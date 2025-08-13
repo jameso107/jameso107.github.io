@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Showcase – SYZYGY</title>
+  <link rel="icon" href="blue.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{ --bg:#0e0a2f; --fg:#e7e9ff; --accent:#7c7bff; --accent2:#52e3f6; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{ margin:0; background:var(--bg); color:var(--fg); font-family:'Inter',system-ui,Segoe UI,Roboto,sans-serif; }
+    /* Top nav */
+    .topnav{ position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between;
+      padding:10px 18px; background:rgba(12,10,40,.7); backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.08); }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.5px; }
+    .brand img{ height:32px; width:auto; }
+    .nav-links{ display:flex; gap:6px; align-items:center; }
+    .topnav a{ color:#c2bafc; text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; }
+    .topnav a:hover{ background:rgba(255,255,255,.06); color:#fff; }
+    .wrap{ width:min(100vw,960px); margin:0 auto; padding:24px 16px 40px; position:relative; z-index:1; }
+    h1{ font-size: clamp(22px, 4vw, 36px); margin: 18px 0 10px; }
+    p.lede{ opacity:.9; margin-top:0; margin-bottom: 18px; }
+    .callout{ background:#15143a; border:1px solid #27255b; border-radius:16px; padding:14px 16px; margin-bottom: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.04) inset; }
+    .controls{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
+    button, select{ background:#15143a; border:1px solid #27255b; color:var(--fg); padding:8px 12px; border-radius:12px;
+      box-shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 10px 20px rgba(0,0,0,.25); cursor:pointer; transition: transform .1s ease; }
+    button:hover{ transform: translateY(-1px); }
+    canvas{ width:100%; height:auto; display:block; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.1));
+      border:1px solid #2b285f; border-radius:16px; box-shadow: 0 10px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.05) inset; }
+    .hud{ position:relative; margin-top:6px; display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:14px; }
+    .pill{ padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.1) }
+    /* Background video (same look as site) */
+    .video-background{ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      min-width:100%; min-height:100%; width:auto; height:auto; z-index:-1; object-fit:contain; object-position:center; filter:brightness(.25); }
+    footer{ text-align:center; padding:24px; opacity:.8; }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="topnav">
+    <div class="brand">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;">
+        <img src="blue.png" alt="SYZYGY" />
+        <span>SYZYGY</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="ai-showcase.html" style="background: rgba(255,255,255,.08); color:#fff;">AI Showcase</a>
+    </div>
+  </nav>
+
+  <!-- Site background video for visual consistency -->
+  <video autoplay muted loop class="video-background">
+    <source src="stars.mp4" type="video/mp4">
+  </video>
+
+  <main class="wrap">
+    <h1>AI Showcase</h1>
+    <p class="lede">Rapid demo builds created with AI. Below: a classic <strong>Pong</strong> clone, designed and coded with AI in under 10 minutes.</p>
+    <div class="callout">
+      <strong>How to play:</strong> W/S for left paddle · ↑/↓ for right (in 2P) · Space to serve · P to pause. Use the controls below to switch modes or target score.
+    </div>
+
+    <!-- Inline controls -->
+    <div class="controls">
+      <button id="btnToggle">Start</button>
+      <button id="btnPause">Pause</button>
+      <label>Mode
+        <select id="mode">
+          <option value="solo" selected>1P vs CPU</option>
+          <option value="duo">2P (local)</option>
+        </select>
+      </label>
+      <label>Play to
+        <select id="winScore">
+          <option>5</option>
+          <option selected>11</option>
+          <option>21</option>
+        </select>
+      </label>
+      <button id="btnReset">Reset</button>
+      <span class="pill" id="status">Ready</span>
+      <span class="pill">Built with AI in <span style="color:#52e3f6;font-weight:700;">&lt;10 min</span></span>
+    </div>
+
+    <!-- Game surface -->
+    <canvas id="game" width="900" height="520" aria-label="Pong game canvas" role="img"></canvas>
+    <div class="hud">
+      <span class="pill" id="scoreL">0</span>
+      <span id="centerMsg"></span>
+      <span class="pill" id="scoreR">0</span>
+    </div>
+  </main>
+
+  <footer>&copy; 2025 SYZYGY. All rights reserved.</footer>
+
+<script>
+(() => {
+  const canvas = document.getElementById('game');
+  const cx = canvas.getContext('2d');
+  const dpr = Math.max(1, window.devicePixelRatio || 1);
+  function fitCanvas(){
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.width * (520/900) * dpr);
+    cx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  new ResizeObserver(fitCanvas).observe(canvas);
+  fitCanvas();
+
+  const W = () => canvas.width / dpr, H = () => canvas.height / dpr;
+  const PADDLE_W = 12, PADDLE_H = 90, BALL = 12;
+  const NET_GAP = 16, NET_SEG = 24;
+
+  let running = false, paused = false;
+  let mode = 'solo';
+  let winScore = 11;
+  let scoreL = 0, scoreR = 0;
+  let serveDir = 1;
+
+  const left = { x: 24, y: 0, vy:0 };
+  const right = { x: 0, y: 0, vy:0 };
+  const ball = { x: 0, y: 0, vx: 0, vy: 0, speed: 360 };
+
+  const keys = new Set();
+  window.addEventListener('keydown', (e)=>{
+    if(['ArrowUp','ArrowDown','w','s','W','S',' ','p','P'].includes(e.key)) e.preventDefault();
+    keys.add(e.key);
+    if(e.key === ' ') { if(!running) start(); else if(!ball.vx && !ball.vy) serve(); }
+    if(e.key === 'p' || e.key === 'P') togglePause();
+  }, {passive:false});
+  window.addEventListener('keyup', (e)=> keys.delete(e.key));
+
+  const elScoreL = document.getElementById('scoreL');
+  const elScoreR = document.getElementById('scoreR');
+  const elStatus = document.getElementById('status');
+  const elCenter = document.getElementById('centerMsg');
+  const btnToggle = document.getElementById('btnToggle');
+  const btnPause = document.getElementById('btnPause');
+  const btnReset = document.getElementById('btnReset');
+  const selMode = document.getElementById('mode');
+  const selWin = document.getElementById('winScore');
+
+  selMode.addEventListener('change', ()=>{ mode = selMode.value; updateStatus(); });
+  selWin.addEventListener('change', ()=>{ winScore = parseInt(selWin.value,10); updateStatus(); });
+  btnToggle.addEventListener('click', ()=> { if(!running) start(); else serve(); });
+  btnPause.addEventListener('click', togglePause);
+  btnReset.addEventListener('click', resetAll);
+
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const audioCtx = new AC();
+  function beep(freq=440, dur=0.06, vol=0.1){
+    const t = audioCtx.currentTime;
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    o.frequency.value = freq; o.type = 'square';
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.001, t+dur);
+    o.connect(g).connect(audioCtx.destination);
+    o.start(); o.stop(t+dur);
+  }
+
+  function centerText(msg){ elCenter.textContent = msg; }
+  function updateStatus(){ elStatus.textContent = `${mode==='solo'?'CPU':'2P'} · Play to ${winScore}`; }
+
+  function resetPositions(){
+    left.y = (H()-PADDLE_H)/2; left.vy=0;
+    right.x = W()-PADDLE_W-24; right.y = (H()-PADDLE_H)/2; right.vy=0;
+    ball.x = W()/2; ball.y = H()/2; ball.vx = 0; ball.vy = 0; ball.speed = 360;
+    centerText('Press Space or Start to Serve');
+  }
+
+  function resetAll(){ scoreL=scoreR=0; serveDir = (Math.random()<0.5?-1:1); updateScore(); start(true); }
+  function start(keepRunning=false){ running = true; paused = false; btnToggle.textContent = 'Serve'; btnPause.textContent = 'Pause'; updateStatus(); resetPositions(); if(!keepRunning) render(); }
+  function togglePause(){ if(!running) return; paused=!paused; btnPause.textContent = paused? 'Resume':'Pause'; centerText(paused? 'Paused – Press P to Resume':'' ); }
+
+  function serve(){ if(paused) return; if(ball.vx||ball.vy) return;
+    const angle = (Math.random()*0.6 - 0.3);
+    ball.vx = Math.cos(angle) * ball.speed * serveDir;
+    ball.vy = Math.sin(angle) * ball.speed * (Math.random()<0.5?1:-1);
+    centerText('');
+  }
+
+  function updateScore(){ elScoreL.textContent = scoreL; elScoreR.textContent = scoreR; }
+
+  function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
+
+  function step(dt){
+    if(!running || paused) return;
+
+    const speed = 420;
+    if(keys.has('w')||keys.has('W')) left.y -= speed*dt;
+    if(keys.has('s')||keys.has('S')) left.y += speed*dt;
+
+    if(mode==='duo'){
+      if(keys.has('ArrowUp')) right.y -= speed*dt;
+      if(keys.has('ArrowDown')) right.y += speed*dt;
+    } else {
+      const target = ball.y - PADDLE_H/2;
+      const ease = 6;
+      right.y += clamp(target - right.y, -speed*dt*ease, speed*dt*ease);
+    }
+
+    left.y = clamp(left.y, 0, H()-PADDLE_H);
+    right.y = clamp(right.y, 0, H()-PADDLE_H);
+
+    if(ball.vx||ball.vy){
+      ball.x += ball.vx*dt; ball.y += ball.vy*dt;
+      if(ball.y < 0){ ball.y = 0; ball.vy *= -1; beep(600); }
+      if(ball.y > H()-BALL){ ball.y = H()-BALL; ball.vy *= -1; beep(600); }
+
+      const lRect = {x:left.x, y:left.y, w:PADDLE_W, h:PADDLE_H};
+      const rRect = {x:right.x, y:right.y, w:PADDLE_W, h:PADDLE_H};
+
+      if(ball.x <= lRect.x + lRect.w && ball.x + BALL >= lRect.x && ball.y + BALL >= lRect.y && ball.y <= lRect.y + lRect.h){
+        ball.x = lRect.x + lRect.w;
+        const hit = ((ball.y + BALL/2) - (lRect.y + lRect.h/2)) / (lRect.h/2);
+        const angle = hit * 0.7;
+        const speedUp = 1.05, speedCap = 900;
+        const speedNow = Math.min(Math.hypot(ball.vx, ball.vy) * speedUp, speedCap);
+        ball.vx = Math.cos(angle) * speedNow;
+        ball.vy = Math.sin(angle) * speedNow;
+        serveDir = 1;
+        beep(440);
+      }
+
+      if(ball.x + BALL >= rRect.x && ball.x <= rRect.x + rRect.w && ball.y + BALL >= rRect.y && ball.y <= rRect.y + rRect.h){
+        ball.x = rRect.x - BALL;
+        const hit = ((ball.y + BALL/2) - (rRect.y + rRect.h/2)) / (rRect.h/2);
+        const angle = hit * 0.7;
+        const speedUp = 1.05, speedCap = 900;
+        const speedNow = Math.min(Math.hypot(ball.vx, ball.vy) * speedUp, speedCap);
+        ball.vx = -Math.cos(angle) * speedNow;
+        ball.vy = Math.sin(angle) * speedNow;
+        serveDir = -1;
+        beep(440);
+      }
+
+      if(ball.x < -BALL){ scoreR++; updateScore(); pointOver(); }
+      if(ball.x > W()+BALL){ scoreL++; updateScore(); pointOver(); }
+    }
+  }
+
+  function pointOver(){
+    beep(220,0.12,0.15);
+    if(scoreL >= winScore || scoreR >= winScore){
+      const winner = scoreL>scoreR? 'Left Player wins!': 'Right Player wins!';
+      centerText(`Game Over · ${winner} · Press Space to Restart`);
+      running = true; paused = false;
+      setTimeout(()=>{ resetPositions(); }, 150);
+      const mkRestart = (e)=>{ if(e.key===' '){ window.removeEventListener('keydown', mkRestart); resetAll(); } };
+      window.addEventListener('keydown', mkRestart);
+      return;
+    }
+    resetPositions();
+  }
+
+  function draw(){
+    cx.clearRect(0,0,W(),H());
+    const grd = cx.createLinearGradient(0,0,0,H());
+    grd.addColorStop(0,'rgba(124,123,255,0.06)');
+    grd.addColorStop(1,'rgba(82,227,246,0.04)');
+    cx.fillStyle = grd; cx.fillRect(0,0,W(),H());
+
+    cx.save();
+    cx.strokeStyle = 'rgba(231,233,255,.2)';
+    cx.lineWidth = 2; cx.setLineDash([NET_SEG, NET_GAP]);
+    cx.beginPath(); cx.moveTo(W()/2, 8); cx.lineTo(W()/2, H()-8); cx.stroke();
+    cx.restore();
+
+    cx.fillStyle = '#e7e9ff';
+    cx.fillRect(left.x, left.y, PADDLE_W, PADDLE_H);
+    cx.fillRect(right.x, right.y, PADDLE_W, PADDLE_H);
+    cx.fillRect(ball.x, ball.y, BALL, BALL);
+  }
+
+  let last = performance.now();
+  function render(now){
+    const dt = Math.min(0.033, (now - last)/1000);
+    last = now;
+    step(dt);
+    draw();
+    requestAnimationFrame(render);
+  }
+
+  function updateScore(){
+    elScoreL.textContent = scoreL;
+    elScoreR.textContent = scoreR;
+  }
+
+  // Boot
+  updateStatus();
+  resetPositions();
+  render(performance.now());
+})();
+</script>
+</body>
+</html>
