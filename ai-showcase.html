@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Showcase – SYZYGY</title>
-  <link rel="icon" href="blue.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AI Showcase – SYZYGY</title>
+<link href="blue.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
     :root{ --bg:#0e0a2f; --fg:#e7e9ff; --accent:#7c7bff; --accent2:#52e3f6; }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -37,70 +38,87 @@
     .video-background{ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
       min-width:100%; min-height:100%; width:auto; height:auto; z-index:-1; object-fit:contain; object-position:center; filter:brightness(.25); }
     footer{ text-align:center; padding:24px; opacity:.8; }
-  </style>
-</head>
+  
+/* Match index header branding */
+.brand a span { color: #c2bafc; font-size: 1.25rem; font-family: 'Saira Stencil One', sans-serif; }
+/* Utility to force Saira Stencil font wherever needed */
+.syzygy-font { font-family: 'Saira Stencil One', sans-serif !important; letter-spacing: 0.02em; }
+h1 .syzygy-font { font-weight: 700; }
+footer .syzygy-font { letter-spacing: 0.02em; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&amp;display=swap" rel="stylesheet"/></head>
 <body>
-  <!-- Top Navigation -->
-  <nav class="topnav">
-    <div class="brand">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px;">
-        <img src="blue.png" alt="SYZYGY" />
-        <span>SYZYGY</span>
-      </a>
+<!-- Top Navigation -->
+<nav class="topnav">
+<div class="brand">
+<a href="index.html" style="display:flex;align-items:center;gap:10px;">
+<img alt="SYZYGY" src="blue.png"/>
+<span class="syzygy-font"><span class="syzygy-font">SYZYGY</span></span>
+</a>
+</div>
+<div class="nav-links">
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#contact">Contact</a>
+<a href="ai-showcase.html" style="background: rgba(255,255,255,.08); color:#fff;">AI Showcase</a>
+</div>
+</nav>
+<!-- Site background video for visual consistency -->
+<video autoplay="" class="video-background" loop="" muted="">
+<source src="stars.mp4" type="video/mp4"/>
+</video>
+<main class="wrap">
+<h1>AI Showcase — <span class="syzygy-font">SYZYGY</span></h1>
+<p class="lede">Rapid demo builds created with AI. Below: a classic <strong>Pong</strong> clone, designed and coded with AI in under 10 minutes.</p>
+<div class="callout">
+<strong>How to play:</strong> W/S for left paddle · ↑/↓ for right (in 2P) · Space to serve · P to pause. Use the controls below to switch modes or target score.
     </div>
-    <div class="nav-links">
-      <a href="index.html#about">About</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="ai-showcase.html" style="background: rgba(255,255,255,.08); color:#fff;">AI Showcase</a>
-    </div>
-  </nav>
-
-  <!-- Site background video for visual consistency -->
-  <video autoplay muted loop class="video-background">
-    <source src="stars.mp4" type="video/mp4">
-  </video>
-
-  <main class="wrap">
-    <h1>AI Showcase</h1>
-    <p class="lede">Rapid demo builds created with AI. Below: a classic <strong>Pong</strong> clone, designed and coded with AI in under 10 minutes.</p>
-    <div class="callout">
-      <strong>How to play:</strong> W/S for left paddle · ↑/↓ for right (in 2P) · Space to serve · P to pause. Use the controls below to switch modes or target score.
-    </div>
-
-    <!-- Inline controls -->
-    <div class="controls">
-      <button id="btnToggle">Start</button>
-      <button id="btnPause">Pause</button>
-      <label>Mode
+<!-- Inline controls -->
+<div class="controls">
+<button id="btnToggle">Start</button>
+<button id="btnPause">Pause</button>
+<label>Mode
         <select id="mode">
-          <option value="solo" selected>1P vs CPU</option>
-          <option value="duo">2P (local)</option>
-        </select>
-      </label>
-      <label>Play to
+<option selected="" value="solo">1P vs CPU</option>
+<option value="duo">2P (local)</option>
+</select>
+</label>
+<label>Play to
         <select id="winScore">
-          <option>5</option>
-          <option selected>11</option>
-          <option>21</option>
-        </select>
-      </label>
-      <button id="btnReset">Reset</button>
-      <span class="pill" id="status">Ready</span>
-      <span class="pill">Built with AI in <span style="color:#52e3f6;font-weight:700;">&lt;10 min</span></span>
-    </div>
-
-    <!-- Game surface -->
-    <canvas id="game" width="900" height="520" aria-label="Pong game canvas" role="img"></canvas>
-    <div class="hud">
-      <span class="pill" id="scoreL">0</span>
-      <span id="centerMsg"></span>
-      <span class="pill" id="scoreR">0</span>
-    </div>
-  </main>
-
-  <footer>&copy; 2025 SYZYGY. All rights reserved.</footer>
-
+<option>5</option>
+<option selected="">11</option>
+<option>21</option>
+</select>
+</label>
+<button id="btnReset">Reset</button>
+<span class="pill" id="status">Ready</span>
+<span class="pill">Built with AI in <span style="color:#52e3f6;font-weight:700;">&lt;10 min</span></span>
+</div>
+<section aria-labelledby="why-syzygy" class="callout" style="margin-top:14px;">
+<h2 class="syzygy-font" id="why-syzygy" style="margin:0 0 8px;font-size:1.25rem;">Why SYZYGY?</h2>
+<ul style="margin:0;padding-left:18px;line-height:1.6;">
+<li><strong>Pragmatic AI, not buzzwords:</strong> We target workflows where AI actually saves time and money.</li>
+<li><strong>Fast demos to real rollouts:</strong> We prototype in days and operationalize with training and guardrails.</li>
+<li><strong>Meeting you exactly where you are:</strong> we learn your team’s flow, culture, and tools first—then elevate them with targeted AI enhancements that feel natural and stick.</li>
+</ul>
+<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+<a href="https://calendly.com/jamesoo-umich" rel="noopener" style="text-decoration:none;color:#e7e9ff;border:1px solid #27255b;border-radius:12px;padding:8px 12px;background:#15143a;" target="_blank">
+          Book a free consult
+        </a>
+<a href="index.html#services" style="text-decoration:none;color:#e7e9ff;border:1px solid #27255b;border-radius:12px;padding:8px 12px;background:#15143a;">
+          See our services
+        </a>
+</div>
+</section>
+<!-- Game surface -->
+<canvas aria-label="Pong game canvas" height="520" id="game" role="img" width="900"></canvas>
+<div class="hud">
+<span class="pill" id="scoreL">0</span>
+<span id="centerMsg"></span>
+<span class="pill" id="scoreR">0</span>
+</div>
+</main>
+<footer>© 2025 <span class="syzygy-font">SYZYGY</span>. All rights reserved.</footer>
 <script>
 (() => {
   const canvas = document.getElementById('game');
