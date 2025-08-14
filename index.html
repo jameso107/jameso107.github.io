@@ -467,16 +467,29 @@
 
 /* Force hero logo to be 3x original size */
 .hero-logo-large { height: 16.5rem !important; width: auto; }
+
+.main-title { font-family: 'Saira Stencil One', sans-serif; }
+.brand a span {
+  color: #c2bafc;
+  font-size: 1.25rem;
+}
+
+/* Apply Saira Stencil One font to all mentions of SYZYGY */
+
+.syzygy-font { font-family: 'Saira Stencil One', sans-serif !important; letter-spacing: 0.02em; }
+.main-title { font-family: 'Saira Stencil One', sans-serif; }
+.brand a span { font-family: 'Saira Stencil One', sans-serif; color: #c2bafc; font-size: 1.25rem; }
+.gradient-text { font-family: 'Saira Stencil One', sans-serif; }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&amp;display=swap" rel="stylesheet"/></head>
 <body>
 <nav aria-label="Primary" class="topnav">
 <div class="topnav-inner">
 <div class="brand">
 <a href="index.html">
 <img alt="SYZYGY logo" src="blue.png"/>
-<span>SYZYGY</span>
+<span><span class="syzygy-font">SYZYGY</span></span>
 </a>
 </div>
 <div class="nav-links">
@@ -507,7 +520,7 @@
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem;">
 <img alt="James Oosterhouse" class="headshot" src="headshot.jpg" style="max-width: 150px;"/>
 <div style="flex: 1; min-width: 250px;">
-<p>Founded by <strong>James Oosterhouse</strong> and <strong>Hannah Terhaar</strong>, SYZYGY specializes in practical and ethical implementation of artificial intelligence. James and Hannah blend deep technical knowledge with real-world consulting, automation, and psychology experience to deliver value at every stage of AI adoption.</p>
+<p>Founded by <strong>James Oosterhouse</strong> and <strong>Hannah Terhaar</strong>, <span class="syzygy-font">SYZYGY</span> specializes in practical and ethical implementation of artificial intelligence. James and Hannah blend deep technical knowledge with real-world consulting, automation, and psychology experience to deliver value at every stage of AI adoption.</p>
 </div>
 <img alt="Hannah Terhaar" class="headshot" src="headshot2.jpg" style="max-width: 150px;"/>
 </div>
@@ -541,7 +554,7 @@
 </p>
 </section>
 <footer>
-    © 2025 SYZYGY. All rights reserved.
+    © 2025 <span class="syzygy-font">SYZYGY</span>. All rights reserved.
   </footer>
 <script>
   const phrases = ["Automate smarter.", "Train your team.", "Deploy real intelligence."];
