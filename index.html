@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SYZYGY</title>
-  <link rel="icon" href="blue.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYZYGY</title>
+<link href="blue.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
 
 
 
@@ -440,101 +441,108 @@
   text-align: center;
 }
 
+
+/* Top Navigation */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(14, 10, 47, 0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.topnav-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand a { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
+.brand img { height: 28px; width: auto; }
+.nav-links { display: flex; gap: 16px; align-items: center; }
+.nav-links a { color: #fff; text-decoration: none; font-weight: 600; opacity: 0.9; padding: 8px 10px; border-radius: 10px; }
+.nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,0.06); outline: none; }
+
+/* Force hero logo to be 3x original size */
+.hero-logo-large { height: 16.5rem !important; width: auto; }
 </style>
-
-  
-  
-  
-
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
-<nav style="text-align:center; margin: 10px 0;"><a href="#about" style="margin:0 10px; color:white;">About</a><a href="#services" style="margin:0 10px; color:white;">Services</a><a href="#contact" style="margin:0 10px; color:white;">Contact</a><a href="ai-showcase.html" style="margin:0 10px; color:white;">AI Showcase</a></nav>
-
-<div class="hero-logo-title-wrapper" id="hero">
-  <img src="blue.png" alt="SYZYGY Logo" class="hero-logo-large">
-  <h1 class="main-title gradient-text">SYZYGY</h1>
-  <h2 class="sub-gradient-text">AI Consulting</h2>
-</div>
-
-
-<a href="#hero" class="logo-link">
-  <img src="blue.png" alt="Logo" class="site-logo" />
+<nav aria-label="Primary" class="topnav">
+<div class="topnav-inner">
+<div class="brand">
+<a href="index.html">
+<img alt="SYZYGY logo" src="blue.png"/>
+<span>SYZYGY</span>
 </a>
-
-<a id="top"></a>
-  <video autoplay muted loop class="video-background">
-    <source src="stars.mp4" type="video/mp4">
-  </video>
-
-  <header>
-    <p>Aligning AI, Strategy, and Your Business</p>
-        
-
-<div style="margin-top: 3rem; text-align: center;">
-  <p><span class="gradient-text">SYZYGY</span> helps you <span id="typed-text" style="font-size: 2rem;"></span></p>
 </div>
-
-
-  </header>
-
-  
-<section id="about" >
-  <h2>About Us</h2>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem;">
-    <img src="headshot.jpg" alt="James Oosterhouse" class="headshot" style="max-width: 150px;" />
-    <div style="flex: 1; min-width: 250px;">
-      <p>Founded by <strong>James Oosterhouse</strong> and <strong>Hannah Terhaar</strong>, SYZYGY specializes in practical and ethical implementation of artificial intelligence. James and Hannah blend deep technical knowledge with real-world consulting, automation, and psychology experience to deliver value at every stage of AI adoption.</p>
-    </div>
-    <img src="headshot2.jpg" alt="Hannah Terhaar" class="headshot" style="max-width: 150px;" />
-  </div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+<a href="ai-showcase.html">AI Showcase</a>
+</div>
+</div>
+</nav>
+<div class="hero-logo-title-wrapper" id="hero">
+<img alt="SYZYGY Logo" class="hero-logo-large" src="blue.png"/>
+<h1 class="main-title gradient-text">SYZYGY</h1>
+<h2 class="sub-gradient-text" style="color: #8a63d2; background: none; -webkit-background-clip: initial; -webkit-text-fill-color: initial;">AI Consulting</h2>
+</div>
+<a id="top"></a>
+<video autoplay="" class="video-background" loop="" muted="">
+<source src="stars.mp4" type="video/mp4"/>
+</video>
+<header>
+<p>Aligning AI, Strategy, and Your Business</p>
+<div style="margin-top: 3rem; text-align: center;">
+<p><span class="gradient-text">SYZYGY</span> helps you <span id="typed-text" style="font-size: 2rem;"></span></p>
+</div>
+</header>
+<section id="about">
+<h2>About Us</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem;">
+<img alt="James Oosterhouse" class="headshot" src="headshot.jpg" style="max-width: 150px;"/>
+<div style="flex: 1; min-width: 250px;">
+<p>Founded by <strong>James Oosterhouse</strong> and <strong>Hannah Terhaar</strong>, SYZYGY specializes in practical and ethical implementation of artificial intelligence. James and Hannah blend deep technical knowledge with real-world consulting, automation, and psychology experience to deliver value at every stage of AI adoption.</p>
+</div>
+<img alt="Hannah Terhaar" class="headshot" src="headshot2.jpg" style="max-width: 150px;"/>
+</div>
 </section>
-
-
-  <section id="services">
-    <h2>Services</h2>
-    <div class="card-grid">
-      <div class="card" >
-        <h3>AI Audit</h3>
-        <p>We evaluate your current workflows to find where AI and automation can create the most value.</p>
-      </div>
-      <div class="card" >
-        <h3>AI Training</h3>
-        <p>We deliver hands-on training and tools that help your team integrate AI into their everyday work.</p>
-      </div>
-      <div class="card" >
-        <h3>Workflow Automation</h3>
-        <p>We build intelligent systems that automate complex, repeatable tasks like quoting, follow-ups, and review pipelines.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" >
-    <h2>Contact us for a free 30-minute consultation!</h2>
-    
-    
-
+<section id="services">
+<h2>Services</h2>
+<div class="card-grid">
+<div class="card">
+<h3>AI Audit</h3>
+<p>We evaluate your current workflows to find where AI and automation can create the most value.</p>
+</div>
+<div class="card">
+<h3>AI Training</h3>
+<p>We deliver hands-on training and tools that help your team integrate AI into their everyday work.</p>
+</div>
+<div class="card">
+<h3>Workflow Automation</h3>
+<p>We build intelligent systems that automate complex, repeatable tasks like quoting, follow-ups, and review pipelines.</p>
+</div>
+</div>
+</section>
+<section id="contact">
+<h2>Contact us for a free 30-minute consultation!</h2>
 <div style="text-align:center; margin: 40px 0;">
-  <a href="https://calendly.com/jamesoo-umich" target="_blank" class="animated-gradient-button">
+<a class="animated-gradient-button" href="https://calendly.com/jamesoo-umich" target="_blank">
     Schedule Now
   </a>
 </div>
-
-
-    
-    
-    <p style="margin-top:1rem;">Or reach out directly:<br>
+<p style="margin-top:1rem;">Or reach out directly:<br/>
       Call: <a href="tel:+16164030259">(616) 403-0259</a>
-    </p>
-    
-  </section>
-
-  <footer>
-    &copy; 2025 SYZYGY. All rights reserved.
+</p>
+</section>
+<footer>
+    © 2025 SYZYGY. All rights reserved.
   </footer>
-
 <script>
   const phrases = ["Automate smarter.", "Train your team.", "Deploy real intelligence."];
   let i = 0, j = 0, currentPhrase = [], isDeleting = false, isEnd = false;
@@ -577,17 +585,13 @@
   }
   loop();
 </script>
-
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
     AOS.init({
       once: true,
       duration: 800
     });
   </script>
-
-
 <script>
 (function(){
   if(!window.chatbase || window.chatbase("getState") !== "initialized") {
@@ -616,7 +620,6 @@
   }
 })();
 </script>
-
 <div class="chat-hint">💬 Need help?</div>
 </body>
 </html>
