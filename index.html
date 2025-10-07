@@ -1,258 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SYZYGY.services</title>
-<link rel="icon" type="image/png" href="blue.png" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet" />
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; background: #0e0a2f; color: #ffffff; scroll-behavior: smooth; }
-
-  /* Background video */
-  .video-background { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; object-fit: contain; object-position: center center; filter: brightness(0.25); }
-
-  header { text-align: center; padding: 8rem 2rem; position: relative; z-index: 1; }
-  header h1 { font-size: 6rem; margin: 0; color: #8a63d2; margin-bottom: 1.5rem; }
-  header p { font-size: 1.2rem; margin-top: 1rem; color: #c2bafc; }
-
-  section { padding: 4rem 2rem; max-width: 1000px; margin: auto; position: relative; z-index: 1; }
-  h2 { color: #8a63d2; margin-bottom: 1rem; }
-
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; }
-  .card { background: #1c133b; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.06); }
-  .card h3 { color: #cbb5ff; margin-bottom: 0.5rem; }
-  .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.08); margin: 6px 6px 0 0; font-size: 0.9rem; }
-
-  /* Buttons */
-  .animated-gradient-button { display: inline-block; padding: 12px 24px; font-weight: bold; font-size: 1.1rem; border-radius: 30px; text-decoration: none; color: white; background: linear-gradient(270deg, #5f4b8b, #9b59b6, #ffd700, #5f4b8b); background-size: 600% 600%; animation: gradientShift 8s ease infinite; border: none; transition: transform 0.3s ease; }
-  .animated-gradient-button:hover { transform: scale(1.05); }
-
-  /* Animated gradients */
-  .gradient-text { font-size: 2rem; font-weight: bold; background: linear-gradient(-45deg, #7b2ff7, #f107a3, #00ffd5, #8a63d2); background-size: 400% 400%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 6s ease infinite; display: inline-block; font-family: 'Saira Stencil One', sans-serif; }
-  @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-  /* Top Navigation */
-  .topnav { position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); background: rgba(14, 10, 47, 0.6); border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .topnav-inner { max-width: 100%; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
-  .brand a { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
-  .brand img { height: 28px; width: auto; }
-  .nav-links { display: flex; gap: 16px; align-items: center; }
-  .nav-links a { color: #fff; text-decoration: none; font-weight: 600; opacity: 0.9; padding: 8px 10px; border-radius: 10px; }
-  .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,0.06); outline: none; }
-
-  /* Hero */
-  .hero-logo-title-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: 60px; margin-bottom: 60px; }
-  .hero-logo-large { height: 5.5rem; width: auto; margin-bottom: 20px; }
-  .main-title.gradient-text { font-size: 11rem; margin: 0; background: linear-gradient(270deg, #5f4b8b, #9b59b6, #ffd700, #5f4b8b); background-size: 600% 600%; animation: gradientShift 8s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; font-family: 'Saira Stencil One', sans-serif; }
-  .sub-gradient-text { font-size: 5.5rem; margin-top: 1rem; background: linear-gradient(270deg, #5f4b8b, #9b59b6, #ffd700, #5f4b8b); background-size: 600% 600%; animation: gradientShift 8s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; }
-
-  .syzygy-font { font-family: 'Saira Stencil One', sans-serif !important; letter-spacing: 0.02em; }
-
-  /* Chat hint */
-  .chat-hint { position: fixed; bottom: 85px; right: 65px; background: #222; color: white; padding: 6px 12px; border-radius: 20px; font-size: 14px; z-index: 1001; animation: floatFade 12s ease infinite; }
-  @keyframes floatFade { 0%, 100% { opacity: 0; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-5px); } }
-
-  /* About: constellation layout */
-  .constellation { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-  .node { position: relative; padding: 1.25rem; background: radial-gradient(1200px 300px at -10% -10%, rgba(255,255,255,0.06), rgba(28,19,59,0.9)); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; overflow: hidden; }
-  .node:after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 40px rgba(255,255,255,0.04); }
-  .node h3 { margin-bottom: 0.5rem; color: #e3dcff; }
-  .node p { color: #d5cff9; }
-  .node ul { margin-left: 1rem; color: #dcd6ff; }
-  .node li { margin: 0.25rem 0; }
-
-  /* Micro copy */
-  .micro { opacity: 0.8; font-size: 0.9rem; }
-  /* About: Orbit Diagram */
-  .about-orbits { position: relative; width: min(92vw, 700px); height: min(92vw, 700px); margin: 2rem auto 0; }
-  .orbits-svg { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:.6; }
-  .orbits-svg .orbit { fill:none; stroke: rgba(255,255,255,0.08); stroke-width:1; }
-  .about-orbits .sun { position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); padding:.2rem .4rem; border-radius:12px; z-index:2; text-align:center; line-height:1; }
-.about-orbits .sun .gradient-text { font-size: 2.6rem; }
-  .orbiter { position:absolute; left:50%; top:50%; width:0; height:0; transform: translate(-50%,-50%) rotate(var(--start,0deg)); transform-origin: center center; animation: orbitSpin var(--dur,24s) linear infinite; }
-  .planet { position:absolute; left: var(--r,120px); top: 0; transform: translate(-50%,-50%); background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 8px 12px; font-weight:600; box-shadow: 0 6px 14px rgba(0,0,0,.25); white-space: nowrap; }
-  .planet:hover { background: rgba(255,255,255,0.12); }
-  .planet::after { content: none; display: none; }
-  .planet:hover::after, .planet:focus::after { content: none; display: none; }
-  @keyframes orbitSpin { from { transform: translate(-50%,-50%) rotate(var(--start,0deg)); } to { transform: translate(-50%,-50%) rotate(calc(var(--start,0deg) + 360deg)); } }
-  @media (prefers-reduced-motion: reduce) { .orbiter { animation: none; } }
-  .sr-only { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip: rect(0,0,0,0); white-space: nowrap; border:0; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SYZYGY.services — AI Consulting for Builders & Operators</title>
+  <meta name="description" content="SYZYGY.services helps teams align people, process, and data to ship AI that actually works — audits, rapid prototypes, and production implementations for manufacturing, education, and operations." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cdefs/%3E%3Ccircle cx='128' cy='128' r='120' fill='%230b1020'/%3E%3Ccircle cx='78' cy='128' r='28' fill='%23ffffff'/%3E%3Ccircle cx='128' cy='128' r='44' fill='%23a78bfa' opacity='.9'/%3E%3Ccircle cx='178' cy='128' r='20' fill='%230ea5e9'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--bg:#0b1020;--ink:#e5e7eb;--muted:#94a3b8;--brand:#a78bfa;--brand2:#0ea5e9}
+    html{scroll-behavior:smooth}
+    .gradient{background: radial-gradient(1200px 800px at 10% -10%, rgba(167,139,250,.18), transparent 60%),
+                         radial-gradient(900px 700px at 90% 10%, rgba(14,165,233,.18), transparent 60%),
+                         linear-gradient(180deg, #0b1020, #0b1020)}
+    .glass{backdrop-filter: blur(8px); background: rgba(13,16,32,.5); border:1px solid rgba(255,255,255,.06)}
+    .shine{position:relative;overflow:hidden}
+    .shine::after{content:"";position:absolute;inset:-150% -50%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.15),transparent);transform:rotate(12deg);animation:shine 7s linear infinite}
+    @keyframes shine{0%{transform:translateX(-60%) rotate(12deg)}100%{transform:translateX(60%) rotate(12deg)}}
+    .code-badge{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
 </head>
-<body>
-  <!-- Top Nav (AI Showcase removed) -->
-  <nav class="topnav" aria-label="Primary">
-    <div class="topnav-inner">
-      <div class="brand">
-        <a href="index.html">
-          <img src="blue.png" alt="SYZYGY logo" />
-          <span class="syzygy-font">SYZYGY</span>
+<body class="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="glass mt-4 rounded-2xl shadow-lg flex items-center justify-between p-3">
+        <a href="#" class="flex items-center gap-3">
+          <div class="size-9 rounded-full bg-gradient-to-tr from-violet-500 to-sky-400 grid place-items-center font-bold">S</div>
+          <span class="font-semibold tracking-wide">SYZYGY<span class="text-violet-400">.services</span></span>
         </a>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+          <a href="#definition" class="hover:text-white">Definition</a>
+          <a href="#services" class="hover:text-white">Services</a>
+          <a href="#process" class="hover:text-white">Process</a>
+          <a href="#work" class="hover:text-white">Work</a>
+          <a href="#pricing" class="hover:text-white">Pricing</a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-violet-500/90 px-4 py-2 font-medium text-white hover:bg-violet-500 transition">Start a Project</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex size-10 items-center justify-center rounded-xl bg-white/5 hover:bg-white/10" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
       </div>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <div id="hero" class="hero-logo-title-wrapper">
-    <img src="blue.png" class="hero-logo-large" alt="SYZYGY Logo" />
-    <h1 class="main-title gradient-text">SYZYGY.services</h1>
-  </div>
-
-  <a id="top"></a>
-  <video class="video-background" autoplay muted loop>
-    <source src="stars.mp4" type="video/mp4" />
-  </video>
-
-  <header>
-    <p>Aligning AI, Strategy, and Your Business</p>
-    <div style="margin-top: 3rem; text-align: center;">
-      <p><span class="gradient-text">SYZYGY</span> helps you <span id="typed-text" style="font-size: 2rem;"></span></p>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="glass mt-2 rounded-2xl p-4 space-y-2">
+        <a href="#definition" class="block py-2">Definition</a>
+        <a href="#services" class="block py-2">Services</a>
+        <a href="#process" class="block py-2">Process</a>
+        <a href="#work" class="block py-2">Work</a>
+        <a href="#pricing" class="block py-2">Pricing</a>
+        <a href="#contact" class="block py-2 font-medium text-violet-300">Start a Project</a>
+      </div>
     </div>
   </header>
 
-  <!-- ABOUT  -->
-  <section id="about">
-
-    <div class="about-orbits" data-aos="fade-up" aria-label="SYZYGY capabilities orbit diagram">
-      <svg class="orbits-svg" viewBox="0 0 700 700" aria-hidden="true">
-        <circle class="orbit" cx="350" cy="350" r="120"/>
-        <circle class="orbit" cx="350" cy="350" r="200"/>
-        <circle class="orbit" cx="350" cy="350" r="280"/>
-      </svg>
-
-      <div class="sun syzygy-font" aria-hidden="true"><span class="gradient-text">SYZYGY</span></div>
-
-      <div class="orbiter" style="--r:120px; --dur:26s; --start: 12deg;">
-        <div class="planet" tabindex="0">Audits</div>
+  <!-- HERO -->
+  <section class="relative pt-36 md:pt-40 pb-20">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute -top-48 -left-32 h-96 w-96 rounded-full blur-3xl bg-violet-500/20"></div>
+      <div class="absolute -top-32 right-0 h-72 w-72 rounded-full blur-3xl bg-sky-400/10"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+            <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Now booking Q4 AI audits
+          </span>
+          <h1 class="mt-5 text-4xl md:text-5xl font-extrabold leading-tight">
+            Align <span class="text-violet-400">people</span>, <span class="text-sky-400">process</span>, and <span class="text-violet-300">data</span> to ship AI that actually works.
+          </h1>
+          <p class="mt-5 text-slate-300/90 max-w-2xl">We’re an AI consulting studio that builds practical systems— from quoting copilots for manufacturers to workflow assistants for education teams. Start with a fast audit, move into a prototype in weeks, and scale to production when it earns its keep.</p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-violet-500 px-5 py-3 font-semibold hover:bg-violet-600 transition">Start a project
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M13.5 4.5h6v6m0-6L10 14"/><path d="M21 3 9 15"/></svg>
+            </a>
+            <a href="#work" class="inline-flex items-center gap-2 rounded-xl bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition">See work</a>
+          </div>
+          <div class="mt-8 flex gap-6 text-sm text-slate-400">
+            <div class="flex items-center gap-2"><span class="size-2 rounded-full bg-violet-400"></span> Manufacturing</div>
+            <div class="flex items-center gap-2"><span class="size-2 rounded-full bg-sky-400"></span> Education</div>
+            <div class="flex items-center gap-2"><span class="size-2 rounded-full bg-emerald-400"></span> Operations</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="glass shine rounded-3xl p-6 md:p-8 shadow-xl">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="rounded-2xl bg-white/5 p-4">
+                <div class="text-xs text-slate-400">Service</div>
+                <div class="mt-1 font-semibold">AI Audit</div>
+                <div class="mt-2 text-sm text-slate-400">Map ROI opportunities, risks, and a 90‑day plan.</div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4">
+                <div class="text-xs text-slate-400">Service</div>
+                <div class="mt-1 font-semibold">Prototype Sprint</div>
+                <div class="mt-2 text-sm text-slate-400">Ship a working tool in 2–4 weeks with real users.</div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4">
+                <div class="text-xs text-slate-400">Service</div>
+                <div class="mt-1 font-semibold">Production Build</div>
+                <div class="mt-2 text-sm text-slate-400">Hardening, guardrails, analytics, and rollout.</div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4">
+                <div class="text-xs text-slate-400">Service</div>
+                <div class="mt-1 font-semibold">Retainer</div>
+                <div class="mt-2 text-sm text-slate-400">Continuous improvements and on‑call support.</div>
+              </div>
+            </div>
+            <div class="mt-6 text-xs text-slate-400 code-badge">Python • Typescript • RAG • Retrieval • Embeddings • Vector DB • Automations • Agentic workflows</div>
+          </div>
+        </div>
       </div>
-      <div class="orbiter" style="--r:200px; --dur:22s; --start: 200deg;">
-        <div class="planet" tabindex="0">Training</div>
-      </div>
-      <div class="orbiter" style="--r:280px; --dur:28s; --start: 320deg;">
-        <div class="planet" tabindex="0">Implementation</div>
-      </div>
-
-      <ul class="sr-only" id="about-summary">
-        <li>Purpose: SYZYGY aligns AI with the way work actually gets done—meeting you where you are, then enhancing from there.</li>
-        <li>Approach: Start small, measure impact, scale what works, and own the last 10% that makes tools usable.</li>
-        <li>Focus: Quoting & estimating, review workflows, document pipelines, and knowledge systems for manufacturing and professional services.</li>
-        <li>Principles: Clarity over hype; people-first; security by default; measurable ROI.</li>
-      </ul>
     </div>
   </section>
 
-  <!-- Services (unchanged content, refined visuals) -->
-  <section id="services">
-    <h2>Services</h2>
-    <div class="card-grid">
-      <div class="card"><h3>AI Audit</h3><p>We evaluate your current workflows to find where AI and automation can create the most value.</p></div>
-      <div class="card"><h3>AI Training</h3><p>We deliver hands-on training and tools that help your team integrate AI into their everyday work.</p></div>
-      <div class="card"><h3>AI Implementation</h3><p>We build intelligent systems that automate complex tasks.</p></div>
+  <!-- DEFINITION -->
+  <section id="definition" class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold">What is <span class="text-violet-400">Syzygy</span>?</h2>
+        <p class="mt-4 text-slate-300/90 max-w-3xl mx-auto">A <em>syzygy</em> is an alignment of three celestial bodies. We named our studio SYZYGY because great AI demands alignment: <span class="font-semibold">People</span> who own the outcome, <span class="font-semibold">Process</span> that scales safely, and <span class="font-semibold">Data</span> that’s accessible and trustworthy. When those three line up, momentum compounds.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+          <div class="text-sm text-slate-400">Pillar I</div>
+          <div class="mt-1 font-semibold">People</div>
+          <p class="mt-2 text-sm text-slate-400">We co‑design with your operators, ICs, and stakeholders so adoption is baked in from day one.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+          <div class="text-sm text-slate-400">Pillar II</div>
+          <div class="mt-1 font-semibold">Process</div>
+          <p class="mt-2 text-sm text-slate-400">From risk/benefit framing to evaluation, we put strong loops around your AI so it improves, safely.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+          <div class="text-sm text-slate-400">Pillar III</div>
+          <div class="mt-1 font-semibold">Data</div>
+          <p class="mt-2 text-sm text-slate-400">We unblock access, normalize sources, and apply retrieval so answers come from your ground truth.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  
-<!-- Chatbot Test -->
-<section id="chatbot-test">
-  <h2>Chatbot test</h2>
-  <p class="micro" style="margin-bottom:1rem;">
-    Try our embedded assistant below. It runs on OpenAI ChatKit.
-  </p>
-  <div id="chatkit-container"
-       style="max-width: 900px; margin: 0 auto; background:#1c133b; border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:0;">
-  </div>
-</section>
-
-<!-- Contact -->
-  <section id="contact">
-    <h2>Contact us for a free 30-minute consultation!</h2>
-    <div style="text-align:center; margin: 40px 0;">
-      <a class="animated-gradient-button" href="https://calendly.com/jamesoo-umich" target="_blank" rel="noopener">Schedule Now</a>
+  <!-- SERVICES -->
+  <section id="services" class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-extrabold">Services</h2>
+          <p class="mt-3 text-slate-300/90">Pick the entry point that matches your risk tolerance and timeline. We’ll tailor the plan to your stack and security requirements.</p>
+          <div class="mt-6 text-sm text-slate-400">
+            Typical stacks: Azure/OpenAI, AWS Bedrock, Google Vertex; Vercel/Cloudflare; Postgres + pgvector; Pinecone/Weaviate. On‑prem available.
+          </div>
+        </div>
+        <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+          <!-- Card -->
+          <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+            <div class="text-xs text-slate-400">Engagement</div>
+            <div class="mt-1 font-semibold">AI Opportunity Audit</div>
+            <ul class="mt-3 space-y-2 text-sm text-slate-400 list-disc pl-5">
+              <li>Stakeholder interviews & job‑to‑be‑done mapping</li>
+              <li>Risk/benefit & ROI sizing, data readiness assessment</li>
+              <li>90‑day roadmap with success metrics</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+            <div class="text-xs text-slate-400">Sprint</div>
+            <div class="mt-1 font-semibold">Rapid Prototype</div>
+            <ul class="mt-3 space-y-2 text-sm text-slate-400 list-disc pl-5">
+              <li>Clickable spec → working tool in 2–4 weeks</li>
+              <li>RAG/agents with your private docs & systems</li>
+              <li>Pilot with real users & evaluation harness</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+            <div class="text-xs text-slate-400">Build</div>
+            <div class="mt-1 font-semibold">Production Implementation</div>
+            <ul class="mt-3 space-y-2 text-sm text-slate-400 list-disc pl-5">
+              <li>Guardrails, monitoring, and analytics</li>
+              <li>Auth, roles, data governance, and red‑team testing</li>
+              <li>Training & rollout, change‑management support</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+            <div class="text-xs text-slate-400">Partner</div>
+            <div class="mt-1 font-semibold">Ongoing Retainer</div>
+            <ul class="mt-3 space-y-2 text-sm text-slate-400 list-disc pl-5">
+              <li>Backlog grooming, iteration, and support</li>
+              <li>Monthly evaluations & cost/perf optimizations</li>
+              <li>Quarterly roadmap refresh</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <p style="margin-top:1rem;">Or reach out directly:<br />Call: <a href="tel:+16164030259">(616) 403-0259</a></p>
   </section>
 
-  <footer>© 2025 <span class="syzygy-font">SYZYGY</span>. All rights reserved.</footer>
+  <!-- PROCESS -->
+  <section id="process" class="py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-3xl font-extrabold text-center">How we work</h2>
+      <div class="mt-10 grid md:grid-cols-4 gap-6">
+        <div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">01</div>
+          <div class="mt-1 font-semibold">Discover</div>
+          <p class="mt-2 text-sm text-slate-400">We unpack the job‑to‑be‑done, workflows, and constraints. Clear problem framing beats shiny demos.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">02</div>
+          <div class="mt-1 font-semibold">Design</div>
+          <p class="mt-2 text-sm text-slate-400">Spec the UX, retrieval strategy, evaluation plan, and success metrics before we write code.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">03</div>
+          <div class="mt-1 font-semibold">Build</div>
+          <p class="mt-2 text-sm text-slate-400">Ship a thin slice to production quickly, integrated with your systems and identity.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">04</div>
+          <div class="mt-1 font-semibold">Measure</div>
+          <p class="mt-2 text-sm text-slate-400">Instrument usage, cost, quality, and safety; iterate with real‑world feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Typed text script -->
+  <!-- WORK / CASE STUDIES -->
+  <section id="work" class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <h2 class="text-3xl font-extrabold">Selected work</h2>
+        <div class="text-sm text-slate-400">Real outcomes, redacted as needed for privacy.</div>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">Manufacturing • Quoting Copilot</div>
+          <h3 class="mt-1 font-semibold">Faster RFQ to proposal</h3>
+          <p class="mt-2 text-sm text-slate-400">Document‑grounded assistant turns prints, specs, and past quotes into structured estimates and risks. Result: hours → minutes and fewer misses.</p>
+        </article>
+        <article class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">Education • Knowledge Assistant</div>
+          <h3 class="mt-1 font-semibold">Answer bank from your own docs</h3>
+          <p class="mt-2 text-sm text-slate-400">RAG system indexed policies & curricula, with citations and access controls. Help‑desk load dropped while accuracy and trust went up.</p>
+        </article>
+        <article class="rounded-2xl bg-white/5 p-5 border border-white/10">
+          <div class="text-xs text-slate-400">Ops • Contract Review</div>
+          <h3 class="mt-1 font-semibold">Clause detection + playbooks</h3>
+          <p class="mt-2 text-sm text-slate-400">Standardized review highlights risky clauses, maps to internal playbooks, and drafts responses—tight loop with legal sign‑off.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-3xl font-extrabold text-center">Transparent pricing</h2>
+      <p class="mt-3 text-center text-slate-300/90">Start small, prove value, then scale.</p>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-white/5 p-6 border border-white/10 flex flex-col">
+          <div class="text-xs text-slate-400">Audit</div>
+          <div class="mt-1 font-semibold">Opportunity Audit</div>
+          <div class="mt-3 text-3xl font-extrabold">$3k–$7k<span class="text-base font-normal text-slate-400"> / fixed</span></div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-400 list-disc pl-5 flex-1">
+            <li>Discovery sessions & data scan</li>
+            <li>ROI/feasibility matrix</li>
+            <li>90‑day action plan</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-white/10 px-4 py-2 font-medium hover:bg-white/20">Book audit</a>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-6 border border-violet-500/50 flex flex-col ring-1 ring-violet-500/30">
+          <div class="text-xs text-violet-300">Most popular</div>
+          <div class="mt-1 font-semibold">Prototype Sprint</div>
+          <div class="mt-3 text-3xl font-extrabold">$8k–$25k<span class="text-base font-normal text-slate-400"> / 2–4 wks</span></div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-400 list-disc pl-5 flex-1">
+            <li>Clickable spec → working pilot</li>
+            <li>RAG/agent with your data</li>
+            <li>Evaluation & user testing</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-violet-500 px-4 py-2 font-semibold hover:bg-violet-600">Start sprint</a>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-6 border border-white/10 flex flex-col">
+          <div class="text-xs text-slate-400">Retainer</div>
+          <div class="mt-1 font-semibold">Ongoing Partnership</div>
+          <div class="mt-3 text-3xl font-extrabold">$2k+<span class="text-base font-normal text-slate-400"> / mo</span></div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-400 list-disc pl-5 flex-1">
+            <li>Backlog, iterations, support</li>
+            <li>Monthly evals & cost tuning</li>
+            <li>Quarterly roadmap</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-white/10 px-4 py-2 font-medium hover:bg-white/20">Let’s talk</a>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-xs text-slate-500">Ranges are typical for SMB/enterprise pilots; final pricing depends on scope, security, and integrations.</p>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section id="contact" class="py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-3xl font-extrabold">Ready to align your team around AI that delivers?</h2>
+      <p class="mt-3 text-slate-300/90">Tell us about your goals and constraints. We’ll reply with next steps and a time to talk.</p>
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:hello@syzygy.services?subject=Project%20inquiry%20from%20website" class="inline-flex items-center gap-2 rounded-xl bg-violet-500 px-5 py-3 font-semibold hover:bg-violet-600">Email hello@syzygy.services</a>
+        <a href="https://cal.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-5 py-3 font-semibold hover:bg-white/20">Book a 20‑min intro</a>
+      </div>
+      <div class="mt-6 text-left glass rounded-2xl p-5">
+        <div class="text-sm text-slate-400">What to include</div>
+        <ul class="mt-2 grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate-300/90 list-disc pl-6">
+          <li>Team & problem overview</li>
+          <li>Data sources & access constraints</li>
+          <li>Desired outcomes & timeline</li>
+          <li>Security/compliance needs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-6 flex flex-wrap items-center justify-between gap-4 text-sm text-slate-400">
+      <div class="flex items-center gap-2">
+        <div class="size-6 rounded-full bg-gradient-to-tr from-violet-500 to-sky-400"></div>
+        <span>© <span id="year"></span> SYZYGY.services</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="#services" class="hover:text-slate-200">Services</a>
+        <a href="#work" class="hover:text-slate-200">Work</a>
+        <a href="#contact" class="hover:text-slate-200">Contact</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const phrases = ["Automate smarter.", "Train your team.", "Deploy real intelligence."];
-    let i = 0, j = 0, currentPhrase = [], isDeleting = false, isEnd = false;
-    const element = document.getElementById("typed-text");
-
-    function loop() {
-      isEnd = false;
-      element.innerHTML = currentPhrase.join("");
-
-      if (i < phrases.length) {
-        if (!isDeleting && j <= phrases[i].length) {
-          currentPhrase.push(phrases[i][j]);
-          j++;
-          element.innerHTML = currentPhrase.join("");
-        }
-        if (isDeleting && j <= phrases[i].length) {
-          currentPhrase.pop(phrases[i][j]);
-          j--;
-        }
-        if (j === phrases[i].length) { isEnd = true; isDeleting = true; }
-        if (isDeleting && j === 0) { currentPhrase = []; isDeleting = false; i++; if (i === phrases.length) i = 0; }
-      }
-      const spedUp = Math.random() * (80 - 50) + 50;
-      const normalSpeed = Math.random() * (150 - 100) + 100;
-      const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed;
-      setTimeout(loop, time);
-    }
-    loop();
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click',()=>menu.classList.toggle('hidden'))
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ once: true, duration: 800 }); </script>
-
-  <!-- Chatbase embed (unchanged) -->
-  <script>
-    (function(){
-      if(!window.chatbase || window.chatbase("getState") !== "initialized"){
-        window.chatbase = (...args)=>{ if(!window.chatbase.q) window.chatbase.q=[]; window.chatbase.q.push(args); };
-        window.chatbase = new Proxy(window.chatbase, { get(target, prop){ if(prop === "q") return target.q; return (...args)=>target(prop, ...args); } });
-      }
-      const onLoad = function(){ const s=document.createElement("script"); s.src="https://www.chatbase.co/embed.min.js"; s.id="z3dkLkekVjzAwww9YcShE"; s.domain="www.chatbase.co"; document.body.appendChild(s); };
-      if(document.readyState === "complete"){ onLoad(); } else { window.addEventListener("load", onLoad); }
-    })();
-  </script>
-
-  <div class="chat-hint">💬 Need help?</div>
-
-<!-- OpenAI ChatKit embed -->
-<script async src="https://cdn.openai.com/chatkit/v1/chatkit.js"></script>
-<script>
-  window.addEventListener("load", function () {
-    if (!window.ChatKit) {
-      console.warn("ChatKit script not found. Check the CDN URL.");
-      return;
-    }
-    const chat = new window.ChatKit({
-      workflowId: "wf_68e47e5c71908190928c78b581c5f80e09d39885479042d2",
-      container: "#chatkit-container",
-      theme: {
-        appearance: "auto",
-        brandColor: "#8a63d2",
-        radius: 12
-      }
-    });
-    // For a floating bubble instead of inline:
-    // chat.renderFloating({ position: "bottom-right" });
-  });
-</script>
-
 </body>
 </html>
