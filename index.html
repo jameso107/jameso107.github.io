@@ -160,7 +160,19 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  
+<!-- Chatbot Test -->
+<section id="chatbot-test">
+  <h2>Chatbot test</h2>
+  <p class="micro" style="margin-bottom:1rem;">
+    Try our embedded assistant below. It runs on OpenAI ChatKit.
+  </p>
+  <div id="chatkit-container"
+       style="max-width: 900px; margin: 0 auto; background:#1c133b; border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:0;">
+  </div>
+</section>
+
+<!-- Contact -->
   <section id="contact">
     <h2>Contact us for a free 30-minute consultation!</h2>
     <div style="text-align:center; margin: 40px 0;">
@@ -219,5 +231,28 @@
   </script>
 
   <div class="chat-hint">💬 Need help?</div>
+
+<!-- OpenAI ChatKit embed -->
+<script async src="https://cdn.openai.com/chatkit/v1/chatkit.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    if (!window.ChatKit) {
+      console.warn("ChatKit script not found. Check the CDN URL.");
+      return;
+    }
+    const chat = new window.ChatKit({
+      workflowId: "wf_68e47e5c71908190928c78b581c5f80e09d39885479042d2",
+      container: "#chatkit-container",
+      theme: {
+        appearance: "auto",
+        brandColor: "#8a63d2",
+        radius: 12
+      }
+    });
+    // For a floating bubble instead of inline:
+    // chat.renderFloating({ position: "bottom-right" });
+  });
+</script>
+
 </body>
 </html>
