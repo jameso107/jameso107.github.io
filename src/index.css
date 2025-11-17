@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b1020;
+  --ink: #e5e7eb;
+  --muted: #94a3b8;
+  --brand: #a78bfa;
+  --brand2: #0ea5e9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient {
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(167,139,250,.18), transparent 60%),
+              radial-gradient(900px 700px at 90% 10%, rgba(14,165,233,.18), transparent 60%),
+              linear-gradient(180deg, #0b1020, #0b1020);
+}
+
+.glass {
+  backdrop-filter: blur(8px);
+  background: rgba(13,16,32,.5);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: -150% -50%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.15), transparent);
+  transform: rotate(12deg);
+  animation: shine 7s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-60%) rotate(12deg);
+  }
+  100% {
+    transform: translateX(60%) rotate(12deg);
+  }
+}
+
+.code-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Orbiting animations - orbs orbit around center */
+@keyframes orbit-1 {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-2 {
+  0% {
+    transform: rotate(120deg) translateX(140px) rotate(-120deg);
+  }
+  100% {
+    transform: rotate(480deg) translateX(140px) rotate(-480deg);
+  }
+}
+
+@keyframes orbit-3 {
+  0% {
+    transform: rotate(240deg) translateX(130px) rotate(-240deg);
+  }
+  100% {
+    transform: rotate(600deg) translateX(130px) rotate(-600deg);
+  }
+}
+
+.animate-orbit-1 {
+  animation: orbit-1 3s linear infinite;
+}
+
+.animate-orbit-2 {
+  animation: orbit-2 3.5s linear infinite;
+}
+
+.animate-orbit-3 {
+  animation: orbit-3 4s linear infinite;
+}
+
+/* Smooth alignment animations - transition from orbit to aligned position */
+@keyframes align-left {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-70px) translateY(0);
+  }
+}
+
+@keyframes align-center {
+  0% {
+    transform: rotate(120deg) translateX(140px) rotate(-120deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+
+@keyframes align-right {
+  0% {
+    transform: rotate(240deg) translateX(130px) rotate(-240deg);
+  }
+  100% {
+    transform: translateX(50px) translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes align-left {
+    0% {
+      transform: rotate(0deg) translateX(120px) rotate(0deg);
+    }
+    100% {
+      transform: translateX(-90px) translateY(0);
+    }
+  }
+  
+  @keyframes align-right {
+    0% {
+      transform: rotate(240deg) translateX(130px) rotate(-240deg);
+    }
+    100% {
+      transform: translateX(70px) translateY(0);
+    }
+  }
+}
+
+.animate-align-left {
+  animation: align-left 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-align-center {
+  animation: align-center 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-align-right {
+  animation: align-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Site reveal animation */
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: slide-up-fade 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Additional modern effects */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(167, 139, 250, 0.3);
+  color: white;
+}
+
