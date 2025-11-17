@@ -34,18 +34,34 @@ html {
 .shine::after {
   content: "";
   position: absolute;
-  inset: -150% -50%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.15), transparent);
-  transform: rotate(12deg);
-  animation: shine 7s linear infinite;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.08) 42%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 58%,
+    transparent 65%,
+    transparent 100%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(12deg);
+  animation: shine 15s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes shine {
   0% {
-    transform: translateX(-60%) rotate(12deg);
+    transform: translateX(-100%) translateY(-100%) rotate(12deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(12deg);
   }
   100% {
-    transform: translateX(60%) rotate(12deg);
+    transform: translateX(-100%) translateY(-100%) rotate(12deg);
   }
 }
 
@@ -94,9 +110,15 @@ html {
 }
 
 /* Smooth alignment animations - transition from orbit to aligned position */
+/* Calculated positions at exactly 3.5 seconds:
+   Orb 1: 3s cycle, at 3.5s = 1.167 cycles = 60deg from start (0deg)
+   Orb 2: 3.5s cycle, at 3.5s = 1.0 cycle = back to start (120deg)
+   Orb 3: 4s cycle, at 3.5s = 0.875 cycles = 315deg from start (240deg) = 195deg total
+*/
 @keyframes align-left {
   0% {
-    transform: rotate(0deg) translateX(120px) rotate(0deg);
+    /* Orb 1 at 3.5s: 60deg position */
+    transform: rotate(60deg) translateX(120px) rotate(-60deg);
   }
   100% {
     transform: translateX(-70px) translateY(0);
@@ -105,6 +127,7 @@ html {
 
 @keyframes align-center {
   0% {
+    /* Orb 2 at 3.5s: back to 120deg start position */
     transform: rotate(120deg) translateX(140px) rotate(-120deg);
   }
   100% {
@@ -114,7 +137,8 @@ html {
 
 @keyframes align-right {
   0% {
-    transform: rotate(240deg) translateX(130px) rotate(-240deg);
+    /* Orb 3 at 3.5s: 195deg position (240deg start + 315deg progress - 360deg wrap) */
+    transform: rotate(195deg) translateX(130px) rotate(-195deg);
   }
   100% {
     transform: translateX(50px) translateY(0);
@@ -124,7 +148,7 @@ html {
 @media (min-width: 768px) {
   @keyframes align-left {
     0% {
-      transform: rotate(0deg) translateX(120px) rotate(0deg);
+      transform: rotate(60deg) translateX(120px) rotate(-60deg);
     }
     100% {
       transform: translateX(-90px) translateY(0);
@@ -133,7 +157,7 @@ html {
   
   @keyframes align-right {
     0% {
-      transform: rotate(240deg) translateX(130px) rotate(-240deg);
+      transform: rotate(195deg) translateX(130px) rotate(-195deg);
     }
     100% {
       transform: translateX(70px) translateY(0);
