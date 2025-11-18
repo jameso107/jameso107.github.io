@@ -42,7 +42,7 @@ export default function OpeningAnimation({ onComplete }) {
                 ? 'animate-orbit-1'
                 : phase === 'aligning'
                 ? 'animate-align-left'
-                : 'translate-x-[-70px] md:translate-x-[-90px] translate-y-0'
+                : 'translate-x-[-44px] md:translate-x-[-62px] translate-y-0'
             }`}
           />
 

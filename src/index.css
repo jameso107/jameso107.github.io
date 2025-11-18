@@ -129,7 +129,7 @@ body {
     transform: rotate(240deg) translateX(120px) rotate(-240deg);
   }
   100% {
-    transform: translateX(-70px) translateY(0);
+    transform: translateX(-44px) translateY(0);
   }
 }
 
@@ -159,7 +159,7 @@ body {
       transform: rotate(240deg) translateX(120px) rotate(-240deg);
     }
     100% {
-      transform: translateX(-90px) translateY(0);
+      transform: translateX(-62px) translateY(0);
     }
   }
   

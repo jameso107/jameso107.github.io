@@ -15,13 +15,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleContactClick = (e) => {
-    if (location.pathname !== '/') {
-      e.preventDefault()
-      window.location.href = '/#contact'
-    }
-  }
-
   const handleLogoClick = (e) => {
     // If on homepage, replay animation by clearing sessionStorage and reloading
     if (location.pathname === '/') {
@@ -73,8 +66,9 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <a 
-              href={location.pathname === '/' ? '#contact' : '/#contact'}
-              onClick={handleContactClick}
+              href="https://calendly.com/jamesoo-umich"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-5 py-2.5 font-medium text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50"
             >
               Start a Project
@@ -124,11 +118,10 @@ export default function Header() {
               Our Team
             </Link>
             <a 
-              href={location.pathname === '/' ? '#contact' : '/#contact'}
-              onClick={(e) => {
-                handleContactClick(e)
-                setIsMenuOpen(false)
-              }}
+              href="https://calendly.com/jamesoo-umich"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
               className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
             >
               Start a Project

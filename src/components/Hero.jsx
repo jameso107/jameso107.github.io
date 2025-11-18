@@ -29,12 +29,14 @@ export default function Hero() {
           </h1>
           
           <p className="text-base md:text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-            We're all in on AI and serving you. SYZYGY.services is your one-stop shop to audit your AI readiness, develop your AI strategy, prototype effective tools, and implement real ROI.
+            All-in on AI. All-in on you. SYZYGY.services evaluates your AI potential, designs high-ROI strategies, builds rapid prototypes, and implements solutions that generate real impact for your business.
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a 
-              href="#contact" 
+              href="https://calendly.com/jamesoo-umich"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
             >
               Start a project
