@@ -5,10 +5,12 @@ import ProcessPage from './pages/ProcessPage'
 import PricingPage from './pages/PricingPage'
 import TeamPage from './pages/TeamPage'
 import ScrollToTop from './components/ScrollToTop'
+import Analytics from './components/Analytics'
 
 function App() {
   return (
     <Router>
+      <Analytics />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />

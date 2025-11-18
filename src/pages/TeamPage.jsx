@@ -1,5 +1,7 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
+import { breadcrumbSchema, personSchema } from '../utils/structuredData'
 
 export default function TeamPage() {
   const teamMembers = [
@@ -29,8 +31,25 @@ export default function TeamPage() {
     }
   ]
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'Home', url: 'https://syzygy.services' },
+    { name: 'Our Team', url: 'https://syzygy.services/team' }
+  ])
+
+  const personSchemas = teamMembers.map(member => personSchema(member))
+
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
+      <SEO
+        title="AI Consultants & Experts | Our Team"
+        description="Meet the AI consulting experts at SYZYGY.services: James Oosterhouse (Founder & CEO), Christian Reinhardt (Co-founder & Director of Research), and Hannah TerHaar (Co-founder & Director of Marketing)."
+        keywords="AI consultants, AI experts, AI consulting team, AI strategy consultants, AI implementation experts"
+        canonicalUrl="https://syzygy.services/team"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@graph': [breadcrumbs, ...personSchemas]
+        }}
+      />
       <Header />
       <section className="pt-32 pb-32 relative overflow-hidden">
         {/* Background effects */}
@@ -64,7 +83,7 @@ export default function TeamPage() {
                   <div className="mb-4 relative">
                     <img
                       src={member.image}
-                      alt={member.name}
+                      alt={`${member.name}, ${member.role} at SYZYGY.services`}
                       className="w-32 h-32 rounded-full object-cover border-2 border-white/20 group-hover:border-white/40 transition-all duration-300"
                       onError={(e) => {
                         // Fallback to a placeholder if image fails to load

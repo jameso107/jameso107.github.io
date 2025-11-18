@@ -6,6 +6,8 @@ import Definition from '../components/Definition'
 import Process from '../components/Process'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
+import { getHomePageSchema } from '../utils/structuredData'
 
 export default function HomePage() {
   const [showSite, setShowSite] = useState(false)
@@ -33,6 +35,13 @@ export default function HomePage() {
 
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
+      <SEO
+        title="AI Consulting Services | AI Audit & Implementation"
+        description="SYZYGY.services provides AI consulting, AI audits, and AI implementation services. We align AI, people, and your business to build solutions that actually work."
+        keywords="AI consulting, AI audit, AI implementation, AI strategy, AI consulting services, AI readiness assessment, AI prototype"
+        canonicalUrl="https://syzygy.services"
+        structuredData={getHomePageSchema()}
+      />
       {shouldShowAnimation && !showSite && (
         <OpeningAnimation onComplete={handleAnimationComplete} />
       )}

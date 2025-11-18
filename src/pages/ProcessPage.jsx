@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Header from '../components/Header'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
+import { breadcrumbSchema } from '../utils/structuredData'
 
 export default function ProcessPage() {
   const [expandedStep, setExpandedStep] = useState(null)
@@ -157,8 +159,20 @@ export default function ProcessPage() {
     }
   ]
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'Home', url: 'https://syzygy.services' },
+    { name: 'Our Process', url: 'https://syzygy.services/process' }
+  ])
+
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
+      <SEO
+        title="AI Consulting Process | How We Work"
+        description="Learn about SYZYGY.services proven AI consulting process: Discovery Audit, Design & Prototype, Build & Implement, and Measure & Improve. A structured approach to AI success."
+        keywords="AI consulting process, AI strategy development, AI implementation process, AI consulting methodology"
+        canonicalUrl="https://syzygy.services/process"
+        structuredData={breadcrumbs}
+      />
       <Header />
       <section className="pt-32 pb-32 relative overflow-hidden">
         {/* Background effects */}

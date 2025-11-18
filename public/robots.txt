@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://syzygy.services/sitemap.xml
+
+# Disallow admin and API routes if they exist
+Disallow: /api/
+
