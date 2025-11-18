@@ -18,18 +18,6 @@ export default function Footer() {
               © {currentYear} <span className="font-semibold text-white">SYZYGY<span className="text-violet-400">.services</span></span>
             </span>
           </div>
-          <div className="flex items-center gap-6">
-            {['Work', 'Contact'].map((link) => (
-              <a 
-                key={link}
-                href={`#${link.toLowerCase()}`} 
-                className="text-slate-400 hover:text-white relative group transition-colors duration-200"
-              >
-                {link}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

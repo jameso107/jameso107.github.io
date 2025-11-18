@@ -1,7 +1,7 @@
 export default function Contact({ 
   heading = "Ready to align your team around",
   headingHighlight = "AI that delivers",
-  description = "Tell us about your goals and constraints. We'll reply with next steps and a time to talk.",
+  description = "No commitment needed, let's talk AI.",
   headingGradient = "from-violet-400 to-sky-400"
 }) {
   return (

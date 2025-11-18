@@ -12,7 +12,7 @@ export default function CaseStudiesPage() {
         <Contact 
           heading="Ready to see similar"
           headingHighlight="results for your business"
-          description="Let's discuss how we can help you achieve similar impact. We'll reply with next steps and a time to talk."
+          description="No commitment needed, let's talk AI."
           headingGradient="from-violet-400 to-sky-400"
         />
       </div>

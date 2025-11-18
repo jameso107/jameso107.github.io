@@ -12,7 +12,7 @@ export default function PricingPage() {
         <Contact 
           heading="Ready to get started with"
           headingHighlight="SYZYGY"
-          description="Have questions about our pricing or ready to begin? We'll reply with next steps and a time to talk."
+          description="No commitment needed, let's talk AI."
           headingGradient="from-violet-400 to-sky-400"
         />
       </div>

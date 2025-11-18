@@ -5,7 +5,12 @@ export default function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // Scroll to just below the header (approximately 120px from top)
+    // This ensures the header doesn't cover the top section content
+    window.scrollTo({
+      top: 120,
+      behavior: 'smooth'
+    })
   }, [pathname])
 
   return null

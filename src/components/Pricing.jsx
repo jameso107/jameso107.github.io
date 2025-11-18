@@ -120,7 +120,7 @@ export default function Pricing() {
                 </ul>
                 
                 <a 
-                  href="#contact" 
+                  href="/#contact" 
                   className={`inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
                     plan.popular
                       ? `bg-gradient-to-r ${plan.gradient} text-white hover:shadow-lg hover:shadow-violet-500/50 hover:scale-105`
