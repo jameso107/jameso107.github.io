@@ -3,21 +3,21 @@ export default function Work() {
     {
       category: 'Manufacturing • Quoting Copilot',
       title: 'Faster RFQ to proposal',
-      description: 'Document‑grounded assistant turns prints, specs, and past quotes into structured estimates and risks. Result: hours → minutes and fewer misses.',
+      description: 'Document‑grounded assistant turns prints, specs, and past quotes into structured estimates and risks. Result: Sales Engineers saved 5+ hours per week, opening up time for more customer interaction.',
       gradient: 'from-violet-500 to-purple-600',
       icon: '⚙️'
     },
     {
-      category: 'Education • Knowledge Assistant',
-      title: 'Answer bank from your own docs',
-      description: 'RAG system indexed policies & curricula, with citations and access controls. Help‑desk load dropped while accuracy and trust went up.',
+      category: 'Manufacturing • Document Analysis',
+      title: 'Analyze documents to make more accurate decisions',
+      description: 'Custom AI engine to analyze specification documents and take exception to contract terms. Result: 18% more efficient quoting operations, allowing for quicker quote turnaround times.',
       gradient: 'from-sky-400 to-blue-500',
       icon: '📚'
     },
     {
-      category: 'Ops • Contract Review',
-      title: 'Clause detection + playbooks',
-      description: 'Standardized review highlights risky clauses, maps to internal playbooks, and drafts responses—tight loop with legal sign‑off.',
+      category: 'Retail • Operations Automation',
+      title: 'Automate online store operations',
+      description: 'Researched and implemented 3rd party software to automatically list, reprice, and prepare shipping for online storefront. Result: 25% more efficient operations and 10% increase in revenue',
       gradient: 'from-emerald-400 to-teal-500',
       icon: '📋'
     }
@@ -35,10 +35,10 @@ export default function Work() {
         <div className="flex items-end justify-between gap-6 flex-wrap mb-16 animate-reveal">
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-              Selected work
+              Case Studies
             </h2>
             <p className="text-lg text-slate-400">
-              Real outcomes, redacted as needed for privacy.
+              Real clients, real impact
             </p>
           </div>
         </div>

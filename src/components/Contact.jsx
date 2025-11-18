@@ -1,11 +1,4 @@
 export default function Contact() {
-  const items = [
-    'Team & problem overview',
-    'Data sources & access constraints',
-    'Desired outcomes & timeline',
-    'Security/compliance needs'
-  ]
-
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
       {/* Background effects */}
@@ -24,7 +17,7 @@ export default function Contact() {
           </p>
         </div>
         
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-reveal" style={{ animationDelay: '0.1s' }}>
+        <div className="flex flex-wrap items-center justify-center gap-4 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <a 
             href="mailto:jamesoo@umich.edu?subject=Project%20inquiry%20from%20website" 
             className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
@@ -45,21 +38,6 @@ export default function Contact() {
               <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
             </svg>
           </a>
-        </div>
-        
-        <div className="glass rounded-3xl p-8 border border-white/20 shadow-2xl animate-reveal" style={{ animationDelay: '0.2s' }}>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="size-2 rounded-full bg-gradient-to-r from-violet-400 to-sky-400"></div>
-            <div className="text-sm font-semibold text-slate-300">What to include</div>
-          </div>
-          <ul className="grid md:grid-cols-2 gap-4">
-            {items.map((item, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-slate-300/90">
-                <span className="mt-1.5 size-1.5 rounded-full bg-gradient-to-r from-violet-400 to-sky-400 flex-shrink-0"></span>
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

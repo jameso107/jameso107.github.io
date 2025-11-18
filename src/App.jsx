@@ -3,7 +3,6 @@ import OpeningAnimation from './components/OpeningAnimation'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Definition from './components/Definition'
-import Services from './components/Services'
 import Process from './components/Process'
 import Work from './components/Work'
 import Pricing from './components/Pricing'
@@ -20,7 +19,6 @@ function App() {
         <Header />
         <Hero />
         <Definition />
-        <Services />
         <Process />
         <Work />
         <Pricing />

@@ -2,29 +2,32 @@ export default function Process() {
   const steps = [
     {
       number: '01',
-      title: 'Discover',
-      description: 'We unpack the job‑to‑be‑done, workflows, and constraints. Clear problem framing beats shiny demos.',
+      title: 'Discovery Audit',
+      subtitle: 'Discover',
+      description: 'We unpack the job‑to‑be‑done, workflows, and constraints. We work alongside your people every step of the way.',
       gradient: 'from-violet-500 to-purple-600',
       icon: '🔎'
     },
     {
       number: '02',
-      title: 'Design',
-      description: 'Spec the UX, retrieval strategy, evaluation plan, and success metrics before we write code.',
+      title: 'Design and Prototype',
+      description: 'Spec the UX, retrieval strategy, evaluation plan, and success metrics to unlock real value for your business. Your dreams are translated into real code.',
       gradient: 'from-sky-400 to-blue-500',
       icon: '✏️'
     },
     {
       number: '03',
-      title: 'Build',
-      description: 'Ship a thin slice to production quickly, integrated with your systems and identity.',
+      title: 'Build and Implement',
+      subtitle: 'Build',
+      description: 'Integrate real AI solutions into your business processes. Our custom or 3rd-party tools will unlock real ROI into your business.',
       gradient: 'from-emerald-400 to-teal-500',
       icon: '⚙️'
     },
     {
       number: '04',
-      title: 'Measure',
-      description: 'Instrument usage, cost, quality, and safety; iterate with real‑world feedback.',
+      title: 'Measure and Improve',
+      subtitle: 'Measure',
+      description: 'We showcase the ROI and impact your team has now unlocked. Iterate with real‑world feedback.',
       gradient: 'from-orange-400 to-pink-500',
       icon: '📊'
     }
@@ -71,9 +74,12 @@ export default function Process() {
                     {step.number}
                   </div>
                 </div>
-                <div className="text-xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors duration-300">
+                <div className="text-xl font-bold text-white mb-1 group-hover:text-violet-300 transition-colors duration-300">
                   {step.title}
                 </div>
+                {step.subtitle && (
+                  <div className="text-sm text-slate-400 mb-3">{step.subtitle}</div>
+                )}
                 <p className="text-sm text-slate-400 leading-relaxed">{step.description}</p>
               </div>
             </div>

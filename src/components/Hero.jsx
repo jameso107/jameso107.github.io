@@ -34,7 +34,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg text-slate-300/90 max-w-2xl leading-relaxed">
-              We're an AI consulting studio that builds practical systems— from quoting copilots for manufacturers to classroom assistants for education teams. Start with a fast audit, move into a prototype in weeks, and scale to production when it earns its keep.
+              We're all in on AI and serving you. SYZYGY.services is your one-stop shop to audit your AI readiness, develop your AI strategy, prototype effective tools, and implement real ROI.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -66,7 +66,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2 group">
                 <span className="size-3 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.5)] group-hover:shadow-[0_0_15px_rgba(56,189,248,0.8)] transition-all duration-300"></span>
-                <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Education</span>
+                <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Finance</span>
               </div>
               <div className="flex items-center gap-2 group">
                 <span className="size-3 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.5)] group-hover:shadow-[0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300"></span>
@@ -82,9 +82,9 @@ export default function Hero() {
               <div className="relative z-10">
                 <div className="grid sm:grid-cols-2 gap-5">
                   {[
-                    { title: 'AI Audit', desc: 'Map ROI opportunities, risks, and a 90‑day plan.', delay: '0s' },
+                    { title: 'AI Audit', desc: 'Map ROI opportunities, risks, and an internal/external analysis.', delay: '0s' },
                     { title: 'Prototype Sprint', desc: 'Experiment with the best tools in 4-6 weeks and train your team on the results.', delay: '0.1s' },
-                    { title: 'Production Build', desc: 'Hardening, guardrails, analytics, and rollout.', delay: '0.2s' },
+                    { title: 'Production Build', desc: 'Real solutions implemented into your teams.', delay: '0.2s' },
                     { title: 'Retainer', desc: 'Continuous improvements and on‑call support.', delay: '0.3s' }
                   ].map((service, idx) => (
                     <div 
@@ -103,9 +103,8 @@ export default function Hero() {
                     <span className="px-2 py-1 rounded bg-white/5">CustomGPTs</span>
                     <span className="px-2 py-1 rounded bg-white/5">RAG</span>
                     <span className="px-2 py-1 rounded bg-white/5">3rd-Party Tools</span>
-                    <span className="px-2 py-1 rounded bg-white/5">Embeddings</span>
-                    <span className="px-2 py-1 rounded bg-white/5">Automations</span>
-                    <span className="px-2 py-1 rounded bg-white/5">Agents</span>
+                    <span className="px-2 py-1 rounded bg-white/5">AI-First Data</span>
+                    <span className="px-2 py-1 rounded bg-white/5">Agentic Automation</span>
                   </div>
                 </div>
               </div>

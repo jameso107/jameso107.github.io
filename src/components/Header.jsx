@@ -26,7 +26,7 @@ export default function Header() {
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            {['Definition', 'Services', 'Process', 'Work', 'Pricing'].map((item) => (
+            {['Definition', 'Process', 'Work', 'Pricing'].map((item) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`} 
@@ -61,7 +61,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 animate-reveal">
           <div className="glass mt-2 rounded-2xl p-4 space-y-2 border-white/20">
-            {['Definition', 'Services', 'Process', 'Work', 'Pricing', 'Contact'].map((item) => (
+            {['Definition', 'Process', 'Work', 'Pricing', 'Contact'].map((item) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`} 

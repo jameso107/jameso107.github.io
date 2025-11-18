@@ -10,14 +10,14 @@ export default function Definition() {
     {
       number: 'II',
       title: 'People',
-      description: 'We co‑design with your operators, ICs, and stakeholders so adoption is baked in from day one.',
+      description: 'We co‑design with your stakeholders so adoption is baked in from day one. Documentation and change management are our culture.',
       gradient: 'from-sky-400 to-blue-500',
       icon: '👥'
     },
     {
       number: 'III',
       title: 'Your Business',
-      description: 'We meet you where you\'re at, understand your unique business case, and work with you to take it to the next level.',
+      description: 'We meet you where you\'re at, understand your unique business case, and work with you to take it into the next generation of business technology.',
       gradient: 'from-emerald-400 to-teal-500',
       icon: '🚀'
     }
@@ -37,7 +37,7 @@ export default function Definition() {
             What is <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">Syzygy</span>?
           </h2>
           <p className="mt-4 text-lg text-slate-300/90 max-w-4xl mx-auto leading-relaxed">
-            A <em className="text-violet-300 not-italic font-semibold">syzygy</em> is an alignment of three celestial bodies. We named our company SYZYGY because great AI demands alignment: <span className="font-semibold text-white">AI</span> that powers the future, <span className="font-semibold text-white">People</span> who drive innovation, and <span className="font-semibold text-white">Your Business</span> and its unique competitive advantages!
+            A <em className="text-violet-300 not-italic font-semibold">Syz - y - gy</em> [siz - uh - gee] is the perfect alignment of three celestial bodies. AI demands perfect alignment, and our promise to you is to align <span className="font-semibold text-white">AI</span>, <span className="font-semibold text-white">people</span>, and <span className="font-semibold text-white">your business</span>.
           </p>
         </div>
         
