@@ -64,7 +64,7 @@ export default function OpeningAnimation({ onComplete }) {
                 ? 'animate-orbit-3'
                 : phase === 'aligning'
                 ? 'animate-align-right'
-                : 'translate-x-[50px] md:translate-x-[70px] translate-y-0'
+                : 'translate-x-[44px] md:translate-x-[62px] translate-y-0'
             }`}
           />
         </div>
