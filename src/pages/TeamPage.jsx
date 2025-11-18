@@ -8,7 +8,7 @@ export default function TeamPage() {
       role: 'Founder & CEO',
       description: 'Leading SYZYGY.services with a vision to align AI, people, and business for real-world impact.',
       image: 'https://media.licdn.com/dms/image/v2/D5603AQGqELc5V3rjLg/profile-displayphoto-shrink_800_800/B56ZUkc2eaHoAk-/0/1740073298172?e=1764806400&v=beta&t=nPKM8hgQyn7EaXp1mbn7Z4IvyxmVExSdDqLvLryaup4',
-      linkedin: 'https://www.linkedin.com/in/jamesoosterhouse',
+      linkedin: 'https://www.linkedin.com/in/james-oosterhouse/',
       gradient: 'from-violet-500 to-purple-600'
     },
     {
@@ -16,7 +16,7 @@ export default function TeamPage() {
       role: 'Co-founder & Director of Research',
       description: 'Driving research initiatives and staying at the forefront of AI technology and innovation.',
       image: 'https://media.licdn.com/dms/image/v2/D4E03AQEJhgJrDPALQg/profile-displayphoto-crop_800_800/B4EZlN6bHvIwAI-/0/1757948785495?e=1764806400&v=beta&t=22uNnZSalOGx_YJ-8hEakcTDHE-I3It4XRQZEiILe3M',
-      linkedin: 'https://www.linkedin.com/in/christianreinhardt',
+      linkedin: 'https://www.linkedin.com/in/christian-reinhardt-186b7428a/',
       gradient: 'from-sky-400 to-blue-500'
     },
     {
@@ -24,7 +24,7 @@ export default function TeamPage() {
       role: 'Co-founder & Director of Marketing',
       description: 'Shaping our brand and connecting with clients to communicate the value of AI alignment.',
       image: 'https://media.licdn.com/dms/image/v2/D5603AQHA1852c9AQ0g/profile-displayphoto-crop_800_800/B56ZpHCSutHYAI-/0/1762128375283?e=1764806400&v=beta&t=XEH-5FvisKaPRPmUfpPRQQRaucGCpiCA2BjXU9oMPPI',
-      linkedin: 'https://www.linkedin.com/in/hannahterhaar',
+      linkedin: 'https://www.linkedin.com/in/hannahterhaar/',
       gradient: 'from-cyan-400 to-blue-500'
     }
   ]
