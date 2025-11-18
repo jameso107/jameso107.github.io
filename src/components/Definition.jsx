@@ -13,7 +13,7 @@ export default function Definition() {
             What is <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">Syzygy</span>?
           </h2>
           <p className="mt-4 text-lg text-slate-300/90 max-w-4xl mx-auto leading-relaxed">
-            A <em className="text-violet-300 not-italic font-semibold">Syz - y - gy</em> [siz - uh - gee] is the perfect alignment of three celestial bodies. AI demands perfect alignment, and our promise to you is to align <span className="font-semibold text-white">AI</span>, <span className="font-semibold text-white">people</span>, and <span className="font-semibold text-white">your business</span>.
+            A <em className="text-violet-300 not-italic font-semibold">syz·y·gy</em> [siz-uh-jee] is the perfect alignment of three celestial bodies. Just like a solar eclipse, AI only works when everything is aligned. Our promise: align <span className="font-semibold text-white">AI</span>, <span className="font-semibold text-white">people</span>, and <span className="font-semibold text-white">your business</span>.
           </p>
         </div>
       </div>
