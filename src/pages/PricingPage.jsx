@@ -9,7 +9,12 @@ export default function PricingPage() {
       <Header />
       <div className="pt-32">
         <Pricing />
-        <Contact />
+        <Contact 
+          heading="Ready to get started with"
+          headingHighlight="SYZYGY"
+          description="Have questions about our pricing or ready to begin? We'll reply with next steps and a time to talk."
+          headingGradient="from-violet-400 to-sky-400"
+        />
       </div>
       <Footer />
     </div>

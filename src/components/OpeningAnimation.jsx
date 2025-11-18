@@ -5,10 +5,10 @@ export default function OpeningAnimation({ onComplete }) {
   const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
-    // After 3.5 seconds, start alignment
+    // After 2 seconds, start alignment
     const alignmentTimer = setTimeout(() => {
       setPhase('aligning')
-    }, 3500)
+    }, 2000)
 
     // After alignment completes (1.5 seconds), reveal content
     const revealTimer = setTimeout(() => {
@@ -17,7 +17,7 @@ export default function OpeningAnimation({ onComplete }) {
       setTimeout(() => {
         onComplete()
       }, 500)
-    }, 5000)
+    }, 3500)
 
     return () => {
       clearTimeout(alignmentTimer)

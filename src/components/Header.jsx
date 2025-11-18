@@ -22,11 +22,20 @@ export default function Header() {
     }
   }
 
+  const handleLogoClick = (e) => {
+    // If on homepage, replay animation by clearing sessionStorage and reloading
+    if (location.pathname === '/') {
+      e.preventDefault()
+      sessionStorage.removeItem('openingAnimationShown')
+      window.location.reload()
+    }
+  }
+
   return (
     <header className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 backdrop-blur-xl ${scrolled ? 'bg-[#0b1020]/80' : 'bg-[#0b1020]/40'}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
         <div className={`glass rounded-2xl shadow-lg flex items-center justify-between p-3 transition-all duration-300 ${scrolled ? 'border-white/20 shadow-2xl' : ''}`}>
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3 group">
             <div className="group-hover:scale-110 transition-transform duration-300">
               <Logo size="md" />
             </div>
@@ -36,10 +45,17 @@ export default function Header() {
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link 
+              to="/process" 
+              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
+            >
+              Our Process
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link 
               to="/case-studies" 
               className="text-slate-300 hover:text-white relative group transition-colors duration-200"
             >
-              Case Studies
+              Customer Stories
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
@@ -47,6 +63,13 @@ export default function Header() {
               className="text-slate-300 hover:text-white relative group transition-colors duration-200"
             >
               Pricing
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link 
+              to="/team" 
+              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
+            >
+              Our Team
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <a 
@@ -73,11 +96,18 @@ export default function Header() {
         <div className="md:hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 animate-reveal">
           <div className="glass mt-2 rounded-2xl p-4 space-y-2 border-white/20">
             <Link 
+              to="/process" 
+              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Our Process
+            </Link>
+            <Link 
               to="/case-studies" 
               className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
               onClick={() => setIsMenuOpen(false)}
             >
-              Case Studies
+              Customer Stories
             </Link>
             <Link 
               to="/pricing" 
@@ -85,6 +115,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
+            </Link>
+            <Link 
+              to="/team" 
+              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Our Team
             </Link>
             <a 
               href={location.pathname === '/' ? '#contact' : '/#contact'}

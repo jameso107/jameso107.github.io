@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Work from '../components/Work'
+import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 export default function CaseStudiesPage() {
@@ -8,6 +9,12 @@ export default function CaseStudiesPage() {
       <Header />
       <div className="pt-32">
         <Work />
+        <Contact 
+          heading="Ready to see similar"
+          headingHighlight="results for your business"
+          description="Let's discuss how we can help you achieve similar impact. We'll reply with next steps and a time to talk."
+          headingGradient="from-violet-400 to-sky-400"
+        />
       </div>
       <Footer />
     </div>

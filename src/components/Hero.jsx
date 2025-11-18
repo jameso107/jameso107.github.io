@@ -15,7 +15,7 @@ export default function Hero() {
       }}></div>
 
       <div className="px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="space-y-8 animate-reveal">
+        <div className="space-y-8 animate-reveal text-center">
           <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm px-6 py-3 text-sm md:text-base text-slate-300 shadow-lg">
             <span className="relative flex size-3 md:size-4">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
@@ -25,14 +25,14 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.1]">
-            Align <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">AI</span>, <span className="text-sky-400">people</span>, and <span className="text-violet-300">your business</span>.
+            Aligning <span className="text-violet-400">AI</span>, <span className="text-sky-400">people</span>, and <span className="text-violet-300">your business</span>.
           </h1>
           
-          <p className="text-base md:text-lg text-slate-300/90 max-w-3xl leading-relaxed">
+          <p className="text-base md:text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
             We're all in on AI and serving you. SYZYGY.services is your one-stop shop to audit your AI readiness, develop your AI strategy, prototype effective tools, and implement real ROI.
           </p>
           
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <a 
               href="#contact" 
               className="group inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
@@ -48,25 +48,6 @@ export default function Hero() {
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
-          </div>
-          
-          <div className="flex flex-wrap items-center gap-8 pt-4">
-            <div className="flex items-center gap-2 group">
-              <span className="size-3 rounded-full bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.5)] group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)] transition-all duration-300"></span>
-              <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Manufacturing</span>
-            </div>
-            <div className="flex items-center gap-2 group">
-              <span className="size-3 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.5)] group-hover:shadow-[0_0_15px_rgba(56,189,248,0.8)] transition-all duration-300"></span>
-              <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Finance</span>
-            </div>
-            <div className="flex items-center gap-2 group">
-              <span className="size-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] group-hover:shadow-[0_0_15px_rgba(34,211,238,0.8)] transition-all duration-300"></span>
-              <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Operations</span>
-            </div>
-            <div className="flex items-center gap-2 group">
-              <span className="size-3 rounded-full bg-pink-400 shadow-[0_0_10px_rgba(244,114,182,0.5)] group-hover:shadow-[0_0_15px_rgba(244,114,182,0.8)] transition-all duration-300"></span>
-              <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Your industry</span>
-            </div>
           </div>
         </div>
       </div>

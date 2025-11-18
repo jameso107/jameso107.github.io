@@ -1,4 +1,7 @@
+import { useLocation, Link } from 'react-router-dom'
+
 export default function Work() {
+  const location = useLocation()
   const projects = [
     {
       category: 'Manufacturing • Quoting Copilot',
@@ -53,7 +56,7 @@ export default function Work() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16 animate-reveal">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-            Case Studies
+            Customer Stories
           </h2>
           <p className="text-lg text-slate-400">
             Real clients, real impact
@@ -85,6 +88,18 @@ export default function Work() {
             </article>
           ))}
         </div>
+        
+        {/* Button to view more case studies - only show on home page */}
+        {location.pathname === '/' && (
+          <div className="text-center mt-12 animate-reveal" style={{ animationDelay: '0.4s' }}>
+            <Link 
+              to="/case-studies"
+              className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-4 font-semibold hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
+            >
+              Look at more customer stories
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
