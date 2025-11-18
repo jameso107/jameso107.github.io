@@ -1,31 +1,17 @@
-import { useState } from 'react'
-import OpeningAnimation from './components/OpeningAnimation'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Definition from './components/Definition'
-import Process from './components/Process'
-import Work from './components/Work'
-import Pricing from './components/Pricing'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import CaseStudiesPage from './pages/CaseStudiesPage'
+import PricingPage from './pages/PricingPage'
 
 function App() {
-  const [showSite, setShowSite] = useState(false)
-
   return (
-    <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
-      {!showSite && <OpeningAnimation onComplete={() => setShowSite(true)} />}
-      <div className={showSite ? 'animate-reveal' : 'opacity-0'}>
-        <Header />
-        <Hero />
-        <Definition />
-        <Process />
-        <Work />
-        <Pricing />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+      </Routes>
+    </Router>
   )
 }
 

@@ -12,7 +12,7 @@ export default function Pricing() {
       ],
       gradient: 'from-blue-500 to-cyan-500',
       buttonText: 'Book audit',
-      popular: false
+      popular: true
     },
     {
       type: 'Sprint',
@@ -26,7 +26,7 @@ export default function Pricing() {
       ],
       gradient: 'from-violet-500 to-purple-600',
       buttonText: 'Start sprint',
-      popular: true
+      popular: false
     },
     {
       type: 'Implementation',
@@ -38,7 +38,7 @@ export default function Pricing() {
         'Full documentation and training',
         'Integrate into existing tech stack'
       ],
-      gradient: 'from-emerald-500 to-teal-500',
+      gradient: 'from-cyan-500 to-blue-500',
       buttonText: 'Contact us',
       popular: false
     },
@@ -53,7 +53,7 @@ export default function Pricing() {
         'Continuous Training',
         'Board room strategy support'
       ],
-      gradient: 'from-orange-500 to-pink-500',
+      gradient: 'from-pink-500 to-rose-500',
       buttonText: "Let's talk",
       popular: false
     }
@@ -82,14 +82,14 @@ export default function Pricing() {
               key={plan.type}
               className={`group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border flex flex-col transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal ${
                 plan.popular 
-                  ? 'border-violet-500/50 ring-2 ring-violet-500/30 md:-mt-4 md:mb-4' 
+                  ? `border-blue-500/50 ring-2 ring-blue-500/30 md:-mt-4 md:mb-4` 
                   : 'border-white/10 hover:border-white/20'
               }`}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Popular badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 text-xs font-semibold text-white shadow-lg">
+                <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r ${plan.gradient} text-xs font-semibold text-white shadow-lg`}>
                   Most popular
                 </div>
               )}

@@ -30,7 +30,7 @@ export default function Services() {
         'Auth, roles, data governance, and red‑team testing',
         'Training & rollout, change‑management support'
       ],
-      gradient: 'from-emerald-500 to-teal-600',
+      gradient: 'from-cyan-500 to-blue-500',
       icon: '🏗️'
     },
     {
@@ -41,7 +41,7 @@ export default function Services() {
         'Monthly evaluations & cost/perf optimizations',
         'Quarterly roadmap refresh'
       ],
-      gradient: 'from-orange-500 to-pink-500',
+      gradient: 'from-pink-500 to-rose-500',
       icon: '🤝'
     }
   ]

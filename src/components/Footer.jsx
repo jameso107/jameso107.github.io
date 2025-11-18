@@ -1,3 +1,5 @@
+import Logo from './Logo'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   
@@ -11,9 +13,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-wrap items-center justify-between gap-8">
           <div className="flex items-center gap-3">
-            <div className="relative size-8 rounded-full bg-gradient-to-tr from-violet-500 via-purple-500 to-sky-400 shadow-[0_0_20px_rgba(167,139,250,0.5)]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-violet-500 to-sky-400 opacity-0 hover:opacity-100 blur-xl transition-opacity duration-300"></div>
-            </div>
+            <Logo size="sm" />
             <span className="text-slate-400">
               © {currentYear} <span className="font-semibold text-white">SYZYGY<span className="text-violet-400">.services</span></span>
             </span>

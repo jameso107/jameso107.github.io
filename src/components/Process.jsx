@@ -20,7 +20,7 @@ export default function Process() {
       title: 'Build and Implement',
       subtitle: 'Build',
       description: 'Integrate real AI solutions into your business processes. Our custom or 3rd-party tools will unlock real ROI into your business.',
-      gradient: 'from-emerald-400 to-teal-500',
+      gradient: 'from-cyan-400 to-blue-500',
       icon: '⚙️'
     },
     {
@@ -28,7 +28,7 @@ export default function Process() {
       title: 'Measure and Improve',
       subtitle: 'Measure',
       description: 'We showcase the ROI and impact your team has now unlocked. Iterate with real‑world feedback.',
-      gradient: 'from-orange-400 to-pink-500',
+      gradient: 'from-pink-400 to-rose-500',
       icon: '📊'
     }
   ]
@@ -45,31 +45,25 @@ export default function Process() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
             How we work
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            A proven process that delivers results
-          </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {steps.map((step, idx) => (
             <div 
               key={step.number}
-              className="group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal"
+              className="group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal overflow-hidden"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Connecting line (hidden on last item) */}
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-violet-500/50 to-transparent group-hover:from-violet-500 transition-colors duration-300"></div>
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-violet-500/30 to-transparent z-[-1] pointer-events-none"></div>
               )}
               
               {/* Gradient glow */}
-              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500 z-0`}></div>
               
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`text-3xl bg-gradient-to-br ${step.gradient} bg-clip-text text-transparent`}>
-                    {step.icon}
-                  </div>
+                <div className="mb-4">
                   <div className={`text-2xl font-bold bg-gradient-to-r ${step.gradient} bg-clip-text text-transparent font-mono`}>
                     {step.number}
                   </div>
