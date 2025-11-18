@@ -7,7 +7,13 @@ export const organizationSchema = {
   '@type': 'Organization',
   name: 'SYZYGY.services',
   url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/logo.png`,
+    width: 112,
+    height: 112
+  },
+  image: `${siteUrl}/logo.png`,
   description: 'AI consulting services that align AI, people, and your business to build solutions that actually work.',
   email: 'jamesoo@umich.edu',
   sameAs: [
