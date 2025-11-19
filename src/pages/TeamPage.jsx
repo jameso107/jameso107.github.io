@@ -42,8 +42,8 @@ export default function TeamPage() {
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
         title="AI Consultants & Experts | Our Team"
-        description="Meet the AI consulting experts at SYZYGY.services: James Oosterhouse (Founder & CEO), Christian Reinhardt (Co-founder & Director of Research), and Hannah TerHaar (Co-founder & Director of Marketing)."
-        keywords="AI consultants, AI experts, AI consulting team, AI strategy consultants, AI implementation experts"
+        description="Meet the AI consulting service experts at SYZYGY.services serving Michigan and Midwest small businesses: James Oosterhouse (Founder & CEO), Christian Reinhardt (Co-founder & Director of Research), and Hannah TerHaar (Co-founder & Director of Marketing)."
+        keywords="AI consultants, AI experts, AI consulting team, AI consulting service team, AI strategy consultants, AI implementation experts, Michigan AI consultants, Midwest AI consultants"
         canonicalUrl="https://syzygy.services/team"
         structuredData={{
           '@context': 'https://schema.org',

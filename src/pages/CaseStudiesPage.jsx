@@ -15,8 +15,8 @@ export default function CaseStudiesPage() {
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
         title="AI Case Studies | Customer Success Stories"
-        description="See real AI consulting results: Manufacturing quoting automation, document analysis, and retail operations automation. Real clients, real impact with SYZYGY.services."
-        keywords="AI case studies, AI success stories, AI consulting results, AI implementation examples, AI ROI case studies"
+        description="See real AI consulting service results for Michigan and Midwest small businesses: Manufacturing quoting automation, document analysis, and retail operations automation. Real clients, real impact with SYZYGY.services."
+        keywords="AI case studies, AI success stories, AI consulting results, AI consulting service results, AI implementation examples, AI ROI case studies, Michigan AI consulting, Midwest AI consulting"
         canonicalUrl="https://syzygy.services/case-studies"
         structuredData={breadcrumbs}
       />

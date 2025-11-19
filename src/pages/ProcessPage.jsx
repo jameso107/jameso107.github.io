@@ -168,8 +168,8 @@ export default function ProcessPage() {
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
         title="AI Consulting Process | How We Work"
-        description="Learn about SYZYGY.services proven AI consulting process: Discovery Audit, Design & Prototype, Build & Implement, and Measure & Improve. A structured approach to AI success."
-        keywords="AI consulting process, AI strategy development, AI implementation process, AI consulting methodology"
+        description="Learn about SYZYGY.services proven AI consulting service process for Michigan and Midwest small businesses: Discovery Audit, Design & Prototype, Build & Implement, and Measure & Improve. A structured approach to AI success."
+        keywords="AI consulting process, AI consulting service process, AI strategy development, AI implementation process, AI consulting methodology, Michigan AI consulting, Midwest AI consulting"
         canonicalUrl="https://syzygy.services/process"
         structuredData={breadcrumbs}
       />

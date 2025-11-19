@@ -38,8 +38,8 @@ export default function PricingPage() {
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
         title="AI Consulting Pricing | Transparent AI Audit & Implementation Costs"
-        description="Transparent AI consulting pricing: AI Audit ($3k-$5k), Prototype Sprint ($6k-$8k), AI Implementation (custom quote), and Ongoing Partnership ($2k/month). Start small, prove value, then scale."
-        keywords="AI consulting pricing, AI audit cost, AI implementation cost, AI consulting rates, AI strategy pricing"
+        description="Transparent AI consulting service pricing for small businesses: AI Audit ($3k-$5k), Prototype Sprint ($6k-$8k), AI Implementation (custom quote), and Ongoing Partnership ($2k/month). Start small, prove value, then scale."
+        keywords="AI consulting pricing, AI consulting service pricing, AI audit cost, AI implementation cost, AI consulting rates, AI strategy pricing, Michigan AI consulting, Midwest AI consulting, small business AI consulting"
         canonicalUrl="https://syzygy.services/pricing"
         structuredData={{
           '@context': 'https://schema.org',

@@ -11,7 +11,7 @@ export default function SEO({
 }) {
   const siteUrl = 'https://syzygy.services'
   const defaultTitle = 'SYZYGY.services | AI Consulting for Your Business'
-  const defaultDescription = 'SYZYGY.services helps align AI, people, and your business to build solutions that actually work — audits, rapid prototypes, and production implementations for manufacturing, finance, operations, and more.'
+  const defaultDescription = 'AI consulting service for small businesses in Michigan and the Midwest. SYZYGY.services provides AI consulting, AI audits, and AI implementation services. We align AI, people, and your business to build solutions that actually work.'
   const defaultImage = `${siteUrl}/og-image.png`
   
   const fullTitle = defaultTitle
