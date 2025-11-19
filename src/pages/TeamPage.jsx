@@ -64,7 +64,7 @@ export default function TeamPage() {
               Our Team
             </h2>
             <p className="text-lg text-slate-300/90 max-w-2xl mx-auto">
-              Meet the experts behind SYZYGY.services
+              Meet the University of Michigan experts behind SYZYGY.services. We may be young, but we know AI.
             </p>
           </div>
           
