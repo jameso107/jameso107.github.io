@@ -123,6 +123,41 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+
+      {/* Join Our Team Section */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-0 h-96 w-96 rounded-full blur-3xl bg-violet-500/20"></div>
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl bg-sky-500/20"></div>
+        </div>
+
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="text-center mb-12 animate-reveal">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+              Interested in joining <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">our team</span>?
+            </h2>
+            <p className="text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
+              We're always looking for talented individuals passionate about AI and helping businesses succeed. If you're excited about aligning AI, people, and business, we'd love to hear from you.
+            </p>
+          </div>
+          
+          <div className="flex justify-center animate-reveal" style={{ animationDelay: '0.1s' }}>
+            <a 
+              href="https://forms.gle/PHqVb3Lpk319SVBU6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-8 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
+            >
+              <span>Apply to join our team</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )
