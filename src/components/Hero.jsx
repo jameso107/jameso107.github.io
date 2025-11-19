@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero() {
   return (
     <section className="relative pt-32 md:pt-40 pb-32 overflow-hidden">
@@ -41,15 +43,15 @@ export default function Hero() {
             >
               Start a project
             </a>
-            <a 
-              href="/case-studies" 
+            <Link 
+              to="/case-studies" 
               className="inline-flex items-center gap-2 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 px-6 py-4 font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-300"
             >
               See customer stories
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
