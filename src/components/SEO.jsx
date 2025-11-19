@@ -10,11 +10,11 @@ export default function SEO({
   structuredData
 }) {
   const siteUrl = 'https://syzygy.services'
-  const defaultTitle = 'SYZYGY.services — AI Consulting for Your Business'
+  const defaultTitle = 'SYZYGY.services | AI Consulting for Your Business'
   const defaultDescription = 'SYZYGY.services helps align AI, people, and your business to build solutions that actually work — audits, rapid prototypes, and production implementations for manufacturing, finance, operations, and more.'
   const defaultImage = `${siteUrl}/og-image.png`
   
-  const fullTitle = title ? `${title} | SYZYGY.services` : defaultTitle
+  const fullTitle = defaultTitle
   const fullDescription = description || defaultDescription
   const fullImage = ogImage || defaultImage
   const fullUrl = canonicalUrl || siteUrl
