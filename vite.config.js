@@ -18,10 +18,11 @@ export default defineConfig({
         } catch (err) {
           console.warn('Could not copy CNAME file:', err.message)
         }
-        // Copy sitemap.xml and robots.txt to dist folder
+        // Copy sitemap.xml, robots.txt, and 404.html to dist folder
         try {
           copyFileSync(join(__dirname, 'public', 'sitemap.xml'), join(__dirname, 'dist', 'sitemap.xml'))
           copyFileSync(join(__dirname, 'public', 'robots.txt'), join(__dirname, 'dist', 'robots.txt'))
+          copyFileSync(join(__dirname, 'public', '404.html'), join(__dirname, 'dist', '404.html'))
         } catch (err) {
           console.warn('Could not copy SEO files:', err.message)
         }
