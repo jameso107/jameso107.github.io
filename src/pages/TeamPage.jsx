@@ -28,6 +28,30 @@ export default function TeamPage() {
       image: 'https://media.licdn.com/dms/image/v2/D5603AQHA1852c9AQ0g/profile-displayphoto-crop_800_800/B56ZpHCSutHYAI-/0/1762128375283?e=1764806400&v=beta&t=XEH-5FvisKaPRPmUfpPRQQRaucGCpiCA2BjXU9oMPPI',
       linkedin: 'https://www.linkedin.com/in/hannahterhaar/',
       gradient: 'from-cyan-400 to-blue-500'
+    },
+    {
+      name: 'Ethan Franklin',
+      role: 'AI Engineer',
+      description: 'Building and implementing AI solutions to drive business value and innovation.',
+      image: `https://ui-avatars.com/api/?name=${encodeURIComponent('Ethan Franklin')}&background=a78bfa&color=fff&size=256`,
+      linkedin: 'https://www.linkedin.com/in/ethanmfranklin/',
+      gradient: 'from-emerald-500 to-teal-500'
+    },
+    {
+      name: 'Max Cooper',
+      role: 'AI Engineer',
+      description: 'Building and implementing AI solutions to drive business value and innovation.',
+      image: `https://ui-avatars.com/api/?name=${encodeURIComponent('Max Cooper')}&background=a78bfa&color=fff&size=256`,
+      linkedin: 'https://www.linkedin.com/in/cooper-maxwell/',
+      gradient: 'from-amber-500 to-orange-500'
+    },
+    {
+      name: 'Kyle Cornell',
+      role: 'AI Engineer',
+      description: 'Building and implementing AI solutions to drive business value and innovation.',
+      image: `https://ui-avatars.com/api/?name=${encodeURIComponent('Kyle Cornell')}&background=a78bfa&color=fff&size=256`,
+      linkedin: 'https://www.linkedin.com/in/kylecornell04/',
+      gradient: 'from-rose-500 to-pink-500'
     }
   ]
 
