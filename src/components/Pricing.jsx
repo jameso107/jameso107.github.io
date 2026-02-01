@@ -2,59 +2,48 @@ export default function Pricing() {
   const plans = [
     {
       type: 'Audit',
-      title: 'AI Audit',
-      price: '$3k–$5k',
-      priceDetail: '2-4 wks',
+      title: 'AI Audit & Prototyping',
       features: [
         'Discovery sessions',
         'ROI/feasibility analysis',
-        'internal/external audit'
+        'Internal/external audit',
+        'Create a functional prototype'
       ],
       gradient: 'from-blue-500 to-cyan-500',
-      buttonText: 'Book audit',
       popular: true
-    },
-    {
-      type: 'Sprint',
-      title: 'Prototype Sprint',
-      price: '$6k–$8k',
-      priceDetail: '4-6 wks',
-      features: [
-        'Working pilot to test with your team',
-        'Build what your people actually want',
-        'Evaluation & user testing'
-      ],
-      gradient: 'from-violet-500 to-purple-600',
-      buttonText: 'Start sprint',
-      popular: false
     },
     {
       type: 'Implementation',
       title: 'AI Implementation',
-      price: 'Contact for quote',
-      priceDetail: '12+ wks',
       features: [
         'Unlock production level ROI',
         'Full documentation and training',
         'Integrate into existing tech stack'
       ],
-      gradient: 'from-cyan-500 to-blue-500',
-      buttonText: 'Contact us',
+      gradient: 'from-violet-500 to-purple-600',
       popular: false
     },
     {
       type: 'Retainer',
       title: 'Ongoing Partnership',
-      price: '$2k',
-      priceDetail: '/ month',
       features: [
         'Iterations & support',
         'Monthly emerging tech updates',
-        'Continuous Training',
+        'Continuous training',
         'Board room strategy support'
       ],
+      gradient: 'from-cyan-500 to-blue-500',
+      popular: false
+    },
+    {
+      type: 'Advisory',
+      title: 'Technology Consulting',
+      features: [
+        'Website design & development',
+        'Technology integrations',
+        'Product advising & strategy'
+      ],
       gradient: 'from-pink-500 to-rose-500',
-      buttonText: "Let's talk",
       popular: false
     }
   ]
@@ -103,13 +92,6 @@ export default function Pricing() {
                   {plan.title}
                 </div>
                 
-                <div className="mb-4">
-                  <div className="text-3xl font-extrabold text-white mb-1">
-                    {plan.price}
-                  </div>
-                  <div className="text-sm text-slate-400">{plan.priceDetail}</div>
-                </div>
-                
                 <ul className="space-y-2.5 flex-1 mb-6">
                   {plan.features.map((feature, featureIdx) => (
                     <li key={featureIdx} className="flex items-start gap-2.5 text-sm text-slate-400">
@@ -120,16 +102,14 @@ export default function Pricing() {
                 </ul>
                 
                 <a 
-                  href="https://calendly.com/jamesoo-umich"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className={`inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
                     plan.popular
                       ? `bg-gradient-to-r ${plan.gradient} text-white hover:shadow-lg hover:shadow-violet-500/50 hover:scale-105`
                       : 'bg-white/10 text-white hover:bg-white/20 border border-white/10'
                   }`}
                 >
-                  {plan.buttonText}
+                  Contact for quote
                 </a>
               </div>
             </div>
@@ -137,7 +117,7 @@ export default function Pricing() {
         </div>
         
         <p className="mt-8 text-center text-sm text-slate-500 max-w-3xl mx-auto">
-          Final pricing depends on scope, security, and integrations.
+          Contact us for a customized quote based on your scope and requirements.
         </p>
       </div>
     </section>

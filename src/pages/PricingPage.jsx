@@ -13,14 +13,9 @@ export default function PricingPage() {
 
   const services = [
     serviceSchema({
-      name: 'AI Audit',
-      description: 'Comprehensive AI readiness assessment and strategic roadmap',
-      price: '$3,000-$5,000'
-    }),
-    serviceSchema({
-      name: 'Prototype Sprint',
-      description: 'Rapid AI prototyping and proof of concept development',
-      price: '$6,000-$8,000'
+      name: 'AI Audit & Prototyping',
+      description: 'Comprehensive AI readiness assessment, strategic roadmap, and functional prototype',
+      price: 'Contact for quote'
     }),
     serviceSchema({
       name: 'AI Implementation',
@@ -30,15 +25,20 @@ export default function PricingPage() {
     serviceSchema({
       name: 'Ongoing Partnership',
       description: 'Continuous AI improvements and support',
-      price: '$2,000/month'
+      price: 'Contact for quote'
+    }),
+    serviceSchema({
+      name: 'Technology Consulting',
+      description: 'Website design, technology integrations, and product advising',
+      price: 'Contact for quote'
     })
   ]
 
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="AI Consulting Pricing | Transparent AI Audit & Implementation Costs"
-        description="Transparent AI consulting service pricing for small businesses: AI Audit ($3k-$5k), Prototype Sprint ($6k-$8k), AI Implementation (custom quote), and Ongoing Partnership ($2k/month). Start small, prove value, then scale."
+        title="AI Consulting Services | AI Audit, Implementation & Technology Consulting"
+        description="AI consulting services for small businesses: AI Audit & Prototyping, AI Implementation, Ongoing Partnership, and Technology Consulting. Contact for a customized quote."
         keywords="AI consulting pricing, AI consulting service pricing, AI audit cost, AI implementation cost, AI consulting rates, AI strategy pricing, Michigan AI consulting, Midwest AI consulting, small business AI consulting"
         canonicalUrl="https://syzygy.services/pricing"
         structuredData={{

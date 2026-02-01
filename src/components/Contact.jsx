@@ -24,10 +24,10 @@ export default function Contact({
         
         <div className="flex flex-wrap items-center justify-center gap-4 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <a 
-            href="mailto:jamesoo@umich.edu?subject=Project%20inquiry%20from%20website" 
+            href="mailto:james@syzygy.services?subject=Project%20inquiry%20from%20website" 
             className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
           >
-            Email jamesoo@umich.edu
+            Email james@syzygy.services
           </a>
           <a 
             href="https://calendly.com/jamesoo-umich" 

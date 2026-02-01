@@ -15,14 +15,14 @@ export const organizationSchema = {
   },
   image: `${siteUrl}/logo.png`,
   description: 'AI consulting service for small businesses in Michigan and the Midwest. We align AI, people, and your business to build solutions that actually work.',
-  email: 'jamesoo@umich.edu',
+  email: 'james@syzygy.services',
   sameAs: [
     'https://www.linkedin.com/company/syzygy-services'
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Customer Service',
-    email: 'jamesoo@umich.edu',
+    email: 'james@syzygy.services',
     areaServed: ['US-MI', 'US-IL', 'US-IN', 'US-OH', 'US-WI'],
     availableLanguage: 'English'
   },
@@ -51,7 +51,7 @@ export const localBusinessSchema = {
     height: 112
   },
   image: `${siteUrl}/logo.png`,
-  email: 'jamesoo@umich.edu',
+  email: 'james@syzygy.services',
   telephone: '+1-734-000-0000', // Update with actual phone if available
   address: {
     '@type': 'PostalAddress',

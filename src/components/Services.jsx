@@ -6,21 +6,11 @@ export default function Services() {
       items: [
         'Stakeholder interviews & job‑to‑be‑done mapping over 2-4 weeks',
         'Risk/benefit & ROI sizing, data readiness assessment',
-        '90‑day roadmap with success metrics'
+        '90‑day roadmap with success metrics',
+        'Create a functional prototype'
       ],
       gradient: 'from-blue-500 to-cyan-500',
       icon: '🔍'
-    },
-    {
-      type: 'Sprint',
-      title: 'Rapid Prototype',
-      items: [
-        'Clickable spec → working tool in 4-6 weeks',
-        'RAG/agents with your private docs & systems',
-        'Pilot with real users & evaluation harness'
-      ],
-      gradient: 'from-violet-500 to-purple-600',
-      icon: '⚡'
     },
     {
       type: 'Build',
@@ -43,6 +33,17 @@ export default function Services() {
       ],
       gradient: 'from-pink-500 to-rose-500',
       icon: '🤝'
+    },
+    {
+      type: 'Advisory',
+      title: 'Technology Consulting',
+      items: [
+        'Website design & development',
+        'Technology integrations',
+        'Product advising & strategy'
+      ],
+      gradient: 'from-violet-500 to-purple-600',
+      icon: '💡'
     }
   ]
 
