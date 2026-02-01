@@ -9,7 +9,7 @@ export default function TeamPage() {
       name: 'James Oosterhouse',
       role: 'Founder & CEO',
       description: 'Leading SYZYGY.services with a vision to align AI, people, and business for real-world impact.',
-      image: 'https://media.licdn.com/dms/image/v2/D5603AQGqELc5V3rjLg/profile-displayphoto-shrink_800_800/B56ZUkc2eaHoAk-/0/1740073298172?e=1764806400&v=beta&t=nPKM8hgQyn7EaXp1mbn7Z4IvyxmVExSdDqLvLryaup4',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQGqELc5V3rjLg/profile-displayphoto-shrink_800_800/B56ZUkc2eaHoAk-/0/1740073298172?e=1771459200&v=beta&t=s5ArP1sIX4O2P1A7SUev2aDH83r3ltqWCf6esWDAE70',
       linkedin: 'https://www.linkedin.com/in/james-oosterhouse/',
       gradient: 'from-violet-500 to-purple-600'
     },
@@ -17,7 +17,7 @@ export default function TeamPage() {
       name: 'Christian Reinhardt',
       role: 'Co-founder & Director of Research',
       description: 'Driving research initiatives and staying at the forefront of AI technology and innovation.',
-      image: 'https://media.licdn.com/dms/image/v2/D4E03AQEJhgJrDPALQg/profile-displayphoto-crop_800_800/B4EZlN6bHvIwAI-/0/1757948785495?e=1764806400&v=beta&t=22uNnZSalOGx_YJ-8hEakcTDHE-I3It4XRQZEiILe3M',
+      image: 'https://media.licdn.com/dms/image/v2/D4E03AQEJhgJrDPALQg/profile-displayphoto-crop_800_800/B4EZlN6bHvIwAI-/0/1757948785495?e=1771459200&v=beta&t=bRNfVOYuMqYhc74h0NR83ntvUPhc3IQibPoAbrswqYs',
       linkedin: 'https://www.linkedin.com/in/christian-reinhardt-186b7428a/',
       gradient: 'from-sky-400 to-blue-500'
     },
@@ -25,7 +25,7 @@ export default function TeamPage() {
       name: 'Hannah TerHaar',
       role: 'Co-founder & Director of Marketing',
       description: 'Shaping our brand and connecting with clients to communicate the value of AI alignment.',
-      image: 'https://media.licdn.com/dms/image/v2/D5603AQHA1852c9AQ0g/profile-displayphoto-crop_800_800/B56ZpHCSutHYAI-/0/1762128375283?e=1764806400&v=beta&t=XEH-5FvisKaPRPmUfpPRQQRaucGCpiCA2BjXU9oMPPI',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQHA1852c9AQ0g/profile-displayphoto-crop_800_800/B56ZpHCSutHYAI-/0/1762128375283?e=1771459200&v=beta&t=jACVj-MHYsyRRH7E6pxwk0BsehpCDuoyHQXeHnkHAa0',
       linkedin: 'https://www.linkedin.com/in/hannahterhaar/',
       gradient: 'from-cyan-400 to-blue-500'
     },
@@ -33,7 +33,7 @@ export default function TeamPage() {
       name: 'Ethan Franklin',
       role: 'AI Engineer',
       description: 'Building and implementing AI solutions to drive business value and innovation.',
-      image: `https://ui-avatars.com/api/?name=${encodeURIComponent('Ethan Franklin')}&background=a78bfa&color=fff&size=256`,
+      image: 'https://media.licdn.com/dms/image/v2/D4D03AQH7_3EzrvLp8g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1666198810019?e=1771459200&v=beta&t=iJh3ADyZd9bjBhkxAf3VzXpBnc-3bqOeGdv7T-3JhWQ',
       linkedin: 'https://www.linkedin.com/in/ethanmfranklin/',
       gradient: 'from-emerald-500 to-teal-500'
     },
@@ -41,7 +41,7 @@ export default function TeamPage() {
       name: 'Max Cooper',
       role: 'AI Engineer',
       description: 'Building and implementing AI solutions to drive business value and innovation.',
-      image: `https://ui-avatars.com/api/?name=${encodeURIComponent('Max Cooper')}&background=a78bfa&color=fff&size=256`,
+      image: 'https://media.licdn.com/dms/image/v2/D4E03AQG9B97-XF1ogA/profile-displayphoto-crop_800_800/B4EZq9aK6tIUAM-/0/1764114348625?e=1771459200&v=beta&t=KLJi-vZK2qAO3CteGhwVkbXxjNwQby2OO_EGT9yA1lY',
       linkedin: 'https://www.linkedin.com/in/cooper-maxwell/',
       gradient: 'from-amber-500 to-orange-500'
     },
@@ -49,7 +49,7 @@ export default function TeamPage() {
       name: 'Kyle Cornell',
       role: 'AI Engineer',
       description: 'Building and implementing AI solutions to drive business value and innovation.',
-      image: `https://ui-avatars.com/api/?name=${encodeURIComponent('Kyle Cornell')}&background=a78bfa&color=fff&size=256`,
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQFQjsuvZlcDuA/profile-displayphoto-shrink_800_800/B56ZUbt6C7GQAk-/0/1739926774631?e=1771459200&v=beta&t=OtDMeDNvbJr0arBbOFOWPl15TuIPeeJhyWYVozuKjl4',
       linkedin: 'https://www.linkedin.com/in/kylecornell04/',
       gradient: 'from-rose-500 to-pink-500'
     }
