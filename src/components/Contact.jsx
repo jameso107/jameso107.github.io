@@ -24,16 +24,10 @@ export default function Contact({
         
         <div className="flex flex-wrap items-center justify-center gap-4 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <a 
-            href="mailto:james@syzygy.services?subject=Project%20inquiry%20from%20website" 
-            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
-          >
-            Email james@syzygy.services
-          </a>
-          <a 
             href="https://calendly.com/jamesoo-umich" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-4 font-semibold hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
           >
             Book a 30-min intro
           </a>

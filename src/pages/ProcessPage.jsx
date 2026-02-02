@@ -246,7 +246,7 @@ export default function ProcessPage() {
                         <div className="flex items-start justify-between mb-6">
                           <div className="flex-1">
                             <div className={`text-sm font-mono mb-2 bg-gradient-to-r ${step.gradient} bg-clip-text text-transparent`}>
-                              {step.number} • {step.timeline}
+                              {step.number}
                             </div>
                             <h3 className={`text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r ${step.gradient} bg-clip-text text-transparent`}>
                               {step.title}

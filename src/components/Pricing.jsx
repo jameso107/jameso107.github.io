@@ -57,12 +57,9 @@ export default function Pricing() {
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16 animate-reveal">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-            Transparent pricing
-          </h2>
-          <p className="text-lg text-slate-300/90 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold max-w-2xl mx-auto">
             Start small, prove value, then scale.
-          </p>
+          </h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
