@@ -45,13 +45,6 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
-              to="/case-studies" 
-              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
-            >
-              Customer Stories
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link 
               to="/pricing" 
               className="text-slate-300 hover:text-white relative group transition-colors duration-200"
             >
@@ -102,13 +95,6 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Our Process
-            </Link>
-            <Link 
-              to="/case-studies" 
-              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Customer Stories
             </Link>
             <Link 
               to="/pricing" 

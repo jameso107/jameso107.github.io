@@ -8,11 +8,6 @@ export default function Process() {
       gradient: 'from-violet-500 to-purple-600',
     },
     {
-      title: 'Customer Stories',
-      link: '/case-studies',
-      gradient: 'from-sky-400 to-blue-500',
-    },
-    {
       title: 'Our Pricing',
       link: '/pricing',
       gradient: 'from-cyan-400 to-blue-500',
@@ -38,7 +33,7 @@ export default function Process() {
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {boxes.map((box, idx) => (
             <Link
               key={box.title}
