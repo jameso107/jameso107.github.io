@@ -58,13 +58,6 @@ export default function Header() {
               Our Team
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link 
-              to="/blog" 
-              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
-            >
-              Blog
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-            </Link>
             <a 
               href="https://calendly.com/jamesoo-umich"
               target="_blank"
@@ -109,13 +102,6 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Our Team
-            </Link>
-            <Link 
-              to="/blog" 
-              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
             </Link>
             <a 
               href="https://calendly.com/jamesoo-umich"
