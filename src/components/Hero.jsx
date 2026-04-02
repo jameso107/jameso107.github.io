@@ -36,7 +36,7 @@ export default function Hero() {
           
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a 
-              href="https://calendly.com/jamesoo-umich"
+              href="https://calendly.com/syzygy-intro/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"

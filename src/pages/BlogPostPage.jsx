@@ -132,7 +132,7 @@ export default function BlogPostPage() {
               Let's discuss how SYZYGY.services can help your Midwest small or midsized business harness the power of AI.
             </p>
             <a 
-              href="https://calendly.com/jamesoo-umich"
+              href="https://calendly.com/syzygy-intro/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-3 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50"
