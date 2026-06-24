@@ -33,3 +33,7 @@ lerna-debug.log*
 *.sln
 *.sw?
 
+# Claude Code / MCP local tooling
+.claude/
+.mcp.json
+

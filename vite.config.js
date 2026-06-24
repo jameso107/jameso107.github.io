@@ -37,6 +37,11 @@ export default defineConfig({
       }
     }
   ],
+  resolve: {
+    alias: {
+      '@': join(__dirname, 'src'),
+    },
+  },
   base: '/',
   publicDir: 'public',
 })
