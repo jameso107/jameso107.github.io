@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import LogoLoop from '../components/LogoLoop'
 import { breadcrumbSchema, personSchema } from '../utils/structuredData'
 
 export default function TeamPage() {
@@ -53,6 +54,17 @@ export default function TeamPage() {
       linkedin: 'https://www.linkedin.com/in/kylecornell04/',
       gradient: 'from-rose-500 to-pink-500'
     }
+  ]
+
+  const companyLogos = [
+    { src: '/logos/capital-one.png', alt: 'Capital One', title: 'Capital One' },
+    { src: '/logos/nasa.png', alt: 'NASA', title: 'NASA' },
+    { src: '/logos/meta.png', alt: 'Meta', title: 'Meta' },
+    { src: '/logos/ucf.png', alt: 'University of Central Florida', title: 'University of Central Florida' },
+    { src: '/logos/michigan-medicine.png', alt: 'Michigan Medicine', title: 'Michigan Medicine' },
+    { src: '/logos/nissan.png', alt: 'Nissan', title: 'Nissan' },
+    { src: '/logos/lmcu.png', alt: 'Lake Michigan Credit Union', title: 'Lake Michigan Credit Union' },
+    { src: '/logos/abercrombie.png', alt: 'Abercrombie & Fitch', title: 'Abercrombie & Fitch' }
   ]
 
   const breadcrumbs = breadcrumbSchema([
@@ -144,6 +156,31 @@ export default function TeamPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Companies We've Worked For */}
+      <section className="pb-24 -mt-12 relative">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-10 animate-reveal">
+            <h2 className="text-2xl md:text-3xl font-bold text-white/90">
+              Companies We've <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Worked For</span>
+            </h2>
+          </div>
+          <div className="animate-reveal" style={{ animationDelay: '0.1s' }}>
+            <LogoLoop
+              logos={companyLogos}
+              speed={70}
+              direction="left"
+              logoHeight={52}
+              gap={72}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#0b1020"
+              ariaLabel="Companies we've worked for"
+            />
           </div>
         </div>
       </section>
