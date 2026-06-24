@@ -23,7 +23,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
               <span className="relative inline-flex size-3 md:size-4 rounded-full bg-sky-400"></span>
             </span>
-            Now booking 2026 Q2 AI audits
+            Now booking Q3 clients
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.1]">
