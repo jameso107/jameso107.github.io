@@ -17,7 +17,7 @@ export default function HomePage() {
     // Check if animation has been shown in this session
     // Only show animation on the very first visit to homepage in a session
     const animationShown = sessionStorage.getItem('openingAnimationShown')
-    
+
     if (!animationShown) {
       // First visit to homepage - show animation
       setShouldShowAnimation(true)
@@ -29,6 +29,8 @@ export default function HomePage() {
 
   const handleAnimationComplete = () => {
     setShowSite(true)
+    // Land at the very top when the site reveals after the intro animation
+    window.scrollTo(0, 0)
     // Mark animation as shown only after it completes
     sessionStorage.setItem('openingAnimationShown', 'true')
   }
@@ -47,7 +49,7 @@ export default function HomePage() {
       )}
       <div className={showSite ? 'animate-reveal' : shouldShowAnimation ? 'opacity-0' : 'animate-reveal'}>
         <Header />
-        <Hero />
+        <Hero enableBackground={showSite} />
         <Definition />
         <Process />
         <Contact />
@@ -56,4 +58,3 @@ export default function HomePage() {
     </div>
   )
 }
-

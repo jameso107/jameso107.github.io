@@ -5,12 +5,10 @@ export default function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    // Scroll to just below the header (approximately 120px from top)
-    // This ensures the header doesn't cover the top section content
-    // Use setTimeout to ensure the page has rendered before scrolling
-    // Use instant scroll for better mobile compatibility
+    // Land at the very top on every route change.
+    // (Section top padding already clears the fixed header, so no offset is needed.)
     const scrollTimer = setTimeout(() => {
-      window.scrollTo(0, 120)
+      window.scrollTo(0, 0)
     }, 0)
 
     return () => clearTimeout(scrollTimer)

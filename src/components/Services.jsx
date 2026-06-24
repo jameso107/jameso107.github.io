@@ -1,3 +1,5 @@
+import SpotlightCard from './SpotlightCard'
+
 export default function Services() {
   const services = [
     {
@@ -86,9 +88,10 @@ export default function Services() {
           
           <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
             {services.map((service, idx) => (
-              <div 
+              <SpotlightCard
                 key={service.title}
-                className="group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal"
+                spotlightColor="rgba(167, 139, 250, 0.18)"
+                className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {/* Gradient glow */}
@@ -111,7 +114,7 @@ export default function Services() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

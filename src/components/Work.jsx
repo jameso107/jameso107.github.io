@@ -1,3 +1,5 @@
+import SpotlightCard from './SpotlightCard'
+
 export default function Work() {
   const projects = [
     {
@@ -58,9 +60,10 @@ export default function Work() {
         
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
-            <article 
+            <SpotlightCard
               key={project.title}
-              className="group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal"
+              spotlightColor="rgba(56, 189, 248, 0.16)"
+              className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Gradient glow */}
@@ -78,7 +81,7 @@ export default function Work() {
                 {/* Decorative element */}
                 <div className={`mt-6 h-1 w-16 rounded-full bg-gradient-to-r ${project.gradient} opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </div>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
         

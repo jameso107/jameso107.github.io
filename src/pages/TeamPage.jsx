@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
 import LogoLoop from '../components/LogoLoop'
+import SpotlightCard from '../components/SpotlightCard'
 import { breadcrumbSchema, personSchema } from '../utils/structuredData'
 
 export default function TeamPage() {
@@ -106,9 +107,10 @@ export default function TeamPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, idx) => (
-              <div
+              <SpotlightCard
                 key={member.name}
-                className="group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal overflow-hidden"
+                spotlightColor="rgba(167, 139, 250, 0.18)"
+                className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal overflow-hidden"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {/* Gradient glow */}
@@ -154,7 +156,7 @@ export default function TeamPage() {
                     View LinkedIn
                   </a>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

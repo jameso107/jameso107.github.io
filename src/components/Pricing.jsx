@@ -1,3 +1,6 @@
+import SpotlightCard from './SpotlightCard'
+import StarBorder from './StarBorder'
+
 export default function Pricing() {
   const plans = [
     {
@@ -64,11 +67,12 @@ export default function Pricing() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {plans.map((plan, idx) => (
-            <div 
+            <SpotlightCard
               key={plan.type}
-              className={`group relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border flex flex-col transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal ${
-                plan.popular 
-                  ? `border-blue-500/50 ring-2 ring-blue-500/30 md:-mt-4 md:mb-4` 
+              spotlightColor="rgba(56, 189, 248, 0.18)"
+              className={`group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border flex flex-col transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal ${
+                plan.popular
+                  ? `border-blue-500/50 ring-2 ring-blue-500/30 md:-mt-4 md:mb-4`
                   : 'border-white/10 hover:border-white/20'
               }`}
               style={{ animationDelay: `${idx * 0.1}s` }}
@@ -98,18 +102,28 @@ export default function Pricing() {
                   ))}
                 </ul>
                 
-                <a 
-                  href="mailto:james@syzygy.services?subject=Quote%20request"
-                  className={`inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? `bg-gradient-to-r ${plan.gradient} text-white hover:shadow-lg hover:shadow-violet-500/50 hover:scale-105`
-                      : 'bg-white/10 text-white hover:bg-white/20 border border-white/10'
-                  }`}
-                >
-                  Contact for quote
-                </a>
+                {plan.popular ? (
+                  <StarBorder
+                    as="a"
+                    href="mailto:james@syzygy.services?subject=Quote%20request"
+                    color="#38bdf8"
+                    speed="5s"
+                    thickness={2}
+                    className="hover:scale-105 transition-transform duration-300"
+                    innerClassName={`bg-gradient-to-r ${plan.gradient} text-white text-sm font-semibold py-2.5 px-5`}
+                  >
+                    Contact for quote
+                  </StarBorder>
+                ) : (
+                  <a
+                    href="mailto:james@syzygy.services?subject=Quote%20request"
+                    className="inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 bg-white/10 text-white hover:bg-white/20 border border-white/10"
+                  >
+                    Contact for quote
+                  </a>
+                )}
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
         

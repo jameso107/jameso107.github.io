@@ -1,8 +1,40 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect, lazy, Suspense } from 'react'
+import ShinyText from './ShinyText'
+import StarBorder from './StarBorder'
 
-export default function Hero() {
+// Lazy-load the WebGL background so the heavy `ogl` chunk is code-split out of the
+// main bundle and never competes with the opening animation on first paint.
+const Lightfall = lazy(() => import('./Lightfall'))
+
+export default function Hero({ enableBackground = true }) {
+  // Only mount Lightfall on non-touch (desktop) devices to save GPU/battery on mobile.
+  const [showLightfall, setShowLightfall] = useState(false)
+  useEffect(() => {
+    const isTouch = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0
+    setShowLightfall(!isTouch)
+  }, [])
+
   return (
-    <section className="relative pt-32 md:pt-40 pb-32 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center pt-32 md:pt-40 pb-32 overflow-hidden">
+      {/* Lightfall WebGL background — desktop only, mounted after the opening animation,
+          lazy-loaded + faded in so it never causes jank during the intro. */}
+      {showLightfall && enableBackground && (
+        <Suspense fallback={null}>
+          <div className="animate-lightfall-in absolute inset-0 -z-10">
+            <Lightfall
+              colors={['#a78bfa', '#5227FF', '#38bdf8']}
+              backgroundColor="#0b1020"
+              speed={0.4}
+              streakCount={3}
+              density={0.6}
+              glow={1}
+              opacity={0.85}
+              mouseInteraction={false}
+            />
+          </div>
+        </Suspense>
+      )}
+
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute -top-48 -left-32 h-96 w-96 rounded-full blur-3xl bg-violet-500/30 animate-pulse"></div>
@@ -25,24 +57,32 @@ export default function Hero() {
             </span>
             Now booking Q3 clients
           </div>
-          
+
           <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.1]">
-            Aligning <span className="text-violet-400">AI</span>, <span className="text-sky-400">people</span>, and <span className="text-violet-300">your business</span>.
+            Aligning{' '}
+            <ShinyText text="AI" color="#a78bfa" shineColor="#ffffff" speed={3} />,{' '}
+            <ShinyText text="people" color="#38bdf8" shineColor="#ffffff" speed={3} delay={0.4} />, and{' '}
+            <ShinyText text="your business" color="#c4b5fd" shineColor="#ffffff" speed={3} delay={0.8} />.
           </h1>
-          
+
           <p className="text-base md:text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
             All-in on AI. All-in on you. SYZYGY.services evaluates your AI potential, designs high-ROI strategies, builds rapid prototypes, and implements solutions that generate real impact for your business.
           </p>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a 
+            <StarBorder
+              as="a"
               href="https://calendly.com/syzygy-intro/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
+              color="#a78bfa"
+              speed="5s"
+              thickness={2}
+              className="hover:scale-105 transition-transform duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50"
+              innerClassName="bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold py-4 px-7 text-base"
             >
               Start a project
-            </a>
+            </StarBorder>
           </div>
         </div>
       </div>

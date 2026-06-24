@@ -10,7 +10,7 @@ export default function Definition() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center animate-reveal">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-            What is <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">Syzygy</span>?
+            What is <span className="bg-gradient-to-r from-violet-400 via-sky-400 to-violet-400 bg-clip-text text-transparent animate-gradient-pan">Syzygy</span>?
           </h2>
           <p className="mt-4 text-lg text-slate-300/90 max-w-4xl mx-auto leading-relaxed">
             A <em className="text-violet-300 not-italic font-semibold">syz·y·gy</em> [siz-uh-jee] is the perfect alignment of three celestial bodies. Just like a solar eclipse, AI only works when everything is aligned. Our promise: align <span className="font-semibold text-white">AI</span>, <span className="font-semibold text-white">people</span>, and <span className="font-semibold text-white">your business</span>.
