@@ -7,28 +7,32 @@ import StarBorder from './StarBorder'
 const Lightfall = lazy(() => import('./Lightfall'))
 
 export default function Hero({ enableBackground = true }) {
-  // Only mount Lightfall on non-touch (desktop) devices to save GPU/battery on mobile.
-  const [showLightfall, setShowLightfall] = useState(false)
+  // Show Lightfall on all devices, but tune it down on touch devices (phones/tablets):
+  // fewer streaks + a capped pixel ratio keep the WebGL shader smooth and easy on battery.
+  const [deviceReady, setDeviceReady] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
-    const isTouch = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0
-    setShowLightfall(!isTouch)
+    const touch = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0
+    setIsMobile(touch)
+    setDeviceReady(true)
   }, [])
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-32 md:pt-40 pb-32 overflow-hidden">
       {/* Lightfall WebGL background — desktop only, mounted after the opening animation,
           lazy-loaded + faded in so it never causes jank during the intro. */}
-      {showLightfall && enableBackground && (
+      {deviceReady && enableBackground && (
         <Suspense fallback={null}>
           <div className="animate-lightfall-in absolute inset-0 -z-10">
             <Lightfall
               colors={['#a78bfa', '#5227FF', '#38bdf8']}
               backgroundColor="#0b1020"
               speed={0.4}
-              streakCount={3}
+              streakCount={isMobile ? 2 : 3}
               density={0.6}
               glow={1}
               opacity={0.85}
+              dpr={isMobile ? 1 : undefined}
               mouseInteraction={false}
             />
           </div>
