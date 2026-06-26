@@ -173,8 +173,7 @@ export const personSchema = (person) => ({
   name: person.name,
   jobTitle: person.role,
   description: person.description,
-  url: person.linkedin,
-  sameAs: [person.linkedin],
+  ...(person.linkedin && { url: person.linkedin, sameAs: [person.linkedin] }),
   worksFor: {
     '@type': 'Organization',
     name: 'SYZYGY.services'

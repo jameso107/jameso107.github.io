@@ -54,12 +54,20 @@ export default function TeamPage() {
       image: '/kyle.jpg',
       linkedin: 'https://www.linkedin.com/in/kylecornell04/',
       gradient: 'from-rose-500 to-pink-500'
+    },
+    {
+      name: 'Colin Miller',
+      role: 'AI Development Intern',
+      description: 'Building the next generation of educational AI tools for SYZYGY.services and our clients.',
+      image: '/colin.jpg',
+      gradient: 'from-indigo-500 to-blue-600'
     }
   ]
 
   const companyLogos = [
     { src: '/logos/capital-one.png', alt: 'Capital One', title: 'Capital One' },
     { src: '/logos/nasa.png', alt: 'NASA', title: 'NASA' },
+    { src: '/logos/jpl.png', alt: 'NASA Jet Propulsion Laboratory', title: 'Jet Propulsion Laboratory' },
     { src: '/logos/meta.png', alt: 'Meta', title: 'Meta' },
     { src: '/logos/ucf.png', alt: 'University of Central Florida', title: 'University of Central Florida' },
     { src: '/logos/michigan-medicine.png', alt: 'Michigan Medicine', title: 'Michigan Medicine' },
@@ -105,12 +113,12 @@ export default function TeamPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member, idx) => (
               <SpotlightCard
                 key={member.name}
                 spotlightColor="rgba(167, 139, 250, 0.18)"
-                className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal overflow-hidden"
+                className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-reveal overflow-hidden"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {/* Gradient glow */}
@@ -144,17 +152,19 @@ export default function TeamPage() {
                   </p>
                   
                   {/* LinkedIn Link */}
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-violet-400 transition-colors duration-300"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    View LinkedIn
-                  </a>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-violet-400 transition-colors duration-300"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                      View LinkedIn
+                    </a>
+                  )}
                 </div>
               </SpotlightCard>
             ))}
