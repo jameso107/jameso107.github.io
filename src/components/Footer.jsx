@@ -1,8 +1,17 @@
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
+
+const footerLinks = [
+  { to: '/process', label: 'Our Process' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/team', label: 'Our Team' },
+  { to: '/blog', label: 'Blog' },
+  { to: '/careers', label: 'Careers' },
+]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  
+
   return (
     <footer className="py-16 border-t border-white/10 relative overflow-hidden">
       {/* Background effect */}
@@ -18,6 +27,24 @@ export default function Footer() {
               © {currentYear} <span className="font-semibold text-white">SYZYGY<span className="text-violet-400">.services</span></span>
             </span>
           </div>
+
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-slate-400 hover:text-white transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href="mailto:james@syzygy.services"
+              className="text-slate-400 hover:text-white transition-colors duration-200"
+            >
+              Contact
+            </a>
+          </nav>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import CaseStudiesPage from './pages/CaseStudiesPage'
 import ProcessPage from './pages/ProcessPage'
 import PricingPage from './pages/PricingPage'
 import TeamPage from './pages/TeamPage'
+import CareersPage from './pages/CareersPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import ScrollToTop from './components/ScrollToTop'
@@ -20,6 +21,7 @@ function App() {
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/careers" element={<CareersPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
       </Routes>

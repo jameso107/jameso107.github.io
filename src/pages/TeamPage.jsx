@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
@@ -169,6 +170,30 @@ export default function TeamPage() {
               </SpotlightCard>
             ))}
           </div>
+
+          {/* Recruiting now lives on /careers */}
+          <div className="mt-14 text-center animate-reveal" style={{ animationDelay: '0.2s' }}>
+            <Link
+              to="/careers"
+              className="group inline-flex items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-violet-300"
+            >
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-75"></span>
+                <span className="relative inline-flex size-2 rounded-full bg-violet-400"></span>
+              </span>
+              <span>We&apos;re hiring &mdash; see open roles and apply</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -193,40 +218,6 @@ export default function TeamPage() {
               fadeOutColor="#0b1020"
               ariaLabel="Companies we've worked for"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Join Our Team Section */}
-      <section className="py-32 relative overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-0 h-96 w-96 rounded-full blur-3xl bg-violet-500/20"></div>
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl bg-sky-500/20"></div>
-        </div>
-
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="text-center mb-12 animate-reveal">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-              Interested in joining <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">our team</span>?
-            </h2>
-            <p className="text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-              We're always looking for talented individuals passionate about AI and helping businesses succeed. If you're excited about aligning AI, people, and business, we'd love to hear from you.
-            </p>
-          </div>
-          
-          <div className="flex justify-center animate-reveal" style={{ animationDelay: '0.1s' }}>
-            <a 
-              href="https://forms.gle/PHqVb3Lpk319SVBU6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-8 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
-            >
-              <span>Apply to join our team</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
           </div>
         </div>
       </section>
