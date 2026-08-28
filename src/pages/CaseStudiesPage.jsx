@@ -3,6 +3,7 @@ import Work from '../components/Work'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { routeMeta } from '../data/routeMeta'
 import { breadcrumbSchema } from '../utils/structuredData'
 
 export default function CaseStudiesPage() {
@@ -14,10 +15,7 @@ export default function CaseStudiesPage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="AI Case Studies | Customer Success Stories"
-        description="See real AI consulting service results for Michigan and Midwest small businesses: Manufacturing quoting automation, document analysis, and retail operations automation. Real clients, real impact with SYZYGY.services."
-        keywords="AI case studies, AI success stories, AI consulting results, AI consulting service results, AI implementation examples, AI ROI case studies, Michigan AI consulting, Midwest AI consulting"
-        canonicalUrl="https://syzygy.services/case-studies"
+        {...routeMeta['/case-studies']}
         structuredData={breadcrumbs}
       />
       <Header />

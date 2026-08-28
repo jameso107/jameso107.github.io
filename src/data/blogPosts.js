@@ -3,6 +3,8 @@ export const blogPosts = [
   {
     id: 1,
     title: 'Harnessing AI Aptitude: A Guide for Midwest Small and Midsized Businesses',
+    // Optional shorter title for the <title>/og:title tags; falls back to `title`.
+    seoTitle: 'AI Aptitude for Midwest Small Businesses',
     excerpt: 'Discover how small and midsized businesses across the Midwest can unlock their AI potential. Learn practical strategies for building AI aptitude and transforming your operations.',
     date: '2025-01-17',
     author: 'James Oosterhouse',

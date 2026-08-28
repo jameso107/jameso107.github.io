@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { routeMeta } from '../data/routeMeta'
 import SpotlightCard from '../components/SpotlightCard'
 import ApplicationForm from '../components/ApplicationForm'
 import { openRoles, responsibilities, idealCandidate, GENERAL_APPLICATION } from '../data/openRoles'
@@ -38,10 +39,7 @@ export default function CareersPage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="Careers | Join Our Team"
-        description="Join SYZYGY.services. We're looking for driven people who want to solve real business problems with AI and other emerging technologies. Apply to work with our Michigan-based AI consulting team."
-        keywords="AI consulting jobs, AI careers Michigan, AI internship, AI engineer jobs, Ann Arbor AI jobs, AI consulting careers, work in AI"
-        canonicalUrl="https://syzygy.services/careers"
+        {...routeMeta['/careers']}
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [breadcrumbs, organizationSchema],

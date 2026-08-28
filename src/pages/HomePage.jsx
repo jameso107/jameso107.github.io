@@ -7,6 +7,7 @@ import Process from '../components/Process'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { routeMeta } from '../data/routeMeta'
 import { getHomePageSchema } from '../utils/structuredData'
 
 export default function HomePage() {
@@ -38,10 +39,7 @@ export default function HomePage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="AI Consulting Service | Michigan & Midwest Small Business"
-        description="AI consulting service for small businesses in Michigan and the Midwest. SYZYGY.services provides AI consulting, AI audits, and AI implementation services. We align AI, people, and your business to build solutions that actually work."
-        keywords="AI consulting service, AI consulting services, AI consulting, AI consulting company, AI consulting Michigan, AI consulting Midwest, AI consulting small business, Michigan AI consulting, Midwest AI consulting, AI audit, AI implementation, AI strategy"
-        canonicalUrl="https://syzygy.services"
+        {...routeMeta['/']}
         structuredData={getHomePageSchema()}
       />
       {shouldShowAnimation && !showSite && (

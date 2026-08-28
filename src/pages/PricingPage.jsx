@@ -3,6 +3,7 @@ import Pricing from '../components/Pricing'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { routeMeta } from '../data/routeMeta'
 import { breadcrumbSchema, serviceSchema } from '../utils/structuredData'
 
 export default function PricingPage() {
@@ -37,10 +38,7 @@ export default function PricingPage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="AI Consulting Services | AI Audit, Implementation & Technology Consulting"
-        description="AI consulting services for small businesses: AI Audit & Prototyping, AI Implementation, Ongoing Partnership, and Technology Consulting. Contact for a customized quote."
-        keywords="AI consulting pricing, AI consulting service pricing, AI audit cost, AI implementation cost, AI consulting rates, AI strategy pricing, Michigan AI consulting, Midwest AI consulting, small business AI consulting"
-        canonicalUrl="https://syzygy.services/pricing"
+        {...routeMeta['/pricing']}
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [breadcrumbs, ...services]

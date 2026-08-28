@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { blogPostMeta } from '../data/routeMeta'
 import { breadcrumbSchema } from '../utils/structuredData'
 import { getPostBySlug } from '../data/blogPosts'
 
@@ -61,10 +62,7 @@ export default function BlogPostPage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title={`${post.title} | SYZYGY.services Blog`}
-        description={post.excerpt}
-        keywords="AI aptitude, Midwest small business, midsized business AI, AI consulting service, Michigan AI consulting, small business AI, AI for small business, Midwest AI consulting"
-        canonicalUrl={`https://syzygy.services/blog/${post.slug}`}
+        {...blogPostMeta(post)}
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [breadcrumbs, articleSchema]

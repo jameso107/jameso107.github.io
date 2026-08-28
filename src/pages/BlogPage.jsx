@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { routeMeta } from '../data/routeMeta'
 import { breadcrumbSchema } from '../utils/structuredData'
 import { getAllPosts } from '../data/blogPosts'
 
@@ -16,10 +17,7 @@ export default function BlogPage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="AI Consulting Blog | Thoughts on AI"
-        description="Insights, thoughts, and perspectives on AI consulting, AI strategy, and AI implementation for small businesses in Michigan and the Midwest."
-        keywords="AI consulting blog, AI strategy blog, AI implementation blog, AI thoughts, AI insights, Michigan AI consulting, Midwest AI consulting"
-        canonicalUrl="https://syzygy.services/blog"
+        {...routeMeta['/blog']}
         structuredData={breadcrumbs}
       />
       <Header />

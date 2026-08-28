@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
+import { routeMeta } from '../data/routeMeta'
 import { breadcrumbSchema } from '../utils/structuredData'
 
 export default function ProcessPage() {
@@ -167,10 +168,7 @@ export default function ProcessPage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO
-        title="AI Consulting Process | How We Work"
-        description="Learn about SYZYGY.services proven AI consulting service process for Michigan and Midwest small businesses: Discovery Audit, Design & Prototype, Build & Implement, and Measure & Improve. A structured approach to AI success."
-        keywords="AI consulting process, AI consulting service process, AI strategy development, AI implementation process, AI consulting methodology, Michigan AI consulting, Midwest AI consulting"
-        canonicalUrl="https://syzygy.services/process"
+        {...routeMeta['/process']}
         structuredData={breadcrumbs}
       />
       <Header />
