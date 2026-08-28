@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
 
+// Drives both the desktop nav and the mobile menu, so the two can't drift.
+const navLinks = [
+  { to: '/process', label: 'Our Process' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/team', label: 'Our Team' },
+  { to: '/careers', label: 'Careers' },
+]
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -36,29 +44,18 @@ export default function Header() {
               SYZYGY<span className="text-violet-400 bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">.services</span>
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link 
-              to="/process" 
-              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
-            >
-              Our Process
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link 
-              to="/pricing" 
-              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
-            >
-              Pricing
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link 
-              to="/team" 
-              className="text-slate-300 hover:text-white relative group transition-colors duration-200"
-            >
-              Our Team
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <a 
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-slate-300 hover:text-white relative group transition-colors duration-200 whitespace-nowrap"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
+              </Link>
+            ))}
+            <a
               href="https://calendly.com/syzygy-intro/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,28 +79,17 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 animate-reveal">
           <div className="glass mt-2 rounded-2xl p-4 space-y-2 border-white/20">
-            <Link 
-              to="/process" 
-              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Our Process
-            </Link>
-            <Link 
-              to="/pricing" 
-              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Pricing
-            </Link>
-            <Link 
-              to="/team" 
-              className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Our Team
-            </Link>
-            <a 
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
               href="https://calendly.com/syzygy-intro/30min"
               target="_blank"
               rel="noopener noreferrer"
