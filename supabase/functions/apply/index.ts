@@ -4,7 +4,7 @@
 //
 // Accepts a multipart/form-data application, stores the resume in the private
 // `resumes` bucket, writes a row to public.job_applications, and emails a
-// formatted summary to james@syzygy.services.
+// formatted summary to everyone in TO_EMAILS via AgentMail.
 //
 // The application is ALWAYS persisted before email is attempted, so a mail
 // outage can never lose an applicant -- failures are recorded on the row in
@@ -26,7 +26,12 @@ const ALLOWED_ORIGINS = [
   'http://127.0.0.1:4173',
 ]
 
-const TO_EMAIL = Deno.env.get('CAREERS_TO_EMAIL') ?? 'james@syzygy.services'
+// Everyone who should be notified of a new application. Override with a
+// comma-separated CAREERS_TO_EMAIL secret to change the list without a deploy.
+const TO_EMAILS = (Deno.env.get('CAREERS_TO_EMAIL') ?? 'james@syzygy.services,christian@syzygy.services')
+  .split(',')
+  .map((address) => address.trim())
+  .filter(Boolean)
 
 // Mail goes out through AgentMail, the same transport the trivia-bot org uses.
 // AGENTMAIL_API_KEY must be set as an edge function secret -- never commit it,
@@ -294,7 +299,7 @@ async function sendNotification(
   attachment: { filename: string; content_type: string; content: string } | null,
 ): Promise<void> {
   await agentMailSend({
-    to: [TO_EMAIL],
+    to: TO_EMAILS,
     reply_to: app.email,
     subject: `New application: ${app.full_name}${app.role_interest ? ` - ${app.role_interest}` : ''}`,
     text: buildEmailText(app, resumeUrl),
@@ -321,7 +326,7 @@ async function sendAutoReply(app: Application): Promise<void> {
 
   await agentMailSend({
     to: [app.email],
-    reply_to: TO_EMAIL,
+    reply_to: TO_EMAILS,
     subject: 'We received your application - SYZYGY.services',
     text: `Hi ${app.full_name.split(' ')[0]},\n\nThanks for applying to SYZYGY.services. We have your application and your resume, and we read every one. If there's a fit, you'll hear from us at this address.\n\n- The SYZYGY team`,
     html,
