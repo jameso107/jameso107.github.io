@@ -419,7 +419,7 @@ export default function ApplicationForm({ defaultRole }) {
 
       <div className="mt-6 grid gap-6">
         <Field
-          label="Why SYZYGY?"
+          label="Why Syzygy?"
           htmlFor="message"
           hint="A few sentences on what draws you to this work is plenty."
         >

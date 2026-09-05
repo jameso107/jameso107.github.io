@@ -1,271 +1,180 @@
-// Structured Data (JSON-LD) helpers for SEO
+// Structured data (JSON-LD) helpers.
+//
+// Every helper returns a bare node (no @context). Pages combine nodes with
+// `graph(...)`, which adds a single top-level @context, and hand the result to
+// <SEO structuredData={...} />, which renders it into the page as a
+// <script type="application/ld+json"> — so it is present in the prerendered
+// HTML, not injected after the fact.
+//
+// The Organization node carries a stable @id that Person.worksFor,
+// Service.provider, Article.publisher and WebSite.publisher all point at, so
+// crawlers see one entity rather than four look-alikes.
 
-const siteUrl = 'https://syzygy.services'
+import {
+  SITE_URL,
+  BRAND,
+  ALTERNATE_NAMES,
+  POSITIONING,
+  CONTACT_EMAIL,
+  LINKEDIN_COMPANY_URL,
+  DEFAULT_IMAGE,
+} from '../data/routeMeta'
 
-export const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'SYZYGY.services',
-  url: siteUrl,
-  logo: {
-    '@type': 'ImageObject',
-    url: `${siteUrl}/logo.png`,
-    width: 112,
-    height: 112
-  },
-  image: `${siteUrl}/logo.png`,
-  description: 'AI consulting service for small businesses in Michigan and the Midwest. We align AI, people, and your business to build solutions that actually work.',
-  email: 'james@syzygy.services',
-  sameAs: [
-    'https://www.linkedin.com/company/syzygy-services'
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'Customer Service',
-    email: 'james@syzygy.services',
-    areaServed: ['US-MI', 'US-IL', 'US-IN', 'US-OH', 'US-WI'],
-    availableLanguage: 'English'
-  },
-  areaServed: [
-    {
-      '@type': 'State',
-      name: 'Michigan'
-    },
-    {
-      '@type': 'GeoRegion',
-      name: 'Midwest United States'
-    }
-  ]
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`
+export const WEBSITE_ID = `${SITE_URL}/#website`
+
+export const FOUNDER = {
+  name: 'James Oosterhouse',
+  role: 'Founder & CEO',
+  linkedin: 'https://www.linkedin.com/in/james-oosterhouse/',
+  image: '/james.jpg',
 }
 
-export const localBusinessSchema = {
+const ALUMNI_OF = { '@type': 'CollegeOrUniversity', name: 'University of Michigan' }
+
+export const AREA_SERVED = [
+  { '@type': 'State', name: 'Michigan' },
+  { '@type': 'Place', name: 'Midwest United States' },
+  { '@type': 'Country', name: 'United States' },
+]
+
+export const KNOWS_ABOUT = [
+  'AI consulting',
+  'Business process automation',
+  'Operations consulting',
+  'Technology strategy',
+  'Small business consulting',
+]
+
+const absolute = (path) => (path.startsWith('http') ? path : `${SITE_URL}${path}`)
+
+export const graph = (...nodes) => ({
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'SYZYGY.services',
-  description: 'AI consulting service specializing in small businesses across Michigan and the Midwest. We provide AI audits, AI strategy, AI implementation, and AI consulting services.',
-  url: siteUrl,
+  '@graph': nodes.flat().filter(Boolean),
+})
+
+export const organizationRef = { '@id': ORGANIZATION_ID }
+
+export const organizationSchema = {
+  '@type': ['Organization', 'ProfessionalService'],
+  '@id': ORGANIZATION_ID,
+  name: BRAND,
+  alternateName: ALTERNATE_NAMES,
+  url: `${SITE_URL}/`,
   logo: {
     '@type': 'ImageObject',
-    url: `${siteUrl}/logo.png`,
-    width: 112,
-    height: 112
+    url: `${SITE_URL}/logo.png`,
+    width: 1001,
+    height: 1001,
   },
-  image: `${siteUrl}/logo.png`,
-  email: 'james@syzygy.services',
-  telephone: '+1-734-000-0000', // Update with actual phone if available
+  image: DEFAULT_IMAGE,
+  description: POSITIONING,
+  email: CONTACT_EMAIL,
+  sameAs: [LINKEDIN_COMPANY_URL],
+  founder: {
+    '@type': 'Person',
+    name: FOUNDER.name,
+    jobTitle: FOUNDER.role,
+    url: FOUNDER.linkedin,
+    sameAs: [FOUNDER.linkedin],
+    image: absolute(FOUNDER.image),
+  },
+  knowsAbout: KNOWS_ABOUT,
+  areaServed: AREA_SERVED,
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'MI',
-    addressCountry: 'US'
+    addressCountry: 'US',
   },
-  areaServed: [
-    {
-      '@type': 'State',
-      name: 'Michigan'
-    },
-    {
-      '@type': 'State',
-      name: 'Illinois'
-    },
-    {
-      '@type': 'State',
-      name: 'Indiana'
-    },
-    {
-      '@type': 'State',
-      name: 'Ohio'
-    },
-    {
-      '@type': 'State',
-      name: 'Wisconsin'
-    },
-    {
-      '@type': 'GeoRegion',
-      name: 'Midwest United States'
-    }
-  ],
-  serviceType: 'AI Consulting Service',
-  priceRange: '$$',
-  servesCuisine: false,
-  paymentAccepted: 'Cash, Credit Card, Check',
-  currenciesAccepted: 'USD'
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Sales',
+    email: CONTACT_EMAIL,
+    areaServed: 'US',
+    availableLanguage: 'English',
+  },
 }
 
 export const websiteSchema = {
-  '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'SYZYGY.services',
-  url: siteUrl,
-  description: 'AI consulting services for businesses looking to implement AI solutions',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${siteUrl}/?q={search_term_string}`
-    },
-    'query-input': 'required name=search_term_string'
-  }
+  '@id': WEBSITE_ID,
+  name: BRAND,
+  alternateName: ALTERNATE_NAMES,
+  url: `${SITE_URL}/`,
+  description: POSITIONING,
+  inLanguage: 'en-US',
+  publisher: organizationRef,
 }
 
+// No `offers`: prices are pending, and schema.org rejects a non-numeric price.
 export const serviceSchema = (service) => ({
-  '@context': 'https://schema.org',
   '@type': 'Service',
-  name: service.name,
+  '@id': `${SITE_URL}/pricing/#${service.id}`,
+  name: service.title,
   description: service.description,
-  provider: {
-    '@type': 'Organization',
-    name: 'SYZYGY.services'
-  },
-  areaServed: [
-    {
-      '@type': 'State',
-      name: 'Michigan'
-    },
-    {
-      '@type': 'State',
-      name: 'Illinois'
-    },
-    {
-      '@type': 'State',
-      name: 'Indiana'
-    },
-    {
-      '@type': 'State',
-      name: 'Ohio'
-    },
-    {
-      '@type': 'State',
-      name: 'Wisconsin'
-    },
-    {
-      '@type': 'GeoRegion',
-      name: 'Midwest United States'
-    }
-  ],
-  serviceType: 'AI Consulting Service',
+  serviceType: service.shortName || service.title,
+  url: `${SITE_URL}/pricing/#${service.id}`,
+  provider: organizationRef,
+  areaServed: AREA_SERVED,
   audience: {
     '@type': 'BusinessAudience',
-    audienceType: 'Small Business'
+    audienceType: 'Small and mid-sized businesses',
   },
-  ...(service.price && {
-    offers: {
-      '@type': 'Offer',
-      price: service.price,
-      priceCurrency: 'USD'
-    }
-  })
 })
 
+// Items are { name, url }. Pass canonical URLs (trailing slash) — see routeMeta.
 export const breadcrumbSchema = (items) => ({
-  '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: items.map((item, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     name: item.name,
-    item: item.url
-  }))
+    item: item.url,
+  })),
 })
 
 export const personSchema = (person) => ({
-  '@context': 'https://schema.org',
   '@type': 'Person',
   name: person.name,
   jobTitle: person.role,
   description: person.description,
+  ...(person.image && { image: absolute(person.image) }),
   ...(person.linkedin && { url: person.linkedin, sameAs: [person.linkedin] }),
-  worksFor: {
-    '@type': 'Organization',
-    name: 'SYZYGY.services'
-  }
+  // The team copy presents the whole team as University of Michigan alumni.
+  alumniOf: ALUMNI_OF,
+  worksFor: organizationRef,
 })
 
-export const getHomePageSchema = () => ({
-  '@context': 'https://schema.org',
-  '@graph': [
-    organizationSchema,
-    localBusinessSchema,
-    websiteSchema,
-    {
-      '@type': 'Service',
-      name: 'AI Consulting Service',
-      description: 'AI consulting service for small businesses in Michigan and the Midwest. Comprehensive AI readiness assessment and strategic roadmap.',
-      provider: {
-        '@type': 'Organization',
-        name: 'SYZYGY.services'
-      },
-      areaServed: [
-        {
-          '@type': 'State',
-          name: 'Michigan'
-        },
-        {
-          '@type': 'GeoRegion',
-          name: 'Midwest United States'
-        }
-      ],
-      audience: {
-        '@type': 'BusinessAudience',
-        audienceType: 'Small Business'
-      }
-    },
-    {
-      '@type': 'Service',
-      name: 'AI Audit',
-      description: 'Comprehensive AI readiness assessment and strategic roadmap for Michigan and Midwest small businesses',
-      provider: {
-        '@type': 'Organization',
-        name: 'SYZYGY.services'
-      },
-      areaServed: [
-        {
-          '@type': 'State',
-          name: 'Michigan'
-        },
-        {
-          '@type': 'GeoRegion',
-          name: 'Midwest United States'
-        }
-      ]
-    },
-    {
-      '@type': 'Service',
-      name: 'Prototype Sprint',
-      description: 'Rapid AI prototyping and proof of concept development for small businesses',
-      provider: {
-        '@type': 'Organization',
-        name: 'SYZYGY.services'
-      },
-      areaServed: [
-        {
-          '@type': 'State',
-          name: 'Michigan'
-        },
-        {
-          '@type': 'GeoRegion',
-          name: 'Midwest United States'
-        }
-      ]
-    },
-    {
-      '@type': 'Service',
-      name: 'AI Implementation',
-      description: 'Full-scale AI solution implementation and integration for Michigan and Midwest businesses',
-      provider: {
-        '@type': 'Organization',
-        name: 'SYZYGY.services'
-      },
-      areaServed: [
-        {
-          '@type': 'State',
-          name: 'Michigan'
-        },
-        {
-          '@type': 'GeoRegion',
-          name: 'Midwest United States'
-        }
-      ]
-    }
-  ]
+export const faqSchema = (items) => ({
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
 })
 
+// Articles are deliberately undated: no datePublished / dateModified.
+export const articleSchema = (article, canonicalUrl) => ({
+  '@type': 'Article',
+  '@id': `${canonicalUrl}#article`,
+  headline: article.title,
+  description: article.dek,
+  image: DEFAULT_IMAGE,
+  author: {
+    '@type': 'Person',
+    name: article.author.name,
+    url: article.author.linkedin,
+    jobTitle: article.author.jobTitle,
+    image: absolute(article.author.image),
+    worksFor: organizationRef,
+  },
+  publisher: organizationRef,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  articleSection: article.category,
+  keywords: article.keywords.join(', '),
+  about: article.keywords.map((keyword) => ({ '@type': 'Thing', name: keyword })),
+  wordCount: article.wordCount,
+  inLanguage: 'en-US',
+  isAccessibleForFree: true,
+})

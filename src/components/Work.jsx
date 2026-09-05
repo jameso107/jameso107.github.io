@@ -50,9 +50,9 @@ export default function Work() {
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16 animate-reveal">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
             Customer Stories
-          </h2>
+          </h1>
           <p className="text-lg text-slate-400">
             Real clients, real impact
           </p>

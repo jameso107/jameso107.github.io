@@ -1,9 +1,12 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import ShinyText from './ShinyText'
 import StarBorder from './StarBorder'
+import { CALENDLY_URL } from '../data/routeMeta'
 
 // Lazy-load the WebGL background so the heavy `ogl` chunk is code-split out of the
 // main bundle and never competes with the opening animation on first paint.
+// It is only ever mounted after an effect runs, so the server render (and the
+// prerendered HTML) never touch WebGL.
 const Lightfall = lazy(() => import('./Lightfall'))
 
 export default function Hero({ enableBackground = true }) {
@@ -12,14 +15,16 @@ export default function Hero({ enableBackground = true }) {
   const [deviceReady, setDeviceReady] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
-    const touch = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0
+    const touch =
+      (typeof window.matchMedia === 'function' && window.matchMedia('(pointer: coarse)').matches) ||
+      (navigator.maxTouchPoints || 0) > 0
     setIsMobile(touch)
     setDeviceReady(true)
   }, [])
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-32 md:pt-40 pb-32 overflow-hidden">
-      {/* Lightfall WebGL background — desktop only, mounted after the opening animation,
+      {/* Lightfall WebGL background — mounted after the opening animation,
           lazy-loaded + faded in so it never causes jank during the intro. */}
       {deviceReady && enableBackground && (
         <Suspense fallback={null}>
@@ -59,24 +64,30 @@ export default function Hero({ enableBackground = true }) {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
               <span className="relative inline-flex size-3 md:size-4 rounded-full bg-sky-400"></span>
             </span>
-            Now booking Q3 clients
+            Now booking new clients
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.1]">
-            Aligning{' '}
-            <ShinyText text="AI" color="#a78bfa" shineColor="#ffffff" speed={3} />,{' '}
-            <ShinyText text="people" color="#38bdf8" shineColor="#ffffff" speed={3} delay={0.4} />, and{' '}
-            <ShinyText text="your business" color="#c4b5fd" shineColor="#ffffff" speed={3} delay={0.8} />.
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] max-w-5xl mx-auto">
+            Consulting for{' '}
+            <span className="bg-gradient-to-r from-violet-300 via-violet-400 to-sky-400 bg-clip-text text-transparent">
+              small and mid-sized businesses
+            </span>
+            , led by <ShinyText text="AI" color="#38bdf8" shineColor="#ffffff" speed={3} />.
           </h1>
 
           <p className="text-base md:text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-            All-in on AI. All-in on you. SYZYGY.services evaluates your AI potential, designs high-ROI strategies, builds rapid prototypes, and implements solutions that generate real impact for your business.
+            Aligning{' '}
+            <ShinyText text="AI" color="#a78bfa" shineColor="#ffffff" speed={3} delay={0.4} />,{' '}
+            <ShinyText text="people" color="#38bdf8" shineColor="#ffffff" speed={3} delay={0.8} />, and{' '}
+            <ShinyText text="your business" color="#c4b5fd" shineColor="#ffffff" speed={3} delay={1.2} />. Syzygy
+            helps owner-led companies find, prototype, and implement the highest-return improvements in how they
+            operate — all-in on AI, all-in on you.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <StarBorder
               as="a"
-              href="https://calendly.com/syzygy-intro/30min"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               color="#a78bfa"

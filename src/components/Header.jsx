@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
+import { CALENDLY_URL } from '../data/routeMeta'
 
 // Drives both the desktop nav and the mobile menu, so the two can't drift.
-const navLinks = [
-  { to: '/process', label: 'Our Process' },
-  { to: '/pricing', label: 'Pricing' },
-  { to: '/team', label: 'Our Team' },
-  { to: '/careers', label: 'Careers' },
+// Trailing slashes match the canonical URLs GitHub Pages serves with a 200, so
+// a crawler following these links never has to take the /path -> /path/ 301.
+export const navLinks = [
+  { to: '/process/', label: 'Our Process' },
+  { to: '/pricing/', label: 'Pricing' },
+  { to: '/insights/', label: 'Insights' },
+  { to: '/team/', label: 'Our Team' },
+  { to: '/careers/', label: 'Careers' },
 ]
 
 export default function Header() {
@@ -27,7 +31,11 @@ export default function Header() {
     // If on homepage, replay animation by clearing sessionStorage and reloading
     if (location.pathname === '/') {
       e.preventDefault()
-      sessionStorage.removeItem('openingAnimationShown')
+      try {
+        sessionStorage.removeItem('openingAnimationShown')
+      } catch {
+        /* storage blocked */
+      }
       window.location.reload()
     }
   }
@@ -36,7 +44,7 @@ export default function Header() {
     <header className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 backdrop-blur-xl ${scrolled ? 'bg-[#0b1020]/80' : 'bg-[#0b1020]/40'}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
         <div className={`glass rounded-2xl shadow-lg flex items-center justify-between p-3 transition-all duration-300 ${scrolled ? 'border-white/20 shadow-2xl' : ''}`}>
-          <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3 group">
+          <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3 group" aria-label="Syzygy home">
             <div className="group-hover:scale-110 transition-transform duration-300">
               <Logo size="md" />
             </div>
@@ -44,7 +52,7 @@ export default function Header() {
               SYZYGY<span className="text-violet-400 bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">.services</span>
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm" aria-label="Primary">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -56,7 +64,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://calendly.com/syzygy-intro/30min"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-5 py-2.5 font-medium text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50"
@@ -67,7 +75,8 @@ export default function Header() {
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden inline-flex size-10 items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-200" 
-            aria-label="Open menu"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
               <path d="M3 6h18M3 12h18M3 18h18"/>
@@ -90,7 +99,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://calendly.com/syzygy-intro/30min"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}

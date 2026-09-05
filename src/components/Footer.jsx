@@ -1,16 +1,26 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import { CONTACT_EMAIL, LEGAL_NAME } from '../data/routeMeta'
 
 const footerLinks = [
-  { to: '/process', label: 'Our Process' },
-  { to: '/pricing', label: 'Pricing' },
-  { to: '/team', label: 'Our Team' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/careers', label: 'Careers' },
+  { to: '/process/', label: 'Our Process' },
+  { to: '/pricing/', label: 'Pricing' },
+  { to: '/insights/', label: 'Insights' },
+  { to: '/team/', label: 'Our Team' },
+  { to: '/careers/', label: 'Careers' },
 ]
 
+// Baked in at build time (vite.config.js `define`) so the prerendered HTML and
+// the first client render agree; refreshed after hydration in case the site
+// has not been rebuilt since New Year.
+const BUILD_YEAR = typeof __BUILD_YEAR__ !== 'undefined' ? __BUILD_YEAR__ : '2026'
+
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const [year, setYear] = useState(BUILD_YEAR)
+  useEffect(() => {
+    setYear(String(new Date().getFullYear()))
+  }, [])
 
   return (
     <footer className="py-16 border-t border-white/10 relative overflow-hidden">
@@ -24,11 +34,11 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Logo size="sm" />
             <span className="text-slate-400">
-              © {currentYear} <span className="font-semibold text-white">SYZYGY<span className="text-violet-400">.services</span></span>
+              © {year} <span className="font-semibold text-white">{LEGAL_NAME}</span>
             </span>
           </div>
 
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm" aria-label="Footer">
             {footerLinks.map((link) => (
               <Link
                 key={link.to}
@@ -39,13 +49,16 @@ export default function Footer() {
               </Link>
             ))}
             <a
-              href="mailto:james@syzygy.services"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >
               Contact
             </a>
           </nav>
         </div>
+        <p className="mt-8 text-sm text-slate-500 max-w-3xl">
+          Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, serving the Midwest and remote clients nationwide.
+        </p>
       </div>
     </footer>
   )

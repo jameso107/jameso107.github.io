@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Header from '../components/Header'
+import FAQ from '../components/FAQ'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
 import { routeMeta } from '../data/routeMeta'
-import { breadcrumbSchema } from '../utils/structuredData'
+import { processFaq } from '../data/faqs'
+import { graph, breadcrumbSchema, faqSchema } from '../utils/structuredData'
 
 export default function ProcessPage() {
   const [expandedStep, setExpandedStep] = useState(null)
@@ -160,18 +162,19 @@ export default function ProcessPage() {
     }
   ]
 
-  const breadcrumbs = breadcrumbSchema([
-    { name: 'Home', url: 'https://syzygy.services' },
-    { name: 'Our Process', url: 'https://syzygy.services/process' }
-  ])
+  const structuredData = graph(
+    breadcrumbSchema([
+      { name: 'Home', url: routeMeta['/'].canonicalUrl },
+      { name: 'Our Process', url: routeMeta['/process'].canonicalUrl },
+    ]),
+    faqSchema(processFaq),
+  )
 
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
-      <SEO
-        {...routeMeta['/process']}
-        structuredData={breadcrumbs}
-      />
+      <SEO {...routeMeta['/process']} structuredData={structuredData} />
       <Header />
+      <main>
       <section className="pt-32 pb-32 relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 -z-10">
@@ -180,11 +183,11 @@ export default function ProcessPage() {
 
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center mb-20 animate-reveal">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
               How we work
-            </h2>
+            </h1>
             <p className="text-lg text-slate-300/90 max-w-2xl mx-auto">
-              A proven process that delivers results
+              Four phases, each scoped on its own: a 2–4 week Discovery Audit, a 4–6 week Design and Prototype sprint, an 8–12 week Build and Implement phase, then ongoing measurement and improvement.
             </p>
           </div>
           
@@ -339,12 +342,14 @@ export default function ProcessPage() {
           </div>
         </div>
       </section>
+      <FAQ items={processFaq} intro="What to expect at each step, and what we need from your team." />
       <Contact 
         heading="Ready to start this process with"
         headingHighlight="your team"
         description="No commitment needed, let's talk AI."
         headingGradient="from-violet-400 to-sky-400"
       />
+      </main>
       <Footer />
     </div>
   )
