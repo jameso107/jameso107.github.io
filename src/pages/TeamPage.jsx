@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
-import { routeMeta } from '../data/routeMeta'
+import { routeMeta, POSITIONING } from '../data/routeMeta'
 import LogoLoop from '../components/LogoLoop'
 import SpotlightCard from '../components/SpotlightCard'
-import { breadcrumbSchema, personSchema } from '../utils/structuredData'
+import { graph, breadcrumbSchema, personSchema } from '../utils/structuredData'
 
 export default function TeamPage() {
   const teamMembers = [
     {
       name: 'James Oosterhouse',
       role: 'Founder & CEO',
-      description: 'Leading SYZYGY.services with a vision to align AI, people, and business for real-world impact.',
+      description: 'Leading Syzygy with a vision to align AI, people, and business for real-world impact.',
       image: '/james.jpg',
       linkedin: 'https://www.linkedin.com/in/james-oosterhouse/',
       gradient: 'from-violet-500 to-purple-600'
@@ -60,7 +60,7 @@ export default function TeamPage() {
     {
       name: 'Colin Miller',
       role: 'AI Development Intern',
-      description: 'Building the next generation of educational AI tools for SYZYGY.services and our clients.',
+      description: 'Building the next generation of educational AI tools for Syzygy and our clients.',
       image: '/colin.jpg',
       gradient: 'from-indigo-500 to-blue-600'
     }
@@ -78,23 +78,24 @@ export default function TeamPage() {
     { src: '/logos/abercrombie.png', alt: 'Abercrombie & Fitch', title: 'Abercrombie & Fitch' }
   ]
 
-  const breadcrumbs = breadcrumbSchema([
-    { name: 'Home', url: 'https://syzygy.services' },
-    { name: 'Our Team', url: 'https://syzygy.services/team' }
-  ])
+  // Plain-text version of the logo loop below, so the employers are readable
+  // by anyone (and anything) that does not render images.
+  const priorEmployers = companyLogos.map((logo) => logo.title)
+  const priorEmployersSentence = `${priorEmployers.slice(0, -1).join(', ')}, and ${priorEmployers[priorEmployers.length - 1]}`
 
-  const personSchemas = teamMembers.map(member => personSchema(member))
+  const structuredData = graph(
+    breadcrumbSchema([
+      { name: 'Home', url: routeMeta['/'].canonicalUrl },
+      { name: 'Our Team', url: routeMeta['/team'].canonicalUrl },
+    ]),
+    ...teamMembers.map((member) => personSchema(member)),
+  )
 
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
-      <SEO
-        {...routeMeta['/team']}
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@graph': [breadcrumbs, ...personSchemas]
-        }}
-      />
+      <SEO {...routeMeta['/team']} structuredData={structuredData} />
       <Header />
+      <main>
       <section className="pt-32 pb-32 relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 -z-10">
@@ -104,11 +105,17 @@ export default function TeamPage() {
 
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-16 animate-reveal">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
               Our Team
-            </h2>
+            </h1>
             <p className="text-lg text-slate-300/90 max-w-2xl mx-auto">
-              Meet the University of Michigan experts behind SYZYGY.services. We may be young, but we know AI.
+              Meet the University of Michigan experts behind Syzygy. We may be young, but we know AI.
+            </p>
+            <p className="mt-6 text-base text-slate-300/80 max-w-3xl mx-auto leading-relaxed">
+              {POSITIONING}
+            </p>
+            <p className="mt-4 text-base text-slate-300/80 max-w-3xl mx-auto leading-relaxed">
+              Before Syzygy, our team worked at {priorEmployersSentence}.
             </p>
           </div>
           
@@ -128,7 +135,7 @@ export default function TeamPage() {
                   <div className="mb-4 relative">
                     <img
                       src={member.image}
-                      alt={`${member.name}, ${member.role} at SYZYGY.services`}
+                      alt={`${member.name}, ${member.role} at Syzygy`}
                       className="w-32 h-32 rounded-full object-cover border-2 border-white/20 group-hover:border-white/40 transition-all duration-300"
                       onError={(e) => {
                         // Fallback to a placeholder if image fails to load
@@ -172,7 +179,7 @@ export default function TeamPage() {
           {/* Recruiting now lives on /careers */}
           <div className="mt-14 text-center animate-reveal" style={{ animationDelay: '0.2s' }}>
             <Link
-              to="/careers"
+              to="/careers/"
               className="group inline-flex items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-violet-300"
             >
               <span className="relative flex size-2">
@@ -219,6 +226,7 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

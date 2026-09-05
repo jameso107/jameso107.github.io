@@ -1,3 +1,5 @@
+import { CALENDLY_URL, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
+
 export default function Contact({ 
   heading = "Ready to align your team around",
   headingHighlight = "AI that delivers",
@@ -24,7 +26,7 @@ export default function Contact({
         
         <div className="flex flex-wrap items-center justify-center gap-4 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <a 
-            href="https://calendly.com/syzygy-intro/30min" 
+            href={CALENDLY_URL} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
@@ -32,6 +34,18 @@ export default function Contact({
             Book a 30-min intro
           </a>
         </div>
+
+        <p className="mt-8 text-center text-slate-400 animate-reveal" style={{ animationDelay: '0.15s' }}>
+          Prefer to talk first? Call{' '}
+          <a href={PHONE_TEL_HREF} className="font-semibold text-slate-200 hover:text-white underline-offset-4 hover:underline transition-colors duration-200">
+            {PHONE_DISPLAY}
+          </a>{' '}
+          or email{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-slate-200 hover:text-white underline-offset-4 hover:underline transition-colors duration-200">
+            {CONTACT_EMAIL}
+          </a>
+          .
+        </p>
       </div>
     </section>
   )

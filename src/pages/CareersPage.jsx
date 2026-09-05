@@ -6,7 +6,7 @@ import { routeMeta } from '../data/routeMeta'
 import SpotlightCard from '../components/SpotlightCard'
 import ApplicationForm from '../components/ApplicationForm'
 import { openRoles, responsibilities, idealCandidate, GENERAL_APPLICATION } from '../data/openRoles'
-import { breadcrumbSchema, organizationSchema } from '../utils/structuredData'
+import { graph, breadcrumbSchema, organizationSchema } from '../utils/structuredData'
 
 function CheckIcon() {
   return (
@@ -31,20 +31,17 @@ export default function CareersPage() {
     document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const breadcrumbs = breadcrumbSchema([
-    { name: 'Home', url: 'https://syzygy.services' },
-    { name: 'Careers', url: 'https://syzygy.services/careers' },
-  ])
+  const structuredData = graph(
+    breadcrumbSchema([
+      { name: 'Home', url: routeMeta['/'].canonicalUrl },
+      { name: 'Careers', url: routeMeta['/careers'].canonicalUrl },
+    ]),
+    organizationSchema,
+  )
 
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
-      <SEO
-        {...routeMeta['/careers']}
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@graph': [breadcrumbs, organizationSchema],
-        }}
-      />
+      <SEO {...routeMeta['/careers']} structuredData={structuredData} />
       <Header />
 
       {/* Hero */}

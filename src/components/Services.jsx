@@ -1,56 +1,10 @@
+import { Link } from 'react-router-dom'
 import SpotlightCard from './SpotlightCard'
+import { services, servicePricingUrl } from '../data/services'
+
+const stacks = ['OpenAI', 'Gemini', 'Claude', 'Vercel', 'n8n']
 
 export default function Services() {
-  const services = [
-    {
-      type: 'Engagement',
-      title: 'AI Opportunity Audit',
-      items: [
-        'Stakeholder interviews & job‑to‑be‑done mapping over 2-4 weeks',
-        'Risk/benefit & ROI sizing, data readiness assessment',
-        '90‑day roadmap with success metrics',
-        'Create a functional prototype'
-      ],
-      gradient: 'from-blue-500 to-cyan-500',
-      icon: '🔍'
-    },
-    {
-      type: 'Build',
-      title: 'Production Implementation',
-      items: [
-        'Guardrails, monitoring, and analytics',
-        'Auth, roles, data governance, and red‑team testing',
-        'Training & rollout, change‑management support'
-      ],
-      gradient: 'from-cyan-500 to-blue-500',
-      icon: '🏗️'
-    },
-    {
-      type: 'Partner',
-      title: 'Ongoing Retainer',
-      items: [
-        'Backlog grooming, iteration, and support',
-        'Monthly evaluations & cost/perf optimizations',
-        'Quarterly roadmap refresh'
-      ],
-      gradient: 'from-pink-500 to-rose-500',
-      icon: '🤝'
-    },
-    {
-      type: 'Advisory',
-      title: 'Technology Consulting',
-      items: [
-        'Website design & development',
-        'Technology integrations',
-        'Product advising & strategy'
-      ],
-      gradient: 'from-violet-500 to-purple-600',
-      icon: '💡'
-    }
-  ]
-
-  const stacks = ['OpenAI', 'Gemini', 'Claude', 'Vercel', 'n8n']
-
   return (
     <section id="services" className="py-32 relative overflow-hidden">
       {/* Background effects */}
@@ -63,16 +17,25 @@ export default function Services() {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           <div className="lg:sticky lg:top-32 animate-reveal">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Services
+              What we do
             </h2>
             <p className="text-lg text-slate-300/90 leading-relaxed mb-6">
-              Pick the entry point that matches your risk tolerance and timeline. We'll tailor the plan to your stack and security requirements.
+              Four ways to work with Syzygy. Pick the entry point that matches your risk tolerance and timeline; most clients start with an audit, prove the value with a prototype, then scale.
             </p>
-            <div className="mt-8">
+            <Link
+              to="/pricing/"
+              className="inline-flex items-center gap-2 text-violet-300 hover:text-white font-semibold transition-colors duration-300"
+            >
+              See services and pricing
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <div className="mt-10">
               <div className="text-sm text-slate-400 mb-3">Typical stacks:</div>
               <div className="flex flex-wrap gap-2">
                 {stacks.map((stack) => (
-                  <span 
+                  <span
                     key={stack}
                     className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                   >
@@ -85,34 +48,36 @@ export default function Services() {
               </div>
             </div>
           </div>
-          
+
           <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
             {services.map((service, idx) => (
               <SpotlightCard
-                key={service.title}
+                key={service.id}
                 spotlightColor="rgba(167, 139, 250, 0.18)"
-                className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal"
+                className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal flex flex-col"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {/* Gradient glow */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500`}></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-xs text-slate-400 font-mono">{service.type}</div>
-                    <div className="text-2xl">{service.icon}</div>
-                  </div>
-                  <div className={`text-xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-4`}>
+
+                <div className="relative z-10 flex flex-col flex-1">
+                  <div className="text-xs text-slate-400 font-mono mb-3">{service.type}</div>
+                  <h3 className={`text-xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-3`}>
                     {service.title}
-                  </div>
-                  <ul className="space-y-3">
-                    {service.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="flex items-start gap-3 text-sm text-slate-400">
-                        <span className={`mt-1.5 size-1.5 rounded-full bg-gradient-to-r ${service.gradient} flex-shrink-0`}></span>
-                        <span className="leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  </h3>
+                  <p className="text-sm text-slate-300/90 leading-relaxed flex-1">{service.description}</p>
+                  {service.length && (
+                    <div className="mt-4 text-xs text-slate-400">{service.length}</div>
+                  )}
+                  <Link
+                    to={servicePricingUrl(service.id)}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-violet-300 hover:text-white transition-colors duration-300"
+                  >
+                    Details and pricing
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
                 </div>
               </SpotlightCard>
             ))}

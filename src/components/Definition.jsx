@@ -1,3 +1,5 @@
+import { POSITIONING } from '../data/routeMeta'
+
 export default function Definition() {
   return (
     <section id="definition" className="py-32 relative overflow-hidden">
@@ -9,11 +11,14 @@ export default function Definition() {
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center animate-reveal">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8">
             What is <span className="bg-gradient-to-r from-violet-400 via-sky-400 to-violet-400 bg-clip-text text-transparent animate-gradient-pan">Syzygy</span>?
           </h2>
-          <p className="mt-4 text-lg text-slate-300/90 max-w-4xl mx-auto leading-relaxed">
-            A <em className="text-violet-300 not-italic font-semibold">syz·y·gy</em> [siz-uh-jee] is the perfect alignment of three celestial bodies. Just like a solar eclipse, AI only works when everything is aligned. Our promise: align <span className="font-semibold text-white">AI</span>, <span className="font-semibold text-white">people</span>, and <span className="font-semibold text-white">your business</span>.
+          <p className="text-xl md:text-2xl text-slate-100 font-medium max-w-4xl mx-auto leading-relaxed">
+            {POSITIONING}
+          </p>
+          <p className="mt-8 text-lg text-slate-300/90 max-w-4xl mx-auto leading-relaxed">
+            The name is a promise. A <em className="text-violet-300 not-italic font-semibold">syz·y·gy</em> [siz-uh-jee] is the perfect alignment of three celestial bodies. Just like a solar eclipse, AI only works when everything is aligned: <span className="font-semibold text-white">AI</span>, <span className="font-semibold text-white">people</span>, and <span className="font-semibold text-white">your business</span>.
           </p>
         </div>
       </div>
