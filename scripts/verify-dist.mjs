@@ -8,9 +8,11 @@
 //   - a canonical URL with a trailing slash
 //   - an absolute og:image URL whose file exists in dist/
 //   - at least one <script type="application/ld+json"> and every block parses
-// Plus: sitemap.xml lists every insights article and no /blog/ or
-// /case-studies/ URLs; /case-studies/ carries noindex; the /blog/ stubs
-// redirect to live pages; llms.txt, robots.txt, CNAME and the favicon exist.
+// Plus: sitemap.xml lists the homepage, every static route and every insights
+// article, and no /blog/ or /case-studies/ URLs; every Markdown article in
+// src/content/insights/ produced a page (none skipped); /case-studies/ carries
+// noindex; the /blog/ stubs redirect to live pages; llms.txt, robots.txt,
+// CNAME, favicon.png and og-image.png exist.
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'fs'
 import { join, relative, resolve, dirname } from 'path'
@@ -18,7 +20,12 @@ import { fileURLToPath } from 'url'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
+const contentDir = join(root, 'src', 'content', 'insights')
 const SITE_URL = 'https://syzygy.services'
+
+// Indexable routes that must always be in the sitemap (in addition to the
+// articles, which are discovered from dist/).
+const STATIC_ROUTES = ['/', '/process/', '/pricing/', '/team/', '/careers/', '/insights/']
 
 const failures = []
 const fail = (file, message) => failures.push(`${file}: ${message}`)
@@ -134,9 +141,21 @@ for (const file of stubs) {
     const targetFile = join(dist, target.slice(SITE_URL.length + 1), 'index.html')
     if (!existsSync(targetFile)) fail(rel, `stub target has no built page: ${target}`)
   }
+  if (rel === 'blog/index.html' && target !== `${SITE_URL}/insights/`) fail(rel, `/blog/ stub must refresh to /insights/, got ${target}`)
   rows.push({ page: `/${rel.replace(/index\.html$/, '')}`, text: 0, h1: 0, title: 0, ld: 0, types: `stub -> ${refresh?.[1] ?? '?'}` })
 }
 if (!stubs.some((file) => relative(dist, file) === 'blog/index.html')) fail('blog/index.html', 'legacy /blog/ stub missing')
+
+// Every Markdown article must have produced a page (the loader skips invalid
+// files with a warning instead of failing the build, so catch that here).
+const builtInsightPages = realPages
+  .map((file) => relative(dist, file))
+  .filter((rel) => /^insights\/[^/]+\/index\.html$/.test(rel))
+const sourceArticles = existsSync(contentDir) ? readdirSync(contentDir).filter((file) => file.endsWith('.md')) : []
+if (sourceArticles.length === 0) fail('src/content/insights', 'no Markdown articles found')
+if (builtInsightPages.length !== sourceArticles.length) {
+  fail('insights', `${sourceArticles.length} Markdown article(s) in src/content/insights, ${builtInsightPages.length} built — check the loader warnings`)
+}
 
 // Sitemap
 const sitemapPath = join(dist, 'sitemap.xml')
@@ -148,10 +167,10 @@ else {
   if (locs.some((loc) => loc.includes('/case-studies'))) fail('sitemap.xml', 'contains /case-studies/')
   if (locs.some((loc) => !loc.endsWith('/'))) fail('sitemap.xml', 'a URL lacks a trailing slash')
   if (sitemap.includes('<lastmod>')) fail('sitemap.xml', 'contains <lastmod> without a real value source')
-  const builtInsights = realPages
-    .map((file) => relative(dist, file))
-    .filter((rel) => /^insights\/[^/]+\/index\.html$/.test(rel))
-    .map((rel) => `${SITE_URL}/${rel.replace(/index\.html$/, '')}`)
+  for (const route of STATIC_ROUTES) {
+    if (!locs.includes(`${SITE_URL}${route}`)) fail('sitemap.xml', `missing static route ${route}`)
+  }
+  const builtInsights = builtInsightPages.map((rel) => `${SITE_URL}/${rel.replace(/index\.html$/, '')}`)
   for (const url of builtInsights) {
     if (!locs.includes(url)) fail('sitemap.xml', `missing built article ${url}`)
   }
@@ -159,7 +178,7 @@ else {
     const file = join(dist, loc.slice(SITE_URL.length + 1), 'index.html')
     if (!existsSync(file)) fail('sitemap.xml', `lists ${loc} but no built page exists`)
   }
-  rows.push({ page: 'sitemap.xml', text: 0, h1: 0, title: 0, ld: 0, types: `${locs.length} urls, ${builtInsights.length} insights` })
+  rows.push({ page: 'sitemap.xml', text: 0, h1: 0, title: 0, ld: 0, types: `${locs.length} urls, ${builtInsights.length} insights (${sourceArticles.length} in src)` })
 }
 
 // Other artifacts
@@ -194,4 +213,6 @@ if (failures.length) {
   failures.forEach((message) => console.log(`  ✗ ${message}`))
   process.exit(1)
 }
-console.log(`verify: OK — ${realPages.length} pages, ${stubs.length} redirect stubs, sitemap, llms.txt`)
+console.log(
+  `verify: OK — ${realPages.length} pages (${builtInsightPages.length} insights articles, ${sourceArticles.length} in src), ${stubs.length} redirect stubs, sitemap, llms.txt`,
+)
