@@ -53,6 +53,14 @@ export default function Pricing() {
                 <h2 className={`text-xl font-bold mb-3 bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>
                   {plan.title}
                 </h2>
+                {plan.pricing && (
+                  <div className="mb-4">
+                    <div className="text-2xl font-extrabold text-white tracking-tight">{plan.pricing.headline}</div>
+                    {plan.pricing.detail && (
+                      <p className="mt-1.5 text-xs text-slate-400 leading-relaxed">{plan.pricing.detail}</p>
+                    )}
+                  </div>
+                )}
                 <p className="text-sm text-slate-300/90 leading-relaxed mb-4">{plan.description}</p>
                 {plan.length && (
                   <div className="text-xs text-slate-400 mb-4">
@@ -95,7 +103,7 @@ export default function Pricing() {
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500 max-w-3xl mx-auto">
-          Contact us for a customized quote based on your scope and requirements.
+          Figures are starting points. Every engagement is quoted individually after an intro call, based on your scope and the systems involved.
         </p>
       </div>
     </section>

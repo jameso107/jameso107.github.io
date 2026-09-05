@@ -1,7 +1,7 @@
 // Visible FAQ copy for the homepage, /process/ and /pricing/. Each list is
 // rendered as real text by <FAQ /> and mirrored into FAQPage structured data,
-// so the answers here are the answers crawlers see. No pricing figures: those
-// are pending owner confirmation.
+// so the answers here are the answers crawlers see. Pricing figures match
+// `pricing` in data/services.js; change them in both places.
 
 export const homeFaq = [
   {
@@ -23,6 +23,10 @@ export const homeFaq = [
   {
     q: 'How long does an AI audit take?',
     a: 'Two to four weeks. It includes stakeholder interviews, workflow and process analysis, a review of your data and technology stack, and a written ROI opportunity analysis with a 90-day roadmap.',
+  },
+  {
+    q: 'How much does an AI audit cost?',
+    a: 'AI Audit & Prototyping engagements start at $3,000 and typically take two to four weeks. The Design and Prototype phase that follows typically runs $6,000–$8,000 over four to six weeks, and every engagement is quoted individually after an intro call.',
   },
   {
     q: 'Do you work with companies that have no IT staff?',
@@ -52,7 +56,11 @@ export const processFaq = [
 export const pricingFaq = [
   {
     q: 'How is a Syzygy engagement priced?',
-    a: 'We quote each engagement individually after an intro call, based on the scope and the systems involved. Each phase is scoped on its own, so you can start small with the audit, prove the value with a prototype, and only then decide on a full build.',
+    a: 'Each engagement is quoted individually after an intro call, based on the scope and the systems involved. AI Audit & Prototyping starts at $3,000, the Design and Prototype phase typically runs $6,000–$8,000, AI Implementation is scoped per project, and the Ongoing Partnership is from $2,000 per month. Each phase is scoped on its own, so you can start with the audit and decide on the next step once you have seen the results.',
+  },
+  {
+    q: 'How much does an AI audit cost?',
+    a: 'AI Audit & Prototyping engagements start at $3,000 and typically take two to four weeks. If you continue into Design and Prototype, that phase typically runs $6,000–$8,000 over four to six weeks.',
   },
   {
     q: 'What is included in AI Audit & Prototyping?',

@@ -16,6 +16,7 @@ import {
   ALTERNATE_NAMES,
   POSITIONING,
   CONTACT_EMAIL,
+  PHONE_INTERNATIONAL,
   LINKEDIN_COMPANY_URL,
   DEFAULT_IMAGE,
 } from '../data/routeMeta'
@@ -70,6 +71,7 @@ export const organizationSchema = {
   image: DEFAULT_IMAGE,
   description: POSITIONING,
   email: CONTACT_EMAIL,
+  telephone: PHONE_INTERNATIONAL,
   sameAs: [LINKEDIN_COMPANY_URL],
   founder: {
     '@type': 'Person',
@@ -90,6 +92,7 @@ export const organizationSchema = {
     '@type': 'ContactPoint',
     contactType: 'Sales',
     email: CONTACT_EMAIL,
+    telephone: PHONE_INTERNATIONAL,
     areaServed: 'US',
     availableLanguage: 'English',
   },
@@ -106,21 +109,52 @@ export const websiteSchema = {
   publisher: organizationRef,
 }
 
-// No `offers`: prices are pending, and schema.org rejects a non-numeric price.
-export const serviceSchema = (service) => ({
-  '@type': 'Service',
-  '@id': `${SITE_URL}/pricing/#${service.id}`,
-  name: service.title,
-  description: service.description,
-  serviceType: service.shortName || service.title,
-  url: `${SITE_URL}/pricing/#${service.id}`,
-  provider: organizationRef,
-  areaServed: AREA_SERVED,
-  audience: {
-    '@type': 'BusinessAudience',
-    audienceType: 'Small and mid-sized businesses',
-  },
-})
+// One Offer per published figure (see `pricing.offers` in data/services.js).
+// "Starting at" is a PriceSpecification with minPrice; a range adds maxPrice;
+// a recurring fee is a UnitPriceSpecification per MONTH. `price` is always a
+// number (the floor), never prose — tiers quoted per project simply have no
+// Offer.
+const offerSchema = (service, offer) => {
+  const recurring = Boolean(offer.unitText)
+  const priceSpecification = {
+    '@type': recurring ? 'UnitPriceSpecification' : 'PriceSpecification',
+    priceCurrency: 'USD',
+    minPrice: offer.minPrice,
+    ...(offer.maxPrice && { maxPrice: offer.maxPrice }),
+    ...(recurring && { unitText: offer.unitText, unitCode: 'MON' }),
+    valueAddedTaxIncluded: false,
+  }
+  return {
+    '@type': 'Offer',
+    name: offer.name,
+    url: `${SITE_URL}/pricing/#${service.id}`,
+    price: offer.minPrice,
+    priceCurrency: 'USD',
+    priceSpecification,
+    availability: 'https://schema.org/InStock',
+    eligibleRegion: { '@type': 'Country', name: 'US' },
+    offeredBy: organizationRef,
+  }
+}
+
+export const serviceSchema = (service) => {
+  const offers = (service.pricing?.offers || []).map((offer) => offerSchema(service, offer))
+  return {
+    '@type': 'Service',
+    '@id': `${SITE_URL}/pricing/#${service.id}`,
+    name: service.title,
+    description: service.description,
+    serviceType: service.shortName || service.title,
+    url: `${SITE_URL}/pricing/#${service.id}`,
+    provider: organizationRef,
+    areaServed: AREA_SERVED,
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Small and mid-sized businesses',
+    },
+    ...(offers.length > 0 && { offers: offers.length === 1 ? offers[0] : offers }),
+  }
+}
 
 // Items are { name, url }. Pass canonical URLs (trailing slash) — see routeMeta.
 export const breadcrumbSchema = (items) => ({

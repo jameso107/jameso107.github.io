@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
-import { CONTACT_EMAIL, LEGAL_NAME } from '../data/routeMeta'
+import { CONTACT_EMAIL, LEGAL_NAME, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
 
 const footerLinks = [
   { to: '/process/', label: 'Our Process' },
@@ -53,6 +53,12 @@ export default function Footer() {
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >
               Contact
+            </a>
+            <a
+              href={PHONE_TEL_HREF}
+              className="text-slate-400 hover:text-white transition-colors duration-200 whitespace-nowrap"
+            >
+              {PHONE_DISPLAY}
             </a>
           </nav>
         </div>

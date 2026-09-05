@@ -82,6 +82,7 @@ const {
   POSITIONING,
   CALENDLY_URL,
   CONTACT_EMAIL,
+  PHONE_INTERNATIONAL,
   DEFAULT_IMAGE,
   NOT_FOUND_META,
   getPrerenderRoutes,
@@ -90,6 +91,7 @@ const {
   getSkippedInsights,
   services,
   processSteps,
+  PRICING_MODEL,
   renderTitle,
 } = server
 
@@ -218,8 +220,16 @@ const llms = [
   '',
   ...services.map(
     (service) =>
-      `- ${service.title}${service.length ? ` (${service.length})` : ''}: ${service.description} ${SITE_URL}/pricing/#${service.id}`,
+      `- ${service.title}${service.length ? ` (${service.length})` : ''}: ${service.description}${
+        service.pricing?.headline ? ` Pricing: ${service.pricing.headline}.` : ''
+      } ${SITE_URL}/pricing/#${service.id}`,
   ),
+  '',
+  '## Pricing model',
+  '',
+  PRICING_MODEL,
+  '',
+  `Details: ${SITE_URL}/pricing/`,
   '',
   '## How the process works',
   '',
@@ -231,6 +241,7 @@ const llms = [
   '',
   `- Book a 30-minute intro call: ${CALENDLY_URL}`,
   `- Email: ${CONTACT_EMAIL}`,
+  `- Phone: ${PHONE_INTERNATIONAL}`,
   `- Website: ${SITE_URL}/`,
   '',
   '## Pages',

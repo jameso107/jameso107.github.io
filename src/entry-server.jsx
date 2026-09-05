@@ -28,6 +28,8 @@ export {
   POSITIONING,
   CALENDLY_URL,
   CONTACT_EMAIL,
+  PHONE_DISPLAY,
+  PHONE_INTERNATIONAL,
   DEFAULT_IMAGE,
   NOT_FOUND_META,
   routeMeta,
@@ -36,4 +38,4 @@ export {
   renderTitle,
 } from './data/routeMeta'
 export { getAllInsights, getSkippedInsights } from './data/insights'
-export { services, processSteps } from './data/services'
+export { services, processSteps, PRICING_MODEL } from './data/services'
