@@ -28,7 +28,7 @@ cta:
 related: ["ai-readiness-assessment", "where-ai-pays-off-first", "what-an-ai-consultant-does"]
 ---
 
-In the heart of America's manufacturing and business landscape, Midwest small and mid-sized businesses are discovering that AI isn't just for tech giants. It's a competitive advantage waiting to be unlocked. But here's the reality: most businesses struggle not with the technology itself, but with building the **AI aptitude** needed to harness it effectively.
+In the heart of America's manufacturing and business landscape, Midwest small and mid-sized businesses are discovering that AI isn't just for tech giants. It's a competitive advantage available to any company willing to build the capability. But here's the reality: most businesses struggle not with the technology itself, but with building the **AI aptitude** needed to harness it effectively.
 
 ## What is AI aptitude?
 
@@ -95,7 +95,7 @@ We've seen businesses in our own client base achieve real results by building th
 
 - A West Michigan manufacturer gave every Sales Engineer back 5+ hours a week with a document-grounded assistant that turns prints, specs, and past quotes into structured estimates and risks.
 - A mid-Atlantic manufacturer made its quoting operations 18% more efficient with a custom AI engine that analyzes specification documents and takes exception to contract terms.
-- A 400-employee automotive supplier now runs a custom LLM suite for day-to-day operations, with room to grow into more of the business.
+- A West Michigan automotive company rolled out a custom LLM suite that more than 400 employees use in their daily work, with room to grow into more of the business.
 
 > These aren't isolated cases. They're what happens when a business commits to building the capability, not just buying a tool.
 
@@ -127,13 +127,13 @@ For **Midwest small and mid-sized businesses** ready to harness AI, here's a pra
 
 ### Phase 4: Measure and Improve (ongoing)
 
-- Report the ROI and impact your team has unlocked
+- Report the ROI and impact the project has delivered
 - Iterate with real-world feedback
 - Identify the next AI opportunity on the roadmap
 
 ## The bottom line
 
-**AI aptitude** isn't a destination. It's a journey. For **Midwest small and mid-sized businesses**, the companies that start building this capability today will have a significant competitive advantage tomorrow. The question isn't whether AI will transform your industry. It's whether you'll be leading that transformation or playing catch-up.
+**AI aptitude** isn't a destination. It's a journey. For **Midwest small and mid-sized businesses**, the companies that build this capability early hold a durable competitive advantage over those that wait. The question isn't whether AI will change your industry. It's whether you'll be leading that change or playing catch-up.
 
 At Syzygy, we specialize in helping **small businesses in Michigan** and across the Midwest, along with remote clients nationwide, build their **AI aptitude**. We start with a comprehensive audit to understand your unique opportunities, then work alongside your team to implement solutions that generate real ROI. See [our services](/pricing/) for how an engagement is structured.
 

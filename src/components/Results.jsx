@@ -1,11 +1,12 @@
-// Anonymized outcomes from real engagements (see /case-studies/ for the long
-// form). Region-level descriptors only — never client names or cities.
+// Anonymized outcomes from real engagements; src/components/Work.jsx is the
+// source of truth for which result belongs to which client. Region-level
+// descriptors only — never client names or cities.
 export const results = [
   {
     stat: '5+ hours a week',
     label: 'back for every Sales Engineer',
     detail:
-      'A West Michigan manufacturer now turns prints, specs, and past quotes into structured estimates with a document-grounded assistant, freeing its Sales Engineers for customer work.',
+      'A West Michigan manufacturer turns prints, specs, and past quotes into structured estimates with a document-grounded assistant, freeing its Sales Engineers for customer work.',
     gradient: 'from-violet-400 to-purple-500',
   },
   {
@@ -17,9 +18,9 @@ export const results = [
   },
   {
     stat: '400+ employees',
-    label: 'on a custom LLM suite, daily',
+    label: 'using a custom LLM suite daily',
     detail:
-      'A 400-employee automotive supplier runs a custom LLM suite we built for day-to-day operations, with room to grow into more of the business.',
+      'A West Michigan automotive company rolled out a custom LLM suite we built. More than 400 employees use it in their daily work, with room to grow into more of the business.',
     gradient: 'from-cyan-400 to-teal-400',
   },
 ]

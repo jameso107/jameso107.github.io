@@ -28,6 +28,12 @@ export const CALENDLY_URL = 'https://calendly.com/syzygy-intro/30min'
 export const CONTACT_EMAIL = 'james@syzygy.services'
 export const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/syzygy-services'
 
+// One number, three spellings: what people read, what tel: links dial, and
+// the hyphenated international form schema.org expects in `telephone`.
+export const PHONE_DISPLAY = '(616) 403-0259'
+export const PHONE_TEL_HREF = 'tel:+16164030259'
+export const PHONE_INTERNATIONAL = '+1-616-403-0259'
+
 export const DEFAULT_TITLE = `${BRAND} | AI Consulting for Small & Mid-Sized Businesses`
 export const DEFAULT_DESCRIPTION =
   'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, serving owner-led companies across the Midwest and remote clients nationwide.'
@@ -63,7 +69,7 @@ export const routeMeta = {
   '/case-studies': {
     title: 'AI Case Studies & Client Results',
     description:
-      'Anonymized results from Syzygy engagements: faster quoting for manufacturers, a company-wide LLM suite for a 400-employee automotive supplier, and more.',
+      'Anonymized results from Syzygy engagements: faster quoting for manufacturers, a custom LLM suite that more than 400 employees at an automotive company use daily, and more.',
     keywords:
       'AI case studies, AI consulting results, AI implementation examples, AI ROI, manufacturing AI, Michigan AI consulting, Midwest AI consulting',
     canonicalUrl: `${SITE_URL}/case-studies/`,
@@ -72,7 +78,7 @@ export const routeMeta = {
   '/pricing': {
     title: 'AI Consulting Services & Pricing',
     description:
-      'Syzygy services for small and mid-sized businesses: AI Audit & Prototyping, AI Implementation, Ongoing Partnership, and Technology Consulting. Contact for a quote.',
+      'Syzygy services for small and mid-sized businesses: AI Audit & Prototyping from $3,000, AI Implementation scoped per project, Ongoing Partnership from $2,000 a month, and Technology Consulting.',
     keywords:
       'AI consulting pricing, AI audit cost, AI implementation cost, AI consulting rates, fractional technology leadership, small business AI consulting, Michigan AI consulting',
     canonicalUrl: `${SITE_URL}/pricing/`,
