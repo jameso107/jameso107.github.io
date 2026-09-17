@@ -2,7 +2,7 @@
 title: "The Fractional Technology Partner: Executive-Level Tech Strategy Without a Full-Time Hire"
 seoTitle: "Fractional CTO for Small Business: When It Fits | Syzygy"
 slug: "fractional-technology-partner"
-dek: "A fractional technology partner gives an owner-led company executive-level judgment on strategy, vendors, security, and build-or-buy decisions for a fraction of a full-time executive's cost. It beats hiring when you need that judgment regularly but not forty hours a week of it."
+dek: "A fractional technology partner gives a small or mid-sized company executive-level judgment on strategy, vendors, security, and build-or-buy decisions for a fraction of a full-time executive's cost. It beats hiring when you need that judgment regularly but not forty hours a week of it."
 description: "What a fractional CTO or technology partner does for a small business, when it beats a full-time hire, and how to structure the arrangement."
 category: "Strategy"
 keywords: ["fractional CTO small business", "outsourced CTO", "technology consulting for small business", "fractional technology partner", "part-time CTO", "technology strategy small business"]
@@ -24,11 +24,11 @@ faq:
 cta:
   service: "technology"
   heading: "How Syzygy helps"
-  body: "Syzygy's Technology Consulting and Ongoing Partnership work gives owner-led companies a standing technology partner for strategy, vendor decisions, integrations, and board-level planning without a full-time hire. Book an intro call to talk through what that would look like for your company."
+  body: "Syzygy's Technology Consulting and Ongoing Partnership work gives small and mid-sized companies a standing technology partner for strategy, vendor decisions, integrations, and board-level planning without a full-time hire. Book an intro call to talk through what that would look like for your company."
 related: ["build-buy-or-configure", "how-much-does-consulting-cost", "ai-governance-for-owner-led-companies"]
 ---
 
-At some point between thirty and three hundred employees, most owner-led companies discover that their technology decisions have outgrown the people making them. The IT provider keeps things running but does not set direction. The office manager who "handles the software" is drowning. Vendors are making the strategy by default, one contract at a time. And the owner, who has a business to run, has become the de facto chief technology officer without the time or background for the job.
+At some point between thirty and three hundred employees, most companies discover that their technology decisions have outgrown the people making them. The IT provider keeps things running but does not set direction. The office manager who "handles the software" is drowning. Vendors are making the strategy by default, one contract at a time. And the owner, who has a business to run, has become the de facto chief technology officer without the time or background for the job.
 
 A full-time technology executive is the textbook answer and usually the wrong one at this size. This article explains the alternative: what a fractional technology partner does, when it beats hiring, and how to set it up so it delivers.
 
@@ -46,7 +46,7 @@ Technology leadership is four distinct jobs, and a fractional partner should wea
 
 ### The Strategist
 
-Ties technology to the business plan. Where should technology change how the company competes over the next few years? Which processes deserve investment and which should just be kept running? This hat produces a roadmap the owner understands and a budget the owner can defend, and it is the hat most often empty in an owner-led company.
+Ties technology to the business plan. Where should technology change how the company competes over the next few years? Which processes deserve investment and which should just be kept running? This hat produces a roadmap the owner understands and a budget the owner can defend, and it is the hat most often empty in a company this size.
 
 ### The Architect and Buyer
 
@@ -110,4 +110,4 @@ By the end of the first year the distributor has a roadmap the owner can explain
 
 ## The bottom line
 
-A fractional technology partner fills the gap between technical hands and technical leadership that most owner-led companies hit long before they can justify a full-time executive. The role covers strategy, architecture and buying, risk, and team development, on a fixed cadence with real decision rights and outcome-based accountability. It beats hiring when the executive work is real but partial, and a good partner will tell you when that stops being true.
+A fractional technology partner fills the gap between technical hands and technical leadership that most companies hit long before they can justify a full-time executive. The role covers strategy, architecture and buying, risk, and team development, on a fixed cadence with real decision rights and outcome-based accountability. It beats hiring when the executive work is real but partial, and a good partner will tell you when that stops being true.

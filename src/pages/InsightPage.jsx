@@ -229,7 +229,7 @@ export default function InsightPage() {
                 <div className="text-xl font-bold text-white">{author.name}</div>
                 <div className="text-sm text-violet-300 mb-3">{author.role}</div>
                 <p className="text-sm text-slate-300/90 leading-relaxed mb-4">
-                  James founded Syzygy to bring AI-led operations consulting to owner-led small and mid-sized businesses across the Midwest and beyond.
+                  James founded Syzygy to bring AI-led operations consulting to small and mid-sized businesses across the Midwest and beyond.
                 </p>
                 <a
                   href={author.linkedin}

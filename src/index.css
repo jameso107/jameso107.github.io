@@ -438,13 +438,13 @@ body {
   animation: gradient-pan 6s linear infinite;
 }
 
-/* Lightfall hero background fade-in (mounts after the opening animation) */
-@keyframes lightfall-in {
+/* Hero background fade-in (mounts after the opening animation) */
+@keyframes hero-bg-in {
   from { opacity: 0; }
   to { opacity: 0.7; }
 }
 
-.animate-lightfall-in {
-  animation: lightfall-in 1.2s ease-out both;
+.animate-hero-bg-in {
+  animation: hero-bg-in 1.2s ease-out both;
 }
 

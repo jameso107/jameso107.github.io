@@ -94,7 +94,7 @@ The screen is deliberately simple. Its job is not to be precise; it is to make y
 
 ## Which processes usually score highest?
 
-Across owner-led companies, the same processes tend to rise to the top of the screen because they share the same shape: messy input, learned pattern, structured output.
+Across small and mid-sized businesses, the same processes tend to rise to the top of the screen because they share the same shape: messy input, learned pattern, structured output.
 
 - **Quoting and estimating** from customer drawings, specifications, and requests for quotation. This is where a mid-Atlantic manufacturer [made its quoting 18% more efficient](/insights/automating-quoting-in-manufacturing/) by automating specification analysis and contract-term exceptions.
 - **Order entry** from emailed purchase orders and PDFs into the ERP.

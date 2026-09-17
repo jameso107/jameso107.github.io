@@ -60,7 +60,7 @@ An AI consultant is not your IT provider, not a software vendor, and not a resea
 
 - **An IT provider** keeps your network, email, and devices running. That is essential and it is a different skill. Uptime is not the same as improvement.
 - **A software vendor** sells a product. A vendor's demo will always show their tool solving your problem, because that is what the demo is for. A consultant should be neutral about tools and willing to recommend something they do not build.
-- **A research team** invents new models. Almost no small or mid-sized business needs that. The work that pays off for owner-led companies is applied: grounding existing models in your documents, wiring them into your systems, and putting the right checks around them.
+- **A research team** invents new models. Almost no small or mid-sized business needs that. The work that pays off for these companies is applied: grounding existing models in your documents, wiring them into your systems, and putting the right checks around them.
 
 If the person you are talking to cannot describe a project they recommended against, be cautious.
 

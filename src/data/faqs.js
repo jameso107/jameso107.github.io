@@ -6,7 +6,7 @@
 export const homeFaq = [
   {
     q: 'Who does Syzygy work with?',
-    a: 'Owner-led small and mid-sized businesses. Most of our clients are operating companies such as manufacturers, suppliers, and service businesses across Michigan and the Midwest, plus remote clients nationwide. They want measurable improvements in how they operate, not experiments.',
+    a: 'Small and mid-sized businesses. Most of our clients are operating companies such as manufacturers, suppliers, and service businesses across Michigan and the Midwest, plus remote clients nationwide. They want measurable improvements in how they operate, not experiments.',
   },
   {
     q: 'What does "leads with AI" mean?',

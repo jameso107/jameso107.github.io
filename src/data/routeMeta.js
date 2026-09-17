@@ -22,7 +22,7 @@ export const ALTERNATE_NAMES = ['Syzygy Services', 'SYZYGY.services']
 // The entity definition. Mirrored verbatim in Organization.description, the
 // homepage, /team/, and llms.txt — keep every noun if you edit it.
 export const POSITIONING =
-  'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, we help owner-led companies across the Midwest and remote clients nationwide find, prototype, and implement the highest-return improvements in how they operate.'
+  'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, we help companies across the Midwest and remote clients nationwide find, prototype, and implement the highest-return improvements in how they operate.'
 
 export const CONTACT_EMAIL = 'james@syzygy.services'
 
@@ -41,7 +41,7 @@ export const PHONE_INTERNATIONAL = '+1-616-403-0259'
 
 export const DEFAULT_TITLE = `${BRAND} | AI Consulting for Small & Mid-Sized Businesses`
 export const DEFAULT_DESCRIPTION =
-  'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, serving owner-led companies across the Midwest and remote clients nationwide.'
+  'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, serving companies across the Midwest and remote clients nationwide.'
 export const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`
 export const DEFAULT_ROBOTS = 'index, follow'
 

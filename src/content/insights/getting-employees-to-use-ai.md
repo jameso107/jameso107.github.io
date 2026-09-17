@@ -1,9 +1,9 @@
 ---
-title: "Getting Employees to Actually Use AI: Change Management for Owner-Led Companies"
+title: "Getting Employees to Actually Use AI: Change Management for Small and Mid-Sized Businesses"
 seoTitle: "Getting Employees to Actually Use AI at Work | Syzygy"
 slug: "getting-employees-to-use-ai"
 dek: "Employees adopt AI when it is embedded in a task they already do, when a respected peer shows them how, and when the owner visibly uses it, expects it, and measures it. Training sessions alone change almost nothing."
-description: "How to get employees to use AI: a change management method for owner-led companies covering workflow embedding, champions, training, and usage metrics."
+description: "How to get employees to use AI: a change management method for small businesses covering workflow embedding, champions, training, and usage metrics."
 category: "People"
 keywords: ["AI adoption employees", "AI change management small business", "AI training for staff", "employee AI adoption", "getting employees to use AI", "AI champions"]
 author: "james-oosterhouse"
@@ -42,7 +42,7 @@ Adoption happens when the question changes from "how could I use AI?" to "here i
 
 ## How does adoption actually spread in a small company?
 
-It spreads in a predictable order, and in an owner-led company the whole curve is a handful of people. A few early adopters try anything and will use the tool on day one regardless of what you do. The pragmatic majority, usually most of the team, will use it when a peer they respect shows them it works on real cases and when the old way stops being the default. A few holdouts will use it when it becomes the standard and not before.
+It spreads in a predictable order, and in a small company the whole curve is a handful of people. A few early adopters try anything and will use the tool on day one regardless of what you do. The pragmatic majority, usually most of the team, will use it when a peer they respect shows them it works on real cases and when the old way stops being the default. A few holdouts will use it when it becomes the standard and not before.
 
 The mistake is to design the rollout for the early adopters, who need nothing, or for the holdouts, who need everything. Design for the pragmatic majority. They are watching two things: whether someone like them is getting real value, and whether management actually means it. Give them both and the curve moves in weeks. Give them neither and it never moves.
 

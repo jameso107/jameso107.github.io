@@ -28,7 +28,7 @@ cta:
 related: ["ai-for-document-heavy-work", "getting-employees-to-use-ai", "build-buy-or-configure"]
 ---
 
-Most owner-led companies do not have a chief information officer, a compliance department, or anyone whose job title includes the word "risk." They do have employees with browsers, and those employees are already using AI tools on company work: drafting emails, summarizing customer documents, asking questions about contracts. The question is not whether your company uses AI. It is whether anyone has decided how.
+Most small and mid-sized companies do not have a chief information officer, a compliance department, or anyone whose job title includes the word "risk." They do have employees with browsers, and those employees are already using AI tools on company work: drafting emails, summarizing customer documents, asking questions about contracts. The question is not whether your company uses AI. It is whether anyone has decided how.
 
 This guide gives you a governance approach sized for a business without a CIO: a two-page policy, a three-color data classification, and a handful of defaults that do most of the work.
 

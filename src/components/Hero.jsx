@@ -3,15 +3,15 @@ import ShinyText from './ShinyText'
 import StarBorder from './StarBorder'
 import { START_PROJECT_HREF } from '../data/routeMeta'
 
-// Lazy-load the WebGL background so the heavy `ogl` chunk is code-split out of the
-// main bundle and never competes with the opening animation on first paint.
+// Lazy-load the interactive background so its `gsap` chunk is code-split out of
+// the main bundle and never competes with the opening animation on first paint.
 // It is only ever mounted after an effect runs, so the server render (and the
-// prerendered HTML) never touch WebGL.
-const Lightfall = lazy(() => import('./Lightfall'))
+// prerendered HTML) never touch the canvas.
+const DotGrid = lazy(() => import('./DotGrid'))
 
 export default function Hero({ enableBackground = true }) {
-  // Show Lightfall on all devices, but tune it down on touch devices (phones/tablets):
-  // fewer streaks + a capped pixel ratio keep the WebGL shader smooth and easy on battery.
+  // Touch devices have no cursor, so the grid is pure texture there — a wider
+  // gap means fewer dots to redraw each frame, and easier on battery.
   const [deviceReady, setDeviceReady] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
@@ -24,21 +24,22 @@ export default function Hero({ enableBackground = true }) {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-32 md:pt-40 pb-32 overflow-hidden">
-      {/* Lightfall WebGL background — mounted after the opening animation,
-          lazy-loaded + faded in so it never causes jank during the intro. */}
+      {/* DotGrid background — mounted after the opening animation, lazy-loaded
+          + faded in so it never causes jank during the intro. Dots sit dim until
+          the cursor comes near, then light up violet and scatter on a click. */}
       {deviceReady && enableBackground && (
         <Suspense fallback={null}>
-          <div className="animate-lightfall-in absolute inset-0 -z-10">
-            <Lightfall
-              colors={['#a78bfa', '#5227FF', '#38bdf8']}
-              backgroundColor="#0b1020"
-              speed={0.4}
-              streakCount={isMobile ? 2 : 3}
-              density={0.6}
-              glow={1}
-              opacity={0.85}
-              dpr={isMobile ? 1 : undefined}
-              mouseInteraction={false}
+          <div className="animate-hero-bg-in absolute inset-0 -z-10">
+            <DotGrid
+              dotSize={5}
+              gap={isMobile ? 34 : 24}
+              baseColor="#2b3366"
+              activeColor="#a78bfa"
+              proximity={140}
+              shockRadius={260}
+              shockStrength={5}
+              resistance={750}
+              returnDuration={1.5}
             />
           </div>
         </Suspense>
@@ -51,12 +52,6 @@ export default function Hero({ enableBackground = true }) {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full blur-3xl bg-purple-500/20 animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 -z-10 opacity-10" style={{
-        backgroundImage: 'linear-gradient(rgba(167,139,250,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.1) 1px, transparent 1px)',
-        backgroundSize: '50px 50px'
-      }}></div>
-
       <div className="px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="space-y-8 animate-reveal text-center">
           <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm px-6 py-3 text-sm md:text-base text-slate-300 shadow-lg">
@@ -67,21 +62,18 @@ export default function Hero({ enableBackground = true }) {
             Now booking new clients
           </div>
 
+          {/* The three terms keep the colours they carried as body copy:
+              AI violet, people sky, your business light violet. */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] max-w-5xl mx-auto">
-            Consulting for{' '}
-            <span className="bg-gradient-to-r from-violet-300 via-violet-400 to-sky-400 bg-clip-text text-transparent">
-              small and mid-sized businesses
-            </span>
-            , led by <ShinyText text="AI" color="#38bdf8" shineColor="#ffffff" speed={3} />.
+            Aligning{' '}
+            <ShinyText text="AI" color="#a78bfa" shineColor="#ffffff" speed={3} />,{' '}
+            <ShinyText text="people" color="#38bdf8" shineColor="#ffffff" speed={3} delay={0.4} />, and{' '}
+            <ShinyText text="your business" color="#c4b5fd" shineColor="#ffffff" speed={3} delay={0.8} />.
           </h1>
 
           <p className="text-base md:text-lg text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-            Aligning{' '}
-            <ShinyText text="AI" color="#a78bfa" shineColor="#ffffff" speed={3} delay={0.4} />,{' '}
-            <ShinyText text="people" color="#38bdf8" shineColor="#ffffff" speed={3} delay={0.8} />, and{' '}
-            <ShinyText text="your business" color="#c4b5fd" shineColor="#ffffff" speed={3} delay={1.2} />. Syzygy
-            helps owner-led companies find, prototype, and implement the highest-return improvements in how they
-            operate — all-in on AI, all-in on you.
+            SYZYGY helps small and mid-sized businesses find, prototype, and implement the highest-return
+            opportunities. We’re all-in on AI, all-in on you.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

@@ -2,7 +2,7 @@
 title: "Harnessing AI Aptitude: A Guide for Midwest Small and Mid-Sized Businesses"
 seoTitle: "AI Aptitude for Midwest Small Businesses | Syzygy"
 slug: "harnessing-ai-aptitude-midwest-small-business"
-dek: "AI aptitude is your organization's ability to understand, implement, and keep using AI to solve real business problems. For a Midwest owner-led company it is built in four moves: assess honestly, start with a quick win, grow the capability inside the team, and partner where you need depth."
+dek: "AI aptitude is your organization's ability to understand, implement, and keep using AI to solve real business problems. For a Midwest company it is built in four moves: assess honestly, start with a quick win, grow the capability inside the team, and partner where you need depth."
 description: "How Midwest small and mid-sized businesses build AI aptitude: a practical framework, real outcomes from manufacturers and suppliers, and a phased roadmap."
 category: "Strategy"
 keywords: ["AI aptitude", "AI for small business", "Midwest small business AI", "AI readiness", "AI consulting Michigan", "AI roadmap small business"]

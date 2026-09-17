@@ -213,7 +213,7 @@ const llms = [
   '',
   '## What Syzygy does',
   '',
-  'Syzygy helps owner-led small and mid-sized businesses find, prototype, and implement the highest-return improvements in how they operate. Engagements start with an audit of how the business actually runs, move to a working prototype of the best opportunity, and end with a production implementation the team is trained to run. AI is where we start, but we recommend whatever produces the result — off-the-shelf software, a process change, an integration, or custom AI.',
+  'Syzygy helps small and mid-sized businesses find, prototype, and implement the highest-return improvements in how they operate. Engagements start with an audit of how the business actually runs, move to a working prototype of the best opportunity, and end with a production implementation the team is trained to run. AI is where we start, but we recommend whatever produces the result — off-the-shelf software, a process change, an integration, or custom AI.',
   '',
   '## Services',
   '',
