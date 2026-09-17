@@ -19,7 +19,7 @@ export default function TeamPage() {
     },
     {
       name: 'Christian Reinhardt',
-      role: 'Co-founder & Director of Research',
+      role: 'Co-founder & COO',
       description: 'Driving research initiatives and staying at the forefront of AI technology and innovation.',
       image: '/christian.jpg',
       linkedin: 'https://www.linkedin.com/in/christian-reinhardt-186b7428a/',

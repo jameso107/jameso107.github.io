@@ -91,7 +91,7 @@ export const routeMeta = {
   '/team': {
     title: 'Meet Our AI Consultants',
     description:
-      'Meet the Syzygy team: James Oosterhouse (Founder & CEO), Christian Reinhardt (Director of Research), Hannah TerHaar (Director of Marketing), and our AI engineers.',
+      'Meet the Syzygy team: James Oosterhouse (Founder & CEO), Christian Reinhardt (COO), Hannah TerHaar (Director of Marketing), and our AI engineers.',
     keywords:
       'AI consultants, AI consulting team, AI strategy consultants, AI implementation experts, Michigan AI consultants, Midwest AI consultants, University of Michigan',
     canonicalUrl: `${SITE_URL}/team/`,
