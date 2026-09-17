@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import SEO from '../components/SEO'
 import FAQ from '../components/FAQ'
 import InsightCard from '../components/InsightCard'
-import { routeMeta, insightMeta, CALENDLY_URL } from '../data/routeMeta'
+import { routeMeta, insightMeta, START_PROJECT_HREF } from '../data/routeMeta'
 import { getInsight, getRelated } from '../data/insights'
 import { getServiceForCta, servicePricingUrl } from '../data/services'
 import { graph, articleSchema, breadcrumbSchema, faqSchema } from '../utils/structuredData'
@@ -177,12 +177,10 @@ export default function InsightPage() {
               <p className="text-slate-300/90 leading-relaxed mb-8">{article.cta.body}</p>
               <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={START_PROJECT_HREF}
                   className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-3 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50"
                 >
-                  Book an intro call
+                  Start a project
                   <ArrowIcon className="w-5 h-5" />
                 </a>
                 <Link

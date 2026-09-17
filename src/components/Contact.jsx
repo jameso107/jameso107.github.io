@@ -1,4 +1,4 @@
-import { CALENDLY_URL, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
+import { START_PROJECT_HREF, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
 
 export default function Contact({ 
   heading = "Ready to align your team around",
@@ -26,12 +26,10 @@ export default function Contact({
         
         <div className="flex flex-wrap items-center justify-center gap-4 animate-reveal" style={{ animationDelay: '0.1s' }}>
           <a 
-            href={CALENDLY_URL} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            href={START_PROJECT_HREF}
             className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
           >
-            Book a 30-min intro
+            Start a project
           </a>
         </div>
 

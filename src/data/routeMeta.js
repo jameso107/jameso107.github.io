@@ -24,8 +24,13 @@ export const ALTERNATE_NAMES = ['Syzygy Services', 'SYZYGY.services']
 export const POSITIONING =
   'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, we help owner-led companies across the Midwest and remote clients nationwide find, prototype, and implement the highest-return improvements in how they operate.'
 
-export const CALENDLY_URL = 'https://calendly.com/syzygy-intro/30min'
 export const CONTACT_EMAIL = 'james@syzygy.services'
+
+// The primary CTA. Every "Start a project" button opens a pre-addressed email
+// rather than a booking page, so the subject line lives here with the address.
+export const START_PROJECT_HREF = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+  'Start a project',
+)}`
 export const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/syzygy-services'
 
 // One number, three spellings: what people read, what tel: links dial, and

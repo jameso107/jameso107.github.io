@@ -28,13 +28,14 @@ export default function OpeningAnimation({ onComplete }) {
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#0b1020] transition-opacity duration-1000 ${showContent ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
       <div className="relative w-full h-full flex items-center justify-center">
-        {/* SYZYGY Text - centered */}
-        <div className={`absolute text-6xl md:text-8xl font-extrabold text-white transition-all duration-700 z-10 ${phase === 'complete' ? 'opacity-0 scale-90' : 'opacity-100'}`}>
-          <span className="inline-block tracking-tight">SYZYGY</span>
+        {/* Wordmark - sits above the orbs so the aligned logo reads as one lockup */}
+        <div className={`absolute text-6xl md:text-8xl font-extrabold text-white transition-all duration-700 z-10 -translate-y-[72px] md:-translate-y-[108px] ${phase === 'complete' ? 'opacity-0 scale-90' : 'opacity-100'}`}>
+          <span className="inline-block tracking-tight">syzygy</span>
         </div>
 
-        {/* Three Orbs Container - same orbs throughout entire animation */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* Three Orbs Container - same orbs throughout entire animation.
+            Nudged below center so the wordmark above it stays centered as a pair. */}
+        <div className="absolute inset-0 flex items-center justify-center translate-y-[24px] md:translate-y-[32px]">
           {/* Orb 1 - Left (White) - matches logo */}
           <div
             className={`absolute w-14 h-14 md:w-20 md:h-20 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.9)] ${

@@ -1,7 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import ShinyText from './ShinyText'
 import StarBorder from './StarBorder'
-import { CALENDLY_URL } from '../data/routeMeta'
+import { START_PROJECT_HREF } from '../data/routeMeta'
 
 // Lazy-load the WebGL background so the heavy `ogl` chunk is code-split out of the
 // main bundle and never competes with the opening animation on first paint.
@@ -87,9 +87,7 @@ export default function Hero({ enableBackground = true }) {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <StarBorder
               as="a"
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={START_PROJECT_HREF}
               color="#a78bfa"
               speed="5s"
               thickness={2}

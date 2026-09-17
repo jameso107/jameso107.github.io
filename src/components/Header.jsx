@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
-import { CALENDLY_URL } from '../data/routeMeta'
+import { START_PROJECT_HREF } from '../data/routeMeta'
 
 // Drives both the desktop nav and the mobile menu, so the two can't drift.
 // Trailing slashes match the canonical URLs GitHub Pages serves with a 200, so
@@ -48,9 +48,7 @@ export default function Header() {
             <div className="group-hover:scale-110 transition-transform duration-300">
               <Logo size="md" />
             </div>
-            <span className="font-semibold tracking-wide text-lg">
-              SYZYGY<span className="text-violet-400 bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">.services</span>
-            </span>
+            <span className="font-semibold tracking-wide text-lg">syzygy</span>
           </Link>
           <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm" aria-label="Primary">
             {navLinks.map((link) => (
@@ -64,9 +62,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={START_PROJECT_HREF}
               className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-5 py-2.5 font-medium text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50"
             >
               Start a Project
@@ -99,9 +95,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={START_PROJECT_HREF}
               onClick={() => setIsMenuOpen(false)}
               className="block py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
             >
