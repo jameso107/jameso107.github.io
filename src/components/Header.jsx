@@ -48,7 +48,7 @@ export default function Header() {
             <div className="group-hover:scale-110 transition-transform duration-300">
               <Logo size="md" />
             </div>
-            <span className="font-semibold tracking-wide text-lg">syzygy</span>
+            <span className="font-semibold tracking-wide text-lg">SYZYGY</span>
           </Link>
           <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm" aria-label="Primary">
             {navLinks.map((link) => (
