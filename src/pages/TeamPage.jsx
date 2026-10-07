@@ -107,7 +107,10 @@ export default function TeamPage() {
     { src: '/logos/michigan-medicine.png', alt: 'Michigan Medicine', title: 'Michigan Medicine' },
     { src: '/logos/nissan.png', alt: 'Nissan', title: 'Nissan' },
     { src: '/logos/lmcu.png', alt: 'Lake Michigan Credit Union', title: 'Lake Michigan Credit Union' },
-    { src: '/logos/abercrombie.png', alt: 'Abercrombie & Fitch', title: 'Abercrombie & Fitch' }
+    { src: '/logos/abercrombie.png', alt: 'Abercrombie & Fitch', title: 'Abercrombie & Fitch' },
+    { src: '/logos/dte-energy.png', alt: 'DTE Energy', title: 'DTE Energy' },
+    { src: '/logos/procter-gamble.png', alt: 'Procter & Gamble', title: 'Procter & Gamble' },
+    { src: '/logos/us-house.png', alt: 'U.S. House of Representatives', title: 'U.S. House of Representatives' }
   ]
 
   const structuredData = graph(
@@ -223,12 +226,12 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Companies We've Worked For */}
+      {/* Companies We Come From */}
       <section className="pb-24 -mt-12 relative">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-10 animate-reveal">
             <h2 className="text-2xl md:text-3xl font-bold text-white/90">
-              Companies We've <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Worked For</span>
+              Companies We <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Come From</span>
             </h2>
           </div>
           <div className="animate-reveal" style={{ animationDelay: '0.1s' }}>
@@ -242,7 +245,7 @@ export default function TeamPage() {
               scaleOnHover
               fadeOut
               fadeOutColor="#0b1020"
-              ariaLabel="Companies we've worked for"
+              ariaLabel="Companies we come from"
             />
           </div>
         </div>
