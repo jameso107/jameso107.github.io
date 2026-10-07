@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
-import { routeMeta, POSITIONING } from '../data/routeMeta'
+import { routeMeta } from '../data/routeMeta'
 import LogoLoop from '../components/LogoLoop'
 import SpotlightCard from '../components/SpotlightCard'
 import { graph, breadcrumbSchema, personSchema } from '../utils/structuredData'
@@ -12,7 +12,7 @@ export default function TeamPage() {
     {
       name: 'James Oosterhouse',
       role: 'Founder & CEO',
-      description: 'Leading Syzygy with a vision to align AI, people, and business for real-world impact.',
+      description: 'Leading Syzygy with a vision to align AI, people, and business for real-world impact, and heading up our security efforts.',
       image: '/james.jpg',
       linkedin: 'https://www.linkedin.com/in/james-oosterhouse/',
       gradient: 'from-violet-500 to-purple-600'
@@ -27,7 +27,7 @@ export default function TeamPage() {
     },
     {
       name: 'Hannah TerHaar',
-      role: 'Co-founder & Director of Marketing',
+      role: 'Co-founder & CMO',
       description: 'Shaping our brand and connecting with clients to communicate the value of AI alignment.',
       image: '/hannah.jpg',
       linkedin: 'https://www.linkedin.com/in/hannahterhaar/',
@@ -35,7 +35,7 @@ export default function TeamPage() {
     },
     {
       name: 'Ethan Franklin',
-      role: 'AI Engineer',
+      role: 'AI Engineering Lead',
       description: 'Building and implementing AI solutions to drive business value and innovation.',
       image: '/ethan.jpg',
       linkedin: 'https://www.linkedin.com/in/ethanmfranklin/',
@@ -43,7 +43,7 @@ export default function TeamPage() {
     },
     {
       name: 'Max Cooper',
-      role: 'AI Engineer',
+      role: 'AI Engineering Lead',
       description: 'Building and implementing AI solutions to drive business value and innovation.',
       image: '/max.jpg',
       linkedin: 'https://www.linkedin.com/in/cooper-maxwell/',
@@ -51,11 +51,43 @@ export default function TeamPage() {
     },
     {
       name: 'Kyle Cornell',
-      role: 'AI Engineer',
+      role: 'AI Engineering Lead',
       description: 'Building and implementing AI solutions to drive business value and innovation.',
       image: '/kyle.jpg',
       linkedin: 'https://www.linkedin.com/in/kylecornell04/',
       gradient: 'from-rose-500 to-pink-500'
+    },
+    {
+      name: 'Alexa Kahn',
+      role: 'AI Analyst',
+      description: 'Mapping client workflows and turning them into ROI-backed recommendations for where AI can help.',
+      image: '/alexa.jpg',
+      linkedin: 'https://www.linkedin.com/in/alexa-kahn-b19700284/',
+      gradient: 'from-fuchsia-500 to-pink-500'
+    },
+    {
+      name: 'Erin Jeong',
+      role: 'AI Analyst',
+      description: 'Mapping client workflows and turning them into ROI-backed recommendations for where AI can help.',
+      image: '/erin.jpg',
+      linkedin: 'https://www.linkedin.com/in/erinjng/',
+      gradient: 'from-teal-400 to-cyan-500'
+    },
+    {
+      name: 'Andrew Hernandez',
+      role: 'AI Analyst',
+      description: 'Mapping client workflows and turning them into ROI-backed recommendations for where AI can help.',
+      image: '/andrew.jpg',
+      linkedin: 'https://www.linkedin.com/in/an-hern/',
+      gradient: 'from-blue-500 to-indigo-500'
+    },
+    {
+      name: 'Rakesh Kottapalli',
+      role: 'AI Analyst',
+      description: 'Mapping client workflows and turning them into ROI-backed recommendations for where AI can help.',
+      image: '/rakesh.jpg',
+      linkedin: 'https://www.linkedin.com/in/rakeshkottapalli/',
+      gradient: 'from-yellow-400 to-amber-500'
     },
     {
       name: 'Colin Miller',
@@ -77,11 +109,6 @@ export default function TeamPage() {
     { src: '/logos/lmcu.png', alt: 'Lake Michigan Credit Union', title: 'Lake Michigan Credit Union' },
     { src: '/logos/abercrombie.png', alt: 'Abercrombie & Fitch', title: 'Abercrombie & Fitch' }
   ]
-
-  // Plain-text version of the logo loop below, so the employers are readable
-  // by anyone (and anything) that does not render images.
-  const priorEmployers = companyLogos.map((logo) => logo.title)
-  const priorEmployersSentence = `${priorEmployers.slice(0, -1).join(', ')}, and ${priorEmployers[priorEmployers.length - 1]}`
 
   const structuredData = graph(
     breadcrumbSchema([
@@ -110,12 +137,6 @@ export default function TeamPage() {
             </h1>
             <p className="text-lg text-slate-300/90 max-w-2xl mx-auto">
               Meet the University of Michigan experts behind Syzygy. We may be young, but we know AI.
-            </p>
-            <p className="mt-6 text-base text-slate-300/80 max-w-3xl mx-auto leading-relaxed">
-              {POSITIONING}
-            </p>
-            <p className="mt-4 text-base text-slate-300/80 max-w-3xl mx-auto leading-relaxed">
-              Before Syzygy, our team worked at {priorEmployersSentence}.
             </p>
           </div>
           

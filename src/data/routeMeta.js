@@ -20,7 +20,7 @@ export const LEGAL_NAME = 'Syzygy Services'
 export const ALTERNATE_NAMES = ['Syzygy Services', 'SYZYGY.services']
 
 // The entity definition. Mirrored verbatim in Organization.description, the
-// homepage, /team/, and llms.txt — keep every noun if you edit it.
+// homepage and llms.txt — keep every noun if you edit it.
 export const POSITIONING =
   'Syzygy is a consulting firm for small and mid-sized businesses that leads with AI. Based in Michigan, we help companies across the Midwest and remote clients nationwide find, prototype, and implement the highest-return improvements in how they operate.'
 
@@ -91,7 +91,7 @@ export const routeMeta = {
   '/team': {
     title: 'Meet Our AI Consultants',
     description:
-      'Meet the Syzygy team: James Oosterhouse (Founder & CEO), Christian Reinhardt (COO), Hannah TerHaar (Director of Marketing), and our AI engineers.',
+      'Meet the Syzygy team: James Oosterhouse (Founder & CEO), Christian Reinhardt (COO), Hannah TerHaar (CMO), and our AI engineers and analysts.',
     keywords:
       'AI consultants, AI consulting team, AI strategy consultants, AI implementation experts, Michigan AI consultants, Midwest AI consultants, University of Michigan',
     canonicalUrl: `${SITE_URL}/team/`,
