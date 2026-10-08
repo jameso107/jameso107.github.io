@@ -1,4 +1,5 @@
-import { START_PROJECT_HREF, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
+import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
+import ProjectForm from './ProjectForm'
 
 export default function Contact({ 
   heading = "Ready to align your team around",
@@ -24,13 +25,8 @@ export default function Contact({
           </p>
         </div>
         
-        <div className="flex flex-wrap items-center justify-center gap-4 animate-reveal" style={{ animationDelay: '0.1s' }}>
-          <a 
-            href={START_PROJECT_HREF}
-            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 px-6 py-4 font-semibold text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-300 shadow-xl shadow-violet-500/30 hover:shadow-violet-500/50 hover:scale-105"
-          >
-            Start a project
-          </a>
+        <div className="mx-auto max-w-3xl animate-reveal" style={{ animationDelay: '0.1s' }}>
+          <ProjectForm />
         </div>
 
         <p className="mt-8 text-center text-slate-400 animate-reveal" style={{ animationDelay: '0.15s' }}>

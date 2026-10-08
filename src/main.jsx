@@ -1,7 +1,11 @@
 import React from 'react'
 import { hydrateRoot, createRoot } from 'react-dom/client'
 import App from './App'
+import { captureFirstTouch } from './lib/attribution'
 import './index.css'
+
+// Where this visitor first came from, for the project form. Stays in the browser.
+captureFirstTouch()
 
 const container = document.getElementById('root')
 const app = (

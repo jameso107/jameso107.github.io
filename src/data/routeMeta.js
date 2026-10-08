@@ -26,9 +26,12 @@ export const POSITIONING =
 
 export const CONTACT_EMAIL = 'james@syzygy.services'
 
-// The primary CTA. Every "Start a project" button opens a pre-addressed email
-// rather than a booking page, so the subject line lives here with the address.
-export const START_PROJECT_HREF = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+// The primary CTA. Every "Start a project" button goes to the project form in
+// the Contact section of the homepage (ProjectForm.jsx), which files the
+// inquiry straight onto the pipeline in Homebase. The pre-addressed email is
+// kept for the "or email us" line beside the form.
+export const START_PROJECT_HREF = '/#contact'
+export const START_PROJECT_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
   'Start a project',
 )}`
 export const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/syzygy-services'
