@@ -94,9 +94,10 @@ export default function TeamPage() {
       role: 'AI Development Intern',
       description: 'Building the next generation of educational AI tools for Syzygy and our clients.',
       image: '/colin.jpg',
-      gradient: 'from-indigo-500 to-blue-600'
+      gradient: 'from-indigo-500 to-blue-600',
+      archived: true
     }
-  ]
+  ].filter((member) => !member.archived) // archived: true hides someone without deleting their entry
 
   const companyLogos = [
     { src: '/logos/capital-one.png', alt: 'Capital One', title: 'Capital One' },
