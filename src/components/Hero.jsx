@@ -1,6 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import ShinyText from './ShinyText'
 import StarBorder from './StarBorder'
+import CertificationBadge from './CertificationBadge'
 import { START_PROJECT_HREF } from '../data/routeMeta'
 
 // Lazy-load the interactive background so its `gsap` chunk is code-split out of
@@ -88,6 +89,10 @@ export default function Hero({ enableBackground = true }) {
             >
               Start a project
             </StarBorder>
+          </div>
+
+          <div className="pt-4">
+            <CertificationBadge />
           </div>
         </div>
       </div>
