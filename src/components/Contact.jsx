@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
+import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TAGLINE, PHONE_TEL_HREF } from '../data/routeMeta'
 import ProjectForm from './ProjectForm'
 
 export default function Contact({ 
@@ -29,7 +29,14 @@ export default function Contact({
           <ProjectForm />
         </div>
 
-        <p className="mt-8 text-center text-slate-400 animate-reveal" style={{ animationDelay: '0.15s' }}>
+        <p className="mt-8 text-center text-slate-300 animate-reveal" style={{ animationDelay: '0.15s' }}>
+          <a href={PHONE_TEL_HREF} className="font-semibold text-white underline-offset-4 hover:underline">
+            {PHONE_DISPLAY}
+          </a>
+          {' '}&middot; {PHONE_TAGLINE}
+        </p>
+
+        <p className="mt-3 text-center text-slate-400 animate-reveal" style={{ animationDelay: '0.15s' }}>
           Prefer to talk first? Call{' '}
           <a href={PHONE_TEL_HREF} className="font-semibold text-slate-200 hover:text-white underline-offset-4 hover:underline transition-colors duration-200">
             {PHONE_DISPLAY}

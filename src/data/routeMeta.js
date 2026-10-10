@@ -37,10 +37,13 @@ export const START_PROJECT_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURI
 export const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/syzygy-services'
 
 // One number, three spellings: what people read, what tel: links dial, and
-// the hyphenated international form schema.org expects in `telephone`.
-export const PHONE_DISPLAY = '(616) 403-0259'
-export const PHONE_TEL_HREF = 'tel:+16164030259'
-export const PHONE_INTERNATIONAL = '+1-616-403-0259'
+// the hyphenated international form schema.org expects in `telephone`. Since
+// 2026-10-10 it is the SYZYGY line, answered by syzygy sam, the AI assistant
+// that answers questions and books calls with James (Homebase's phone line).
+export const PHONE_DISPLAY = '(616) 796-6649'
+export const PHONE_TEL_HREF = 'tel:+16167966649'
+export const PHONE_INTERNATIONAL = '+1-616-796-6649'
+export const PHONE_TAGLINE = 'Call our AI assistant to answer your questions, schedule a call, and more!'
 
 export const DEFAULT_TITLE = `${BRAND} | AI Consulting for Small & Mid-Sized Businesses`
 export const DEFAULT_DESCRIPTION =
