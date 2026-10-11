@@ -90,6 +90,14 @@ export default function TeamPage() {
       gradient: 'from-yellow-400 to-amber-500'
     },
     {
+      name: 'Brenden Fogg',
+      role: 'AI Analyst',
+      description: 'Mapping client workflows and turning them into ROI-backed recommendations for where AI can help.',
+      image: '/brenden.jpg',
+      linkedin: 'https://www.linkedin.com/in/brendenfogg/',
+      gradient: 'from-lime-400 to-emerald-500'
+    },
+    {
       name: 'Colin Miller',
       role: 'AI Development Intern',
       description: 'Building the next generation of educational AI tools for Syzygy and our clients.',
