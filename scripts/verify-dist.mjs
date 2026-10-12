@@ -105,6 +105,17 @@ for (const file of realPages) {
     }
   }
 
+  // Internal links must name the canonical, slashed URL. GitHub Pages answers
+  // /team with a 301 to /team/, and Search Console lists every such link as
+  // "Page with redirect".
+  for (const [, href] of html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {
+    const path = href.startsWith(`${SITE_URL}/`) ? href.slice(SITE_URL.length) : href
+    if (!path.startsWith('/') || path.startsWith('//')) continue
+    const bare = path.split(/[?#]/)[0]
+    if (bare === '/' || bare.endsWith('/') || /\.[a-z0-9]+$/i.test(bare)) continue
+    fail(rel, `internal link lacks trailing slash: ${href}`)
+  }
+
   const robotsMatch = html.match(/<meta name="robots" content="([^"]+)"/)
   const robots = robotsMatch ? robotsMatch[1] : ''
   if (rel === 'case-studies/index.html' && !robots.includes('noindex')) fail(rel, 'case-studies must be noindex')
@@ -199,6 +210,7 @@ if (existsSync(join(dist, '404.html'))) {
   const notFound = readFileSync(join(dist, '404.html'), 'utf-8')
   if (!/<h1[\s>]/.test(notFound)) fail('404.html', 'missing <h1>')
   if (!notFound.includes('noindex')) fail('404.html', 'should be noindex')
+  if (/<link rel="canonical"/.test(notFound)) fail('404.html', 'must not declare a canonical')
 }
 
 // Report

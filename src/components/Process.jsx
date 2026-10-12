@@ -4,17 +4,17 @@ export default function Process() {
   const boxes = [
     {
       title: 'Our Process',
-      link: '/process',
+      link: '/process/',
       gradient: 'from-violet-500 to-purple-600',
     },
     {
       title: 'Our Pricing',
-      link: '/pricing',
+      link: '/pricing/',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       title: 'Our Team',
-      link: '/team',
+      link: '/team/',
       gradient: 'from-pink-400 to-rose-500',
     }
   ]

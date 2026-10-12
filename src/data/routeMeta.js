@@ -135,7 +135,9 @@ export const NOT_FOUND_META = {
   title: 'Page Not Found',
   description: 'That page does not exist. Head back to the Syzygy homepage or browse our insights.',
   keywords: '',
-  canonicalUrl: `${SITE_URL}/`,
+  // No canonical: a 404 is not a copy of the homepage, and pointing one there
+  // tells Google every unknown URL is a duplicate of it.
+  canonicalUrl: null,
   robots: 'noindex, follow',
 }
 
