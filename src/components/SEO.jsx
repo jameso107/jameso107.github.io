@@ -70,7 +70,8 @@ export default function SEO({
     description: description || DEFAULT_DESCRIPTION,
     keywords: keywords || '',
     image: ogImage || DEFAULT_IMAGE,
-    url: canonicalUrl || `${SITE_URL}/`,
+    // null means "no canonical" (the 404 page); anything else falls back to home.
+    url: canonicalUrl === null ? null : canonicalUrl || `${SITE_URL}/`,
     ogType,
     robots: robots || DEFAULT_ROBOTS,
   }
@@ -91,7 +92,8 @@ export default function SEO({
     setMeta('property', 'og:title', head.title)
     setMeta('property', 'og:description', head.description)
     setMeta('property', 'og:image', head.image)
-    setMeta('property', 'og:url', head.url)
+    if (head.url) setMeta('property', 'og:url', head.url)
+    else document.querySelector('meta[property="og:url"]')?.remove()
     setMeta('property', 'og:site_name', BRAND)
 
     setMeta('name', 'twitter:card', 'summary_large_image')
@@ -99,12 +101,16 @@ export default function SEO({
     setMeta('name', 'twitter:description', head.description)
     setMeta('name', 'twitter:image', head.image)
 
-    const canonical = upsertTag('link[rel="canonical"]', () => {
-      const node = document.createElement('link')
-      node.setAttribute('rel', 'canonical')
-      return node
-    })
-    canonical.setAttribute('href', head.url)
+    if (head.url) {
+      const canonical = upsertTag('link[rel="canonical"]', () => {
+        const node = document.createElement('link')
+        node.setAttribute('rel', 'canonical')
+        return node
+      })
+      canonical.setAttribute('href', head.url)
+    } else {
+      document.querySelector('link[rel="canonical"]')?.remove()
+    }
   }, [head.title, head.description, head.keywords, head.image, head.url, head.ogType, head.robots])
 
   const json = serializeStructuredData(structuredData)

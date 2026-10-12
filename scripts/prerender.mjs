@@ -106,12 +106,12 @@ function applyHead(html, head) {
   const title = escapeAttr(head.title)
   const description = escapeAttr(head.description)
   const social = [
-    `<link rel="canonical" href="${escapeAttr(head.url)}" />`,
+    ...(head.url ? [`<link rel="canonical" href="${escapeAttr(head.url)}" />`] : []),
     `<meta property="og:type" content="${escapeAttr(head.ogType || 'website')}" />`,
     `<meta property="og:title" content="${title}" />`,
     `<meta property="og:description" content="${description}" />`,
     `<meta property="og:image" content="${escapeAttr(head.image)}" />`,
-    `<meta property="og:url" content="${escapeAttr(head.url)}" />`,
+    ...(head.url ? [`<meta property="og:url" content="${escapeAttr(head.url)}" />`] : []),
     `<meta property="og:site_name" content="${escapeAttr(BRAND)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${title}" />`,
@@ -139,7 +139,8 @@ function renderRoute(path, fallbackMeta) {
     description: head.description || fallbackMeta?.description || '',
     keywords: head.keywords ?? fallbackMeta?.keywords ?? '',
     image: head.image || DEFAULT_IMAGE,
-    url: head.url || fallbackMeta?.canonicalUrl || `${SITE_URL}/`,
+    // null (the 404 page) means no canonical at all.
+    url: head.url === null || fallbackMeta?.canonicalUrl === null ? null : head.url || fallbackMeta?.canonicalUrl || `${SITE_URL}/`,
     ogType: head.ogType || fallbackMeta?.ogType || 'website',
     robots: head.robots || fallbackMeta?.robots || 'index, follow',
   }
