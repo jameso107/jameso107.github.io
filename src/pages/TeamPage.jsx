@@ -127,7 +127,9 @@ export default function TeamPage() {
     { src: '/logos/abercrombie.png', alt: 'Abercrombie & Fitch', title: 'Abercrombie & Fitch' },
     { src: '/logos/dte-energy.png', alt: 'DTE Energy', title: 'DTE Energy' },
     { src: '/logos/procter-gamble.png', alt: 'Procter & Gamble', title: 'Procter & Gamble' },
-    { src: '/logos/us-house.png', alt: 'U.S. House of Representatives', title: 'U.S. House of Representatives' }
+    { src: '/logos/us-house.png', alt: 'U.S. House of Representatives', title: 'U.S. House of Representatives' },
+    { src: '/logos/cisco.png', alt: 'Cisco', title: 'Cisco' },
+    { src: '/logos/chick-fil-a.png', alt: 'Chick-fil-A', title: 'Chick-fil-A' }
   ]
 
   const structuredData = graph(
