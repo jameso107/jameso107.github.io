@@ -5,7 +5,6 @@ import Hero from '../components/Hero'
 import Definition from '../components/Definition'
 import Services from '../components/Services'
 import Results from '../components/Results'
-import Process from '../components/Process'
 import InsightsStrip from '../components/InsightsStrip'
 import FAQ from '../components/FAQ'
 import Contact from '../components/Contact'
@@ -107,7 +106,6 @@ export default function HomePage() {
           <Definition />
           <Services />
           <Results />
-          <Process />
           <InsightsStrip />
           <FAQ items={homeFaq} />
           <Contact />

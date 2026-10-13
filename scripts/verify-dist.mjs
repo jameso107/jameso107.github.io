@@ -9,9 +9,9 @@
 //   - an absolute og:image URL whose file exists in dist/
 //   - at least one <script type="application/ld+json"> and every block parses
 // Plus: sitemap.xml lists the homepage, every static route and every insights
-// article, and no /blog/ or /case-studies/ URLs; every Markdown article in
-// src/content/insights/ produced a page (none skipped); /case-studies/ carries
-// noindex; the /blog/ stubs redirect to live pages; llms.txt, robots.txt,
+// article, and no /blog/ or archived URLs; every Markdown article in
+// src/content/insights/ produced a page (none skipped); the archived pages
+// (/case-studies/, /process/) carry noindex; the /blog/ stubs redirect to live pages; llms.txt, robots.txt,
 // CNAME, favicon.png and og-image.png exist.
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'fs'
@@ -25,7 +25,11 @@ const SITE_URL = 'https://syzygy.services'
 
 // Indexable routes that must always be in the sitemap (in addition to the
 // articles, which are discovered from dist/).
-const STATIC_ROUTES = ['/', '/process/', '/pricing/', '/team/', '/careers/', '/insights/']
+const STATIC_ROUTES = ['/', '/pricing/', '/team/', '/careers/', '/insights/']
+
+// Pages still built and reachable, but kept out of the nav, the sitemap and
+// the index.
+const ARCHIVED_PAGES = ['case-studies/index.html', 'process/index.html']
 
 const failures = []
 const fail = (file, message) => failures.push(`${file}: ${message}`)
@@ -118,8 +122,9 @@ for (const file of realPages) {
 
   const robotsMatch = html.match(/<meta name="robots" content="([^"]+)"/)
   const robots = robotsMatch ? robotsMatch[1] : ''
-  if (rel === 'case-studies/index.html' && !robots.includes('noindex')) fail(rel, 'case-studies must be noindex')
-  if (rel !== 'case-studies/index.html' && robots.includes('noindex')) fail(rel, `unexpected noindex: ${robots}`)
+  const archived = ARCHIVED_PAGES.includes(rel)
+  if (archived && !robots.includes('noindex')) fail(rel, 'archived page must be noindex')
+  if (!archived && robots.includes('noindex')) fail(rel, `unexpected noindex: ${robots}`)
 
   // Legacy blog links must not survive anywhere in the app markup.
   if (/href="\/blog(\/|")/.test(rootHtml)) fail(rel, 'links to legacy /blog/ URL')
@@ -175,7 +180,10 @@ else {
   const sitemap = readFileSync(sitemapPath, 'utf-8')
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
   if (locs.some((loc) => loc.includes('/blog'))) fail('sitemap.xml', 'contains a /blog/ URL')
-  if (locs.some((loc) => loc.includes('/case-studies'))) fail('sitemap.xml', 'contains /case-studies/')
+  for (const page of ARCHIVED_PAGES) {
+    const url = `${SITE_URL}/${page.replace(/index\.html$/, '')}`
+    if (locs.includes(url)) fail('sitemap.xml', `contains archived ${url}`)
+  }
   if (locs.some((loc) => !loc.endsWith('/'))) fail('sitemap.xml', 'a URL lacks a trailing slash')
   if (sitemap.includes('<lastmod>')) fail('sitemap.xml', 'contains <lastmod> without a real value source')
   for (const route of STATIC_ROUTES) {

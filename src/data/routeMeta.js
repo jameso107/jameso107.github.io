@@ -69,6 +69,8 @@ export const routeMeta = {
       'AI consulting, AI consulting for small business, consulting firm for small and mid-sized businesses, AI consulting Michigan, AI consulting Midwest, AI audit, AI implementation, business process automation, operations consulting, technology strategy',
     canonicalUrl: `${SITE_URL}/`,
   },
+  // Archived: out of the nav and the sitemap, but the URL still resolves for
+  // the articles that link to it.
   '/process': {
     title: 'Our AI Consulting Process',
     description:
@@ -76,6 +78,7 @@ export const routeMeta = {
     keywords:
       'AI consulting process, AI audit process, AI prototype sprint, AI implementation process, AI consulting methodology, Michigan AI consulting, Midwest AI consulting',
     canonicalUrl: `${SITE_URL}/process/`,
+    robots: 'noindex, follow',
   },
   '/case-studies': {
     title: 'AI Case Studies & Client Results',
@@ -89,9 +92,9 @@ export const routeMeta = {
   '/pricing': {
     title: 'AI Consulting Services & Pricing',
     description:
-      'Syzygy services for small and mid-sized businesses: AI Audit & Prototyping from $3,000, AI Implementation scoped per project, Ongoing Partnership from $2,000 a month, and Technology Consulting.',
+      'Syzygy services for small and mid-sized businesses: AI Training from $2,000, AI Audit from $4,000, Ongoing Partnership from $1,000 a month, Custom Tools & Builds, and Technology Consulting.',
     keywords:
-      'AI consulting pricing, AI audit cost, AI implementation cost, AI consulting rates, fractional technology leadership, small business AI consulting, Michigan AI consulting',
+      'AI consulting pricing, AI training cost, AI workshops for teams, AI audit cost, custom AI tools, AI consulting rates, fractional technology leadership, small business AI consulting, Michigan AI consulting',
     canonicalUrl: `${SITE_URL}/pricing/`,
   },
   '/team': {

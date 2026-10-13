@@ -24,7 +24,7 @@ faq:
 cta:
   service: "audit"
   heading: "How Syzygy helps"
-  body: "Syzygy prices every engagement against a defined scope and deliverable, starting with an AI Audit & Prototyping engagement that tells you where the return is before you spend on a build. Book an intro call and we will walk through what your situation would cost."
+  body: "Syzygy prices every engagement against a defined scope and deliverable, starting with an AI Audit that tells you where the return is before you spend on a build. Book an intro call and we will walk through what your situation would cost."
 related: ["what-an-ai-consultant-does", "fractional-technology-partner", "measuring-ai-roi"]
 ---
 
@@ -110,7 +110,7 @@ A responsible consultant will estimate these for you. An unusually low quote oft
 
 ## Where Syzygy fits
 
-Syzygy's engagements follow the diagnostic-first sequence described above, and the pricing is structured so that each step is a small bet. AI Audit & Prototyping engagements start at $3,000 and typically run two to four weeks. Design & Prototype engagements typically run $6,000 to $8,000 over four to six weeks. Implementation is scoped per project and typically runs eight to twelve weeks or more, depending on integration depth. Ongoing Partnership retainers start from $2,000 per month. Every quote states deliverables, assumptions, exclusions, and how results will be measured, so you can run the seven-question comparison against it. Details are on the [pricing page](/pricing/).
+Syzygy's engagements follow the diagnostic-first sequence described above, and the pricing is structured so that each step is a small bet. AI Training starts at $2,000, and the AI Audit starts at $4,000 and typically runs two to four weeks. Custom tools and builds are quoted after the audit, once the scope is known, and Ongoing Partnership retainers start at $1,000 per month. Every quote states deliverables, assumptions, exclusions, and how results will be measured, so you can run the seven-question comparison against it. Details are on the [pricing page](/pricing/).
 
 ## A worked example
 

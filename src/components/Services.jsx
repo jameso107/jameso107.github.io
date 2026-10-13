@@ -20,7 +20,7 @@ export default function Services() {
               What we do
             </h2>
             <p className="text-lg text-slate-300/90 leading-relaxed mb-6">
-              Four ways to work with Syzygy. Pick the entry point that matches your risk tolerance and timeline; most clients start with an audit, prove the value with a prototype, then scale.
+              Most teams start with hands-on training, an audit of how the business runs, or both. From there we build the tools that pay off and stay on as a partner if you want us.
             </p>
             <Link
               to="/pricing/"
@@ -54,7 +54,10 @@ export default function Services() {
               <SpotlightCard
                 key={service.id}
                 spotlightColor="rgba(167, 139, 250, 0.18)"
-                className="group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal flex flex-col"
+                className={`group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal flex flex-col ${
+                  // An odd card out takes the full row of the two-column grid.
+                  services.length % 2 === 1 && idx === services.length - 1 ? 'md:col-span-2' : ''
+                }`}
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {/* Gradient glow */}

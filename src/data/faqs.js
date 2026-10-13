@@ -1,4 +1,4 @@
-// Visible FAQ copy for the homepage, /process/ and /pricing/. Each list is
+// Visible FAQ copy for the homepage, /pricing/ and the archived /process/. Each list is
 // rendered as real text by <FAQ /> and mirrored into FAQPage structured data,
 // so the answers here are the answers crawlers see. Pricing figures match
 // `pricing` in data/services.js; change them in both places.
@@ -18,15 +18,15 @@ export const homeFaq = [
   },
   {
     q: 'How does an engagement start?',
-    a: 'With a Discovery Audit that takes 2–4 weeks and ends in a prioritized roadmap. From there most clients move into Design and Prototype (4–6 weeks) to test the highest-return idea on real work, then Build and Implement (8–12 weeks) to put it into production.',
+    a: 'With a short call to learn about your team and what you want from AI. Then we pick the right fit, usually hands-on AI training, an AI Audit, or both, and set the plan. Most engagements take three to six weeks, and custom builds or an Ongoing Partnership can follow if you want them.',
   },
   {
     q: 'How long does an AI audit take?',
-    a: 'Two to four weeks. It includes stakeholder interviews, workflow and process analysis, a review of your data and technology stack, and a written ROI opportunity analysis with a 90-day roadmap.',
+    a: 'Typically two to four weeks. It includes interviews with your team, a map of how work moves through the business, where AI fits and what to buy versus build, a data safety check, and a prioritized action plan we walk through with you live.',
   },
   {
     q: 'How much does an AI audit cost?',
-    a: 'AI Audit & Prototyping engagements start at $3,000 and typically take two to four weeks. The Design and Prototype phase that follows typically runs $6,000–$8,000 over four to six weeks, and every engagement is quoted individually after an intro call.',
+    a: 'The AI Audit starts at $4,000 and typically takes two to four weeks. Paired with AI Playbook Training, the package starts at $6,500, which saves $1,000. Prices assume a typical small team and adjust for larger groups, and every engagement is quoted individually after an intro call.',
   },
   {
     q: 'Do you work with companies that have no IT staff?',
@@ -56,15 +56,15 @@ export const processFaq = [
 export const pricingFaq = [
   {
     q: 'How is a Syzygy engagement priced?',
-    a: 'Each engagement is quoted individually after an intro call, based on the scope and the systems involved. AI Audit & Prototyping starts at $3,000, the Design and Prototype phase typically runs $6,000–$8,000, AI Implementation is scoped per project, and the Ongoing Partnership is from $2,000 per month. Each phase is scoped on its own, so you can start with the audit and decide on the next step once you have seen the results.',
+    a: 'Each engagement is quoted individually after an intro call, and the prices on this page are starting rates for a typical small team. AI Training starts at $2,000, the AI Audit at $4,000, the Audit + AI Playbook Training package at $6,500, and the Ongoing Partnership at $1,000 per month. Custom Tools & Builds are quoted after the audit, once we know what to build. Each engagement is scoped on its own, so you decide on the next step once you have seen the results.',
   },
   {
     q: 'How much does an AI audit cost?',
-    a: 'AI Audit & Prototyping engagements start at $3,000 and typically take two to four weeks. If you continue into Design and Prototype, that phase typically runs $6,000–$8,000 over four to six weeks.',
+    a: 'The AI Audit starts at $4,000 and typically takes two to four weeks. Paired with AI Playbook Training, the package starts at $6,500, which saves $1,000, because the audit tells us exactly what to teach.',
   },
   {
-    q: 'What is included in AI Audit & Prototyping?',
-    a: 'Discovery sessions with your team, an ROI and feasibility analysis, an internal and external audit of your processes and data, and a functional prototype of the highest-return opportunity. The audit takes 2–4 weeks and the prototype 4–6 weeks.',
+    q: 'What is included in AI training?',
+    a: 'AI Essentials Training is a short pre-call and two live, hands-on workshops of 60 to 90 minutes each, with a one-page cheat sheet, a starter prompt library built for your industry, and two weeks of email support. AI Playbook Training adds short interviews with your team, three workshops over about four weeks, a custom AI Playbook with a full prompt library, two or three reusable AI tools set up for your work, and 30 days of support.',
   },
   {
     q: 'What do you need from us to get started?',
@@ -72,6 +72,6 @@ export const pricingFaq = [
   },
   {
     q: 'What happens after the engagement ends?',
-    a: 'You keep the production system along with complete documentation and training materials, so your team can run it. Many clients continue with an Ongoing Partnership for iterations, support, and strategy; others come back for the next opportunity on their roadmap.',
+    a: 'You keep everything we leave behind: playbooks, prompt libraries, tools, and documentation your team keeps using. Many clients continue with an Ongoing Partnership for a biweekly advising call and research on new tools; others come back for a custom build from their audit’s action plan.',
   },
 ]

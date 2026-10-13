@@ -38,4 +38,4 @@ export {
   renderTitle,
 } from './data/routeMeta'
 export { getAllInsights, getSkippedInsights } from './data/insights'
-export { services, processSteps, PRICING_MODEL } from './data/services'
+export { services, bundle, PRICING_MODEL } from './data/services'
