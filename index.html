@@ -16,15 +16,19 @@
   <link rel="apple-touch-icon" href="/favicon.png" />
   <script>
     // Homepage intro: the page content is real HTML (crawlers read it), so on a
-    // first visit this hides it before first paint until React mounts the
-    // opening animation. Skipped when the intro already played this session or
-    // the visitor prefers reduced motion. HomePage.jsx removes the class.
+    // first visit this covers it before first paint until the opening animation
+    // has drawn its first frame. Skipped when the intro already played this
+    // session or the visitor prefers reduced motion. HomePage.jsx removes the
+    // class; the timeout is a backstop so the page can't stay covered if the
+    // app never starts.
     (function () {
       try {
         if (location.pathname !== '/') return;
         if (sessionStorage.getItem('openingAnimationShown')) return;
         if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        document.documentElement.classList.add('intro-pending');
+        var html = document.documentElement;
+        html.classList.add('intro-pending');
+        setTimeout(function () { html.classList.remove('intro-pending'); }, 6000);
       } catch (e) { /* storage blocked: show the page */ }
     })();
   </script>

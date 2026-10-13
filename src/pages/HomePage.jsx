@@ -43,29 +43,39 @@ const releaseIntro = () => {
   if (typeof document !== 'undefined') document.documentElement.classList.remove(INTRO_PENDING_CLASS)
 }
 
+// Intro phase → classes on .site-shell, which the intro rules in index.css key
+// off. 'off' is the server render, repeat visits and reduced motion; a first
+// visit runs 'playing' → 'revealed' (hero copy rises in) → 'done' (the header
+// logo and hero grid take over from the animation at the same pixels).
+const SHELL_CLASS = {
+  off: 'animate-reveal',
+  playing: 'intro-playing',
+  revealed: 'intro-playing intro-revealed',
+  done: 'intro-revealed intro-done',
+}
+
 export default function HomePage() {
-  // Both start false on the server and on the client, so the prerendered HTML
-  // (full page content, visible) hydrates cleanly. The intro decision is made
-  // in a layout effect immediately afterwards. index.html carries an inline
-  // script that hides `.site-shell` until then on a first visit.
-  const [showSite, setShowSite] = useState(false)
-  const [shouldShowAnimation, setShouldShowAnimation] = useState(false)
+  // Starts 'off' on the server and on the client, so the prerendered HTML (full
+  // page content, visible) hydrates cleanly. The intro decision is made in a
+  // layout effect immediately afterwards. On a first visit, index.html has
+  // already covered the page with an inline script until the intro's first
+  // frame is up.
+  const [intro, setIntro] = useState('off')
 
   useClientLayoutEffect(() => {
     // Only play the intro once per session, and never for visitors who prefer
     // reduced motion.
     if (introAlreadyShown() || prefersReducedMotion()) {
-      setShowSite(true)
       releaseIntro()
     } else {
-      setShouldShowAnimation(true)
+      setIntro('playing')
     }
   }, [])
 
-  const handleAnimationComplete = useCallback(() => {
-    setShowSite(true)
-    // Land at the very top when the site reveals after the intro animation
-    window.scrollTo(0, 0)
+  const handleReveal = useCallback(() => setIntro('revealed'), [])
+
+  const handleComplete = useCallback(() => {
+    setIntro('done')
     // Mark animation as shown only after it completes
     try {
       sessionStorage.setItem(INTRO_KEY, 'true')
@@ -85,13 +95,15 @@ export default function HomePage() {
   return (
     <div className="gradient min-h-screen text-slate-200 selection:bg-violet-300/30 selection:text-white">
       <SEO {...routeMeta['/']} structuredData={structuredData} />
-      {shouldShowAnimation && !showSite && (
-        <OpeningAnimation onComplete={handleAnimationComplete} />
+      {(intro === 'playing' || intro === 'revealed') && (
+        <OpeningAnimation onStart={releaseIntro} onReveal={handleReveal} onComplete={handleComplete} />
       )}
-      <div className={`site-shell ${showSite ? 'animate-reveal' : shouldShowAnimation ? 'opacity-0' : 'animate-reveal'}`}>
+      {/* `isolate` keeps the hero's -z-10 background layers above the page
+          gradient whatever animation class the shell carries. */}
+      <div className={`site-shell isolate ${SHELL_CLASS[intro]}`}>
         <Header />
         <main>
-          <Hero enableBackground={showSite} />
+          <Hero />
           <Definition />
           <Services />
           <Results />

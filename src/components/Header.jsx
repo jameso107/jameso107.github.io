@@ -45,12 +45,14 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
         <div className={`glass rounded-2xl shadow-lg flex items-center justify-between p-3 transition-all duration-300 ${scrolled ? 'border-white/20 shadow-2xl' : ''}`}>
           <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3 group" aria-label="Syzygy home">
-            <div className="group-hover:scale-110 transition-transform duration-300">
+            {/* data-intro-*: the homepage opening animation flies its bodies
+                onto this logo, then fades the rest of the bar in. */}
+            <div data-intro-logo className="group-hover:scale-110 transition-transform duration-300">
               <Logo size="md" />
             </div>
-            <span className="font-semibold tracking-wide text-lg">SYZYGY</span>
+            <span data-intro-fade className="font-semibold tracking-wide text-lg">SYZYGY</span>
           </Link>
-          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm" aria-label="Primary">
+          <nav data-intro-fade className="hidden md:flex items-center gap-5 lg:gap-6 text-sm" aria-label="Primary">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -69,6 +71,7 @@ export default function Header() {
             </a>
           </nav>
           <button 
+            data-intro-fade
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden inline-flex size-10 items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-200" 
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

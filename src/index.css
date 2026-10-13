@@ -3,10 +3,60 @@
 @tailwind utilities;
 
 /* Homepage intro: index.html adds this class before first paint on a first
-   visit so the prerendered content stays hidden until React mounts the
-   opening animation. HomePage.jsx removes it. */
-html.intro-pending .site-shell {
+   visit, so the prerendered page sits under a cover in the intro's deep-space
+   colour until the opening animation has drawn its first frame. HomePage.jsx
+   removes it. */
+html.intro-pending body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #05070f;
+}
+
+/* While the intro plays (classes on .site-shell, set by HomePage.jsx) the
+   header logo, header text, hero copy and hero grid are hidden. The animation
+   flies its bodies onto the logo and settles its stars onto the grid, then
+   the real ones appear in their place. */
+.intro-playing [data-intro-logo],
+.intro-playing [data-intro-grid] {
   visibility: hidden;
+}
+
+.intro-playing [data-intro-fade] {
+  opacity: 0;
+}
+
+.intro-done [data-intro-fade] {
+  animation: intro-fade-in 0.5s ease both;
+}
+
+/* The grid shows at full strength straight away: the stars have already
+   faded down to exactly its dots. */
+.intro-playing [data-intro-grid],
+.intro-done [data-intro-grid] {
+  animation: none;
+  opacity: 0.7;
+}
+
+.intro-playing [data-intro-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.intro-revealed [data-intro-reveal] {
+  animation: intro-reveal 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--intro-step, 0) * 80ms);
+}
+
+@keyframes intro-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes intro-reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
 }
 
 /* Article body (Markdown output from plugins/markdown.js) */
@@ -265,114 +315,6 @@ body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* Orbiting animations - orbs orbit around center */
-@keyframes orbit-1 {
-  0% {
-    transform: rotate(0deg) translateX(120px) rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg) translateX(120px) rotate(-360deg);
-  }
-}
-
-@keyframes orbit-2 {
-  0% {
-    transform: rotate(120deg) translateX(140px) rotate(-120deg);
-  }
-  100% {
-    transform: rotate(480deg) translateX(140px) rotate(-480deg);
-  }
-}
-
-@keyframes orbit-3 {
-  0% {
-    transform: rotate(240deg) translateX(130px) rotate(-240deg);
-  }
-  100% {
-    transform: rotate(600deg) translateX(130px) rotate(-600deg);
-  }
-}
-
-.animate-orbit-1 {
-  animation: orbit-1 3s linear infinite;
-}
-
-.animate-orbit-2 {
-  animation: orbit-2 3.5s linear infinite;
-}
-
-.animate-orbit-3 {
-  animation: orbit-3 4s linear infinite;
-}
-
-/* Smooth alignment animations - transition from orbit to aligned position */
-/* Calculated positions at exactly 2 seconds:
-   Orb 1: 3s cycle, at 2s = 0.667 cycles = 240deg from start (0deg)
-   Orb 2: 3.5s cycle, at 2s = 0.571 cycles = 205.7deg from start (120deg) = 325.7deg total
-   Orb 3: 4s cycle, at 2s = 0.5 cycles = 180deg from start (240deg) = 60deg total (420deg - 360deg)
-*/
-@keyframes align-left {
-  0% {
-    /* Orb 1 at 2s: 240deg position */
-    transform: rotate(240deg) translateX(120px) rotate(-240deg);
-  }
-  100% {
-    transform: translateX(-44px) translateY(0);
-  }
-}
-
-@keyframes align-center {
-  0% {
-    /* Orb 2 at 2s: 325.7deg position */
-    transform: rotate(325.7deg) translateX(140px) rotate(-325.7deg);
-  }
-  100% {
-    transform: translateX(0) translateY(0) scale(1);
-  }
-}
-
-@keyframes align-right {
-  0% {
-    /* Orb 3 at 2s: 60deg position (240deg start + 180deg progress - 360deg wrap) */
-    transform: rotate(60deg) translateX(130px) rotate(-60deg);
-  }
-  100% {
-    transform: translateX(44px) translateY(0);
-  }
-}
-
-@media (min-width: 768px) {
-  @keyframes align-left {
-    0% {
-      transform: rotate(240deg) translateX(120px) rotate(-240deg);
-    }
-    100% {
-      transform: translateX(-62px) translateY(0);
-    }
-  }
-  
-  @keyframes align-right {
-    0% {
-      transform: rotate(60deg) translateX(130px) rotate(-60deg);
-    }
-    100% {
-      transform: translateX(62px) translateY(0);
-    }
-  }
-}
-
-.animate-align-left {
-  animation: align-left 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.animate-align-center {
-  animation: align-center 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.animate-align-right {
-  animation: align-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -438,7 +380,7 @@ body {
   animation: gradient-pan 6s linear infinite;
 }
 
-/* Hero background fade-in (mounts after the opening animation) */
+/* Hero background fade-in (repeat visits; after the intro the grid appears directly) */
 @keyframes hero-bg-in {
   from { opacity: 0; }
   to { opacity: 0.7; }

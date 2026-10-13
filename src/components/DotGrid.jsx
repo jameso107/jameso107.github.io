@@ -1,7 +1,9 @@
 // Vendored from React Bits (reactbits.dev) — DotGrid, JS + CSS variant.
 // Kept close to upstream so it stays upgradable; the only local changes are the
-// dropped 'use client' directive (this is Vite, not Next) and null guards on the
-// canvas ref so the window listeners can't throw while the hero unmounts.
+// dropped 'use client' directive (this is Vite, not Next), null guards on the
+// canvas ref so the window listeners can't throw while the hero unmounts, and a
+// pointer that starts off-canvas, so no corner of the grid glows before the
+// cursor has moved (the homepage intro hands over to a perfectly still grid).
 //
 // Mounted client-side only (see Hero.jsx): it registers a GSAP plugin at module
 // scope and draws to a canvas, neither of which belongs in the prerendered HTML.
@@ -53,8 +55,8 @@ const DotGrid = ({
   const canvasRef = useRef(null);
   const dotsRef = useRef([]);
   const pointerRef = useRef({
-    x: 0,
-    y: 0,
+    x: -1e4,
+    y: -1e4,
     vx: 0,
     vy: 0,
     speed: 0,

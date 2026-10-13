@@ -40,14 +40,14 @@ export default function Logo({ size = 'md' }) {
 
   return (
     <div className={`relative ${s.container} flex items-center justify-center overflow-visible`}>
-      {/* Orb 1 - Left (White) */}
-      <div className={`absolute ${s.left} rounded-full bg-white ${s.leftShadow}`} />
+      {/* Orb 1 - Left (White). data-orb: landing spots for the opening animation */}
+      <div data-orb="white" className={`absolute ${s.left} rounded-full bg-white ${s.leftShadow}`} />
       
       {/* Orb 2 - Center (Violet/Purple) */}
-      <div className={`absolute ${s.center} rounded-full bg-gradient-to-br from-violet-500 to-purple-600 ${s.centerShadow}`} />
+      <div data-orb="violet" className={`absolute ${s.center} rounded-full bg-gradient-to-br from-violet-500 to-purple-600 ${s.centerShadow}`} />
       
       {/* Orb 3 - Right (Sky Blue) */}
-      <div className={`absolute ${s.right} rounded-full bg-gradient-to-br from-sky-400 to-sky-600 ${s.rightShadow}`} />
+      <div data-orb="sky" className={`absolute ${s.right} rounded-full bg-gradient-to-br from-sky-400 to-sky-600 ${s.rightShadow}`} />
     </div>
   )
 }
