@@ -58,6 +58,14 @@ export default function TeamPage() {
       gradient: 'from-rose-500 to-pink-500'
     },
     {
+      name: 'Evan Aeschliman',
+      role: 'Sales Engineer',
+      description: 'Working with prospective clients to understand how they operate and scope the AI solutions that fit.',
+      image: '/evan.jpg',
+      linkedin: 'https://www.linkedin.com/in/evanaeschliman/',
+      gradient: 'from-red-400 to-orange-500'
+    },
+    {
       name: 'Alexa Kahn',
       role: 'AI Analyst',
       description: 'Mapping client workflows and turning them into ROI-backed recommendations for where AI can help.',
