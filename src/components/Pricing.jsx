@@ -140,7 +140,7 @@ export default function Pricing() {
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500 max-w-3xl mx-auto">
-          Prices are starting rates for a typical small team and adjust for larger groups. Every engagement is quoted individually after an intro call.
+          Every engagement is quoted individually after an intro call, scaled to the size of your team and the scope of the work.
         </p>
       </div>
     </section>

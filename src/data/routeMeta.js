@@ -92,7 +92,7 @@ export const routeMeta = {
   '/pricing': {
     title: 'AI Consulting Services & Pricing',
     description:
-      'Syzygy services for small and mid-sized businesses: AI Training from $2,000, AI Audit from $4,000, Ongoing Partnership from $1,000 a month, Custom Tools & Builds, and Technology Consulting.',
+      'Syzygy services for small and mid-sized businesses: AI Training, the AI Audit, an Ongoing Partnership, Custom Tools & Builds, and Technology Consulting. Every engagement is quoted after an intro call.',
     keywords:
       'AI consulting pricing, AI training cost, AI workshops for teams, AI audit cost, custom AI tools, AI consulting rates, fractional technology leadership, small business AI consulting, Michigan AI consulting',
     canonicalUrl: `${SITE_URL}/pricing/`,

@@ -6,12 +6,12 @@
 // structured data, the article CTA cards (frontmatter `cta.service` maps onto
 // `id` via CTA_SERVICE_MAP), and the generated llms.txt.
 //
-// `pricing` holds the owner-confirmed figures, published as starting rates.
-// `headline` and `detail` are the visible copy on the pricing card; `offers`
-// feeds Service.offers in the structured data and holds numbers only
-// (minPrice / maxPrice in USD, optional unitText for recurring fees). A
-// service without a published number gets an empty `offers` list rather than
-// a "Quoted after the audit" string, which schema.org would reject as a price.
+// `pricing` holds the visible copy on the pricing card (`headline`, `detail`).
+// Prices are no longer published: every engagement is quoted after an intro
+// call. `offers` feeds Service.offers in the structured data and holds numbers
+// only (minPrice / maxPrice in USD, optional unitText for recurring fees); it
+// stays empty while no figures are published, since a "Contact for quote"
+// string would be rejected by schema.org as a price.
 
 export const services = [
   {
@@ -23,12 +23,9 @@ export const services = [
       'Live, hands-on workshops built on your own documents, jobs, and questions, so your team leaves using AI on real work instead of figuring it out alone.',
     length: 'Essentials 2 workshops · Playbook about 4 weeks',
     pricing: {
-      headline: 'Starting at $2,000',
-      detail: 'AI Essentials Training from $2,000. AI Playbook Training from $3,500.',
-      offers: [
-        { name: 'AI Essentials Training', minPrice: 2000 },
-        { name: 'AI Playbook Training', minPrice: 3500 },
-      ],
+      headline: 'Contact for quote',
+      detail: 'AI Essentials Training or AI Playbook Training, scaled to the size of your team.',
+      offers: [],
     },
     features: [
       'Essentials: two live workshops, a cheat sheet, and a starter prompt library',
@@ -48,12 +45,9 @@ export const services = [
       'We interview your team and map how work actually moves through the business, then show you where AI fits, what to buy versus build, and the order to do it in.',
     length: 'Typically 2–4 weeks',
     pricing: {
-      headline: 'Starting at $4,000',
-      detail: 'Pair it with AI Playbook Training from $6,500 and save $1,000.',
-      offers: [
-        { name: 'AI Audit', minPrice: 4000 },
-        { name: 'Audit + AI Playbook Training', minPrice: 6500 },
-      ],
+      headline: 'Contact for quote',
+      detail: 'Pair it with AI Playbook Training for a package discount.',
+      offers: [],
     },
     features: [
       'Interviews with your team',
@@ -74,9 +68,9 @@ export const services = [
       'A standing advisor once the first engagement wraps: a biweekly call, a shared doc for your team’s questions, and research on the new tools worth your attention.',
     length: 'Month to month',
     pricing: {
-      headline: 'Starting at $1,000/month',
+      headline: 'Contact for quote',
       detail: 'Month to month, scaled to how much support your team wants.',
-      offers: [{ name: 'Ongoing Partnership', minPrice: 1000, unitText: 'MONTH' }],
+      offers: [],
     },
     features: [
       'Biweekly advising call',
@@ -132,12 +126,12 @@ export const services = [
 ]
 
 // The Audit + AI Playbook Training package, the "Most popular" card on
-// /pricing/. Its price is also an offer on the audit service above.
+// /pricing/.
 export const bundle = {
   id: 'audit-training',
   title: 'Audit + AI Playbook Training',
-  headline: 'Starting at $6,500',
-  savings: 'Save $1,000',
+  headline: 'Contact for quote',
+  savings: 'Package discount',
   description:
     'The audit tells us exactly what to teach, so the training lands faster. You get everything in both.',
   gradient: 'from-violet-500 to-sky-500',
@@ -156,10 +150,10 @@ export const CTA_SERVICE_MAP = {
   partnership: 'partnership',
 }
 
-// One-paragraph version of the figures above, for llms.txt and anywhere else
-// the pricing model has to be stated in prose. Keep in step with `pricing`.
+// One-paragraph version of the pricing model, for llms.txt and anywhere else
+// it has to be stated in prose. Keep in step with `pricing`.
 export const PRICING_MODEL =
-  'All prices are starting rates for a typical small team and adjust for larger groups. AI Training starts at $2,000 for AI Essentials Training (two live workshops) and $3,500 for AI Playbook Training (about four weeks, with a custom AI Playbook). The AI Audit starts at $4,000 and typically takes 2–4 weeks; the Audit + AI Playbook Training package starts at $6,500, a $1,000 saving. The Ongoing Partnership starts at $1,000 per month, month to month. Custom Tools & Builds are quoted after the audit, and Technology Consulting is quoted per engagement. Every engagement is quoted individually after an intro call.'
+  'Every engagement is quoted individually after an intro call, scaled to the size of the team and the scope of the work. AI Training comes as AI Essentials Training (two live workshops) or AI Playbook Training (about four weeks, with a custom AI Playbook). The AI Audit typically takes 2–4 weeks, and the Audit + AI Playbook Training package comes at a discount. The Ongoing Partnership is month to month. Custom Tools & Builds are quoted after the audit, and Technology Consulting is quoted per engagement.'
 
 export const getService = (id) => services.find((service) => service.id === id) || services[0]
 export const getServiceForCta = (ctaService) => getService(CTA_SERVICE_MAP[ctaService] || 'audit')

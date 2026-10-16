@@ -110,7 +110,7 @@ A responsible consultant will estimate these for you. An unusually low quote oft
 
 ## Where Syzygy fits
 
-Syzygy's engagements follow the diagnostic-first sequence described above, and the pricing is structured so that each step is a small bet. AI Training starts at $2,000, and the AI Audit starts at $4,000 and typically runs two to four weeks. Custom tools and builds are quoted after the audit, once the scope is known, and Ongoing Partnership retainers start at $1,000 per month. Every quote states deliverables, assumptions, exclusions, and how results will be measured, so you can run the seven-question comparison against it. Details are on the [pricing page](/pricing/).
+Syzygy's engagements follow the diagnostic-first sequence described above, and the pricing is structured so that each step is a small bet. AI Training and the AI Audit come first, and the audit typically runs two to four weeks. Custom tools and builds are quoted after the audit, once the scope is known, and the Ongoing Partnership is month to month. Every quote states deliverables, assumptions, exclusions, and how results will be measured, so you can run the seven-question comparison against it. Details are on the [pricing page](/pricing/).
 
 ## A worked example
 

@@ -26,7 +26,7 @@ export const homeFaq = [
   },
   {
     q: 'How much does an AI audit cost?',
-    a: 'The AI Audit starts at $4,000 and typically takes two to four weeks. Paired with AI Playbook Training, the package starts at $6,500, which saves $1,000. Prices assume a typical small team and adjust for larger groups, and every engagement is quoted individually after an intro call.',
+    a: 'Every engagement is quoted individually after an intro call, scaled to the size of your team and the scope of the work. The AI Audit typically takes two to four weeks, and pairing it with AI Playbook Training comes at a package discount.',
   },
   {
     q: 'Do you work with companies that have no IT staff?',
@@ -56,11 +56,11 @@ export const processFaq = [
 export const pricingFaq = [
   {
     q: 'How is a Syzygy engagement priced?',
-    a: 'Each engagement is quoted individually after an intro call, and the prices on this page are starting rates for a typical small team. AI Training starts at $2,000, the AI Audit at $4,000, the Audit + AI Playbook Training package at $6,500, and the Ongoing Partnership at $1,000 per month. Custom Tools & Builds are quoted after the audit, once we know what to build. Each engagement is scoped on its own, so you decide on the next step once you have seen the results.',
+    a: 'Each engagement is quoted individually after an intro call, scaled to the size of your team and the scope of the work. The Audit + AI Playbook Training package comes at a discount, the Ongoing Partnership is month to month, and Custom Tools & Builds are quoted after the audit, once we know what to build. Each engagement is scoped on its own, so you decide on the next step once you have seen the results.',
   },
   {
     q: 'How much does an AI audit cost?',
-    a: 'The AI Audit starts at $4,000 and typically takes two to four weeks. Paired with AI Playbook Training, the package starts at $6,500, which saves $1,000, because the audit tells us exactly what to teach.',
+    a: 'The AI Audit is quoted after an intro call and typically takes two to four weeks. Paired with AI Playbook Training it comes at a package discount, because the audit tells us exactly what to teach.',
   },
   {
     q: 'What is included in AI training?',
