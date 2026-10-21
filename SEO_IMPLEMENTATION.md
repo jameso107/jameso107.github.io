@@ -12,7 +12,7 @@
   - Homepage: AI consulting, AI audit, AI implementation
   - Process: AI consulting process, AI strategy development
   - Case Studies: AI case studies, AI success stories
-  - Pricing: AI consulting pricing, AI audit cost
+  - Services: AI consulting services, AI audit
   - Team: AI consultants, AI experts
   - Blog / Blog posts: AI aptitude, Midwest small business
 - ✅ Unique `<title>` and `og:title` per route (see [Page Titles](#page-titles))
@@ -26,7 +26,7 @@
 ### Phase 2: Structured Data (JSON-LD) ✅
 - ✅ Organization schema
 - ✅ Website schema with search action
-- ✅ Service schemas for all pricing tiers
+- ✅ Service schemas for every service
 - ✅ BreadcrumbList schema for all pages
 - ✅ Person schema for team members
 
@@ -72,7 +72,7 @@ A page that passes no `title` falls back to the site default,
 | `/` | Michigan & Midwest AI Consulting Service \| SYZYGY.services (58) |
 | `/process` | Our AI Consulting Process \| SYZYGY.services (43) |
 | `/case-studies` | AI Case Studies & Client Success Stories \| SYZYGY.services (58) |
-| `/pricing` | AI Consulting Services & Pricing \| SYZYGY.services (50) |
+| `/services` | AI Consulting Services \| Syzygy (31) |
 | `/team` | Meet Our AI Consultants \| SYZYGY.services (41) |
 | `/blog` | AI Consulting Blog & Insights \| SYZYGY.services (47) |
 | `/blog/:slug` | *post `seoTitle`* \| SYZYGY.services |

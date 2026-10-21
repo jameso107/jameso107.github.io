@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import SpotlightCard from './SpotlightCard'
-import { services, servicePricingUrl } from '../data/services'
+import { services, serviceUrl } from '../data/services'
 
 const stacks = ['OpenAI', 'Gemini', 'Claude', 'Vercel', 'n8n']
 
@@ -23,10 +23,10 @@ export default function Services() {
               Most teams start with hands-on training, an audit of how the business runs, or both. From there we build the tools that pay off and stay on as a partner if you want us.
             </p>
             <Link
-              to="/pricing/"
+              to="/services/"
               className="inline-flex items-center gap-2 text-violet-300 hover:text-white font-semibold transition-colors duration-300"
             >
-              See services and pricing
+              See all services
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -73,10 +73,10 @@ export default function Services() {
                     <div className="mt-4 text-xs text-slate-400">{service.length}</div>
                   )}
                   <Link
-                    to={servicePricingUrl(service.id)}
+                    to={serviceUrl(service.id)}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-violet-300 hover:text-white transition-colors duration-300"
                   >
-                    Details and pricing
+                    Service details
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4" aria-hidden="true">
                       <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

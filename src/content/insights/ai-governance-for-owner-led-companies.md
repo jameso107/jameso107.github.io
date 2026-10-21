@@ -113,7 +113,7 @@ Two pages, one training hour, one vendor dropped. The firm is not risk-free, but
 - **Treating governance as a one-time project.** Tools, vendors, and terms change; review the policy on a schedule.
 - **Governing before there is anything to govern.** If you are still deciding [where AI should be used at all](/process/), write the policy alongside the first project, not years ahead of it.
 
-The build phase of any serious implementation should deliver these guardrails as part of the system: access roles, data handling, review steps, monitoring, and adversarial testing before go-live. If a proposal does not mention them, ask why; the [pricing](/pricing/) of any implementation should include this work.
+The build phase of any serious implementation should deliver these guardrails as part of the system: access roles, data handling, review steps, monitoring, and adversarial testing before go-live. If a proposal does not mention them, ask why; the [quote](/services/) for any implementation should include this work.
 
 ## The bottom line
 

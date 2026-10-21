@@ -4,7 +4,7 @@ import Logo from './Logo'
 import { CONTACT_EMAIL, LEGAL_NAME, PHONE_DISPLAY, PHONE_TEL_HREF } from '../data/routeMeta'
 
 const footerLinks = [
-  { to: '/pricing/', label: 'Pricing' },
+  { to: '/services/', label: 'Services' },
   { to: '/insights/', label: 'Insights' },
   { to: '/team/', label: 'Our Team' },
   { to: '/careers/', label: 'Careers' },

@@ -135,6 +135,6 @@ For **Midwest small and mid-sized businesses** ready to harness AI, here's a pra
 
 **AI aptitude** isn't a destination. It's a journey. For **Midwest small and mid-sized businesses**, the companies that build this capability early hold a durable competitive advantage over those that wait. The question isn't whether AI will change your industry. It's whether you'll be leading that change or playing catch-up.
 
-At Syzygy, we specialize in helping **small businesses in Michigan** and across the Midwest, along with remote clients nationwide, build their **AI aptitude**. We start with a comprehensive audit to understand your unique opportunities, then work alongside your team to implement solutions that generate real ROI. See [our services](/pricing/) for how an engagement is structured.
+At Syzygy, we specialize in helping **small businesses in Michigan** and across the Midwest, along with remote clients nationwide, build their **AI aptitude**. We start with a comprehensive audit to understand your unique opportunities, then work alongside your team to implement solutions that generate real ROI. See [our services](/services/) for how an engagement is structured.
 
 Ready to harness the power of AI for your business? Let's talk about how we can help you build the **AI aptitude** your organization needs to thrive in an AI-driven economy.

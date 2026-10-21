@@ -143,7 +143,7 @@ Fix the weakest pillar with the cheapest tool that works, which is rarely softwa
 
 ## How does this fit into a formal audit?
 
-A formal discovery audit produces this assessment for several candidate processes at once, alongside an ROI estimate and a risk review, typically over two to four weeks. The point of paying for it rather than doing it yourself is coverage and objectivity: an outside team interviews people you would not think to ask and scores things you are too close to see. If you are weighing that option, our guide to [what an AI consultant does](/insights/what-an-ai-consultant-does/) and the [pricing page](/pricing/) will tell you what to expect.
+A formal discovery audit produces this assessment for several candidate processes at once, alongside an ROI estimate and a risk review, typically over two to four weeks. The point of paying for it rather than doing it yourself is coverage and objectivity: an outside team interviews people you would not think to ask and scores things you are too close to see. If you are weighing that option, our guide to [what an AI consultant does](/insights/what-an-ai-consultant-does/) and the [services page](/services/) will tell you what to expect.
 
 ## The bottom line
 

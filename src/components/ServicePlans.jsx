@@ -15,7 +15,7 @@ function PlanCard({ plan, idx, className = '' }) {
       className={`group rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 md:p-8 border border-white/10 hover:border-white/20 flex flex-col transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-reveal ${className}`}
       style={{ animationDelay: `${idx * 0.1}s` }}
     >
-      {/* Anchor target for /pricing/#<id> links from articles and the homepage */}
+      {/* Anchor target for /services/#<id> links from articles and the homepage */}
       <span id={plan.id} className="absolute -top-32" aria-hidden="true"></span>
 
       {/* Gradient glow */}
@@ -59,9 +59,9 @@ function PlanCard({ plan, idx, className = '' }) {
   )
 }
 
-export default function Pricing() {
+export default function ServicePlans() {
   return (
-    <section id="pricing" className="py-32 relative overflow-hidden">
+    <section id="services" className="py-32 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full blur-3xl bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-sky-500/10"></div>

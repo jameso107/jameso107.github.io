@@ -6,7 +6,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     // Land at the very top on every route change, or on the anchored section
-    // when the URL carries a hash (e.g. /pricing/#audit from an article CTA).
+    // when the URL carries a hash (e.g. /services/#audit from an article CTA).
     // (Section top padding already clears the fixed header, so no offset is needed.)
     const scrollTimer = setTimeout(() => {
       const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null

@@ -115,7 +115,7 @@ One of three things, and all three are successes if the charter was honest.
 - **Extend.** The criteria were nearly met and the failures are specific. Fix them, run two or three more weeks, and decide again. Extend once. Extending twice is a kill you have not admitted.
 - **Kill.** The criteria were not met or a kill criterion fired. Write down what you learned about your data and process, because it will make the next pilot better, and move to the next candidate on your list.
 
-Whatever the outcome, the pilot has done its job if the decision was made on the end date, by the owner, against the written criteria. That discipline is worth more than any single result, and it is why a pilot should be a separately scoped and [priced](/pricing/) step rather than the first chapter of a build.
+Whatever the outcome, the pilot has done its job if the decision was made on the end date, by the owner, against the written criteria. That discipline is worth more than any single result, and it is why a pilot should be a separately [scoped and priced](/services/) step rather than the first chapter of a build.
 
 ## Where this goes wrong
 

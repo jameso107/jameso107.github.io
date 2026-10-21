@@ -89,13 +89,13 @@ export const routeMeta = {
     canonicalUrl: `${SITE_URL}/case-studies/`,
     robots: 'noindex, follow',
   },
-  '/pricing': {
-    title: 'AI Consulting Services & Pricing',
+  '/services': {
+    title: 'AI Consulting Services',
     description:
       'Syzygy services for small and mid-sized businesses: AI Training, the AI Audit, an Ongoing Partnership, Custom Tools & Builds, and Technology Consulting. Every engagement is quoted after an intro call.',
     keywords:
-      'AI consulting pricing, AI training cost, AI workshops for teams, AI audit cost, custom AI tools, AI consulting rates, fractional technology leadership, small business AI consulting, Michigan AI consulting',
-    canonicalUrl: `${SITE_URL}/pricing/`,
+      'AI consulting services, AI training for teams, AI workshops for teams, AI audit, custom AI tools, AI consulting pricing, fractional technology leadership, small business AI consulting, Michigan AI consulting',
+    canonicalUrl: `${SITE_URL}/services/`,
   },
   '/team': {
     title: 'Meet Our AI Consultants',
@@ -160,14 +160,16 @@ export const getPrerenderRoutes = () => [
   })),
 ]
 
-// Old blog URLs -> new insights URLs. GitHub Pages cannot 301, so the build
+// Retired URLs -> their replacements: old blog URLs -> insights URLs, and the
+// old /pricing/ page -> /services/. GitHub Pages cannot 301, so the build
 // emits an HTML stub with a meta refresh + canonical at each of these paths.
-// Only URLs that were ever live under /blog/ belong here.
+// Only URLs that were ever live belong here.
 const LEGACY_BLOG_SLUGS = ['harnessing-ai-aptitude-midwest-small-business']
 
 export const getLegacyRedirects = () => {
   const live = new Set(getAllInsights().map((article) => article.slug))
   return [
+    { from: '/pricing', to: `${SITE_URL}/services/` },
     { from: '/blog', to: `${SITE_URL}/insights/` },
     ...LEGACY_BLOG_SLUGS.map((slug) => ({
       from: `/blog/${slug}`,

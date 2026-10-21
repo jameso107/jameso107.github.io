@@ -1,4 +1,4 @@
-// Visible FAQ copy for the homepage, /pricing/ and the archived /process/. Each list is
+// Visible FAQ copy for the homepage, /services/ and the archived /process/. Each list is
 // rendered as real text by <FAQ /> and mirrored into FAQPage structured data,
 // so the answers here are the answers crawlers see. Pricing figures match
 // `pricing` in data/services.js; change them in both places.
@@ -53,7 +53,7 @@ export const processFaq = [
   },
 ]
 
-export const pricingFaq = [
+export const servicesFaq = [
   {
     q: 'How is a Syzygy engagement priced?',
     a: 'Each engagement is quoted individually after an intro call, scaled to the size of your team and the scope of the work. The Audit + AI Playbook Training package comes at a discount, the Ongoing Partnership is month to month, and Custom Tools & Builds are quoted after the audit, once we know what to build. Each engagement is scoped on its own, so you decide on the next step once you have seen the results.',

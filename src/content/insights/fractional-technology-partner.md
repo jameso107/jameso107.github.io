@@ -85,7 +85,7 @@ Structure it around decision rights, cadence, and outcomes, and define how it en
 - **Cadence.** A fixed rhythm the business can rely on: a weekly working session, a monthly leadership meeting, a quarterly roadmap review. Cadence is what makes the role a seat rather than a phone number.
 - **Deliverables.** A technology roadmap, a vendor and contract register, a risk register with owners, and a hiring plan, each kept up to date rather than produced once.
 - **Metrics.** Cost of the technology estate as a share of revenue, project delivery against roadmap, incidents and their handling, and progress on the internal team's capability.
-- **Term and price.** A monthly retainer against a defined fraction of time, reviewed annually. For how this compares with other engagement structures, see our guide to [consulting pricing models](/insights/how-much-does-consulting-cost/) and the [pricing page](/pricing/).
+- **Term and price.** A monthly retainer against a defined fraction of time, reviewed annually. For how this compares with other engagement structures, see our guide to [consulting pricing models](/insights/how-much-does-consulting-cost/) and the [services page](/services/).
 - **Exit.** What the handover looks like when the company hires a full-time executive or no longer needs the role. If the partner cannot describe it, be cautious.
 
 > A fractional partner is accountable for outcomes, not for hours.

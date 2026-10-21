@@ -1,12 +1,12 @@
-// The five services, in the order they appear on /pricing/. They mirror the
+// The five services, in the order they appear on /services/. They mirror the
 // "Ways to Work Together" page of the client packets: Training and the Audit
 // are the main offerings (`primary`), the rest sit under "Also available".
 //
-// Shared by the homepage Services section, the Pricing cards, the Service
+// Shared by the homepage Services section, the /services/ cards, the Service
 // structured data, the article CTA cards (frontmatter `cta.service` maps onto
 // `id` via CTA_SERVICE_MAP), and the generated llms.txt.
 //
-// `pricing` holds the visible copy on the pricing card (`headline`, `detail`).
+// `pricing` holds the visible price copy on the service card (`headline`, `detail`).
 // Prices are no longer published: every engagement is quoted after an intro
 // call. `offers` feeds Service.offers in the structured data and holds numbers
 // only (minPrice / maxPrice in USD, optional unitText for recurring fees); it
@@ -126,7 +126,7 @@ export const services = [
 ]
 
 // The Audit + AI Playbook Training package, the "Most popular" card on
-// /pricing/.
+// /services/.
 export const bundle = {
   id: 'audit-training',
   title: 'Audit + AI Playbook Training',
@@ -157,4 +157,4 @@ export const PRICING_MODEL =
 
 export const getService = (id) => services.find((service) => service.id === id) || services[0]
 export const getServiceForCta = (ctaService) => getService(CTA_SERVICE_MAP[ctaService] || 'audit')
-export const servicePricingUrl = (id) => `/pricing/#${id}`
+export const serviceUrl = (id) => `/services/#${id}`

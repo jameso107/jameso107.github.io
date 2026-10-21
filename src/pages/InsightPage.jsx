@@ -7,7 +7,7 @@ import FAQ from '../components/FAQ'
 import InsightCard from '../components/InsightCard'
 import { routeMeta, insightMeta, START_PROJECT_HREF } from '../data/routeMeta'
 import { getInsight, getRelated } from '../data/insights'
-import { getServiceForCta, servicePricingUrl } from '../data/services'
+import { getServiceForCta, serviceUrl } from '../data/services'
 import { graph, articleSchema, breadcrumbSchema, faqSchema } from '../utils/structuredData'
 
 function LinkedInIcon({ className = 'w-4 h-4' }) {
@@ -58,7 +58,7 @@ export default function InsightPage() {
   const navigate = useNavigate()
   const article = getInsight(slug)
 
-  // Markdown links are plain <a href="/pricing/">. Route internal ones through
+  // Markdown links are plain <a href="/services/">. Route internal ones through
   // the router so navigation stays client-side; leave modified clicks and
   // external links alone.
   const handleBodyClick = useCallback(
@@ -184,7 +184,7 @@ export default function InsightPage() {
                   <ArrowIcon className="w-5 h-5" />
                 </a>
                 <Link
-                  to={servicePricingUrl(service.id)}
+                  to={serviceUrl(service.id)}
                   className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-medium text-slate-200 hover:border-white/25 hover:bg-white/10 transition-all duration-300"
                 >
                   About {service.title}

@@ -126,7 +126,7 @@ If a proposal you receive cannot fill in these lines with you, the vendor is ask
 
 ## How often should you re-measure?
 
-Quarterly for the first year, then at least annually, and whenever something about the process or the tool changes materially. Measurement is the point of the [measure-and-improve phase](/process/) that follows a build, and it is the core of what an [ongoing partnership](/pricing/) should deliver: an ROI report you did not have to assemble yourself, a view of where performance is drifting, and a short list of what to improve next. The projects that compound are the ones somebody keeps measuring.
+Quarterly for the first year, then at least annually, and whenever something about the process or the tool changes materially. Measurement is the point of the [measure-and-improve phase](/process/) that follows a build, and it is the core of what an [ongoing partnership](/services/#partnership) should deliver: an ROI report you did not have to assemble yourself, a view of where performance is drifting, and a short list of what to improve next. The projects that compound are the ones somebody keeps measuring.
 
 ## The bottom line
 

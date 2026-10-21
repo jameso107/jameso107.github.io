@@ -131,7 +131,7 @@ Ask questions that reveal how they think, not what they sell. Six that work well
 5. Do you receive payment from any vendor you might recommend?
 6. Show me a prototype that did not make it to production, and what you learned.
 
-A firm that answers these plainly is a firm that has done this before. You can see how Syzygy structures and prices each stage on the [pricing page](/pricing/), and you can read about the [readiness assessment that opens every engagement](/insights/ai-readiness-assessment/) before you talk to anyone.
+A firm that answers these plainly is a firm that has done this before. You can see how Syzygy structures and scopes each stage on the [services page](/services/), and you can read about the [readiness assessment that opens every engagement](/insights/ai-readiness-assessment/) before you talk to anyone.
 
 ## The bottom line
 

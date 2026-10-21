@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Post-build checks for dist/ (`npm run verify`). Exits non-zero on any failure.
 //
-// For every dist/**/index.html (except the legacy /blog/ redirect stubs):
+// For every dist/**/index.html (except the legacy /blog/ and /pricing/ redirect stubs):
 //   - non-empty text inside #root
 //   - exactly one <h1>
 //   - <title> of 60 characters or fewer
@@ -11,7 +11,7 @@
 // Plus: sitemap.xml lists the homepage, every static route and every insights
 // article, and no /blog/ or archived URLs; every Markdown article in
 // src/content/insights/ produced a page (none skipped); the archived pages
-// (/case-studies/, /process/) carry noindex; the /blog/ stubs redirect to live pages; llms.txt, robots.txt,
+// (/case-studies/, /process/) carry noindex; the /blog/ and /pricing/ stubs redirect to live pages; llms.txt, robots.txt,
 // CNAME, favicon.png and og-image.png exist.
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'fs'
@@ -25,11 +25,19 @@ const SITE_URL = 'https://syzygy.services'
 
 // Indexable routes that must always be in the sitemap (in addition to the
 // articles, which are discovered from dist/).
-const STATIC_ROUTES = ['/', '/pricing/', '/team/', '/careers/', '/insights/']
+const STATIC_ROUTES = ['/', '/services/', '/team/', '/careers/', '/insights/']
 
 // Pages still built and reachable, but kept out of the nav, the sitemap and
 // the index.
 const ARCHIVED_PAGES = ['case-studies/index.html', 'process/index.html']
+
+// Retired URL prefixes the build answers with a redirect stub, and where each
+// must land.
+const STUB_TARGETS = {
+  'blog/': `${SITE_URL}/insights/`,
+  'pricing/': `${SITE_URL}/services/`,
+}
+const stubPrefix = (rel) => Object.keys(STUB_TARGETS).find((prefix) => rel.startsWith(prefix))
 
 const failures = []
 const fail = (file, message) => failures.push(`${file}: ${message}`)
@@ -60,7 +68,7 @@ if (!existsSync(dist)) {
 }
 
 const pages = walk(dist).sort()
-const stubs = pages.filter((file) => relative(dist, file).startsWith('blog/'))
+const stubs = pages.filter((file) => stubPrefix(relative(dist, file)))
 const realPages = pages.filter((file) => !stubs.includes(file))
 
 const rows = []
@@ -126,8 +134,9 @@ for (const file of realPages) {
   if (archived && !robots.includes('noindex')) fail(rel, 'archived page must be noindex')
   if (!archived && robots.includes('noindex')) fail(rel, `unexpected noindex: ${robots}`)
 
-  // Legacy blog links must not survive anywhere in the app markup.
+  // Links to retired URLs must not survive anywhere in the app markup.
   if (/href="\/blog(\/|")/.test(rootHtml)) fail(rel, 'links to legacy /blog/ URL')
+  if (/href="\/pricing(\/|"|#)/.test(rootHtml)) fail(rel, 'links to retired /pricing/ URL (now /services/)')
 
   rows.push({
     page: rel === 'index.html' ? '/' : `/${rel.replace(/index\.html$/, '')}`,
@@ -153,7 +162,8 @@ for (const file of stubs) {
   if (targets.size !== 1) fail(rel, `stub targets disagree: ${[...targets].join(' | ')}`)
   const target = [...targets][0]
   if (target) {
-    if (!target.startsWith(`${SITE_URL}/insights/`)) fail(rel, `stub does not point at /insights/: ${target}`)
+    const expected = STUB_TARGETS[stubPrefix(rel)]
+    if (!target.startsWith(expected)) fail(rel, `stub does not point at ${expected}: ${target}`)
     const targetFile = join(dist, target.slice(SITE_URL.length + 1), 'index.html')
     if (!existsSync(targetFile)) fail(rel, `stub target has no built page: ${target}`)
   }
@@ -161,6 +171,7 @@ for (const file of stubs) {
   rows.push({ page: `/${rel.replace(/index\.html$/, '')}`, text: 0, h1: 0, title: 0, ld: 0, types: `stub -> ${refresh?.[1] ?? '?'}` })
 }
 if (!stubs.some((file) => relative(dist, file) === 'blog/index.html')) fail('blog/index.html', 'legacy /blog/ stub missing')
+if (!stubs.some((file) => relative(dist, file) === 'pricing/index.html')) fail('pricing/index.html', 'retired /pricing/ stub missing')
 
 // Every Markdown article must have produced a page (the loader skips invalid
 // files with a warning instead of failing the build, so catch that here).
@@ -180,6 +191,7 @@ else {
   const sitemap = readFileSync(sitemapPath, 'utf-8')
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
   if (locs.some((loc) => loc.includes('/blog'))) fail('sitemap.xml', 'contains a /blog/ URL')
+  if (locs.some((loc) => loc.includes('/pricing'))) fail('sitemap.xml', 'contains a /pricing/ URL')
   for (const page of ARCHIVED_PAGES) {
     const url = `${SITE_URL}/${page.replace(/index\.html$/, '')}`
     if (locs.includes(url)) fail('sitemap.xml', `contains archived ${url}`)

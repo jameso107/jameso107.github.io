@@ -137,7 +137,7 @@ Resist counting soft benefits in the business case. Put "better morale" in a foo
 
 ## What comes after the first project?
 
-The first project's real return is the second project. Once a team has seen a boring, hated task disappear, the next candidate list writes itself and the resistance is gone. The returns do not require custom builds, either: an online retailer reached 25% more efficient operations and a 10% increase in revenue after automating listing, repricing, and shipping preparation, by configuring third-party software rather than building anything. And the ceiling is high: a West Michigan automotive company rolled out a custom LLM suite that more than 400 employees use in their daily work. Companies that keep going, usually through an [ongoing partnership](/pricing/) rather than a series of one-off builds, follow the same [phased sequence](/process/) each time: assess, prototype, build, measure, repeat.
+The first project's real return is the second project. Once a team has seen a boring, hated task disappear, the next candidate list writes itself and the resistance is gone. The returns do not require custom builds, either: an online retailer reached 25% more efficient operations and a 10% increase in revenue after automating listing, repricing, and shipping preparation, by configuring third-party software rather than building anything. And the ceiling is high: a West Michigan automotive company rolled out a custom LLM suite that more than 400 employees use in their daily work. Companies that keep going, usually through an [ongoing partnership](/services/#partnership) rather than a series of one-off builds, follow the same [phased sequence](/process/) each time: assess, prototype, build, measure, repeat.
 
 ## The bottom line
 

@@ -127,7 +127,7 @@ const offerSchema = (service, offer) => {
   return {
     '@type': 'Offer',
     name: offer.name,
-    url: `${SITE_URL}/pricing/#${service.id}`,
+    url: `${SITE_URL}/services/#${service.id}`,
     price: offer.minPrice,
     priceCurrency: 'USD',
     priceSpecification,
@@ -141,11 +141,11 @@ export const serviceSchema = (service) => {
   const offers = (service.pricing?.offers || []).map((offer) => offerSchema(service, offer))
   return {
     '@type': 'Service',
-    '@id': `${SITE_URL}/pricing/#${service.id}`,
+    '@id': `${SITE_URL}/services/#${service.id}`,
     name: service.title,
     description: service.description,
     serviceType: service.shortName || service.title,
-    url: `${SITE_URL}/pricing/#${service.id}`,
+    url: `${SITE_URL}/services/#${service.id}`,
     provider: organizationRef,
     areaServed: AREA_SERVED,
     audience: {

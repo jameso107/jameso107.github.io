@@ -32,7 +32,7 @@ The built files will be in the `dist` directory.
 │   │   ├── Services.jsx
 │   │   ├── Process.jsx
 │   │   ├── Work.jsx
-│   │   ├── Pricing.jsx
+│   │   ├── ServicePlans.jsx
 │   │   ├── Contact.jsx
 │   │   └── Footer.jsx
 │   ├── App.jsx          # Main app component

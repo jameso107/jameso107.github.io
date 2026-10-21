@@ -9,8 +9,8 @@
 //      swap the <head> tags (title, description, canonical, og:*, twitter:*,
 //      robots). JSON-LD is rendered by <SEO /> inside the tree, so it arrives
 //      in the HTML automatically.
-//   3. Emit redirect stubs for the legacy /blog/ URLs, sitemap.xml, llms.txt,
-//      and copy CNAME.
+//   3. Emit redirect stubs for the retired /blog/ and /pricing/ URLs,
+//      sitemap.xml, llms.txt, and copy CNAME.
 //
 // Nothing here touches src/content/insights/*.md; a malformed article is
 // skipped by src/data/insights.js (with a warning) and the build continues.
@@ -162,6 +162,8 @@ writeFileSync(join(dist, '404.html'), renderRoute('/__not_found__', NOT_FOUND_ME
 // ---------------------------------------------------------------------------
 // 3. Legacy redirect stubs (GitHub Pages cannot send a 301)
 // ---------------------------------------------------------------------------
+// The script runs first so old /pricing/#audit links keep their anchor; the
+// meta refresh (which drops the hash) covers visitors without JavaScript.
 function stubHtml(target) {
   const href = escapeAttr(target)
   return `<!DOCTYPE html>
@@ -170,6 +172,7 @@ function stubHtml(target) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>This page has moved | ${escapeAttr(BRAND)}</title>
+  <script>location.replace(${JSON.stringify(target)} + location.hash)</script>
   <meta http-equiv="refresh" content="0;url=${href}" />
   <link rel="canonical" href="${href}" />
   <style>
@@ -222,15 +225,15 @@ const llms = [
     (service) =>
       `- ${service.title}${service.length ? ` (${service.length})` : ''}: ${service.description}${
         service.pricing?.headline ? ` Pricing: ${service.pricing.headline}.` : ''
-      } ${SITE_URL}/pricing/#${service.id}`,
+      } ${SITE_URL}/services/#${service.id}`,
   ),
-  `- ${bundle.title} (package, most popular): ${bundle.description} Pricing: ${bundle.headline}, ${bundle.savings.toLowerCase()}. ${SITE_URL}/pricing/#${bundle.id}`,
+  `- ${bundle.title} (package, most popular): ${bundle.description} Pricing: ${bundle.headline}, ${bundle.savings.toLowerCase()}. ${SITE_URL}/services/#${bundle.id}`,
   '',
   '## Pricing model',
   '',
   PRICING_MODEL,
   '',
-  `Details: ${SITE_URL}/pricing/`,
+  `Details: ${SITE_URL}/services/`,
   '',
   '## Contact',
   '',
@@ -241,7 +244,7 @@ const llms = [
   '## Pages',
   '',
   `- Home: ${SITE_URL}/`,
-  `- Services and pricing: ${SITE_URL}/pricing/`,
+  `- Services: ${SITE_URL}/services/`,
   `- Team: ${SITE_URL}/team/`,
   `- Careers: ${SITE_URL}/careers/`,
   `- Insights: ${SITE_URL}/insights/`,

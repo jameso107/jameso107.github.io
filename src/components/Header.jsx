@@ -7,7 +7,7 @@ import { START_PROJECT_HREF } from '../data/routeMeta'
 // Trailing slashes match the canonical URLs GitHub Pages serves with a 200, so
 // a crawler following these links never has to take the /path -> /path/ 301.
 export const navLinks = [
-  { to: '/pricing/', label: 'Pricing' },
+  { to: '/services/', label: 'Services' },
   { to: '/insights/', label: 'Insights' },
   { to: '/team/', label: 'Our Team' },
   { to: '/careers/', label: 'Careers' },

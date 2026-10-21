@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CaseStudiesPage from './pages/CaseStudiesPage'
 import ProcessPage from './pages/ProcessPage'
-import PricingPage from './pages/PricingPage'
+import ServicesPage from './pages/ServicesPage'
 import TeamPage from './pages/TeamPage'
 import CareersPage from './pages/CareersPage'
 import InsightsPage from './pages/InsightsPage'
@@ -22,7 +22,7 @@ export function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/process" element={<ProcessPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/insights" element={<InsightsPage />} />

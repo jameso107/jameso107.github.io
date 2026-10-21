@@ -109,7 +109,7 @@ Three problems, three different answers, all from the same gates. And notice the
 - **Ignoring ownership.** A configured chain nobody owns breaks quietly. A build nobody understands is a liability the day the contractor leaves.
 - **Deciding once for everything.** The gates are run per process. A company that builds everything or buys everything has stopped thinking.
 
-The build-versus-buy question is also one of the places where an outside perspective earns its fee, because vendors are structurally unable to recommend configure and builders are structurally inclined to build. A neutral party, whether an [advisor](/pricing/) or a well-run [discovery phase](/process/), should be willing to tell you that the right answer is a product you already own. Deciding which processes are worth this analysis at all is the job of a [prioritization screen](/insights/where-ai-pays-off-first/); run that first so you are not filling in ledgers for processes that do not matter.
+The build-versus-buy question is also one of the places where an outside perspective earns its fee, because vendors are structurally unable to recommend configure and builders are structurally inclined to build. A neutral party, whether an [advisor](/services/#technology) or a well-run [discovery phase](/process/), should be willing to tell you that the right answer is a product you already own. Deciding which processes are worth this analysis at all is the job of a [prioritization screen](/insights/where-ai-pays-off-first/); run that first so you are not filling in ledgers for processes that do not matter.
 
 ## The bottom line
 

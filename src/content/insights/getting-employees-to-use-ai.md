@@ -109,7 +109,7 @@ A small number of people will not move regardless. Treat that as a performance c
 - **The owner delegating adoption.** Expectation cannot be outsourced.
 - **Measuring logins.** Logins measure exposure. Measure task volume through the new way.
 - **Declaring victory at "tried."** Step two on the ladder is not adoption.
-- **Skipping the rollout budget.** Training, champions, and two weeks of side-by-side support are real work; a proposal that omits them from [implementation scope](/pricing/) is underpriced. Rollout and change-management support belong in the [build phase](/process/), not after it.
+- **Skipping the rollout budget.** Training, champions, and two weeks of side-by-side support are real work; a proposal that omits them from [implementation scope](/services/) is underpriced. Rollout and change-management support belong in the [build phase](/process/), not after it.
 
 ## The bottom line
 

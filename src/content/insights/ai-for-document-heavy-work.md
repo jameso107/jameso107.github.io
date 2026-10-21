@@ -109,7 +109,7 @@ What typically happens in a company like this is that the bid pipeline widens be
 
 ## How do you get started?
 
-Pick one document type at the extraction rung, with high volume and cheap verification. Gather a few hundred past examples from the folders where they already live. Run a [four-to-six-week pilot](/insights/prototype-before-you-commit/) with accuracy thresholds written down first and every extracted field linked to its source. Decide the review level for each downstream use from the grid before the build, not after. Then build it into the systems where the documents arrive and the data needs to go, with access controls and monitoring, and climb to the next rung only when the first is trusted. That is the [audit, prototype, build, measure sequence](/process/) Syzygy uses, and the [pricing page](/pricing/) describes what each step involves.
+Pick one document type at the extraction rung, with high volume and cheap verification. Gather a few hundred past examples from the folders where they already live. Run a [four-to-six-week pilot](/insights/prototype-before-you-commit/) with accuracy thresholds written down first and every extracted field linked to its source. Decide the review level for each downstream use from the grid before the build, not after. Then build it into the systems where the documents arrive and the data needs to go, with access controls and monitoring, and climb to the next rung only when the first is trusted. That is the [audit, prototype, build, measure sequence](/process/) Syzygy uses, and the [services page](/services/) describes what each step involves.
 
 ## Where this goes wrong
 
