@@ -1,144 +1,147 @@
 ---
-title: "Where AI Pays Off First: A Framework for Finding High-ROI Automation in a Small Business"
+title: "Where AI Pays Off First, and How to Find It in Your Own Building"
 seoTitle: "Where AI Pays Off First in a Small Business | Syzygy"
 slug: "where-ai-pays-off-first"
-dek: "AI pays off first in work that is high-volume, depends on pattern recognition rather than rules or deep judgment, causes real pain, and runs on data you already have. Score candidate processes on those four factors and the first project usually picks itself."
-description: "A framework for prioritizing small business AI use cases: score processes on volume, judgment, pain, and data to find high-ROI automation first."
+dek: "AI pays off first where people retype, wait on one senior person, answer the same question all day, pay outsiders, or re-price quotes after every vendor letter. Start with a job someone can check in seconds, and do the arithmetic before buying."
+description: "Where AI pays off first in a small business: five places to find the hours, a one-page ranking sheet, and the arithmetic to estimate return before you buy."
 category: "Strategy"
-keywords: ["AI use cases small business", "AI ROI small business", "business process automation examples", "AI prioritization framework", "where to start with AI", "high-ROI automation"]
+keywords: ["AI use cases small business", "where to start with AI", "AI ROI small business", "how to prioritize AI projects", "first AI project", "AI for distributors"]
 author: "james-oosterhouse"
-order: 4
+order: 7
 featured: false
 keyTakeaways:
-  - "The best first AI project is boring, frequent, and disliked: high volume, moderate judgment, real pain, and data you already hold."
-  - "Judgment is the axis owners misread; AI's sweet spot is pattern recognition on messy inputs, not rule-following and not expert decision-making."
-  - "Scoring candidate processes on volume, judgment fit, pain, and data from one to five produces a ranking you can defend to your team."
-  - "Estimate return before building by multiplying hours returned per week by loaded cost, adding any cycle-time effect on revenue, and comparing that to total cost including your own time."
+  - "Look first at jobs where someone reads a messy document and keys in a structured answer, such as emailed POs, vendor price letters and contractors' bills of material."
+  - "Pick a first use whose output a person can check in seconds, such as a re-priced quote line, over one you can only judge at the end of a season, such as a demand forecast."
+  - "Split each candidate into its steps before you score it: in re-pricing open quotes, finding the quotes is an ERP report and reapplying margin is a mass update, so only reading the letter needs AI."
+  - "Estimate the yearly value before buying: minutes saved per item after checking, times items a week, times 50 weeks, divided by 60, times the loaded hourly cost (about 1.43 times the wage), and keep the first year's cost under it."
+  - "Ask each department lead for three tasks they'd hand off, the hours each takes, and how they'd know the answer was right, then rank the replies on one sheet."
 faq:
   - q: "What are the best AI use cases for a small business?"
-    a: "The highest-return use cases are usually document-heavy, repetitive processes: quoting and estimating, order entry from emails and PDFs, specification and contract review, inbound email triage, invoice matching, and drafting routine reports. They share high volume, moderate judgment, and existing data."
+    a: "The ones that pay first are usually reading jobs with a clear right answer: turning emailed purchase orders into orders, vendor price letters into updated costs, or a customer's bill of material into catalog numbers. They happen often, the people doing them dislike them, and a person can check each result quickly. Work that follows fixed rules is better done with ordinary software, and work that rests on judgment or customer relationships should stay with people."
   - q: "How do I prioritize AI projects?"
-    a: "Score each candidate process from one to five on volume, judgment fit, pain, and data availability, then rank by total. Check the top candidates against a readiness assessment, and start with the highest-scoring process that is also ready."
-  - q: "How do I estimate the ROI of an AI project before building it?"
-    a: "Measure how many hours the process consumes per week and multiply by the loaded hourly cost of the people doing it. Add any revenue effect from faster turnaround. Compare the annual figure to the full cost of the project, including software, integration, and your team's time."
+    a: "List candidate tasks from each department and record, for each, the hours a week it takes now, how long a person needs to check one output, and how you'd get it: an ERP report or rule, software you already pay for, a chat seat with a template, or a custom build. Set aside any whose past examples and right answers aren't written down. Estimate the yearly value, then favor real hours you can check in seconds. At about 100 people, run one project at a time."
+  - q: "How do I estimate the return on an AI project before building it?"
+    a: "Take the minutes a task takes now, subtract the minutes it would take with the tool and the minutes someone spends checking the result, and multiply by how many times it happens a week and by 50 weeks. Divide by 60 for hours and multiply by a loaded hourly cost, roughly the hourly wage times 1.43 on national BLS averages. That figure is a ceiling. The first year's full cost, including your own staff's setup time, should come in under it."
+  - q: "Should a distributor start with AI demand forecasting?"
+    a: "Usually not as a first project. A forecast can only be judged after a season of sales, nobody's hours come back because buyers still review every reorder, and project-driven demand follows which bids contractors win, which sales history can't see. Forecasting tools are also a different kind of AI from tools that read documents. Re-pricing open quotes or entering orders usually pays sooner. If you evaluate a forecasting tool, test it on your own last two years of data."
+  - q: "Should we buy AI licenses for everyone first?"
+    a: "Seats for the office are a reasonable, low-cost way for people to learn what the tools can do, but they aren't a project. McKinsey reported in 2025 that at large companies, company-wide copilots and chatbots spread quickly but produced diffuse, hard-to-measure gains. A first project is one job in one department with a count before and after, such as re-pricing open quotes after a vendor price change. Buy the seats if you like, and pick that one job anyway."
 cta:
-  service: "audit"
-  heading: "How Syzygy helps"
-  body: "Syzygy's AI Audit & Prototyping engagement applies this kind of screen across your business and returns a ranked opportunity list with an estimated return for each. Book an intro call to find out where AI would pay off first for you."
-related: ["ai-readiness-assessment", "measuring-ai-roi", "prototype-before-you-commit"]
+  service: "training"
+  heading: "Turn your team's slowest tasks into its first AI tools"
+  body: "Syzygy's AI Playbook Training runs about four weeks: interviews with your team, three workshops built on your own documents and jobs, a custom AI Playbook, and reusable AI tools set up for the work that takes the most time, with email support after. A tool that has to be wired into your ERP is a separate custom build, quoted after an audit. Book an intro call and bring the list your department leads gave you."
+related: ["ai-readiness-assessment", "measuring-ai-roi", "ai-for-document-heavy-work"]
 ---
 
-The most common way a small business wastes money on AI is by starting with the most interesting problem instead of the most valuable one. Forecasting, strategy, and customer insight are interesting. Retyping purchase orders and reading specification PDFs are not. The second group is where the return is, and it is where the first project should go.
+On Monday a software rep walks the owner through AI demand forecasting. On Tuesday a copper price letter lands, effective the first of next month, and an inside sales rep spends the next day and a half going back through 40 open project quotes to find every line of wire it touches.
 
-This article gives you a four-factor screen for ranking candidate processes, a list of the workflows that usually rise to the top, a worked ranking for a distributor, and a simple method for estimating return before you build anything.
+Take a 115-person electrical distributor, third generation, with two branches in Wichita and two on the Kansas City side, selling to electrical contractors and industrial accounts. It's hypothetical, but its week isn't unusual. The forecasting pitch is more interesting. The price letter is where the money is, and no list of fifty AI use cases would have told the owner that.
 
-## Where does AI pay off first in a small business?
+## Start with work someone can check in seconds
 
-AI pays off first in work that is high in volume, moderate in judgment, genuinely painful, and already documented in data you hold. Those four conditions describe a specific kind of task: someone reads something messy, decides what it means using patterns they have learned, and produces something structured. Quoting from a customer's drawings. Entering orders from emailed purchase orders. Checking a specification against what you can actually build. Routing inbound email. Matching invoices to receipts.
+Stanford's [2026 AI Index](https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_4_economy.pdf) sums up the productivity research in one sentence: "Productivity gains from AI are largest in structured, measurable work where outputs are easy to monitor."
 
-> The best first project is boring, frequent, and disliked.
+In an operating company, that means turning something messy into something structured that a person can confirm at a glance: a price letter that has to become new costs on the right part numbers, a contractor's bill of material matched to your catalog, an emailed PO keyed as an order. Veterans do these fast. A new hire takes months to learn each supplier's and customer's quirks.
 
-Work that fails any of the four conditions pays off later or not at all. Low-volume work does not return enough hours. Work that is purely rule-based is better handled by ordinary software. Work that needs deep expertise or relationships is not safe to hand over. Work with no data has nothing to learn from.
+Work that's simpler or harder than that needs something else. A fixed rule ("raise everything in this product class 4%") needs only the rule, set up once as an import template or the ERP's own price update. That's cheaper, and it never guesses. Judgment, like pricing a one-off job against a competitor who may be buying the bid, stays with the people who own the relationships.
 
-## The VJPD Screen
+Most jobs mix all three, so split each candidate into its steps before you score it. Often only one step needs AI. And the best first project is usually a dull one: frequent enough that a few minutes an item add up to real hours, and disliked by the people who do it.
 
-Score each candidate process from one to five on the four factors below, then add them for a total out of twenty. The name is just the initials: Volume, Judgment, Pain, Data.
+## Five places to look
 
-### Volume
+### Anything keyed in from a PDF
 
-How often does the task happen, and how many hours does it consume across the team each week?
+At the distributor it's customer POs that arrive as PDFs and get keyed into the order screen. Retyping is easy to count: hand-entered orders times minutes each. Check first whether it needs a project at all. Whoever sells you your ERP (Eclipse, Prophet 21 or whatever you run) may already sell document capture for it. The [document-heavy work guide](/insights/ai-for-document-heavy-work/) covers how to count order entry and test a tool on 50 of your own documents.
 
-- **1:** a few times a month, an hour or two in total.
-- **3:** daily, several hours a week across the team.
-- **5:** many times a day, a meaningful fraction of several people's jobs.
+### The queue in front of one or two senior people
 
-Volume is what turns a small per-task saving into a number that matters. A tool that saves ten minutes on a task done four hundred times a week returns more than sixty hours.
+Here it's project quotes. A contractor sends a bill of material and a lighting fixture schedule on Tuesday for a bid due Friday, and only the two senior quoters know which fixtures have an approved substitute, whose lead times are real and which line is a typo. Before any of that, they spend part of every quote typing the contractor's list into the quoting screen.
 
-### Judgment
+Go after the typing. A tool that turns the bill of material into draft quote lines with catalog numbers, and flags what it couldn't match, gives them back the keying time and leaves the judgment where it is.
 
-This is the factor owners misread most often, so score it for fit rather than for amount.
+For an owner wondering who quotes after these two retire, there's a second payoff if you keep their corrections. Save each draft beside the quote as sent, and the differences become the tool's test set and the start of a written substitute list. Start that list this month in a spreadsheet: the fixture a spec calls for, the substitute you've had accepted, and which engineers accepted it.
 
-- **1:** either fully mechanical (a rule could do it, so use a rule) or deeply expert (pricing a one-off engineering job, negotiating a contract, handling an angry key account).
-- **3:** mostly pattern-based, with regular exceptions that need a person.
-- **5:** pattern recognition on messy inputs with clear right answers, where an experienced person is fast but a new hire takes months to learn.
+### The questions the counter answers all day
 
-> Judgment is the axis owners get wrong: the sweet spot is pattern recognition, not decision-making.
+Have the counter keep a tally for a day. Is the 200-amp panel in stock in Wichita or only in Lenexa? When does the backordered fixture ship? What's the approved substitute for the one the spec calls for? The same dozen questions come from contractors and your own inside sales.
 
-A five here looks like reading a customer's spec and pulling the twelve fields you need, or classifying five hundred inbound emails into six buckets. A one looks like deciding whether to take on a risky customer.
+Each answer has to come from live stock and open purchase orders, so a tool needs a working connection to the ERP, and a wrong answer goes straight to a customer. First check whether your ERP's customer web portal, if you have one, already shows branch stock. Getting contractors onto it may be the cheaper fix. Otherwise it's a later project.
 
-### Pain
+### Last year's invoices for outside work
 
-How much does the task cost you beyond the hours?
+Ask the controller to run last year's payables for outside services, temp labor, professional fees and marketing. Anything recurring where someone outside reads or writes for you is a candidate: temp data entry at quarter end, a bookkeeper's catch-up work, an agency's routine product copy.
 
-- **1:** nobody minds it, and errors are rare and cheap.
-- **3:** it delays something customers notice, or it causes periodic errors that take time to fix.
-- **5:** it is a bottleneck that loses business, burns out good people, or produces expensive mistakes.
+MIT's NANDA initiative found in its July 2025 report [The GenAI Divide](https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf) that ROI "emerged from reduced external spend, eliminating BPO contracts, cutting agency fees, and replacing expensive consultants." MIT no longer hosts the report (the link is a widely circulated copy), and the sample wasn't random, so use it to decide where to look.
 
-Pain matters because it predicts adoption. People embrace tools that remove work they hate and ignore tools that remove work they are indifferent to.
+### The stack of price letters
 
-### Data
+Price letters have a new cause this year. Since April 6, 2026, under an [April proclamation](https://www.whitehouse.gov/presidential-actions/2026/04/strengthening-actions-taken-to-adjust-imports-of-aluminum-steel-and-copper-into-the-united-states/), Section 232 tariffs on steel, aluminum and copper apply to an import's full value instead of its metal content. The rates in the White House [fact sheet](https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/) include 50% for articles made entirely or almost entirely of those metals, 25% for derivatives, and 15% through 2027 for certain industrial and electrical grid equipment, a category a [June proclamation](https://www.whitehouse.gov/presidential-actions/2026/06/further-adjusting-the-tariff-regimes-for-imports-of-aluminum-steel-and-copper-into-the-united-states/) widened.
 
-Do you have the inputs and the past outcomes in a form a machine can read?
+A letter sent as a spreadsheet in a fixed layout needs an import template. AI is for the letter that has to be read: building wire up 7% "except as noted," with the exceptions in a table on page two. The quoting guide covers [refreshing quotes after a price change](/insights/automating-quoting-in-manufacturing/) at a machine shop, and the reading step is the same.
 
-- **1:** in heads, on paper, or not retained.
-- **3:** in email, PDFs, and spreadsheets, scattered but retrievable.
-- **5:** in a system with consistent fields, with a few hundred examples you could export this week.
+## Rank them on one page
 
-Data of three is often good enough for document-heavy work, because reading messy documents is one of the things AI does well. Data of one is a stop sign.
+Put the candidates on one sheet, a line each, with three columns:
 
-### Scoring and ranking
+- Hours a week, counted from last month's report or a week of tally marks, not guessed.
+- Time to check one: how long a person needs to confirm one quote line, order or answer. Seconds is best, minutes is workable, and "we'd know by next season" is a warning.
+- How you'd get it: an ERP report or rule, a feature of software you already pay for, a chat seat with a template, or a build. That's the cost side.
 
-Add the four scores. Anything sixteen or above is a strong first candidate. Twelve to fifteen is worth prototyping if the top candidates fail a [readiness check](/insights/ai-readiness-assessment/). Below twelve, wait.
+Two more tests rule lines out or break ties. If past examples and their right answers live in someone's head or a binder, the line waits until they're written down. And a tool that removes a job people dislike gets used, while one that speeds up something nobody minds gets ignored. Fill in the sheet with the people who do the work: the inside sales manager knows how many lines a letter touches, and the owner's estimate is a guess, like any consultant's.
 
-The screen is deliberately simple. Its job is not to be precise; it is to make you compare candidates on the same terms and to expose the projects you were drawn to for the wrong reasons.
+Then estimate the yearly value before anyone buys or builds anything, and keep the counts as your baseline:
 
-## Which processes usually score highest?
+(minutes now, minus minutes with the tool, minus minutes to check) x items a week x 50 weeks / 60 x loaded hourly cost
 
-Across small and mid-sized businesses, the same processes tend to rise to the top of the screen because they share the same shape: messy input, learned pattern, structured output.
+For the hourly cost, multiply the wage by about 1.43. That's the ratio of total cost to wages for private employers in the Bureau of Labor Statistics' [June 2026 figures](https://www.bls.gov/news.release/archives/ecec_09092026.htm), and it's about the same at establishments of 100 to 499 workers. Divide a salary by 2,080 first, and redo it with your own payroll and benefit costs.
 
-- **Quoting and estimating** from customer drawings, specifications, and requests for quotation. This is where a mid-Atlantic manufacturer [made its quoting 18% more efficient](/insights/automating-quoting-in-manufacturing/) by automating specification analysis and contract-term exceptions.
-- **Order entry** from emailed purchase orders and PDFs into the ERP.
-- **Specification and contract review**, flagging terms and requirements that need attention.
-- **Inbound email triage** for sales, service, and accounts-payable inboxes.
-- **Invoice and receipt matching** in accounts payable.
-- **Drafting routine documents**: proposals from past projects, job summaries from technician notes, first-pass reports.
-- **Meeting and call notes** turned into structured CRM updates and follow-up tasks.
+The first year's cost, including your own people's setup hours at the same loaded rate, should come in under the first year's value, or it's the wrong first project. Leave soft benefits out: if the case only works once you count fewer late nights in a price-letter week, pick another line.
 
-Processes that usually score lower than owners expect include demand forecasting (data is thin, judgment is high), strategic analysis (low volume), and anything involving a key customer relationship (judgment is a one).
+Keep the list you act on short. In BCG's [January 2025 AI Radar](https://www.bcg.com/publications/2025/closing-the-ai-impact-gap), companies whose executives said they had created significant value from AI prioritized 3.5 use cases on average, against 6.1 for the rest. Those are C-suite executives grading their own companies. At 115 people, our view is one at a time, two at most. Before you commit to the top line, [check that it's ready](/insights/ai-readiness-assessment/).
 
-## A worked example
+## The distributor's list, ranked
 
-Consider an 80-person industrial distributor with a sales desk of six, a purchasing team of three, and a warehouse. The owner lists five candidates. Score them.
+Here's the Kansas distributor's sheet, with illustrative numbers and who feels each job in parentheses.
 
-- **Order entry from emailed POs.** Volume 5 (a few hundred a week), Judgment 4 (consistent format, occasional odd units), Pain 4 (errors cause returns), Data 5 (every order is in the ERP). Total 18.
-- **Vendor quote comparison in purchasing.** Volume 3, Judgment 4, Pain 3, Data 3 (quotes arrive as PDFs). Total 13.
-- **Answering product-fit questions from customers.** Volume 4, Judgment 3 (needs catalog knowledge, some exceptions), Pain 3, Data 3 (the catalog exists, past answers are in email). Total 13.
-- **Demand forecasting.** Volume 2, Judgment 1 (expert, and the data is too thin), Pain 3, Data 2. Total 8.
-- **Negotiating annual pricing with top accounts.** Volume 1, Judgment 1, Pain 2, Data 3. Total 7.
+| Candidate | Hours a week | Time to check one | How you'd get it |
+|---|---|---|---|
+| 1. Re-pricing open quotes (inside sales) | 12 | 30 seconds a line | ERP report, mass update, chat seat |
+| 2. Project quotes (senior quoters) | 16 of keying | 30 minutes a quote | A build; know-how in two heads |
+| 3. Order entry from PDFs (inside sales) | 10 | A minute or two a PO | Maybe an ERP add-on |
+| 4. Stock questions (counter) | 15, scattered | Seconds, with live stock | A build wired to live stock |
+| 5. Demand forecasting (buyers) | None freed | A season | A new system |
+| 6. Marketing emails (nobody much) | 2 | A few minutes | A chat seat |
 
-Order entry is the clear first project. The two thirteens are second-wave candidates, and the owner should notice that the two projects he found most interesting scored lowest. That is the screen doing its job.
+Re-pricing comes first. Say inside sales re-prices 120 open quote lines a week, about three on each of those 40 quotes, at 6 minutes a line (roughly 2 to find the line, 3 to work out the new cost from the letter and 1 to key it and reapply the margin). An ERP report of open quotes by vendor and a mass update take out the finding and keying with no AI: 3 minutes x 120 = 360 minutes, 6 hours a week. A tool that reads the letter takes out most of the rest, leaving 30 seconds to check each line against the letter: 2.5 minutes x 120 = 300 minutes, 5 hours. Deciding which contractors to call stays with people, against a threshold you set, say any quote that moves more than $500.
 
-## How do you estimate the return before building?
+An inside sales rep at $28 an hour costs about $40 loaded ($28 x 1.43), so the hours saved are worth 11 x 50 x $40 = $22,000 a year, and only $10,000 of it needs AI. That's capacity, not cash, unless overtime or a planned hire goes away, so decide now where the hours go: calling contractors on the quotes the letter moved most.
 
-Multiply hours returned per week by the loaded hourly cost of the people doing the work, annualize, and add any revenue effect from faster turnaround. Then compare to total cost, including software fees, integration, and your team's time during the project.
+Then there's the part nobody logs. A quote that still carries $30,000 of wire at last month's cost, after a 7% letter, gives away $2,100 of margin on one order. To count it, compare each line on last quarter's project orders: the cost it shipped at against the cost its quote was priced on, times the quantity. If the ERP can't run that, do the 20 largest orders by hand, and ask the sales manager whether copper-heavy lines should carry a shorter quote validity.
 
-For the distributor's order entry: if six people spend a combined thirty hours a week on entry and a tool returns two-thirds of that, twenty hours a week at the team's loaded rate is the labor line. If faster entry also means same-day shipping on more orders, estimate the share of customers for whom that affects reorder behavior and be conservative. Write both numbers down before the project starts, because you will need the [baseline to measure the result honestly](/insights/measuring-ai-roi/) afterward.
+You can run two checks this week without hiring anyone. Ask your ERP admin or reseller whether you can pull open quotes by vendor and mass-update their cost. Then paste last week's letter into a chat tool, ask for a table of item, old cost, new cost, effective date and exceptions, and check every row against the letter with a stopwatch. A wrong cost the tool flagged is fine; an unflagged one is the result to worry about. Use a company account on an approved tool, never a personal one, because net pricing and bid documents may be confidential ([put that rule in writing](/insights/ai-governance-for-owner-led-companies/)).
 
-Resist counting soft benefits in the business case. Put "better morale" in a footnote and let hours and cycle time carry the argument. If the case only works with soft benefits, the screen has told you something.
+Project quotes come second, though their AI part is worth more. Say the senior quoters handle 12 a week, each starting with about 80 minutes of keying. A drafting tool needs 10 minutes to load and 30 to check against the schedule, saving 40 minutes a quote, 8 hours a week. A senior quoter on $75,000 is about $36 an hour, or $51 loaded ($36 x 1.43), so 8 x 50 x $51 = $20,400 a year, about twice the AI part of re-pricing.
 
-## Where this goes wrong
+It stays second because checking takes half an hour a quote instead of half a minute a line, a missed fixture costs a bid or a return, and it's a build. The bigger prize may be the bids the quoters pass on or send late, so log those for four weeks, and if there are many, swap the top two. Either way, a team that has spent two months checking a tool's price lines knows how to check quote drafts.
 
-- **Starting with the interesting problem.** Forecasting and strategy are where owners want AI and rarely where it pays first.
-- **Scoring judgment as a quantity.** More judgment is not better. Fit is what matters.
-- **Ignoring pain.** A high-volume task nobody minds will get automated and then ignored.
-- **Counting hours saved without asking what they become.** Hours returned only turn into money if they go to billable work, more quotes, or a hire you no longer need to make.
-- **Running the screen alone.** The people doing the work know the real volume and the real pain. Score with them.
-- **Skipping the readiness check.** A high VJPD score on a process with no owner is still a stalled project.
+Monday's forecasting pitch lands fifth, behind order entry and the counter's questions. A forecast is judged a season later, nobody's hours come back because buyers still review every reorder, and much of this distributor's volume follows contractors' bid wins, which no sales history sees. It's also a different kind of AI from the reading tools above. If you look at it anyway, ask the rep to test it on your data: train it on one year, forecast the next, leave out direct-ship and job material, and compare item by item with what sold and what your buyers ordered, in dollars of excess stock and stockouts. Ask, too, who keeps its ERP connection working and how you get out of the contract.
 
-## What comes after the first project?
+Marketing emails take two hours a week that nobody minds, and a chat seat already does most of it. Don't call that a project. The outside bills turned up little here, since manufacturers supply most product descriptions. At a company paying temps for data entry every quarter end, that line might top the sheet.
 
-The first project's real return is the second project. Once a team has seen a boring, hated task disappear, the next candidate list writes itself and the resistance is gone. The returns do not require custom builds, either: an online retailer reached 25% more efficient operations and a 10% increase in revenue after automating listing, repricing, and shipping preparation, by configuring third-party software rather than building anything. And the ceiling is high: a West Michigan automotive company rolled out a custom LLM suite that more than 400 employees use in their daily work. Companies that keep going, usually through an [ongoing partnership](/services/#partnership) rather than a series of one-off builds, follow the same [phased sequence](/process/) each time: assess, prototype, build, measure, repeat.
+## Buy the chat seats, then pick one job anyway
 
-## The bottom line
+The other common first move is buying chat seats for the whole office. McKinsey's June 2025 report [Seizing the agentic AI advantage](https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage) found that company-wide copilots and chatbots "scaled quickly but deliver diffuse, hard-to-measure gains." It also estimated that about 90% of vertical, function-specific uses "remain stuck in pilot mode," which is the catch in starting with one job. McKinsey doesn't show the base for that 90%, and its research draws on large companies. At smaller ones, in our view, the usual reason is plainer: nobody owns the pilot, and nobody counted anything before it started.
 
-AI pays off first in high-volume, moderate-judgment, painful, well-documented work, which in most small businesses means quoting, order entry, document review, and inbox triage. Score candidates on volume, judgment fit, pain, and data, pick the highest total that also passes a readiness check, and estimate the return in hours and cycle time before you build. The interesting problems can wait. The boring ones are paying for them.
+So buy the seats if you like; people learn the tools by using them. Then give one job in one department an owner and a count before and after, and get it into daily use before you start another.
+
+## This week, ask every department lead one question
+
+You don't need anyone's help to make the sheet, ours included. Outside help is worth paying for later: when your top line needs building (a counter assistant wired to live stock, say), or when nobody on staff has the hours to set up and test the first one.
+
+Send each department lead (inside sales, the branch managers, purchasing, the warehouse, the controller) the same question, due Friday:
+
+"Name three tasks you'd hand off tomorrow, how many hours a week each takes, and how you'd know if the answer was right."
+
+The last part does most of the sorting. A lead who can't say how they'd know the answer was right has named a judgment call, or a job whose right answers aren't written down.
+
+Put every reply on the sheet, split each line into its steps, run the formula on the lines with real hours, and circle the top one whose output someone can check in seconds. That's your first project.

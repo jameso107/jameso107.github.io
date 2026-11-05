@@ -1,126 +1,188 @@
 ---
-title: "Document-Heavy Work Is AI's Sweet Spot: Specs, Contracts, and Compliance"
+title: "What AI Can Safely Do With Your Specs, Contracts and Compliance Paperwork"
 seoTitle: "AI for Document-Heavy Work: Specs and Contracts | Syzygy"
 slug: "ai-for-document-heavy-work"
-dek: "Document-heavy work delivers the most reliable AI return in a small business because reading, extracting, classifying, and first-drafting are the tasks language models do best. Climb the ladder from extraction to classification to drafting, and set review intensity by how costly and how reversible a mistake would be."
-description: "Where AI is safe to use on specs, contracts, and compliance documents, where human review is required, and the extraction-to-drafting ladder to follow."
+dek: "AI is dependable at pulling a dozen fields off a page and checking them against a standard, and shaky on handwriting, blank boxes and judgment calls. Test it on 50 of your past documents first, and keep a person on anything binding."
+description: "Where AI is safe on specs, contracts, POs and compliance paperwork, where it breaks, and how to test it on 50 of your own documents before you buy."
 category: "Operations"
-keywords: ["AI document analysis small business", "AI contract review", "AI for compliance documents", "document automation", "specification review AI", "AI document extraction"]
+keywords: ["AI document processing small business", "AI contract review", "AI for compliance documents", "automate purchase order entry", "AI data extraction from PDFs", "AI spec review", "AI for submittals and COIs"]
 author: "james-oosterhouse"
 order: 12
 featured: false
 keyTakeaways:
-  - "Document-heavy work is AI's most reliable payoff because reading messy text and producing structured output is what language models do best, and small businesses are full of it."
-  - "Climb a three-rung ladder in order: extraction, then classification, then drafting, because each rung is riskier than the last and each builds the trust the next one needs."
-  - "Set review intensity by two questions, how costly is a mistake and how reversible is it, and never let a tool decide alone what you would not let a new hire decide alone."
-  - "The safest AI work is work where a person can check the answer in seconds, which is why extraction with source links should come first."
+  - "Start with a document you receive in volume and retype into a system, such as customer POs, vendor invoices or material certs, because it's the easiest work to check and last month's ERP reports show how much of it there is."
+  - "Ask for about a dozen fields per pass, because in a vendor-run 2026 benchmark, extraction accuracy fell apart as the field list grew, and well-formed output was no guarantee the values were right."
+  - "Test any tool on 50 past documents where you know the answers, including scans, faxes and handwriting, and count the wrong values it didn't flag."
+  - "A pass in a chat window proves the model can read your paperwork; daily use still needs software that picks documents up from the inbox and shows each value beside the page it came from."
+  - "Set the review by what a mistake would cost and whether you can undo it, and never let a tool decide alone what you wouldn't let a first-month hire decide."
 faq:
   - q: "Can AI review contracts for a small business?"
-    a: "AI can reliably extract key terms, compare a contract against your standard positions, flag deviations, and draft a summary or a list of exceptions. It should not be the final decision on whether to sign; a person reviews the flags, and anything with high consequence gets a lawyer as before. The saving is in reading time, not in judgment."
-  - q: "What documents are safe to automate with AI?"
-    a: "Documents where the task is extraction or classification and a person can verify the output quickly: pulling fields from specs and purchase orders, sorting inbound documents by type, flagging missing items in compliance submissions. Documents where the output is a binding decision or leaves the company without review need a human step built in."
-  - q: "How does AI document extraction work?"
-    a: "The tool reads the document, including PDFs and scans, locates the fields you have defined, and returns them in a structured form with a reference to where each value appears in the source. A reviewer checks low-confidence fields, and the structured data flows into your systems."
+    a: "AI can read a contract, pull out the terms that matter (payment, retention, liquidated damages, indemnity, insurance limits) and compare each one against your standard positions, flagging the deviations. That works well once those positions are written down on a page. It shouldn't decide whether to sign. A manager can handle routine deviations, and anything with real exposure still goes to your attorney, with the clauses already marked. What you save is the hours spent reading to find them."
+  - q: "How accurate is AI at pulling data from PDFs and scanned documents?"
+    a: "It depends on the document and on how much you ask for at once. Clean digital PDFs with a short list of fields do well. Accuracy drops as the field list grows, and in 2026 vendor benchmarks handwriting and sparse tables were still weak, with models sometimes inventing values for blank boxes. Neat, well-formatted output is no proof the values are right. The accuracy number that matters is the one you measure on 50 of your own past documents where you know the right answers."
+  - q: "Which documents should a small business automate with AI first?"
+    a: "Start with a document you receive in volume and retype into a system, such as customer purchase orders, vendor invoices or material certs. That work is easy to check against the page, your ERP often catches errors downstream, and the hours add up fast. Contracts and compliance filings come later, because mistakes there cost more and are harder to undo."
+  - q: "Is it safe to put customer contracts or drawings into ChatGPT or Copilot?"
+    a: "Not in a personal or free account. Use a business plan your company controls, check its terms on whether your data trains the vendor's models, and give employees a short written rule on what may be uploaded. Customer drawings and contracts often carry confidentiality terms of their own. Keep export-controlled drawings (ITAR or EAR) and controlled unclassified information out of any AI tool until whoever owns your export and CMMC compliance has cleared it, and have the vendor's terms reviewed before patient or member data goes in."
+  - q: "Do we need custom software to use AI on our paperwork?"
+    a: "Usually not at first. Ask your ERP and accounting vendors what document capture they include, and test a general AI assistant on a business plan against 50 of your own documents. Custom work is worth paying for when the right answer depends on what only your company knows, such as your capabilities, past quotes or contract positions, or when results must flow into your ERP with a review step the software enforces."
 cta:
-  service: "implementation"
-  heading: "How Syzygy helps"
-  body: "Syzygy builds and implements document-grounded AI systems for specifications, contracts, and compliance work, with source-linked extraction, confidence routing, and review workflows built in. Book an intro call to talk through the document work that is consuming your team."
-related: ["automating-quoting-in-manufacturing", "ai-governance-for-owner-led-companies", "where-ai-pays-off-first"]
+  service: "custom-tools"
+  heading: "Have your team check the paperwork instead of retyping it"
+  body: "Syzygy's Custom Tools & Builds start from the paperwork your team handles every day and are built so each value can be traced to the page it came from, with results landing in the systems you already run. Every build comes with documentation and training and is quoted after an AI Audit maps the work. Book an intro call and bring a stack of the paperwork that eats your week."
+related: ["automating-quoting-in-manufacturing", "ai-governance-for-owner-led-companies", "build-buy-or-configure"]
 ---
 
-Walk through any small business and count the hours spent reading documents so that something can be done with them. Specifications read so a quote can be written. Contracts read so terms can be checked. Compliance forms read so a submission can be assembled. Invoices, certificates, purchase orders, permits, insurance binders. Almost none of that reading is the job; it is the cost of getting to the job.
+Count the hours your office spends reading something so it can type it somewhere else. The inside sales rep keys a customer's PO into Epicor line by line while the AP clerk matches vendor invoices against receivers. On a construction job, the project coordinator checks each sub's certificate of insurance against the prime contract's limits; in the plant, a quality tech copies heat numbers off mill certs into a PPAP package. Nobody on that list was hired to retype, and in most offices it adds up to more hours than anyone has counted.
 
-This is where AI earns its keep most reliably, and this article explains why, gives you a three-rung ladder for introducing it safely, and shows how to decide where a person must stay in the loop.
+That reading is also where AI is most dependable today, because when a tool pulls the ship date off a PO, someone can check it against the page in seconds. In our experience, most disappointment with AI comes from work where nobody can quickly tell whether the answer is right. Paperwork is the opposite.
 
-## Why is document-heavy work AI's sweet spot?
+In the St. Louis Fed's [September 2026 look at what US workers use AI for](https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do), "reading documents to gather technical information" topped its list of the most AI-assisted tasks: 61.3% of workers who do that task said they use AI for it. Some of that is likely happening in your building, in personal chat accounts with a customer's contract pasted in. Better to do it on purpose, with a test and a review step.
 
-Because reading messy text and producing structured output is precisely what language models do best, and document work in a small business is almost entirely that. Traditional software needed documents to arrive in fixed formats. Language models read the specification as a person would, find the tolerance callout wherever the customer put it, and return it as a field. That single capability turns a large class of previously unautomatable work into a candidate.
+## Sort the paperwork by what happens after someone reads it
 
-Three properties make document work especially safe as a first target:
+Nearly every document gets read for one of three reasons, and AI gets less reliable as you go down the list.
 
-- **The answer is checkable.** When a tool extracts a delivery date from a purchase order, a person can confirm it in two seconds by looking at the source. Verification is cheap, so trust builds fast.
-- **The volume is high and the judgment is low.** Most of the reading is pattern recognition an experienced clerk does on autopilot. That is the exact profile a [prioritization screen](/insights/where-ai-pays-off-first/) rewards.
-- **The documents already exist.** You do not need a data project. You need the folder where the documents already live.
+Some get read only so part of them can be retyped: PO lines into the ERP, invoice totals into QuickBooks, test values from a cert into the quality log. Nothing gets decided, each field can be checked at a glance, and the system's own checks (a three-way match, the price file) catch some errors later. When the Dallas Fed asked Texas firms in [May 2026](https://www.dallasfed.org/research/surveys/tbos/2026/2605q) which tasks AI had replaced, one plastics and rubber products manufacturer answered, "Order processing, accounts payable, engineering." The first two are this kind of reading.
 
-> The safest AI work is the work where a human can check the answer in seconds.
+Others get compared against a standard, such as a subcontract against your terms, a COI against the contract's insurance requirements or a mill cert against the material spec. That's bounded judgment, with a short list of answers (matches, deviates, missing) and a reference to check against.
 
-## The Extraction, Classification, Drafting Ladder
+The last kind is read so someone can write back: the exceptions list on a quote, clarification questions on an RFQ, the reply to a corrective action request. It's the most valuable reading to hand off and the riskiest, because a well-written draft is persuasive even when it's wrong. Start with retyping, and move down the list only once your people have seen where the tool slips.
 
-Introduce document AI in three rungs, in order. Each rung is more valuable and riskier than the one below it, and each builds the trust and the data the next one needs. We call this the **Extraction, Classification, Drafting Ladder**.
+## Last month's numbers tell you where to start
 
-### Rung 1: Extraction
+Your ERP has most of the count: run last month's reports of sales orders and AP invoices entered, counting only POs that arrive as PDF, email or fax (EDI orders need no reading). Then time ten clean documents of each kind and five that had a problem, because an invoice that doesn't match the receiver can take several times as long as a clean one.
 
-The tool reads a document and pulls defined fields into a structured form: quantities, dates, part numbers, parties, amounts, clauses, certifications. The output is a filled-in form with a link from every field to the place in the source it came from. Low-confidence fields are marked for a person.
+For a 90-person fabricator with a distribution side, it might look like this (an illustration, not a benchmark):
 
-Extraction is where to start because it is the most checkable and the least consequential. Nothing is decided; information is moved from an unstructured place to a structured one, and a person confirms it. Yet it typically absorbs the largest share of reading time, so the return is immediate. It is the foundation of the quoting automation described in our guide to [automating quoting in manufacturing](/insights/automating-quoting-in-manufacturing/), where a mid-Atlantic manufacturer made its quoting 18% more efficient by automating specification analysis and contract-term exceptions.
+| Document | Per week | Minutes each | What happens next |
+|---|---|---|---|
+| Customer POs (PDF, email, fax) | 140 | 6 | Retyped into the ERP |
+| Vendor invoices, clean | 200 | 3 | Matched and entered in AP |
+| Vendor invoices, mismatched | 20 | 20 | Calls to the buyer and vendor |
+| Customer T&Cs, quality manuals | 3 | 90 | Checked against your terms |
+| Mill certs | 40 | 5 | Checked and filed |
 
-### Rung 2: Classification
+For each row, multiply count by minutes, by 50 weeks, by the loaded cost of an hour of work. For hourly staff, take the base rate x 1.43, a ratio from the Bureau of Labor Statistics' [June 2026 employer cost figures](https://www.bls.gov/news.release/archives/ecec_09092026.htm) that adds benefits, paid time off included: $28 an hour x 1.43 = about $40 for an inside sales rep. It's a national average, so redo it with your own payroll and benefit costs. The PO row is 140 x 6 = 840 minutes, or 14 hours a week, and 14 x $40 x 50 = $28,000 a year spent reading and typing POs.
 
-The tool decides what kind of thing a document is, or what category its contents fall into: this email is a change order; this clause deviates from our standard position; this submittal is missing two required certificates; this request is urgent. Classification is a judgment, but a bounded one, with a small set of possible answers and clear examples of each.
+Then subtract the checking. In BCG's [2026 AI at Work survey](https://www.bcg.com/publications/2026/ai-at-work-why-strategy-matters-more-than-tools) of 11,749 employees, managers and leaders in 14 markets, 52% said AI had increased the time they spend reviewing and correcting its output. All of them work at companies with $100 million or more in revenue, but the arithmetic is the same at 90 people. If the tool saves 6 minutes of typing per PO and checking takes 2, you've saved 4. That's 140 x 4 = 560 minutes a week, about 467 hours over 50 weeks, or about $18,700 a year at $40. Call that the ceiling on anything you buy or build for that row.
 
-Classification is riskier than extraction because a wrong category can send a document down the wrong path. It is still safe when the categories are few, the examples are many, and anything ambiguous is routed to a person rather than guessed. The value is triage: work arrives sorted, flagged, and prioritized instead of in a pile.
+The mismatched invoices are nearly 7 hours a week, and no capture tool shortens a phone call. Before you automate anything, decide whose queue the odd ones land in (the PO whose price doesn't match the quote, the cert from a mill you've never used), or they'll sit in an inbox nobody checks.
 
-### Rung 3: Drafting
+The T&C row is only 4.5 hours, but they're the owner's hours, and one missed liquidated damages clause can outweigh a year of typing. Contracts still come later, because you want the tool proven on POs before it reads anything with that much at stake.
 
-The tool produces a first version of something a person will finish: a summary of a contract's deviations, a response to a specification, a compliance narrative, a list of exceptions to terms. Drafting is the most valuable rung, because it moves work forward rather than just organizing it, and the riskiest, because fluent text is persuasive even when it is wrong.
+## Where document AI breaks, and what the demo won't show you
 
-Drafting is safe when the draft is grounded in the source documents with citations, when the person finishing it is competent to judge it, and when nothing leaves the building without that person's review. Drafting is unsafe when the reviewer is rushed or unqualified, or when the draft becomes the decision by default.
+Demos tend to run on clean, digital PDFs, not a fax from a customer's 2009 system. Both benchmarks below were run by companies that sell document AI.
 
-Climb in order. A company that starts with drafting has skipped the two rungs where trust and evaluation data are built, and it will either over-trust the drafts or abandon the tool at the first visible error.
+### Accuracy falls as the field list grows
 
-## Where is document AI safe to automate, and where does it need human review?
+In [ExtractBench](https://arxiv.org/abs/2602.12247), published in February 2026 by Contextual AI, frontier models from OpenAI, Google and Anthropic pulled data out of 35 PDFs. Failure tracked how many fields were asked for and how long the answer had to be, not how long the document was. Asked for 369 fields from a financial filing, no model produced valid output. A well-formed answer wasn't a guarantee either. When a model returned one, 65% to 80% of its fields were right, depending on the model, and the authors note those were mostly the easier cases.
 
-Set review intensity by two questions: how costly is a mistake, and how reversible is it. Together they form the **Review Intensity Grid**, a two-by-two you can hold in your head.
+So ask for about a dozen fields per pass. If you need 60 values off a customer's quality requirements, split the job into five passes by section.
 
-- **Low consequence, easily reversible:** internal summaries, first-pass sorting, extracting fields that a downstream step will validate anyway. Automate fully, with spot checks.
-- **Low consequence, hard to reverse:** a routine document sent to a customer, a filing with a small deadline penalty. Automate with a light review: a person glances before it goes.
-- **High consequence, easily reversible:** an internal price build-up, a draft exception list, a classification that determines who works on something. Automate with a required review; the person confirms before the next step.
-- **High consequence, hard to reverse:** signing a contract, submitting a regulated filing, committing to a delivery date, anything that binds the company. The tool prepares; a qualified person decides, every time, with the tool's work presented as evidence, not as a recommendation to accept.
+### Blank boxes get filled in, and handwriting is still weak
 
-> Never let a tool decide alone what you would not let a new hire decide alone.
+Trail, part of Nanonets, put 16 models (Nanonets' own among them) through more than 9,000 real documents for its [IDP Leaderboard](https://trailhq.com/blog/idp-leaderboard-1-5), published in March 2026. The best handwriting score was 75.5%, most models scored below 55% on sparse tables (scattered cells, lots of blank space), and on handwritten forms the models filled in values for fields that were blank on the page.
 
-The grid is also a design specification. For each quadrant, the workflow should enforce the review level rather than rely on people remembering it. That is a matter of [governance](/insights/ai-governance-for-owner-led-companies/) as much as engineering, and it belongs in the build.
+On a shop floor, that's an inspection sheet with an empty box for a skipped dimension, read by a model that writes in a plausible number. If it lands in a PPAP package, you've shipped a measurement nobody took. Put blank fields in your test set on purpose, and keep a person on anything extracted for a cert or a quality record.
 
-## What does this look like for specs, contracts, and compliance?
+### Wrong answers arrive sounding right
 
-### Specifications
+In a [2023 experiment](https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai) with 758 of its own consultants, BCG found that on a problem chosen to sit outside what GPT-4 could do, those using it got the answer right less often than colleagues working without it. Even participants who had been warned the tool could give wrong answers "did not challenge its output." Models have improved since, but in our experience a fluent answer still stops people from checking. Anything checked against a standard or answered in writing needs a reviewer who knows the work well enough to disagree with the tool.
 
-Extraction pulls requirements, tolerances, materials, standards, and delivery terms into a structured form. Classification flags requirements outside your capabilities or outside the customer's usual pattern. Drafting produces the response, the clarification questions, or the quote skeleton. Review: the estimator or engineer confirms flags and owns the response.
+## Test it on 50 documents you've already processed
 
-### Contracts
+The test takes two or three days from whoever knows the document best, plus a business account on an AI tool your company controls. In a Microsoft 365 shop that's likely Copilot Chat on work accounts. As of fall 2026, Microsoft's [enterprise data protection page](https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection) says organizational use is covered by its Data Protection Addendum and that prompts and responses "aren't used to train foundation models." Your [AI policy](/insights/ai-governance-for-owner-led-companies/) should say in writing that customer documents never go into personal accounts. Leave export-controlled drawings and controlled unclassified information out until the person who owns that compliance clears the tool.
 
-Extraction pulls parties, term, payment terms, liability caps, indemnities, termination rights, and insurance requirements. Classification compares each clause against your standard positions and marks deviations by severity. Drafting produces a deviation summary and proposed exception language. Review: a manager handles routine deviations; anything high-consequence goes to counsel, exactly as before, but with the reading already done. The saving is in getting to the lawyer's question faster, not in replacing the lawyer.
+1. Pull 50 past documents of the type you picked, where the answer is known: POs entered, invoices paid, terms your attorney marked up. Your ERP and files are the answer key.
+2. Make at least 10 of them ugly: scans, faxes, phone photos, handwriting, a table split across two pages, a form with empty boxes.
+3. List 10 to 15 fields and what counts as right for each. A part number must match character for character; a date is right in any format.
+4. Write the instructions once (a version for POs is below) and use them unchanged.
+5. Start a new chat for each document, so one PO can't bleed into the next, and save each answer beside its PDF.
+6. Score every field in a spreadsheet: document, field, right answer from the ERP, the tool's answer, result (right, flagged, or wrong and silent) and seconds to check.
 
-### Compliance
+```
+Read the attached purchase order.
+For each field below, give the value
+exactly as printed, the page number,
+and the label printed next to it.
+If the field isn't on the document,
+write NOT FOUND. If you can't read it
+clearly, write UNCLEAR and put your
+best reading in brackets. Don't guess,
+don't calculate, and don't copy a value
+from a different field.
 
-Extraction pulls required data points from source records into the structure a submission demands. Classification checks a package for completeness against the requirement list and flags what is missing or expired. Drafting assembles narratives and cover documents from the extracted facts. Review: the responsible person verifies against the source and signs. Compliance work tends to sit in the high-consequence, hard-to-reverse quadrant, so review is mandatory, but the reading and assembly that consume most of the time are not.
+Fields: customer PO number, PO date,
+ship-to address, requested ship date,
+payment terms, freight terms, and for
+each line: customer part number,
+revision, quantity, unit of measure,
+unit price.
+```
 
-## A worked example
+In a chat window, NOT FOUND and UNCLEAR are the only flags you'll get. A flag is quick to clear; a silent error is the dangerous kind, so 15 flags and no silent errors beats 3 flags and 2 silent errors.
 
-Consider a 35-person commercial electrical subcontractor. Each bid begins with a specification book running hundreds of pages, each award brings a subcontract agreement with terms that need checking against the company's standard positions, and each project requires submittals, certifications, and closeout documents assembled to the general contractor's requirements. Two office staff and the owner spend a large share of each week reading.
+Write down your pass mark before you run anything. For data entry, it's zero silent errors on part number, quantity and price. The overall accuracy percentage matters less than you'd think: if typing a PO takes 6 minutes and checking takes 2, then even with one PO in four retyped from scratch you'd average 3.5 minutes against 6. Time 10 checks with a stopwatch to confirm the 2 minutes.
 
-Rung one: an extraction tool reads each specification's electrical division and pulls fixture schedules, panel requirements, referenced standards, and submittal requirements into a structured form, with each field linked to its page. The estimator confirms in minutes what took an afternoon.
+Keep every correction the reviewer makes, with a word on why. That log becomes the test set for the next tool and every model update, so you never have to take a vendor's word on accuracy.
 
-Rung two, a couple of months later: the tool classifies subcontract clauses against the company's standard positions, marking payment terms, retention, liquidated damages, and indemnity deviations by severity. The owner reads a one-page flag list instead of a forty-page agreement, and sends anything severe to counsel with the clause already highlighted.
+## For POs and invoices, look first at software you pay for now
 
-Rung three, once the first two are trusted: the tool drafts submittal cover letters and closeout packages from extracted data, and drafts the standard exception language for routine contract deviations. Office staff finish and send. Nothing binding leaves without the owner's sign-off, because contracts and compliance sit in the high-consequence quadrant, and the workflow enforces it.
+A pass in a chat window proves the model can read your paperwork. Nobody should paste 140 POs a week into a chat and retype the answers into Epicor, though. Daily use takes software that picks documents up from the inbox and shows the values beside the page.
 
-What typically happens in a company like this is that the bid pipeline widens because specs no longer wait to be read, contract deviations that used to be missed are caught consistently, and compliance packages stop being a scramble in the final week. The owner's judgment is applied to more decisions with less reading in front of each one.
+Start with your ERP reseller and your AP software vendor, since configuring something you already pay for beats starting a new project. Ask them:
 
-## How do you get started?
+- Does it read POs and invoices straight from an email inbox, or does someone upload each one?
+- Does the review screen show the page beside the values and mark the unsure ones?
+- What does it do with a field it can't find: leave it blank or fill something in?
+- How many samples of a customer's layout does it need, and who sets up a new one?
+- Will you run it on our 50 test documents before we sign? (Keep the answer key and score it yourself.)
+- Is it priced per page, document, user or month, and what does that come to at our volume?
 
-Pick one document type at the extraction rung, with high volume and cheap verification. Gather a few hundred past examples from the folders where they already live. Run a [four-to-six-week pilot](/insights/prototype-before-you-commit/) with accuracy thresholds written down first and every extracted field linked to its source. Decide the review level for each downstream use from the grid before the build, not after. Then build it into the systems where the documents arrive and the data needs to go, with access controls and monitoring, and climb to the next rung only when the first is trusted. That is the [audit, prototype, build, measure sequence](/process/) Syzygy uses, and the [services page](/services/) describes what each step involves.
+Hold the price against the ceiling from your count. Custom work makes sense where the answer depends on what only your company knows, such as your capabilities or contract positions: a general tool can read that page perfectly and still be wrong, because the right answer isn't on the page. The [build, buy or configure guide](/insights/build-buy-or-configure/) covers the wider decision.
 
-## Where this goes wrong
+## Match the review to what a mistake would cost
 
-- **Starting at drafting.** Fluent drafts on an untrusted foundation produce either over-trust or abandonment.
-- **Extraction without source links.** If a reviewer cannot verify a field in seconds, the tool has added work.
-- **Guessing instead of routing.** A tool that fills every field, confident or not, forces full review and destroys the return.
-- **Letting drafts become decisions.** In the high-consequence quadrant, the tool prepares evidence and a person decides, every time.
-- **Pasting red documents into general chat tools.** Contracts and compliance records are sensitive; the tool must be one that has passed vendor review and connects through controlled access.
-- **Skipping the completeness check.** In compliance, the highest-value classification is often the simplest: what is missing.
-- **Treating the lawyer or engineer as replaceable.** They are not. They are the reviewers the whole design depends on; the tool gets them to their question faster.
+Once a tool passes, set the daily review by what a mistake costs and whether you can take it back.
 
-## The bottom line
+| If a mistake... | For example | Review |
+|---|---|---|
+| Is cheap and caught later | PO line with a three-way match behind it | Weekly spot check |
+| Reaches a customer but can be fixed | Order acknowledgment, routine status letter | A person glances before it goes |
+| Is costly but stays inside | Draft exceptions list, internal cost build-up | A person approves before the next step |
+| Binds the company | Signed contract, cert, permit filing, ship date promised | Tool prepares, a named person decides |
 
-Document-heavy work is where AI pays off most reliably because reading and structuring text is what language models do best, the answers are cheap to check, and the documents already exist. Climb from extraction to classification to drafting in order, set review intensity by how costly and how reversible a mistake would be, and build the review level into the workflow rather than into people's memory. Do that and the reading disappears while the judgment stays exactly where it belongs.
+The rule of thumb behind the table: don't let a tool decide alone anything you wouldn't let a new hire decide alone in their first month. Build the review into the workflow, so nothing goes out until someone clicks approve, and the system records who did.
+
+Make whoever keys the documents today the reviewer and keeper of the answer key, since they know which customer's "rev" means what. Decide what their freed hours go to (late-order calls, open quotes, expediting) and tell them before the tool shows up. Our piece on [getting employees to use AI](/insights/getting-employees-to-use-ai/) covers the rest of that conversation.
+
+## Specs, contracts and compliance each need a different check
+
+On specs, prints and customer quality manuals, a tool pulls the materials, tolerances, finishes and referenced standards and flags anything outside your capabilities; the estimator or quality manager owns every flag. For a mid-Atlantic manufacturer, we built a custom AI engine that analyzes specification documents and flags contract exceptions, and the company's quoting operations became 18% more efficient, with faster turnaround. The [quoting walk-through](/insights/automating-quoting-in-manufacturing/) covers the estimating side.
+
+Contracts and subcontracts need your standard positions written down first. If they live in the founder's head after 30 years of reading every contract, writing them down is worth doing whether or not you ever buy a tool. Make it one page: for each clause, what you accept, what you push back on, what you never sign, and who can approve an exception. Start with:
+
+- Payment terms and retention
+- Liquidated damages
+- Indemnity and limits of liability, including consequential damages
+- Insurance limits and additional insured requirements
+- Warranty length and remedy
+- Flow-downs from the prime contract or your customer's customer
+- Termination for convenience
+
+Have your attorney review that one page instead of every contract. A tool can then check each clause against it and sort the deviations by severity: routine ones to a manager, anything with real exposure to your attorney, clause highlighted. In the same Dallas Fed survey, a professional services firm named "Lower-level contract review, summarizing lengthy but somewhat formulaic documents" among the tasks AI had replaced.
+
+Compliance packages (COIs, certs, PPAP submissions, submittals, permit sets) come down to what's missing or expired. A COI's expiry needs no AI, just a date column in a spreadsheet and a calendar reminder. AI's part is reading each certificate into that sheet (limits, additional insured wording, dates) and checking a submittal against what its spec section requires; the signature stays with the person whose name goes on it.
+
+## When it's worth paying for help
+
+You don't need anyone for the count or the test, us included, and doing both yourself makes any outside work faster and cheaper. Outside help is worth paying for when:
+
+- The document feeds something binding, and the review step has to be enforced in software with a record of who approved what.
+- The output has to land in Epicor, JobBOSS, Global Shop, NetSuite or whatever you run without anyone retyping it.
+- Formats vary across dozens of customers, and only one or two senior people know what each means.
+- Your 50-document test failed and you can't tell why.
+
+Run last month's reports on Monday, time your samples during the week, and pick the row on Friday. A week later you'll have 50 scored documents and a straight answer on whether a tool can do the job on your paperwork.

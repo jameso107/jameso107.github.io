@@ -1,138 +1,154 @@
 ---
-title: "What an AI Consultant Actually Does, and When a Small Business Should Hire One"
+title: "What an AI Consultant Should Leave on Your Desk"
 seoTitle: "What an AI Consultant Does for Small Business | Syzygy"
 slug: "what-an-ai-consultant-does"
-dek: "An AI consultant finds the specific places in your business where automation will return more than it costs, builds a working version against real work, and leaves your team able to run it. Hire one when the cost of a wrong first move is higher than the fee."
-description: "What an AI consultant does for a small business, what a good engagement looks like at each stage, and a three-question test for whether to hire one."
+dek: "A good AI consultant maps one job, ranks a few uses with the math shown, tests the best on your past work and leaves your people able to run it. Hire one only when you can't yet size the work and software you own won't fix it."
+description: "What an AI consultant does for a small business: the seven things a good engagement leaves behind, when you don't need one, and how to vet one."
 category: "Strategy"
-keywords: ["AI consultant", "AI consulting for small business", "what does an AI consultant do", "hire an AI consultant", "AI advisor for small business", "small business automation"]
+keywords: ["what does an AI consultant do", "AI consultant for small business", "hire an AI consultant", "AI consulting for small business", "how to vet an AI consultant", "AI consultant vs IT provider", "do I need an AI consultant"]
 author: "james-oosterhouse"
-order: 1
-featured: true
+order: 2
+featured: false
 keyTakeaways:
-  - "An AI consultant's core job is diagnosis: finding the handful of processes in your business where automation will return more than it costs."
-  - "A good engagement moves from audit to prototype to production in stages, with a decision gate at each step so you can stop without losing much."
-  - "Hire a consultant when the problem is unclear, nobody inside can own it, and a wrong first move would cost more than the fee."
-  - "The deliverable that matters most is not the software but a team that can run and extend it after the consultant leaves."
+  - "Judge any AI proposal by what will be on your desk at the end: a map of one job, a short ranked list with hours and dollars, a test on your own past work, and a handover your people can run."
+  - "A good consultant also writes down what not to build and why, such as a dispatch agent when the real trouble is rules that live only in the dispatcher's head."
+  - "You probably don't need a consultant if you can name the job, its weekly volume and the number you want to move, or if the feature already sits in software you pay for."
+  - "Before signing, ask for a project they recommended against, two clients your size you can call, and whether a build would be priced separately from a plan another firm could use."
+  - "This week, time the job you most want to fix 20 times and write one paragraph: how many a week, the hours it takes and what better looks like; if you can't, that's what you'd pay a consultant to find."
 faq:
   - q: "What does an AI consultant do for a small business?"
-    a: "An AI consultant maps your workflows, identifies where automation or AI assistance will save meaningful time or money, builds and tests a working prototype against real work, and helps your team put the solution into production and keep it running."
+    a: "A good AI consultant works out where AI will pay for itself in your company and where it won't. That means interviewing the people who do the work, mapping how one job moves through the business, ranking a few uses by hours saved and dollars, testing the best one on your own past work before anyone relies on it, and leaving your staff able to run what was built, with the accounts, prompts and documentation in your company's name."
   - q: "When should a small business hire an AI consultant?"
-    a: "Hire one when you suspect AI could help but cannot name the specific process, when nobody on staff has the time or skill to own the project, and when a failed first attempt would cost more in money or credibility than the consulting fee."
+    a: "Hire one when you suspect AI could help but can't name the specific job to fix, its weekly volume and the number you want to move, and nobody inside has the hours to work that out. Don't hire one to choose a product you could compare yourself, to switch on a feature already in software you own, or when nobody inside will own the result afterward. Fix that last problem first."
   - q: "How is an AI consultant different from an IT provider or a software vendor?"
-    a: "An IT provider keeps systems running and a vendor sells a product. An AI consultant works backward from your business problem, stays neutral about which tools to use, and is measured on the operational result rather than on uptime or licenses."
+    a: "An IT provider, or MSP, keeps your systems, devices and accounts running and is usually paid by the seat or the month. A software vendor is paid when you buy its product. An AI consultant should be paid to work out what is worth doing at all, which sometimes means telling you to buy nothing or to use a feature you already own. Ask each of them whether they earn fees on the products they recommend."
+  - q: "How do you vet an AI consultant before hiring one?"
+    a: "Ask questions that show how they think: a project they recommended against and why, who will own the code, prompts, data and accounts when they leave, how they check AI-assisted work before it reaches you, whether any vendor pays them, and what would make them stop the project. Then call two of their clients your size without them on the line. Vague answers are the warning sign."
+  - q: "Can a small business start using AI without a consultant?"
+    a: "Yes, and most do. In the U.S. Census Bureau's AI supplement, surveyed November 2025 to February 2026, fewer than one in ten AI-using firms with 20 to 249 employees had used vendors or consultants to install or integrate AI in the previous six months. A company that can name one job, time it and set a target can often start with tools it already pays for. Outside help earns its fee when the job can't be named yet or needs a build on your own documents and systems."
 cta:
   service: "audit"
-  heading: "How Syzygy helps"
-  body: "Syzygy's AI Audit & Prototyping engagement answers the question this article raises: where, specifically, would AI pay off in your business, and what would a working version look like? Book an intro call to talk through your situation."
-related: ["how-much-does-consulting-cost", "ai-readiness-assessment", "where-ai-pays-off-first"]
+  heading: "Find out where AI fits before anyone builds anything"
+  body: "Syzygy's AI Audit usually takes 2 to 4 weeks: we interview your team, map how work moves from start to finish, check what data is safe to use, and come back with a prioritized plan for where AI fits and what to buy or build, walked through with you live. Book an intro call and bring the one job you'd most like to change."
+related: ["how-much-does-consulting-cost", "ai-readiness-assessment", "harnessing-ai-aptitude-midwest-small-business"]
 ---
 
-Most owners who call an AI consultant do not have an AI problem. They have a quoting problem, an order-entry problem, a "my best people spend half their day retyping things" problem, and a suspicion that AI could help. The consultant's job is to turn that suspicion into a specific, tested, measurable change in how work gets done, and to do it without burning the team's trust along the way.
+Take an 85-person commercial mechanical contractor in southeastern Wisconsin. It's made up, but its desk will look familiar: four AI pitches this quarter. A vendor wants a chatbot on the website, a startup is selling an "AI dispatch agent," a consulting firm is offering a 12-week "AI roadmap," and the managed IT provider has started selling "AI services" too.
 
-This article explains what that job involves, what it does not involve, how a well-run engagement is structured, and how to decide whether your business should hire someone for it at all.
+None of them mentions what's costing the company money. Technicians' notes take days to become invoices. Estimators spend evenings reading plans and spec sections. The service manager and two senior techs retire within three years, and much of what they know isn't written down. AI might help with some of that, but nobody pitching has asked.
 
-## What does an AI consultant actually do?
+Ask every pitch two questions. What will be on my desk when you're done? Could my people run it without you? A slide deck fails the first. A tool that lives in the vendor's account fails the second.
 
-An AI consultant finds the specific places in your business where AI or automation will return more than it costs, builds a working version against your real work, and leaves your team able to run it. Everything else, from vendor evaluation to training, is in service of those three things.
+## Seven things a good engagement hands over
 
-In practice the work breaks into four jobs.
+A full engagement leaves the seven things below, though a short one may stop after the third with an honest "don't build anything yet." Hold any proposal up against this list and ask about whatever's missing.
 
-### Diagnosis
+### One job, followed from phone call to invoice
 
-The first job is to figure out where AI belongs in your business and, just as important, where it does not. That means sitting with the people who do the work, watching how a quote or an order or a claim actually moves through the company, and measuring how much time and error each step consumes. The output is a short, ranked list of opportunities with a rough return on each. Most of the value of an engagement is created here, because a well-chosen first project succeeds and a poorly chosen one poisons the well for years.
+First comes a map of one job, start to finish. For a service call: the customer phones, a CSR opens a ticket, dispatch assigns a tech, the tech fixes the unit and types or dictates notes, parts come off the truck or from the supply house, and somebody in the office turns it all into an invoice. Mark every wait and every retype, with times from your own system (ticket closed to invoice sent) and from interviews with the people at each step, billing included.
 
-### Design and prototyping
+The contractor's map shows a finished call sitting four days before it's billed, mostly while someone chases the tech about what "replaced cap, unit running" covered. An org chart, a software list or a map of the whole company drawn too high to time anything won't show you that.
 
-The second job is to turn the top opportunity into something people can touch. A prototype is not a slide deck; it is a working tool fed with your documents and tested by your staff. The point is to answer the questions that matter before you commit real money: Does it handle the messy cases? Is the output good enough to trust? Will the people who need to use it actually use it?
+### A short ranked list, with the arithmetic shown
 
-### Delivery and integration
+Next, a ranked list of three to five uses, every line built the same way: how many a week (from your system), minutes each (timed with a stopwatch), minus the minutes spent checking the AI's draft, times a loaded hourly cost, times 50 working weeks. A weak list has 30 "use cases" rated high, medium and low, and no hours anywhere. BCG's [June 2026 field service brief](https://www.bcg.com/assets/2026/executive-perspectives-future-of-field-service-with-applied-ai.pdf) suggests where a service business might look: automatic job summaries, parts lookup, proposals, warranty registration, a troubleshooting copilot and dispatching.
 
-The third job is to make the thing production-grade: connect it to the systems you already run, add guardrails and monitoring, sort out who can access what, document it, and train the team. This is the least glamorous phase and the one where amateur efforts usually fail, because a demo that works on ten clean examples is a long way from a tool that survives a Monday morning.
+The contractor's might look like this, with the two pitches it turns down at the bottom:
 
-### Capability transfer
+| Use | Hours back a week | A year | Call |
+|---|---|---|---|
+| Invoice text from tech notes | 17 | $30,600, plus cash sooner | Test first |
+| Requirements from spec sections | 6 | $16,500 of estimators' time | Test second |
+| Warranty claims from closed tickets | Not timed yet | Not known | Time it |
+| Senior techs' troubleshooting know-how | Not an hours problem | Fewer callbacks | Start while they're here |
+| Dispatch agent | Unclear | Unclear | Write the rules down first |
+| Website chatbot | Little | Little | No |
 
-The fourth job is to leave. A good consultant works toward the day your team can operate, adjust, and extend the solution without them. If a firm's model depends on you never being able to do that, you are buying dependency, not consulting.
+The top line: two billing coordinators turn about 200 tickets a week into invoice descriptions at 8 minutes each. Checking a draft made from the tech's notes against the parts ticket takes 3. That's 5 minutes x 200 = 1,000 minutes, about 17 hours a week. The Bureau of Labor Statistics' [June 2026 employer cost figures](https://www.bls.gov/news.release/archives/ecec_09092026.htm) put wages at about 70% of what an hour of work costs a private employer, so pay x 1.43 covers benefits, paid time off included: a $25-an-hour coordinator costs about $36, and 17 x $36 x 50 = $30,600.
 
-## What an AI consultant is not
+An $80,000 estimator is $80,000 / 2,080 = $38.46 an hour, x 1.43 = about $55, so two hours a week back for each of three estimators reading Division 22 and 23 specs, net of checking, is 6 x $55 x 50 = $16,500. Redo the multipliers with your own payroll: they're national averages.
 
-An AI consultant is not your IT provider, not a software vendor, and not a research scientist. The distinction matters because each of those roles is measured on something other than your operational result.
+Billing sooner counts too, as cash: at an illustrative $600 a ticket, 10,000 tickets a year is $6 million, about $16,400 a day, so invoices out three days sooner bring in about $49,000, once. And if the estimators' hours come out of unpaid evenings, the $16,500 shows up as bids out sooner or an estimator who stays, never as cash.
 
-- **An IT provider** keeps your network, email, and devices running. That is essential and it is a different skill. Uptime is not the same as improvement.
-- **A software vendor** sells a product. A vendor's demo will always show their tool solving your problem, because that is what the demo is for. A consultant should be neutral about tools and willing to recommend something they do not build.
-- **A research team** invents new models. Almost no small or mid-sized business needs that. The work that pays off for these companies is applied: grounding existing models in your documents, wiring them into your systems, and putting the right checks around them.
+### The things they told you not to do
 
-If the person you are talking to cannot describe a project they recommended against, be cautious.
+The list should have a second half: what not to do, and why, in writing. McKinsey's [review of more than 50 agent builds it led](https://www.mckinsey.com/capabilities/quantumblack/our-insights/one-year-of-agentic-ai-six-lessons-from-the-people-doing-the-work) (September 2025) has a section titled "Agents aren't always the answer," and argues that rules-based automation or predictive analytics can be more reliable. Dispatching is on BCG's list, so the dispatch pitch isn't silly. But if skills, zones and the on-call rotation live in the dispatcher's head, writing them down as rules in the field service software fixes dispatch more dependably than an agent guessing at them. The website chatbot ranks low for a plainer reason: commercial customers call their rep or the service line, and a no-heat call at 2 a.m. needs a person.
 
-## What does a good engagement look like?
+A consultant should be paid to tell you what's worth doing, which sometimes means nothing. Consultants have a pull of their own, though, us included: a firm that diagnoses usually wants to build what it finds. If the plan finds room for every pitch you've been sent, nobody did this part of the job.
 
-A good engagement is a sequence of small bets, each with a decision gate you can walk away from. Syzygy's [four-phase process](/process/) is one version of that pattern: a discovery audit of two to four weeks, a design-and-prototype phase of four to six weeks, a build-and-implement phase of eight to twelve weeks, and an ongoing measure-and-improve relationship after go-live.
+### A one-page rule for what goes into AI
 
-> The right engagement is a series of small bets, each of which you can walk away from.
+Early on, someone should find out which AI tools your people already use, on which accounts, and what goes into them: an estimator pasting a GC's spec sections into a personal ChatGPT account, say, or a coordinator cleaning up invoice text, customer names and all, in a free tool. The check should end in one page, the kind of data rule our [governance guide](/insights/ai-governance-for-owner-led-companies/) walks through. The contractor's might read:
 
-The gates are the point. At the end of discovery you should be able to say "none of these are worth it" and stop, having spent a few thousand dollars to learn that. At the end of the prototype you should be able to say "the output is not good enough" and stop, having spent more but far less than a full build. Owners who skip the gates and go straight to a build are not buying speed; they are buying a larger loss if the bet is wrong.
+*Approved: company business AI accounts only, never personal ones. Never goes in: gate, lock and alarm codes from ticket notes; customer contact lists; anything a GC marked confidential; payroll and employee records. Ask first: customer drawings and specs. Owner: the controller. Reviewed every six months.*
 
-What you should expect to receive at each stage:
+### A test on your own past jobs, with the pass line written first
 
-- **After discovery:** a readiness assessment, a ranked opportunity list with rough ROI, a risk and feasibility view, and a roadmap for the next ninety days.
-- **After prototyping:** a working pilot your staff have used, an evaluation of its accuracy against real cases, and defined success metrics for production.
-- **After implementation:** a system in production, integrated with your existing stack, with documentation and trained users.
-- **Ongoing:** a regular review of usage, cost, and results, and a short backlog of improvements.
+Before anyone relies on the top use, run it on 50 past jobs where you know the right answer. Here that's 50 closed service tickets, each with the tech's raw notes, the parts ticket and the invoice description that went out. Write the [pass line](/insights/prototype-before-you-commit/) first, so nobody moves it afterward: every part and labor hour matches the ticket, and nothing is invented. A coordinator scores each draft against what was sent. One that flags a gap is fine. One that quietly fills a gap in is a fail. A weak test is a demo on five clean examples the vendor picked.
 
-## When should a small business hire an AI consultant?
+### Stop points, and one owner on your side
 
-Hire one when the problem is unclear, nobody inside can own it, and a wrong first move would cost more than the fee. If none of those are true, you may not need one yet.
+The plan should be a series of steps you can walk away from: the map, the ranked list, the test, a live trial with a person approving every draft, then wider use. Each step ends with a date and the number that decides whether you go on, and each is worth having on its own. Be wary of a plan that starts building in week one.
 
-A simple way to run that decision is what we call the **Three-Question Hire Test**.
+The plan also names one owner on your side with hours set aside: for invoicing, the controller, whose numbers move if it works, not the service manager who retires in three years. It lists the hours it needs from everyone else, by name, since proposals [rarely price that side of the bill](/insights/how-much-does-consulting-cost/). Interviews pull senior techs off billable work, so hold them in spring or fall, between the heating and cooling rushes.
 
-1. **Can you name the process?** If you can already state which process you want to change, what it costs you per month, and what "better" would look like in numbers, you may be able to buy or configure a tool directly. If your answer is "something in sales" or "we should be using AI," diagnosis is the value you are missing, and that is a consultant's core job.
-2. **Can someone inside own it?** Ownership means a named person with real hours freed up, enough technical comfort to evaluate options, and the standing to change how colleagues work. Many companies have someone with two of the three. Few have all three.
-3. **What does a wrong first move cost?** Add up the wasted salary hours, the software you would pay for and abandon, and the credibility you would lose with a team that watched the last initiative fizzle. If that number is larger than the consulting fee, the fee is insurance.
+The retirements need their own line, because they don't fit the hours formula. BCG's brief says it plainly: "Retiring technicians carry decades of tribal knowledge." Pull two years of the senior techs' tickets on the hardest equipment and customers (the hospital chillers, the building with the odd controls), draft a troubleshooting reference from them, and have the techs correct it while they're still on the payroll. Callbacks on those sites will show whether it worked.
 
-If two of the three questions point toward hiring, hire. If none do, do the work internally and consider a short advisory check-in instead.
+### A handover your people can run
 
-There are also situations where hiring is the wrong move regardless of the score:
+The work has to keep running after the consultant leaves. That takes the accounts, prompts and any code in your company's name from day one, documentation someone other than its author can follow, training on your own tickets and bid sets, and one person inside who can change a prompt or add a field without calling anyone. Refuse a tool that runs in the consultant's account and comes with a login instead of a manual.
 
-- You want someone to pick a chatbot for you. That is a purchasing task, not a consulting engagement.
-- Your process changes every week. AI automates patterns; if there is no stable pattern, fix the process first.
-- You are not willing to give access to your people and your data. Diagnosis without access is guesswork.
+A custom LLM suite we built for a West Michigan automotive company is used daily by more than 400 employees. Ask any consultant how many people still use theirs.
 
-## A worked example
+## Most of the work isn't software
 
-Consider a 60-person building-products distributor with three inside salespeople, a small warehouse team, and an owner who has read enough to believe AI should be doing something for the business. The owner's shortlist is order entry from emailed purchase orders, customer-service email, and demand forecasting.
+BCG's field service brief, with HVAC among its examples, tells service companies to rewire how they operate to "focus 90% on people and process change." In our view that matters more at 85 people, where nobody has spare hours to absorb a new way of working. A proposal that's mostly licenses and build, with a line of training at the end, is upside down.
 
-A consultant running discovery would likely rank those very differently from the owner. Order entry scores high: hundreds of emailed orders a week, a repetitive pattern with moderate judgment, and years of clean history in the ERP. Customer-service email scores in the middle: real volume, but the hard cases need product knowledge that lives in people's heads. Forecasting scores low, not because it is unimportant but because the data is thin and the payoff is uncertain.
+For the contractor, the people part starts with teaching techs what a usable note sounds like when they dictate it in the truck, because the tool can't invent what the tech never said. Five lines on a card on the dash would do:
 
-The prototype phase would then test order extraction against a few hundred real purchase orders, measure how often the tool gets every line right, and have the inside sales team use it for two weeks. If accuracy on messy orders is not acceptable, the engagement stops there. If it is, the build phase connects the tool to the ERP and adds a review step for anything below a confidence threshold.
+- Found: what was wrong, with the readings that matter.
+- Did: what you did, in order.
+- Parts: each part and quantity, from the truck or the supply house.
+- Time: on site and travel.
+- Still open: anything that needs a quote or a return trip.
 
-That pattern, diagnosis first, prototype second, production third, is how the [West Michigan manufacturer whose sales engineers saved more than five hours a week](/insights/automating-quoting-in-manufacturing/) got there. The saving came from picking quoting and spec review over a dozen other candidates, not from any single piece of technology.
+If your techs are union, run the card past the business agent first. The rest is deciding who approves a drafted invoice and how fast, and writing down the dispatch rules. Ask where each of those sits in the proposal, and whose hours it takes.
 
-> Diagnosis is where most of the value is created, and it is the part owners most often try to skip.
+## When you don't need one
 
-## Where this goes wrong
+Few companies your size that use AI have brought in outside help to set it up, at least recently. In the Census Bureau's [AI supplement](https://www.census.gov/hfp/btos/downloads/AI_Supplement_Table_2026.xlsx) (firms surveyed November 2025 to February 2026), 5.6% of AI-using firms with 50 to 99 employees had used vendors or consultants to install or integrate AI in the previous six months. About three and a half times as many, 19.6%, had trained their own staff.
 
-Most failed AI engagements fail for reasons that have nothing to do with AI.
+You probably don't need a consultant if:
 
-- **Hiring for a tool instead of a problem.** "We need an AI strategy" is not a brief. "Quoting takes six days and we lose bids to faster shops" is.
-- **Skipping the audit to save time.** The audit is cheap. A build on the wrong process is not.
-- **No internal owner.** If nobody on your side has the job of making it work, it will not.
-- **Expecting the consultant to drive adoption alone.** Adoption is a management job. A consultant can design for it and support it, but the owner has to expect it.
-- **Measuring activity instead of results.** Number of prompts written is not a business metric. Hours returned, cycle time, and error rate are.
-- **Choosing the cheapest quote without comparing scope.** Consulting quotes vary because scope varies. Our guide to [how consulting is priced](/insights/how-much-does-consulting-cost/) explains how to compare them like for like.
+1. You can name the job, how many a week, the hours it takes and the number you want to move. You need a tool and someone to set it up, which may be the software vendor.
+2. The feature is already in software you pay for. Ask your field service vendor (ServiceTitan, BuildOps or the service module of your construction accounting system) whether it drafts invoice text from tech notes today, and at what cost, before paying anyone to build it.
+3. It's a purchase, not a diagnosis. Choosing a website chatbot is shopping, and three contractors who bought one will tell you more. Your trade association chapter can find them.
+4. Nobody inside will own the result, or you won't give an outsider time with the people who do the work. Diagnosis without access is guesswork. Fix that first.
 
-## How do you evaluate an AI consultant before hiring?
+Whether or not you hire one, a second opinion can cost nothing. The Small Business Development Centers in [Michigan](https://michigansbdc.org/), [Wisconsin](https://wisconsinsbdc.org/) and [Indiana](https://www.isbdc.org/) advise owners at no cost, without selling anything. Manufacturers can also ask their state's MEP center, such as [The Center](https://www.the-center.org/Our-Services/Applied-AI-for-Manufacturing) in Michigan or [WMEP](https://wmep.org/ai-navigator-workshop/) in Wisconsin, what its AI help costs.
 
-Ask questions that reveal how they think, not what they sell. Six that work well:
+## What we'd tell this owner about the four pitches
 
-1. Describe a project you recommended against. Why?
-2. Who owns the code, the prompts, and the data when we are done?
-3. What happens in the first month after you leave?
-4. How will we know, in numbers, whether this worked?
-5. Do you receive payment from any vendor you might recommend?
-6. Show me a prototype that did not make it to production, and what you learned.
+This owner can name the jobs, so there's less to diagnose than a 12-week roadmap assumes. Ask the roadmap firm what will exist at week 3 and whether you can stop there owing nothing more. In our view the map, the list and the 50-ticket test are a few weeks of work. Use the MSP for business accounts, licenses and shutting off personal accounts. Deciding what's worth doing is [a different job](/insights/fractional-technology-partner/). The chatbot and the dispatch agent stay on the "don't" list.
 
-A firm that answers these plainly is a firm that has done this before. You can see how Syzygy structures and scopes each stage on the [services page](/services/), and you can read about the [readiness assessment that opens every engagement](/insights/ai-readiness-assessment/) before you talk to anyone.
+Invoicing is a tool question, so test what the field service vendor offers on 50 tickets yourself. Spec reading means building on the company's own documents, so a short, fixed-scope outside look is reasonable. The retirements are where outside help most likely earns its fee: nobody inside has the hours to work out what to capture, and the window closes when they leave.
 
-## The bottom line
+## Questions that show how a consultant thinks
 
-An AI consultant's job is to find where automation will pay off in your specific business, prove it with a working prototype, put it into production, and leave your team able to run it. The value is concentrated in diagnosis and in the discipline of small, reversible bets. Hire one when you cannot name the process, nobody inside can own it, and a wrong first move would cost more than the fee. Otherwise, start smaller and come back when the picture is clearer.
+Ask these before you sign. How plainly the answers come matters as much as what they say.
+
+1. **Tell me about a project you recommended against, and why.** A good answer is specific and recent. "We always find something" is not.
+2. **Give me two clients our size I can call without you on the line.** A contractor or a field service business, ideally.
+3. **When you're done, who owns the code, prompts, data and accounts?** You, in your company's name, from the start. A firm whose business depends on you never running it will hedge here.
+4. **How do you check AI-assisted work before it reaches us?** In 2025 Deloitte agreed to repay the final installment of an A$440,000 contract with Australia's employment department after its report was found to contain a made-up quote from a federal court judgment and citations to research that doesn't exist, [The Register reported](https://www.theregister.com/software/2025/10/06/deloitte-refunds-australian-government-over-ai-in-report/722000). The corrected version disclosed the AI tools used, and the department said its recommendations stood. Ask who checks every citation and number, and for the same disclosure.
+5. **Does any vendor pay you?** You want a no. A referral fee or resale margin means they aren't neutral, however honest. If there is one, get it in writing before they recommend anything.
+6. **If you find something worth building, how will you price the build?** Separately, after the diagnosis, against a plan another firm could build from.
+7. **What number tells us it worked, and what would make you stop?** Listen for the baseline from the ranked list. A consultant who can't name a stop condition hasn't planned for failure, and you'd pay for that.
+
+## Write the paragraph before you take a sales call
+
+Before the next pitch, write one paragraph: the job, how many a week, the hours it takes and what better looks like. The contractor's might read: "Service invoicing. About 200 tickets a week. Two coordinators spend about 27 hours a week turning tech notes into invoice descriptions, and a finished call waits four days to be billed. Better is invoices out the day after the call, in half the coordinator time."
+
+To get those numbers by Friday, pull last month's tickets with their closed and invoice dates and take the median gap. Have each coordinator time 20 invoices and mark the ones that needed a call to the tech.
+
+If you can write yours, you may only need a tool and someone to set it up. If you can't, that paragraph is the diagnosis you'd be paying for. Take the question to two peers or a free SBDC session first, then to the sales calls.

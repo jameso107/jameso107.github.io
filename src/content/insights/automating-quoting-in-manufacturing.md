@@ -1,126 +1,161 @@
 ---
-title: "From RFQ to Proposal: Automating Quoting and Estimating in Manufacturing"
+title: "How to Automate Manufacturing Quotes Without Automating the Price"
 seoTitle: "Automating Quoting and RFQs in Manufacturing | Syzygy"
 slug: "automating-quoting-in-manufacturing"
-dek: "Quoting is the highest-return automation target in most manufacturers because it is high-volume, document-heavy, and tied directly to revenue. Automate the reading, extraction, and first-draft work, keep estimators on judgment and exceptions, and the typical result is faster turnaround and more quotes out the door with the same team."
-description: "How manufacturers automate quoting and estimating from RFQ to proposal: which steps AI handles, which stay with estimators, and what results to expect."
+dek: "An estimator's week often goes to reading RFQ packages and copying data off them. AI can take most of that reading, with a source for every field it pulls, while the price and the bid decision stay with people."
+description: "Where AI speeds up manufacturing quotes (reading RFQs, specs and terms, finding past jobs), where estimators stay in charge, and how to start this week."
 category: "Operations"
-keywords: ["AI quoting automation", "RFQ automation manufacturing", "estimating software for job shops", "quote automation", "specification analysis AI", "manufacturing sales engineering"]
+keywords: ["RFQ automation manufacturing", "AI quoting for job shops", "manufacturing estimating software", "automate quotes manufacturing", "AI for estimators", "quote turnaround time", "can AI read engineering drawings"]
 author: "james-oosterhouse"
 order: 11
 featured: false
 keyTakeaways:
-  - "Quoting is the best first automation target in most manufacturers because it combines high volume, heavy document reading, and a direct line to revenue."
-  - "The quoting process is six steps, intake, extraction, interpretation, estimation, assembly, and review, and AI belongs in the reading and drafting steps, not in the pricing judgment."
-  - "Sales engineers at a West Michigan manufacturer saved more than five hours a week, and a mid-Atlantic manufacturer made quoting 18% more efficient, by automating the reading and specification analysis rather than the decisions."
-  - "The prerequisite is not clean data but retained data: past RFQs, the quotes they produced, and whether you won, which most shops already have in email and folders."
+  - "Before you buy anything, log the hands-on minutes and calendar days on your next ten RFQs and re-quotes; in many shops more of the time goes to getting information off the page than to deciding the price."
+  - "In published tests, AI models have read the words in an RFQ package (notes, callouts, specs, terms) far more reliably than the geometry on a 2D print, so treat anything a tool says about geometry as a suggestion to check."
+  - "Your most useful quoting data is past quotes joined to win or loss and to what each job actually cost; most shops have all three, and few ever compare them."
+  - "Write a one-page sheet of your standard positions on terms (payment, price-downs, line-down charges, material validity) so a person or a tool can flag every RFQ that breaks them."
+  - "Test any quoting tool on ten of your worst real packages with a field-by-field scorecard written in advance, and fail it if it invents a single value."
 faq:
-  - q: "Can AI automate quoting in manufacturing?"
-    a: "Yes, for the parts of quoting that involve reading and drafting: extracting requirements from RFQs, drawings, and specifications, flagging terms and risks, matching to past quotes, and assembling a first-draft proposal. Pricing judgment, bid decisions, and customer conversations stay with estimators, who work faster because the reading is done."
-  - q: "What does RFQ automation actually do?"
-    a: "RFQ automation reads incoming requests and attached documents, pulls the fields an estimator needs into a structured form, compares them against past jobs and quotes, flags unusual terms or requirements, and drafts the proposal for review. The estimator checks, adjusts, and decides."
-  - q: "How much faster is quoting with AI?"
-    a: "Results vary with volume and document complexity. Anonymized Syzygy outcomes include sales engineers saving more than five hours a week and a quoting process becoming 18% more efficient. The larger effect is usually turnaround time, because quotes stop waiting for an estimator to find time to read."
+  - q: "Can AI create manufacturing quotes automatically?"
+    a: "For repeat parts and simple configured products, rules-based quoting from a price table or configurator can often produce a quote with little human input. For custom work from prints and specifications, AI is most reliable at reading the RFQ package: pulling quantities, materials, finishes, certifications and terms into a structured form with a source for each field, flagging unusual terms and finding similar past jobs. Setting the price, deciding whether to bid and resolving anything the tool flags should stay with an estimator."
+  - q: "Can ChatGPT or other AI models read engineering drawings?"
+    a: "They read the text on a drawing better than the geometry. In a 2023 MIT study, GPT-4V described a blind hole as a through hole in eight of nine runs, missing the notation that said otherwise, though once told what the part was it pulled every dimension off the drawing. Newer models may do better, so test one on your own prints, treat what it says about geometry as a suggestion to check, and keep NDA or export-controlled drawings out of AI services your shop has not approved."
+  - q: "What data does a manufacturer need to automate quoting?"
+    a: "Past RFQs with their attachments, the quotes you sent, whether each was won or lost, and the actual cost of the jobs that ran, which most job shop ERPs already track. The data does not need to be clean, only kept. Two short documents help as much as the history: a list of your capabilities (materials, size limits, certifications) and a one-page summary of your standard positions on commercial terms."
+  - q: "Should a job shop buy quoting software or build a custom tool?"
+    a: "Buy first if you mostly quote machined parts from 3D models, because quoting software built for that already analyzes the part file's geometry. Configure the quoting module in your ERP if it is underused, so quotes and actual job costs live in one place. Build a custom tool when the time goes into long, wordy packages: specifications, quality manuals and commercial terms that need reading and checking against your own standards. Log ten RFQs first, because where the minutes go tells you which."
+  - q: "How do you measure whether quoting automation is working?"
+    a: "Before starting, log hands-on minutes per RFQ by step, the calendar days from receipt to sent, and the RFQs declined for lack of time. After launch, track the same numbers plus hit rate and quoted versus actual hours on the jobs you win. Hours saved per quote is usually the smallest of these. Check in your own quote history whether faster quotes win more often, since a quote due on a fixed date gains nothing by arriving early."
 cta:
-  service: "implementation"
-  heading: "How Syzygy helps"
-  body: "Syzygy has built document-grounded quoting tools for manufacturers that turn prints, specs, and past quotes into structured estimates and flagged risks, integrated with the systems estimators already use. Book an intro call to talk through your RFQ process."
-related: ["ai-for-document-heavy-work", "where-ai-pays-off-first", "measuring-ai-roi"]
+  service: "custom-tools"
+  heading: "Build an estimating assistant around your own RFQs"
+  body: "Syzygy builds tools around how a business runs. For quoting, that's an estimating assistant that reads your RFQ packages, checks them against your terms and past jobs, and works inside the tools your estimators already use, delivered with documentation and training. Each build is scoped and quoted after an AI Audit of how quoting works today, so book an intro call and walk us through your RFQ process."
+related: ["ai-for-document-heavy-work", "build-buy-or-configure", "prototype-before-you-commit"]
 ---
 
-In most manufacturers, the quoting desk is where revenue is won or lost and where the most experienced people spend their days reading. An RFQ arrives with drawings, a specification, and terms. An estimator opens each file, finds the dozen things that matter, checks them against what the shop can make, looks up what a similar job cost, and assembles a proposal. Two to six hours later, one quote is out. The backlog has not moved.
+An RFQ lands at 4:40 on a Tuesday. It's a zip file: three PDF prints, a STEP model, a 40-page supplier quality manual, the customer's terms and conditions, and an email asking for pricing at three annual volumes by Friday. Your estimator will open every file, copy part numbers, materials, finishes and quantities into the quote sheet, and search the shared drive for the last job that looked like this one, between trips to the floor to answer questions about work already running. The quote goes out next Wednesday if the week cooperates.
 
-This article explains why quoting is the best first automation target in most manufacturers, breaks the process into six steps so you can see exactly where AI belongs, and describes what results are typical when it is done well.
+Most of those hours go to reading and retyping. Not many go to what you pay an estimator for: deciding what the job will cost you and what you want to charge for it. Software can take most of the reading off the estimator's desk. It shouldn't be setting your prices.
 
-## Why is quoting the best place for AI in a manufacturer?
+## Time the next ten RFQs before you buy anything
 
-Because quoting combines three things that make automation pay: high volume, heavy document reading, and a direct connection to revenue. Every RFQ has to be read, and reading is the work AI does best. Every quote that goes out faster is a bid that competitors have less time to win. And every hour an estimator does not spend reading is an hour spent on the judgment that actually differentiates the shop.
+A vendor's hours-saved number means nothing until you know where your hours go now, and "a quote takes a couple of days" blends working time with time in the pile. For the next ten RFQs, have whoever quotes keep a log in a shared spreadsheet:
 
-> Every hour an estimator spends reading a spec is an hour not spent deciding whether to bid.
+| Step | What to write down |
+|---|---|
+| Received | When it arrived, when someone opened it, new or re-quote |
+| Reading | Minutes on prints, specs, terms and the quality manual |
+| Retyping | Minutes copying part data into the quote sheet or ERP |
+| Finding past jobs | Minutes searching for similar parts and what they cost |
+| Building the cost | Minutes on routing, material, outside processing, margin |
+| Writing and review | Minutes on the quote document, exceptions and sign-off |
+| Sent and result | Date sent, then won, lost or no answer |
 
-There is a second reason. Estimators are scarce. Most shops have one or two people who really know how to quote, they are hard to hire, and they carry the shop's pricing knowledge in their heads. Automating the reading does not replace them; it multiplies them, and it captures some of what they know in a form the next estimator can learn from. On a [prioritization screen](/insights/where-ai-pays-off-first/), quoting scores high on every axis.
+Also have them note every RFQ they declined or let slide for lack of time. Owners almost never see that number. And tell the estimators what the log is for before they start: finding what to take off their desk. People who think they're being graded write down the number they think you want.
 
-## What does the quoting process actually consist of?
+Ten RFQs give you a rough picture, and two patterns usually show up. Calendar time dwarfs touch time: a quote with an afternoon of work in it goes out a week later because it waited in line. And the steps that need judgment, building the cost and setting the price, take the smaller share of the hands-on minutes. Reading, retyping and searching take the rest.
 
-Quoting is six steps, and each has a different relationship with automation. We call this the **Six-Step Quote Ladder**.
+If your log says otherwise, believe the log. A shop whose estimators spend most of their time on real costing decisions, and who rarely turn work away, doesn't need a quoting project, from us or anyone else.
 
-### 1. Intake
+## What an estimator's hour costs, and what a missed RFQ is worth
 
-The RFQ arrives, usually by email or a customer portal, with attachments in a mix of formats: PDFs, drawings, spreadsheets, sometimes photographs. Someone logs it, assigns it, and decides how urgent it is. This step is mechanical and frequently neglected, which is why RFQs sit unread for days.
+The Bureau of Labor Statistics puts the [median annual wage for cost estimators](https://web.archive.org/web/20261013082635/https://www.bls.gov/ooh/business-and-financial/cost-estimators.htm) at $78,740 (May 2025). Its [June 2026 employer cost survey](https://www.bls.gov/news.release/archives/ecec_09092026.htm) puts benefits at 30% of private employers' compensation costs. Paid leave is part of that, and a salary already covers it; the rest (insurance, retirement, payroll taxes, and extras like overtime premiums and bonuses) adds about 29% to base pay. So $78,740 x 1.29 is roughly $101,600 a year, or about $54 an hour over the roughly 1,880 hours a full-timer works after vacation and holidays. That's a national average, so redo it with your own payroll and benefit bills.
 
-### 2. Extraction
+If your log shows an estimator spending 12 hours a week on everything before the costing starts, that's 12 x $54 x 50 weeks, about $32,400 a year. Two estimators, about $65,000.
 
-Someone reads everything and pulls out what matters: part numbers, quantities, materials, tolerances, finishes, certifications, delivery dates, and commercial terms. In a typical shop this is where most of the estimator's time goes, and almost none of it requires an estimator.
+The bigger number is usually the work you never bid. Say you let four RFQs a month go unanswered, you win one in four of the ones you quote, and a typical award is worth $40,000 a year. That's 48 x 0.25 x $40,000, or $480,000 in sales. What you'd keep is the contribution margin: at 25%, about $120,000, and only if the floor has room to run the work. The RFQs that slide are often the worst fits, so halve the win rate to be safe. That's $60,000, still nearly double what one estimator's 12 hours a week cost. The inputs are made up; use yours.
 
-### 3. Interpretation
+Before you lean on speed, check whether it wins in your own data. Pull your last 50 to 100 quotes with days from RFQ to sent, and won or lost. If the fast ones win more often, turnaround is your lever. If not, the problem is capacity or price. A quote due on a fixed date through a buyer's portal gains nothing by arriving early.
 
-The extracted requirements are checked against what the shop can do and against what the customer probably means. Is this tolerance achievable on our equipment? Does this specification reference a standard we hold? Is the customer asking for something unusual, and did they mean to? This step mixes pattern recognition with judgment.
+## Let software read the words in the package
 
-### 4. Estimation
+An RFQ package is mostly text, even as a PDF: the buyer's email, notes and callouts on each print, specs, cert requirements, pages of terms. A language model can read it in minutes and produce a structured summary. For one part, a good one looks something like this (a made-up example):
 
-Costs are built up: material, machine time, labor, tooling, outside processing, and margin. Past quotes for similar parts are the best guide, if anyone can find them. This is where the estimator's knowledge of the shop, the market, and the customer earns its keep.
+- RFQ 24-118, bracket 4471-220 rev C
+- Quantities: 500 / 1,500 / 3,000 EAU (buyer email, paragraph 2)
+- Material: 6061-T6 (print sheet 1, title block)
+- Finish: black anodize, Type II (print sheet 1, note 3)
+- Certs: material certs and C of C with each shipment (quality manual, section 7.2)
+- PPAP: Level 3 (buyer email, paragraph 4)
+- Delivery: first article in 6 weeks (RFQ cover sheet)
+- Conflict: spec section 3.1 says 6061-T651, print says 6061-T6
+- Not found: heat treat, packaging spec
+- Against your terms: net 75 payment (T&Cs section 4), past your net 45 limit
 
-### 5. Assembly
+Every field has a source, so the estimator checks it in seconds instead of re-reading the package. And the tool admits what it can't find or reconcile. One that fills blanks with plausible guesses teaches your estimators to check everything, and they'll be right to.
 
-The numbers become a document: pricing, lead times, exceptions to the customer's terms, assumptions, and validity. Most shops assemble from a template with a lot of retyping.
+Keep the field list to about a dozen: part number and revision, quantities, material, finish, heat treat, critical tolerances and GD&T callouts, certs, PPAP or first-article level, delivery, packaging, payment terms, and price-down or line-down language. In [ExtractBench](https://arxiv.org/abs/2602.12247), a February 2026 benchmark from Contextual AI (which sells document AI), accuracy fell as the field count grew: a 13-field schema did best, and a 369-field one got no valid output from any model tested.
 
-### 6. Review
+A document-grounded assistant we built for a West Michigan manufacturer does this kind of reading, turning prints, specs and past quotes into structured estimates and risks. Its Sales Engineers each got 5 or more hours a week back for customer work.
 
-Someone senior checks the quote before it goes out, especially on large or unusual jobs. In many shops this step is skipped under time pressure, and errors leave the building.
+## Can AI read an engineering drawing?
 
-## Which steps should AI handle and which should stay with estimators?
+Researchers in MIT's mechanical engineering department [tested GPT-4V on engineering design tasks in 2023](https://arxiv.org/abs/2311.12668). Asked to describe a simple part drawing, it called a blind hole a through hole in eight of nine runs, missing the notation that said otherwise. The ninth answer ("a cylindrical hole or recess") didn't commit either way. Once told what the part was, it pulled all five dimensions off the drawing every time, though in three of the nine runs it didn't label them all correctly.
 
-AI should handle the reading and drafting: intake, extraction, most of interpretation, the retrieval half of estimation, and assembly. Estimators should keep the judgment: the pricing decision, the bid or no-bid decision, and anything the tool flags as unusual. Review becomes faster and more consistent because the tool has already listed what is odd about this RFQ.
+Newer models may do better, but what it got wrong is what costs money: a blind hole read as a through hole changes the operation, the tooling and the cycle time. So let software pull the text, and treat anything it says about geometry, features or tolerances as a suggestion the estimator confirms on the print.
 
-In practice that looks like this:
+Test today's tools yourself in an hour or so. Pick five prints from past jobs where you know every answer: a blind hole, a tapped hole with a thread depth, a GD&T frame, a note only on sheet 2, a scanned print with a handwritten redline. Black out the finish note on one. Run them through a business account your shop has approved for customer drawings, and mark every field: right with a source, wrong, missed or invented. Watch the blacked-out note. Trail, part of the document-processing vendor Nanonets, reports in its [March 2026 IDP Leaderboard](https://trailhq.com/blog/idp-leaderboard-1-5) that on handwritten forms, models "fill in values for fields that are blank on the form."
 
-- **Intake:** the tool watches the inbox, logs each RFQ, extracts the due date, and routes it. Nothing sits unread.
-- **Extraction:** the tool reads the drawings, specs, and terms and produces a structured summary of every field the estimator needs, with a link to where each item appears in the source. This is the largest time saving and the step where document-grounded AI has the clearest advantage; our guide to [document-heavy work](/insights/ai-for-document-heavy-work/) explains why.
-- **Interpretation:** the tool compares requirements against a description of the shop's capabilities and against past jobs, and flags what is outside normal range, missing, or contradictory. The estimator decides what the flags mean.
-- **Estimation:** the tool retrieves the most similar past quotes and their outcomes and pre-fills a cost build-up for the estimator to adjust. The estimator sets the price.
-- **Assembly:** the tool drafts the proposal, including exceptions to customer terms based on the shop's standard positions. The estimator edits.
-- **Review:** the tool presents a checklist of flagged items alongside the draft. The reviewer confirms, faster and more consistently than before.
+## Keep the price with people, and give them better history
 
-> The estimator's judgment is the asset; the reading is the cost.
+A price carries things no file holds: how hard this buyer pushed back on last year's increase, which machine opens up in March, whether you want this customer's work at all, how hungry your competitors are this quarter. A model that proposes prices from your past quotes will repeat your past mistakes faster, including the jobs you won because you priced them too low.
 
-One design principle governs all of this: confidence routing. Anything the tool is unsure about, whether a field it could not find, a tolerance outside normal range, or a term it has not seen, goes to a person with the uncertainty marked. The tool should be designed to say "I do not know" cleanly, because an estimator who has to check everything gains nothing.
+What software can do for pricing is find history: what you quoted, whether you won, and what the job actually cost. Most shops have all three, in Epicor or JobBOSS or Global Shop or scattered across folders and email, and few ever compare them. An estimator who opens a new RFQ next to the three most similar past jobs, each showing quoted against actual hours, prices better than one working from memory.
 
-## What results should you expect?
+You can start this week without software. Pull your last 20 closed jobs and put quoted hours next to actual hours, by operation if your ERP tracks it, by job if it doesn't. If the gaps run one way on a part family, a material or a machine, you've found a pricing problem no quoting tool would have fixed. Then have your senior estimator write one line per job on why it ran over or under (say, why one bracket family always needs an extra setup), so the next estimator inherits it.
 
-Expect quotes to go out faster, more of them per estimator, and fewer errors from missed requirements, with the estimators' time shifting toward customers and toward the bid decisions that matter. Two anonymized Syzygy outcomes show the shape of it. Sales engineers at a West Michigan manufacturer saved more than five hours a week after quoting and specification review were automated, and the time went to customer interaction. A mid-Atlantic manufacturer made its quoting 18% more efficient by automating specification analysis and contract-term exceptions, which shortened turnaround on every quote.
+## Write down your standard terms before any tool flags them
 
-The effects that typically follow are worth listing, because owners tend to plan for the first and are surprised by the others:
+A tool can only flag a term as unusual if someone has written down what usual is. Often it lives only in the owner's head or the senior estimator's. Put it on one page, which a new estimator needs anyway. An example, with positions you'd replace with your own:
 
-- **Turnaround time falls**, often more than hours-per-quote does, because RFQs no longer wait for an estimator to find a free afternoon.
-- **Quote volume rises** with the same team, which means bids the shop used to decline for lack of time.
-- **Consistency improves**, because the same fields are extracted the same way every time and exceptions to terms follow the shop's standard positions.
-- **No-bid decisions come faster**, since the tool surfaces disqualifying requirements on day one rather than day four.
-- **Pricing knowledge becomes visible**, because past quotes and outcomes are retrieved and compared rather than remembered.
+| Term | Our usual position | Flag it when |
+|---|---|---|
+| Payment | Net 30 | Anything past net 45 |
+| Price reductions | None built in | Automatic annual price-downs |
+| Line-down charges | Not accepted | Any mention |
+| Warranty | 12 months, repair or replace | Longer, or covers their costs |
+| Material pricing | Valid 30 days | Firm price asked for 90+ days |
+| PPAP or first article | Priced as its own line | Required with no line for it |
 
-Baseline hours per quote, turnaround, volume, and error rate before you start, so the results can be [measured rather than felt](/insights/measuring-ai-roi/).
+We built a tool like this for a mid-Atlantic manufacturer: a custom AI engine that analyzes specification documents and flags contract exceptions. Its quoting operations became 18% more efficient, with faster turnaround.
 
-## A worked example
+## Re-quotes are the quotes you do twice
 
-Consider a 45-person precision machining shop with two estimators who together handle roughly thirty RFQs a week. Turnaround averages five days. The estimators spend most of their time reading customer drawings and specifications, pulling quantities and tolerances into a spreadsheet, and searching a shared drive for the last similar job. Reviews are skipped on anything under a threshold because there is no time.
+The log asks "new or re-quote?" for a reason. In the National Association of Manufacturers' [Q3 2026 outlook survey](https://nam.org/wp-content/uploads/2026/09/Q3_2026_Writeup_Final.pdf), 80.8% of the manufacturers it surveyed named rising raw material costs as a top challenge, and they expected input costs to rise 5% over the next year. Tariffs are part of it. Since April 2026, the Section 232 tariffs on steel, aluminum and copper apply to an import's full value, not just its metal content: 50% for articles made entirely or almost entirely of those metals and 25% for derivative products made substantially of them, per the [White House fact sheet](https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/). A firm annual price on a steel part is a bet on trade policy, and the material row of your terms sheet is where you hedge it.
 
-A quoting tool built for this shop would watch the RFQ inbox, extract each drawing's callouts and each spec's requirements into a structured form, flag the three or four items per RFQ that fall outside the shop's normal capabilities, retrieve the nearest past quotes with their win or loss outcome, and draft the proposal from the shop's template with standard exceptions to terms. The estimators would open each RFQ to a completed form, a short list of flags, and a draft.
+So material lines go stale fast, and the same estimators re-price quotes they already sent. NAM doesn't count re-quotes, but your log will. If they're a real share of the week, look for a tool that pulls up the old quote, updates material and outside processing, shows what changed, and drafts the revision for the estimator to send.
 
-What typically happens in a shop like this: reading time per RFQ falls sharply, turnaround compresses from days to a day or two, and the estimators begin quoting jobs they used to decline. The review step, once skipped, becomes a five-minute pass through the flag list on every quote. Within a couple of quarters the owner has a defensible number for hours returned and turnaround, and a second-wave question: whether to point the same tool at incoming purchase orders.
+## Buy, configure or build
 
-## How do you get started?
+Let the log say which bucket you're in (our [build, buy or configure guide](/insights/build-buy-or-configure/) covers the general decision):
 
-Start by confirming you have the raw material: past RFQs with their attachments, the quotes they produced, and the outcome. Most shops have all three in email and folders, which is enough; the data does not need to be clean, only retained. Then run a [scoped pilot](/insights/prototype-before-you-commit/) on one RFQ type from one customer segment for four to six weeks, with accuracy and time thresholds written down first. If it passes, a production build integrates the tool with the inbox, the ERP or quoting system, and the document store, adds access controls and a review workflow, and trains the estimators, typically over eight to twelve weeks. That sequence, from audit to prototype to build to ongoing measurement, is [how Syzygy structures every engagement](/process/), and the [services page](/services/) describes each step.
+- Mostly machined parts quoted from 3D models: start with job-shop quoting software that analyzes the part file's geometry, a different technology from a chat model reading a PDF.
+- Mostly hunting for past jobs, or your ERP's quoting module sits unused: configure it first, so quotes, routings and actual costs live in one system.
+- Mostly reading long packages (engineered-to-order work, thick specs and quality manuals, automotive or defense terms): price out a custom document assistant, because that reading depends on your terms sheet, capabilities list and past jobs, which no packaged product ships with. It has to live inside the tools you quote in, or it's one more browser tab.
+- Re-quotes are a big share: put the first money into refreshing quotes, which can pay before faster first quotes do.
+- Mostly costing, and you rarely decline work: leave quoting alone.
 
-## Where this goes wrong
+A general AI assistant on a business account can help in the meantime, if you're careful what goes in: check each customer's NDA, keep every customer drawing out of personal logins, and keep export-controlled drawings out of general AI services until whoever owns export compliance approves the setup (ITAR's definition of [technical data](https://www.law.cornell.edu/cfr/text/22/120.33) and the EAR's of [technology](https://www.law.cornell.edu/cfr/text/15/772.1) both name drawings). Our guide to [AI governance for owner-led companies](/insights/ai-governance-for-owner-led-companies/) covers how to write the rule down.
 
-- **Automating the pricing decision.** Pricing is judgment. Automate the reading and let estimators price.
-- **Waiting for clean data.** Retained data is enough. Waiting for clean data is waiting forever.
-- **Trusting extraction without source links.** Every extracted field should point to where it came from so estimators can check in seconds.
-- **No confidence routing.** A tool that guesses silently forces estimators to check everything, which destroys the return.
-- **Piloting on the easiest customer.** Include the customer whose specs are a mess; that is where the time goes.
-- **Skipping integration.** A tool that lives outside the quoting system adds a step instead of removing one.
-- **Measuring hours only.** Turnaround and volume are where the revenue effect shows up.
+Ask any vendor:
 
-## The bottom line
+- Show me the output landing in my ERP's quote screen, on my version. (An import file the ERP reads is fine. A CSV somebody re-keys isn't.)
+- Per seat, per quote or per month, and what do setup and the ERP connection cost?
+- Will you run it on ten of my worst packages before I sign?
 
-Quoting is where AI pays off first in most manufacturers because it is high-volume, document-heavy, and tied to revenue. Break the process into intake, extraction, interpretation, estimation, assembly, and review; automate the reading and drafting; keep estimators on pricing, bid decisions, and flagged exceptions; and route uncertainty to a person. Done that way, the typical result is faster turnaround, more quotes with the same team, and estimators spending their time on the judgment the shop is actually paid for.
+## Demos run on clean packages
+
+Your hours go to the messy ones, so run whatever you're evaluating on ten real packages from the customer with the 80-page quality manual and prints that contradict the spec.
+
+Set the pass line in numbers first. Ten packages at a dozen fields each is about 120 checks, scored as in the drawing test. A fair bar is at least 19 of every 20 fields right with a source, and not one value invented. Seed one package with a net 90 clause and a line-down charge, and require both flagged. Past accuracy, it passes only if reading time per RFQ at least halves, the output reaches the ERP without retyping, and the estimators would rather keep it than go back. Write down what failing looks like too, so you can [stop without an argument](/insights/prototype-before-you-commit/).
+
+Decide before launch what the freed hours are for. In BCG's [June 2026 AI at Work survey](https://www.bcg.com/publications/2026/ai-at-work-why-strategy-matters-more-than-tools), 66% of frontline employees who use AI regularly said they get limited or no guidance on what to do with the time they save. BCG's frontline employees are "individual white-collar employees with no managerial responsibilities," all at companies with $100 million or more in revenue. We see no reason a 70-person shop would hold on to saved time any better. Name the use: quote the RFQs you used to skip, follow up on open quotes, clear the re-quote pile, train the next estimator. Then keep the log running, and track that work and your hit rate against the [same baseline](/insights/measuring-ai-roi/). If turnaround falls and you're quoting work you used to turn away, it's paying, even if hours per quote barely move.
+
+## The first month, with nobody hired
+
+- **Week 1.** Explain the log to the estimators and start it on every package, re-quotes and declines included.
+- **Week 2.** Pull the 20 closed jobs and get the senior estimator's one-line reasons: the part families you've been mispricing, on paper.
+- **Week 3.** Write the terms sheet and a capabilities list (materials, size limits, certifications, tolerances you hold comfortably). Have the owner and the senior estimator fill them in separately, then compare. The differences are worth an hour.
+- **Week 4.** Total the minutes spent before anyone touched a routing, count the unquoted RFQs and re-quotes, run the cost math, and match the biggest bucket to the list above.
+
+By the end of the month you'll know what to price out first, or that you don't need to. Start the log on whatever RFQ lands next.

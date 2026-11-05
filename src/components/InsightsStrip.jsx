@@ -21,7 +21,7 @@ export default function InsightsStrip() {
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-3">Insights</h2>
             <p className="text-lg text-slate-300/90 max-w-2xl">
-              Practical frameworks for owners and operators of small and mid-sized businesses — free, and written to be used.
+              Practical frameworks for owners and operators of small and mid-sized businesses. Free, and written to be used.
             </p>
           </div>
           <Link

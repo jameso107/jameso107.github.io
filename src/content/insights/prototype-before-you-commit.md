@@ -1,133 +1,148 @@
 ---
-title: "Prototype Before You Commit: Why Small AI Pilots Beat Big AI Roadmaps"
+title: "How to Run a Six-Week AI Pilot Before You Sign Anything"
 seoTitle: "How to Run an AI Pilot That Proves Value | Syzygy"
 slug: "prototype-before-you-commit"
-dek: "A well-designed AI pilot answers one question with real work in four to six weeks: is this good enough to put into production? Define the scope, success criteria, kill criteria, duration, and owner before you start, and the pilot cannot fail to teach you something."
-description: "How to run an AI pilot: scope, success criteria, kill criteria, duration, and ownership, and why small pilots beat big AI roadmaps for small businesses."
+dek: "Before anything runs, write down what result keeps the tool, what stops the test and when you'll decide. Test on past cases with known answers, run four weeks of live use with a person approving every output, and sign nothing longer than the test."
+description: "How to run a six-week AI pilot: pass line and kill criteria first, a test on past cases, live use with review, and contract terms that make stopping cheap."
 category: "Technology"
-keywords: ["AI pilot project", "AI proof of concept small business", "how to run an AI pilot", "AI prototype", "pilot success criteria", "AI roadmap vs pilot"]
+keywords: ["how to run an AI pilot", "AI pilot project", "AI proof of concept small business", "AI pilot success criteria", "AI pilot kill criteria", "AI pilot vs proof of concept"]
 author: "james-oosterhouse"
 order: 10
 featured: false
 keyTakeaways:
-  - "A roadmap is the output of pilots, not the input; small businesses that write the roadmap first are planning around assumptions a four-week prototype would have tested."
-  - "A pilot differs from a demo in four ways: real data, real users, written success criteria, and the genuine possibility of being killed."
-  - "The Pilot Charter fits on one page and forces the decisions that determine whether a pilot teaches you anything: problem, users, scope, success criteria, kill criteria, duration, owner, and what happens next."
-  - "A pilot ends in one of three ways, proceed, extend, or kill, and all three are successes if the charter was written honestly."
+  - "Before week one, write the pass line, the stop line (kill criteria), the end date and the one person who makes the call, and turn the vendor's full-volume price into the minutes each case must save to break even."
+  - "Score the tool first on 50 to 100 past cases with known answers that the vendor never tuned on, loaded with hard cases that look routine, because those are the misses a quick review is least likely to catch."
+  - "Give it four weeks of live use with a pilot group of three to six, one skeptic included, and let nothing reach a customer or member without a person's click."
+  - "Decide on the end date: keep it, fix named failures once, or stop, and save the test set and correction log whichever you choose."
+  - "Plan the move to daily use before the pilot starts and keep the vendor on pilot or month-to-month terms until the pass line is met, because the hand-off to production is where many pilots stall."
 faq:
   - q: "How long should an AI pilot last?"
-    a: "Four to six weeks of real use is usually enough to judge whether an AI tool is good enough for production. Shorter pilots rarely accumulate enough cases to trust; longer ones drift into unofficial production without the guardrails a real build would have."
+    a: "About six weeks suits most small-company pilots: one week running the tool on 50 to 100 past cases where the right answers are known, with nobody using it live, then four weeks of live use with a person approving every output, then one week to decide. Shorter pilots see too few real cases to judge. Longer ones tend to drift into daily use without the controls, training and ownership a real rollout needs. Extend once, and only to fix named failures."
   - q: "What should the success criteria for an AI pilot be?"
-    a: "Success criteria should be numeric, tied to the process, and agreed before the pilot starts: for example, the tool extracts every required field correctly on at least a stated share of real cases, cuts handling time by a stated amount, and is used voluntarily by the pilot group most days. Add kill criteria that say what result would end the project."
-  - q: "What is the difference between a pilot and a proof of concept?"
-    a: "A proof of concept shows a technique can work, often on clean examples. A pilot puts a working tool into real use with real people on real cases for a defined period to find out whether it is good enough to rely on. Small businesses should skip straight to pilots; the technology is rarely the uncertainty."
+    a: "Numbers written down before the pilot starts and tied to the work itself: accuracy on the cases that matter (for example, the right queue on at least 95 of 100 past messages the vendor never tuned on), zero silent errors on the high-risk cases, how long a person needs to check each output, and whether the pilot group uses the tool without reminders. Measure each against a baseline of how long the work takes today and how often it goes wrong."
+  - q: "What are kill criteria for an AI pilot?"
+    a: "Kill criteria, or a stop line, are the results that end a pilot early. They're written down before it starts, so stopping never turns into an argument. Good ones are specific: any high-risk case handled wrong after tuning, the pilot group not using the tool unprompted by week four, a full-volume price that needs more time saved than the pilot is showing, or vendor terms the compliance officer won't clear. If one fires, the pilot stops that day."
+  - q: "What's the difference between an AI pilot and a proof of concept or a demo?"
+    a: "A demo shows a tool working on examples the vendor chose. A proof of concept shows a technique can work, usually on clean data. A pilot puts the tool on your own cases, with the people who will use it, against criteria written in advance, for a fixed period, and someone on your side can stop it. If nobody is allowed to stop it, it's a demo."
+  - q: "What happens after an AI pilot passes?"
+    a: "The pilot setup has to become a production tool: connected to the systems staff already use, with access set by role, a review step built into the screen, everyone who will use it trained, and one person who owns it and watches the numbers. That hand-off is where many pilots stall. In MIT NANDA's 2025 report, from a non-random sample, top-performing mid-market firms averaged about 90 days from pilot to full implementation, against nine months or longer at enterprises (firms over $100 million in revenue)."
 cta:
-  service: "prototype"
-  heading: "How Syzygy helps"
-  body: "Syzygy's Design and Prototype engagement delivers a working pilot tested by your team against real cases, with success metrics defined up front, typically over four to six weeks. Book an intro call to scope a pilot for the process you have in mind."
-related: ["where-ai-pays-off-first", "measuring-ai-roi", "ai-readiness-assessment"]
+  service: "custom-tools"
+  heading: "Turn a pilot that passed into a tool people use daily"
+  body: "If a vendor's product passes your pilot, you can buy it without us. If the pilot ran on a tool you set up yourself, Syzygy's Custom Tools & Builds can turn it into the version your staff use every day: connected to the systems they already work in, with the review step built in and training for everyone who'll use it. Each build is quoted after an AI Audit of how the work moves today, so book an intro call and bring your pilot's numbers."
+related: ["measuring-ai-roi", "ai-readiness-assessment", "harnessing-ai-aptitude-midwest-small-business"]
 ---
 
-Big companies write AI roadmaps because they have to coordinate thousands of people. Small companies write them because they think it is what serious organizations do. The result is a document that sequences a dozen projects over several years on the basis of assumptions nobody has tested: that the data is good enough, that the output will be trusted, that the people will use it. A four-week prototype tests all three for a fraction of the cost of the planning session.
+The core processor is pushing a three-year term on its AI member-service add-on, and the board expects an AI plan at the January planning session. The secure-message queue runs two days behind, which is what the add-on promises to fix, and the compliance officer wants to know where member data goes before anyone signs.
 
-This article makes the case for pilots over roadmaps, explains what separates a pilot from a demo, and gives you a one-page charter that makes a pilot impossible to waste.
+That's the quarter for the COO of a hypothetical 65-person credit union with four branches in the St. Louis area. An AI plan written before any test would be a list of hopes with dates attached. Six weeks of testing the add-on on the credit union's messages costs far less than three years of finding out, and what those weeks show belongs in front of the board in January.
 
-## Why do small pilots beat big roadmaps?
+At a job shop, read "secure messages" as RFQs and "queue" as which estimator gets one; at a distributor, order emails and who enters them.
 
-Because the things that determine whether AI works in your business are unknowable until you try, and a pilot is the cheapest way to try. Whether your specifications are consistent enough to read, whether your estimators will trust a draft, whether the edge cases are five percent of volume or forty: these are empirical questions. A roadmap answers them by assumption. A pilot answers them with evidence.
+## Before week 1: write the rules on one page
 
-> The roadmap is the output of pilots, not the input.
+A pilot runs on your own cases, with the people who'll use the tool, against a bar written in advance, and it can be stopped. A pilot that can't fail is a demo.
 
-This is not an argument against planning. It is an argument about sequence. After two or three pilots you will know what your data can support, how your people respond, and where the return is, and the roadmap you write then will be worth following. Written first, it is a list of hopes with dates attached.
+So before anything runs, write down four things:
 
-The cost asymmetry seals the case. A pilot that fails costs a few weeks and a modest fee. A roadmap that fails costs a year of coordinated effort and the team's willingness to try again. Given the choice between learning cheaply and learning expensively, the sequence should be obvious.
+1. The pass line: what has to be true on the end date for you to keep the tool.
+2. The stop line, also called kill criteria: results that end the pilot early, written now so that stopping later doesn't take an argument.
+3. The end date.
+4. The owner: one person on your side who makes the call on that date. Not the vendor's rep and not a consultant, since neither lives with the answer.
 
-## What makes a pilot different from a demo?
+For the credit union, the page reads like this:
 
-A demo shows that something can work. A pilot finds out whether it does work, for you, on your cases, with your people. Four things separate them.
+- Problem: about 300 secure messages a week at about 8 minutes each to read, route and answer. That's 40 staff hours a week, and the queue runs two days behind.
+- Cost today: a member service rep at $22 an hour costs about $31 loaded, so 40 hours x $31 x 50 weeks is about $62,000 a year.
+- Users: five member service reps, including a senior rep who expects the tool to make more work.
+- In scope: routing every message, and drafting replies to routine ones such as address changes, payoff requests, online banking lockouts and stop payments.
+- Out of scope, routed to a person and never drafted: fraud reports, card disputes, complaints, loan decisions, estates and legal orders such as garnishments.
+- Pass line: the right queue on at least 95 of the 100 past messages the vendor never tuned on, and on 95% of live ones, with zero fraud or dispute messages routed as routine. At least 7 in 10 routine drafts sent as is or lightly edited, and checking under two minutes a message.
+- Stop line: any fraud or dispute message misrouted after tuning, the pilot group not using the tool unprompted by week four, or a full-volume price that needs more minutes saved per routine message than the live weeks show.
+- End date: Friday, January 8, six weeks from a Monday, November 30 start, with two light holiday weeks inside.
+- Owner: the member services manager, who runs the queue. The COO takes the result to the board.
 
-- **Real data.** The pilot runs on your actual documents, orders, or emails, including the messy ones, not on a curated sample.
-- **Real users.** The people who would use the tool in production use it during the pilot, in their actual workflow, under normal time pressure.
-- **Written success criteria.** Before the pilot starts, everyone agrees in numbers what "good enough" means.
-- **The possibility of failure.** A pilot that cannot be killed is not a test; it is a slow-motion purchase.
+The $31 is $22 x 1.43, the ratio of total compensation to wages per hour worked in the Bureau of Labor Statistics' [June 2026 employer cost figures](https://www.bls.gov/news.release/archives/ecec_09092026.htm). It's a national average, a little high at 65 people, so redo it with your own payroll and benefit costs.
 
-> A pilot that cannot fail is a demo.
+Then run through the four causes Gartner named in its [July 2024 prediction](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025) about generative AI projects abandoned after proof of concept: poor data quality, inadequate risk controls, escalating costs and unclear business value.
 
-Vendors prefer demos because demos always succeed. You should prefer pilots because you are about to spend real money on the answer.
+- Data: are past messages tagged with their final queue, and are the fees, rates and procedures the drafts will quote current and in one place? If the answer key is a mess, the test can't be scored.
+- Risk: an add-on from a long-time vendor is still a new place for member data to go, so nothing runs until the compliance officer has cleared its terms. The [governance guide](/insights/ai-governance-for-owner-led-companies/) covers what to ask. Decide, too, whether members should be told when AI drafted a reply.
+- Cost: turn the full-volume price into minutes. About 200 of the 300 weekly messages are routine, and a minute saved on each is worth about $5,200 a year (200 x 1 minute is about 3.3 hours a week, x $31 x 50 weeks), so the annual price divided by $5,200 is the minutes per routine message it must save to break even. If that's near the 8 minutes a message takes today, no result can make it pay.
+- Value: name the number that moves if it works, here minutes per message and the backlog. Time 20 messages this month without the tool, and you have [the baseline your pass line is measured against](/insights/measuring-ai-roi/).
 
-## The Pilot Charter
+All four can be checked before you spend a dollar, and a "don't know" on any of them is a reason to wait.
 
-Before any pilot begins, fill in the **Pilot Charter**: one page, eight fields. The discipline of filling it in is where most of the value lives, because it forces decisions that are otherwise made by default or not at all.
+## Week 1: run it on past cases you already know the answers to
 
-1. **Problem.** One sentence naming the process and its current cost, taken from your [prioritization work](/insights/where-ai-pays-off-first/): "Maintenance requests arrive by email and take office staff about twenty minutes each to read, classify, and dispatch."
-2. **Users.** The named people who will use the tool during the pilot. Three to six is typical. Include one skeptic.
-3. **Scope.** What is in and what is out. In: requests arriving in the shared inbox from residential tenants. Out: commercial tenants, phone requests, emergencies.
-4. **Success criteria.** Two or three numeric thresholds. Accuracy on a held-out set of real cases. Handling time per request. Voluntary use by the pilot group.
-5. **Kill criteria.** The results that end the project. Accuracy below a floor after tuning. Users abandoning it by week three. An unforeseen data or compliance problem.
-6. **Duration.** Four to six weeks of real use, with a fixed end date.
-7. **Owner.** One named person on your side who is accountable for the pilot running, the criteria being measured, and the decision being made.
-8. **What happens next.** The three possible outcomes and who decides: proceed to build, extend with specific fixes, or kill.
+Nobody uses the tool live in week one. The vendor runs the add-on in a test environment on past messages where you know the right answer: the queue each belonged in, and a good reply that went out. The member services manager and a senior rep can pull 130 in two or three days.
 
-### Scope
+The vendor's demo used messages it picked. Yours should include the ones that fool people: 15 or 20 hard cases that look routine, such as a card dispute worded like an address change ("I moved last month, and there's a charge on my card from a store I've never heard of"), a fraud report tucked inside a balance question, or a payoff request from a member's son who holds power of attorney.
 
-Narrow is a feature. A pilot that covers one document type from one channel for one team will produce a clear answer. A pilot that covers everything will produce an ambiguous one. Choose the slice with the highest volume and the fewest exceptions, and write down the exceptions you are deliberately excluding so nobody mistakes them for failures later.
+Those look-alikes are where the risk sits. In a 2023 experiment with 758 BCG consultants, [published in Organization Science in March 2026](https://www.hbs.edu/ris/Publication%20Files/dell-acqua-et-al-2026-navigating-the-jagged-technological-frontier_5c589c8c-fbb5-458f-b285-c944746cd717.pdf), GPT-4 helped on work inside what it could do: 12.2% more tasks finished, about 25% faster. A separate group got a business problem of seemingly similar difficulty, chosen to sit beyond its reach, and those using GPT-4 were 19 percentage points less likely to get it right than colleagues without it. Newer models have moved the edge, and in our view none has removed it. Only a test near it shows where it falls on your messages.
 
-### Success criteria
+Give the vendor 30 of the 130 to tune on and keep the other 100, with most of the look-alikes, out of its sight until the scored run. The pass line is scored on those 100 only, because a score on messages the vendor tuned on mostly shows what it memorized.
 
-Criteria must be measurable during the pilot, not after production. "Reduces workload" is not a criterion. "Extracts all required fields correctly on at least a stated share of one hundred real requests" is. Set the thresholds by asking what level of accuracy you would need before you stopped checking every output, and be honest that the answer is probably not perfection; your current process is not perfect either, which is why a [baseline](/insights/measuring-ai-roi/) matters.
+Score every message in a spreadsheet: message ID, right queue, tool's queue, result, seconds to check and a correction note. The result is right, flagged (the tool said it wasn't sure and sent it to a person), or wrong and silent. A flag costs a rep a minute. A silent miss on a fraud report means a member's card stays open two more days, so ten flags and no silent misses beats two flags and one silent miss. Have the senior rep mark each routine draft as send as is, light edit or rewrite. If your pilot pulls fields off documents instead, see [how to score a test set field by field](/insights/ai-for-document-heavy-work/).
 
-### Kill criteria
+Zero misses on the look-alikes proves less than it sounds. By a statistician's rule of thumb, after 0 misses in n tries the true miss rate could still be as high as 3 in n: on 20 cases, about 1 in 7. So live fraud and dispute messages keep counting, and the click stays.
 
-Kill criteria are the part everyone skips and the part that makes the pilot trustworthy. They protect you from the sunk-cost drift in which a mediocre pilot becomes an unofficial production system because nobody wanted to call it. Write them down, and give the owner the authority to invoke them.
+If week one trips the stop line, stop there, with nothing signed.
 
-### Duration
+## Weeks 2 to 5: live use, with a person approving everything
 
-Four to six weeks of real use is long enough to accumulate cases and short enough to stay a test. Pilots shorter than that rarely see enough exceptions. Pilots longer than that become production by accident, without the [guardrails, integration, and training](/process/) a real build provides. Set the end date at the start.
+Now a pilot group of three to six uses it on live messages. The credit union picks five: three experienced reps, one hired this year, and the senior rep who thinks it'll make more work. Put the skeptic in on purpose. A group of enthusiasts will pass a tool the rest of the staff won't touch, and the skeptic finds the cases it gets wrong.
 
-### Owner
+Nothing goes to a member without a click. The tool suggests a queue and drafts a reply, and a rep reads both, fixes what's wrong and sends. Whatever a draft says, the credit union said it, so the rule holds for all four weeks, however good week two looks.
 
-The owner is on your side, not the consultant's. They run the weekly check-in, make sure the criteria are being measured, and make the proceed-extend-kill decision on the end date. If you cannot name this person, you are not ready to pilot, which is one of the things a [readiness assessment](/insights/ai-readiness-assessment/) exists to surface.
+Every Friday the pilot's owner spends an hour on four signals:
 
-## How do you know a pilot is working?
+| Signal | How to count it | What you want |
+|---|---|---|
+| Accuracy | right, flagged, or wrong and silent | climbs, then levels off above the pass line |
+| Seconds to check | time 10 drafts a week | under two minutes, falling |
+| Unprompted use | drafts used per message handled | rising, with no reminders |
+| Exceptions | message types it can't handle | a shorter list each week |
 
-You know a pilot is working when accuracy on real cases is at or approaching the threshold, when the pilot group is using it without being reminded, and when the exception list is shrinking week over week. Check all three weekly.
+One sign that people want the tool doesn't fit in the table: a rep asking whether it could take the loan-payment questions too. Put that on a list for the next pilot and keep it out of this one, because every message type added mid-pilot resets the clock.
 
-Four signals are worth a standing agenda item:
+Keep a correction log as you go: every edit a rep makes to a draft or a queue, with a few words on why ("wrong payoff date", "missed the second question", "too stiff for an upset member"). By week five it's your best record of where the tool breaks, and after the pilot its cases join the test set you rerun whenever the vendor changes the model underneath, or another vendor comes calling with a better demo.
 
-- **Accuracy trend.** Measured on real cases each week, including the hard ones. It should improve as the tool is tuned and then flatten; the flat level is what you are judging.
-- **Voluntary use.** If the pilot group uses it only when asked, the tool is not yet better than the old way, and no amount of accuracy will fix that.
-- **Exception rate.** The share of cases the tool cannot handle or routes to a person. A shrinking exception rate means the scope was right; a stubborn one tells you where production design needs a review step.
-- **Unprompted requests.** When users start asking "can it also do this," the pilot has crossed from tolerated to wanted.
+## Week 6: keep, fix once, or stop
 
-## A worked example
+On the end date, keep it if the pass line is met. Routing and drafting have separate numbers, so if routing passed and the drafts didn't, keep the routing and pay only for that.
 
-Consider a 45-person property management company handling maintenance for a few thousand residential units. Tenant requests arrive in a shared inbox; three office coordinators read each one, classify it by trade and urgency, and dispatch a vendor or an in-house technician. The company wants to know whether an AI tool can do the reading and classifying.
+Fix it once if it came close and the failures have names. Say live routing landed at 93% and every miss was a message with two questions in it. Fix that pattern, run two more weeks, and decide again. Extending twice is a stop you haven't admitted.
 
-The charter: Problem, twenty minutes of coordinator time per request across roughly sixty requests a day. Users, the three coordinators, one of whom is openly doubtful. Scope, residential email requests only; commercial, phone, and anything containing the words "flood," "gas," or "no heat" excluded and routed straight to a person. Success criteria, correct trade and urgency on at least a stated share of one hundred held-out real requests, handling time below eight minutes, and voluntary use by all three coordinators in week four. Kill criteria, classification accuracy below a floor after two weeks of tuning, or any excluded emergency slipping through. Duration, five weeks. Owner, the operations manager. Next, proceed to a build that integrates with the work-order system, extend for two weeks to address specific failure types, or kill.
+Stop if a stop line fired or the pass line was never close. Write down what broke, and keep the test set and the correction log, because the next pilot starts from them.
 
-By week three the tool is accurate on routine requests and weak on requests that mention several problems at once. The exception list has shrunk to that one pattern. The doubtful coordinator is using it unprompted because it drafts the vendor message too. On the end date the owner calls it: proceed to build, with multi-issue requests routed to a person until the build addresses them. The company has spent five weeks and a modest fee to make a production decision with evidence instead of hope.
+For the board, run the payback at the pass line: under two minutes of checking plus a minute of editing puts a routine message near 3 minutes instead of 8. On 200 routine messages a week that's 1,000 minutes, about 17 hours, or about $26,000 a year at $31 an hour. Set the add-on's annual price against that, and count it as a return only once you can say where the hours went. Here that's easy: into the two-day backlog.
 
-## What happens after the pilot?
+The board then gets one page instead of a forecast: the queue's cost today, the pass and stop lines, the price the add-on has to beat, the scores, the decision or its date, and the next two workflows to test from the reps' "can it also do this" list. That last item turns one pilot into the AI plan the board asked for. If the test environment or compliance review runs late, bring the page with the week-one result.
 
-One of three things, and all three are successes if the charter was honest.
+## After a pass: getting it to every rep
 
-- **Proceed.** The criteria were met. The build phase integrates the tool with your systems, adds access controls, monitoring, and review steps, and trains the wider team, typically over eight to twelve weeks.
-- **Extend.** The criteria were nearly met and the failures are specific. Fix them, run two or three more weeks, and decide again. Extend once. Extending twice is a kill you have not admitted.
-- **Kill.** The criteria were not met or a kill criterion fired. Write down what you learned about your data and process, because it will make the next pilot better, and move to the next candidate on your list.
+A pass means the tool works with five careful people watching it. Getting it to every rep, on the Monday after a holiday weekend, with nobody watching closely, is a separate job, and it's where many pilots stall.
 
-Whatever the outcome, the pilot has done its job if the decision was made on the end date, by the owner, against the written criteria. That discipline is worth more than any single result, and it is why a pilot should be a separately [scoped and priced](/services/) step rather than the first chapter of a build.
+Manufacturers hit the same wall. In [MEDC's 2026 small business RFI](https://www.michiganbusiness.org/news/2026/09/five-themes-from-medc-small-business-rfi/), Michigan's development agency heard that the challenge for small and medium manufacturers "was not awareness of automation and digital tools, rather moving proven pilots into full production." Its 90 responses came from lenders, technical assistance providers, industry associations and business owners, so it's a read from people around many companies, not a survey of firms.
 
-## Where this goes wrong
+It doesn't have to take long. In [MIT NANDA's 2025 report](https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf), from a non-random sample, top-performing mid-market companies averaged about 90 days from pilot to full implementation; enterprises over $100 million in revenue took nine months or longer. We think a credit union this size, with its short chain of approval, can do it in a quarter if the production work is on the plan before week one.
 
-- **Piloting on clean data.** You learn nothing about the cases that matter.
-- **Piloting with enthusiasts only.** The pilot passes and production fails.
-- **No kill criteria.** The pilot cannot end, so it becomes production by drift.
-- **Success criteria written after the fact.** Whatever happened becomes the target.
-- **Scope creep in week two.** Every added document type resets the clock.
-- **Consultant as owner.** The decision is yours; the owner must be on your side.
-- **Treating a kill as a failure.** A kill that saved you a build is the cheapest lesson available.
-- **Letting the pilot run into production.** Pilots lack the guardrails a build provides; do not run a business on one.
+Production needs what the pilot didn't have. Drafts appear in the secure-message screen reps already use, with member details pulled from the core, so nobody copies between windows. The tool sees no more than the rep using it. Reps approve routine drafts, flagged and high-risk messages go to a supervisor, and nothing sends without a click. Every rep gets trained, not only the five, on what to do when it's wrong. And one person owns it, checks the numbers monthly and keeps the correction log going.
 
-## The bottom line
+Put those on the pilot plan, with a date, before week one, or the pilot quietly becomes the production system, half-trusted, with nobody trained and nobody watching.
 
-Small pilots beat big roadmaps because the questions that decide whether AI works in your business can only be answered by trying, and a pilot is the cheapest way to try. Write a one-page charter with scope, success criteria, kill criteria, duration, and a named owner; run it on real cases with real users for four to six weeks; and make the proceed-extend-kill decision on the end date. Write the roadmap after the second or third pilot, when it will finally be about something you know.
+## Keep the contract as small as the test
+
+The three-year term is what the pilot exists to protect you from, so don't sign it to get the pilot. Send the core processor your terms in writing before week one:
+
+- A scored run on 100 of your past messages in a test environment, then four weeks live, at pilot or month-to-month pricing with no automatic renewal into a multi-year agreement.
+- The full-volume price for year one and year three, in writing.
+- Your messages, scores and correction log exportable, and the test messages deleted on their side when the pilot ends.
+- The routing rules, reply templates and prompts your staff wrote, kept as yours.
+
+A vendor that believes in its product can live with those terms. If the processor sells only the three-year term, ask for the pass line written into it as an exit: you leave without penalty if the tool misses the routing number on your own messages, scored your way, after three months live. If it won't agree, it wants three years of fees before anyone knows whether the add-on works, and the same six weeks can test a tool you control instead.
+
+You can run this plan yourself: a member services manager with a spreadsheet has everything week one needs. If you bring in a consultant, keep the pilot a separate decision from any build, with [pricing that makes stopping cheap](/insights/how-much-does-consulting-cost/).
+
+Before the vendor calls back, put the pass line, the stop line, the end date and the owner on one page. Then time 20 messages as they're handled today and pull 20 past ones with known answers, five of them the kind that look routine and aren't. That's the start of the test set, and the first tested line of the January plan.
